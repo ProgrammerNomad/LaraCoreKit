@@ -1,0 +1,48 @@
+# Laravel & Composer
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.env.production
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+auth.json
+npm-debug.log
+yarn-error.log
+
+# IDEs
+/.fleet
+/.idea
+/.vscode
+*.swp
+*.swo
+*~
+
+# SQLite database
+/database/*.sqlite
+/database/*.sqlite-journal
+
+# Modules (keep structure, ignore generated files)
+/modules/**/vendor
+/modules/**/node_modules
+
+# Build artifacts
+/public/css
+/public/js
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Telescope data
+/storage/telescope
+
+# Logs
+*.log
+/storage/logs/*.log
+.github/copilot-instructions.md
