@@ -11,6 +11,7 @@ module.exports = {
     './vendor/filament/**/*.blade.php',
     './vendor/filament/**/*.js',
     './modules/**/resources/**/*.blade.php',
+    './modules/**/views/**/*.blade.php',
     './modules/**/src/**/*.php',
   ],
 

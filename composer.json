@@ -25,6 +25,15 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
+            "Modules\\Auth\\": "modules/Auth/src/",
+            "Modules\\Blog\\": "modules/Blog/src/",
+            "Modules\\Blog\\Database\\Seeders\\": "modules/Blog/database/seeders/",
+            "Modules\\Core\\": "modules/Core/src/",
+            "Modules\\Settings\\": "modules/Settings/src/",
+            "Modules\\Settings\\Database\\Seeders\\": "modules/Settings/database/seeders/",
+            "Modules\\User\\": "modules/User/src/",
+            "Modules\\User\\Database\\Factories\\": "modules/User/database/factories/",
+            "Modules\\User\\Database\\Seeders\\": "modules/User/database/seeders/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }
