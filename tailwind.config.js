@@ -1,23 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  // Enable class-based dark mode (recommended for Filament + custom UI)
   darkMode: 'class',
 
-  // Specify all paths Tailwind should scan
   content: [
     './resources/**/*.blade.php',
     './resources/**/*.js',
     './resources/**/*.vue',
-
-    // Livewire components
     './app/Http/Livewire/**/*.php',
-
-    // Filament
     './app/Filament/**/*.php',
     './vendor/filament/**/*.blade.php',
     './vendor/filament/**/*.js',
-
-    // Modules frontend + admin (important!)
     './modules/**/resources/**/*.blade.php',
     './modules/**/src/**/*.php',
   ],
@@ -25,40 +17,225 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: "1.5rem",
+      padding: '1.5rem',
       screens: {
-        sm: "600px",
-        md: "728px",
-        lg: "984px",
-        xl: "1240px",
-        "2xl": "1496px",
+        sm: '600px',
+        md: '728px',
+        lg: '984px',
+        xl: '1240px',
+        '2xl': '1496px',
       },
     },
 
     extend: {
       fontFamily: {
-        sans: ["Inter", "Poppins", "sans-serif"],
+        sans: ['Inter', 'Poppins', 'system-ui', 'sans-serif'],
+        display: ['Poppins', 'system-ui', 'sans-serif'],
+        mono: ['Fira Code', 'Monaco', 'monospace'],
+      },
+
+      fontSize: {
+        xs: ['0.75rem', { lineHeight: '1rem' }],
+        sm: ['0.875rem', { lineHeight: '1.25rem' }],
+        base: ['1rem', { lineHeight: '1.5rem' }],
+        lg: ['1.125rem', { lineHeight: '1.75rem' }],
+        xl: ['1.25rem', { lineHeight: '1.75rem' }],
+        '2xl': ['1.5rem', { lineHeight: '2rem' }],
+        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+        '5xl': ['3rem', { lineHeight: '1.2' }],
+        '6xl': ['3.75rem', { lineHeight: '1.2' }],
       },
 
       colors: {
         primary: {
-          DEFAULT: "#FF2D20",  // Laravel Red
-          soft: "#FF6B60",
+          50: '#FFF5F3',
+          100: '#FFE5E0',
+          200: '#FFC9BF',
+          300: '#FF9F7A',
+          400: '#FF6B60',
+          500: '#FF2D20',
+          600: '#E02A1B',
+          700: '#C12515',
+          800: '#A02010',
+          900: '#80190B',
+          950: '#600D06',
+          DEFAULT: '#FF2D20',
+          soft: '#FF6B60',
         },
         secondary: {
-          DEFAULT: "#3B82F6",  // Tailwind Blue
-          soft: "#60A5FA",
+          50: '#F0F9FF',
+          100: '#E0F2FE',
+          200: '#BAE6FD',
+          300: '#7DD3FC',
+          400: '#38BDF8',
+          500: '#0EA5E9',
+          600: '#0284C7',
+          700: '#0369A1',
+          800: '#075985',
+          900: '#0C366F',
+          950: '#082F49',
+          DEFAULT: '#3B82F6',
+          soft: '#60A5FA',
         },
         accent: {
-          DEFAULT: "#0EA5E9",
+          50: '#F0FDFA',
+          100: '#CCFBF1',
+          200: '#99F6E4',
+          300: '#5EEAD4',
+          400: '#2DD4BF',
+          500: '#0EA5E9',
+          600: '#0891B2',
+          700: '#0E7490',
+          800: '#155E75',
+          900: '#164E63',
+          950: '#0C2F3F',
+          DEFAULT: '#0EA5E9',
+        },
+        success: {
+          50: '#F0FDF4',
+          100: '#DCFCE7',
+          200: '#BBF7D0',
+          300: '#86EFAC',
+          400: '#4ADE80',
+          500: '#22C55E',
+          600: '#16A34A',
+          700: '#15803D',
+          800: '#166534',
+          900: '#145231',
+        },
+        warning: {
+          50: '#FFFBEB',
+          100: '#FEF3C7',
+          200: '#FDE68A',
+          300: '#FCD34D',
+          400: '#FBBF24',
+          500: '#F59E0B',
+          600: '#D97706',
+          700: '#B45309',
+          800: '#92400E',
+          900: '#78350F',
+        },
+        danger: {
+          50: '#FEF2F2',
+          100: '#FEE2E2',
+          200: '#FECACA',
+          300: '#FCA5A5',
+          400: '#F87171',
+          500: '#EF4444',
+          600: '#DC2626',
+          700: '#B91C1C',
+          800: '#991B1B',
+          900: '#7F1D1D',
+        },
+        neutral: {
+          50: '#FAFAFA',
+          100: '#F5F5F5',
+          200: '#E5E5E5',
+          300: '#D4D4D4',
+          400: '#A3A3A3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
+          950: '#0A0A0A',
         },
         dark: {
-          DEFAULT: "#0F172A", // slate-900-ish
-        }
+          50: '#F9FAFB',
+          100: '#F3F4F6',
+          200: '#E5E7EB',
+          300: '#D1D5DB',
+          400: '#9CA3AF',
+          500: '#6B7280',
+          600: '#4B5563',
+          700: '#374151',
+          800: '#1F2937',
+          900: '#111827',
+          950: '#030712',
+          DEFAULT: '#0F172A',
+        },
+      },
+
+      spacing: {
+        xs: '0.5rem',
+        sm: '1rem',
+        md: '1.5rem',
+        lg: '2rem',
+        xl: '3rem',
+        '2xl': '4rem',
+        '3xl': '6rem',
+        '4xl': '8rem',
+      },
+
+      borderRadius: {
+        none: '0',
+        xs: '0.25rem',
+        sm: '0.375rem',
+        base: '0.5rem',
+        md: '0.75rem',
+        lg: '1rem',
+        xl: '1.25rem',
+        '2xl': '1.5rem',
+        '3xl': '2rem',
+        full: '9999px',
       },
 
       boxShadow: {
-        soft: "0 4px 20px rgba(0, 0, 0, 0.08)",
+        none: 'none',
+        xs: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        sm: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        base: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        md: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        lg: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        xl: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+        '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+        soft: '0 4px 20px rgba(0, 0, 0, 0.08)',
+        'soft-md': '0 8px 24px rgba(0, 0, 0, 0.12)',
+        'primary-glow': '0 0 30px rgba(255, 45, 32, 0.3)',
+        'secondary-glow': '0 0 30px rgba(59, 130, 246, 0.3)',
+      },
+
+      backgroundImage: {
+        'gradient-primary': 'linear-gradient(135deg, #FF2D20 0%, #FF6B60 100%)',
+        'gradient-secondary': 'linear-gradient(135deg, #3B82F6 0%, #0EA5E9 100%)',
+        'gradient-accent': 'linear-gradient(135deg, #0EA5E9 0%, #06B6D4 100%)',
+      },
+
+      animation: {
+        'fade-in': 'fadeIn 0.3s ease-in-out',
+        'slide-up': 'slideUp 0.3s ease-out',
+        'pulse-soft': 'pulseSoft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(10px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        pulseSoft: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.8' },
+        },
+      },
+
+      transitionDuration: {
+        150: '150ms',
+        200: '200ms',
+        300: '300ms',
+        400: '400ms',
+        500: '500ms',
+      },
+
+      transitionTimingFunction: {
+        'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'ease-in': 'cubic-bezier(0.4, 0, 1, 1)',
+        'ease-out': 'cubic-bezier(0, 0, 0.2, 1)',
+        'spring': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
       },
     },
   },
@@ -68,10 +245,25 @@ module.exports = {
     require('@tailwindcss/typography'),
   ],
 
-  // Safelist for dynamic classes generated from DB (optional)
   safelist: [
-    'bg-primary', 'text-primary', 'border-primary',
-    'bg-secondary', 'text-secondary', 'border-secondary',
-    'dark:bg-dark', 'dark:text-white',
+    'bg-primary',
+    'text-primary',
+    'border-primary',
+    'bg-secondary',
+    'text-secondary',
+    'border-secondary',
+    'bg-accent',
+    'text-accent',
+    'border-accent',
+    'bg-success',
+    'text-success',
+    'bg-warning',
+    'text-warning',
+    'bg-danger',
+    'text-danger',
+    'dark:bg-dark',
+    'dark:text-white',
+    'dark:text-neutral-100',
+    'dark:text-neutral-200',
   ],
 };
