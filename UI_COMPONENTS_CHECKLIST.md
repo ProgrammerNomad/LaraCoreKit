@@ -4,57 +4,57 @@ Complete list of UI components to implement in the starter kit.
 
 ## 1️⃣ Typography + Text Components
 
-- [ ] Headings (H1–H6)
-- [ ] Paragraphs
-- [ ] Lead text
-- [ ] Muted text
-- [ ] Inline code
-- [ ] Blockquote
-- [ ] Lists (UL, OL)
-- [ ] Description list (label + value)
-- [ ] Text truncation with tooltip
-- [ ] Text highlight/mark
-- [ ] Keyboard shortcut display (kbd tag)
+- [x] Headings (H1–H6)
+- [x] Paragraphs
+- [x] Lead text
+- [x] Muted text
+- [x] Inline code
+- [x] Blockquote
+- [x] Lists (UL, OL)
+- [x] Description list (label + value)
+- [x] Text truncation with tooltip
+- [x] Text highlight/mark
+- [x] Keyboard shortcut display (kbd tag)
 
 ## 2️⃣ Buttons
 
-- [ ] Primary button
-- [ ] Secondary button
-- [ ] Outline button
-- [ ] Ghost button
-- [ ] Danger button
-- [ ] Success button
-- [ ] Icon button
-- [ ] Button with icon (left/right)
+- [x] Primary button
+- [x] Secondary button
+- [x] Outline button
+- [x] Ghost button
+- [x] Danger button
+- [x] Success button
+- [x] Icon button
+- [x] Button with icon (left/right)
 - [ ] Button with dropdown
-- [ ] Button loading state
-- [ ] Full-width button
-- [ ] Button group
+- [x] Button loading state
+- [x] Full-width button
+- [x] Button group
 - [ ] Floating action button (FAB)
 - [ ] Link button
-- [ ] Disabled button state
+- [x] Disabled button state
 
 ## 3️⃣ Form Elements
 
 ### Input Fields
-- [ ] Text input
-- [ ] Email input
-- [ ] Number input
-- [ ] Password input (with show/hide)
-- [ ] Search input
-- [ ] File upload input
-- [ ] Tags input
-- [ ] Phone input
+- [x] Text input
+- [x] Email input
+- [x] Number input
+- [x] Password input (with show/hide)
+- [x] Search input
+- [x] File upload input
+- [x] Tags input
+- [x] Phone input
 - [ ] Slug generator input
-- [ ] OTP input boxes
-- [ ] URL input
-- [ ] Currency input
-- [ ] Input with prefix/suffix icons
+- [x] OTP input boxes
+- [x] URL input
+- [x] Currency input
+- [x] Input with prefix/suffix icons
 - [ ] Input with character counter
 
 ### Selects
-- [ ] Basic select
-- [ ] Multi-select
+- [x] Basic select
+- [x] Multi-select
 - [ ] Country select
 - [ ] Language select
 - [ ] Timezone select
@@ -63,39 +63,39 @@ Complete list of UI components to implement in the starter kit.
 - [ ] Grouped select
 
 ### Other Form Controls
-- [ ] Textarea
-- [ ] Auto-resizing textarea
-- [ ] Checkbox
-- [ ] Switch / toggle
-- [ ] Radio button
-- [ ] Radio group
-- [ ] Range slider
+- [x] Textarea
+- [x] Auto-resizing textarea
+- [x] Checkbox
+- [x] Switch / toggle
+- [x] Radio button
+- [x] Radio group
+- [x] Range slider
 - [ ] Dual range slider
-- [ ] Date picker
+- [x] Date picker
 - [ ] Date-range picker
-- [ ] Time picker
-- [ ] DateTime picker
-- [ ] Color picker
+- [x] Time picker
+- [x] DateTime picker
+- [x] Color picker
 - [ ] Rich text editor (Tiptap/Quill)
 - [ ] Markdown editor
 - [ ] WYSIWYG editor
-- [ ] Form validation message system
-- [ ] Inline validation
-- [ ] Form helper text
+- [x] Form validation message system
+- [x] Inline validation
+- [x] Form helper text
 - [ ] Required field indicator
 
 ## 4️⃣ Navigation Components
 
-- [ ] Header / Navbar
+- [x] Header / Navbar
 - [ ] Sticky header
-- [ ] Mobile responsive menu
-- [ ] Sidebar (expandable / collapsible)
+- [x] Mobile responsive menu
+- [x] Sidebar (expandable / collapsible)
 - [ ] Nested sidebar menu
-- [ ] Breadcrumbs
-- [ ] Pagination
+- [x] Breadcrumbs
+- [x] Pagination
 - [ ] Infinite scroll pagination
 - [ ] Load more button
-- [ ] Tabs
+- [x] Tabs
 - [ ] Vertical tabs
 - [ ] Stepper (multi-step form flow)
 - [ ] Command palette (Ctrl+K search)
@@ -105,75 +105,75 @@ Complete list of UI components to implement in the starter kit.
 
 ## 5️⃣ Layout Components
 
-- [ ] Container
-- [ ] Grid system
+- [x] Container
+- [x] Grid system
 - [ ] Flex utilities
 - [ ] Section wrapper
-- [ ] Card
-- [ ] Card with header/footer
-- [ ] Card with image
+- [x] Card
+- [x] Card with header/footer
+- [x] Card with image
 - [ ] Pricing card
-- [ ] Two-column layout
-- [ ] Three-column layout
+- [x] Two-column layout
+- [x] Three-column layout
 - [ ] Dashboard layout
 - [ ] Landing layout
 - [ ] Auth layout
-- [ ] Sidebar layout
-- [ ] Split screen layout
+- [x] Sidebar layout
+- [x] Split screen layout
 - [ ] Centered layout
-- [ ] Max-width wrapper
+- [x] Max-width wrapper
 
 ## 6️⃣ Data Display Components
 
-- [ ] Table (simple)
-- [ ] Table (striped)
-- [ ] Table with sorting
+- [x] Table (simple)
+- [x] Table (striped)
+- [x] Table with sorting
 - [ ] Table with filters
-- [ ] Table with pagination
-- [ ] Table with search
+- [x] Table with pagination
+- [x] Table with search
 - [ ] Table with bulk actions
 - [ ] Table with expandable rows
 - [ ] Table with fixed header
-- [ ] Table with badges, icons
+- [x] Table with badges, icons
 - [ ] Responsive table (mobile stack)
-- [ ] Tag / badge component
-- [ ] Chip component
-- [ ] Avatar component
-- [ ] Avatar group
-- [ ] Avatar with status indicator
-- [ ] Stats component (cards with numbers)
-- [ ] KPI cards
-- [ ] Timeline
+- [x] Tag / badge component
+- [x] Chip component
+- [x] Avatar component
+- [x] Avatar group
+- [x] Avatar with status indicator
+- [x] Stats component (cards with numbers)
+- [x] KPI cards
+- [x] Timeline
 - [ ] Vertical timeline
 - [ ] Horizontal timeline
-- [ ] Accordion
+- [x] Accordion
 - [ ] Nested accordion
 - [ ] Collapsible
-- [ ] Empty state component
-- [ ] Code block viewer
+- [x] Empty state component
+- [x] Code block viewer
 - [ ] Syntax highlighter
 - [ ] JSON viewer
 - [ ] Diff viewer
-- [ ] Key-value pairs display
+- [x] Key-value pairs display
 - [ ] Label list
 
 ## 7️⃣ Feedback Components
 
-- [ ] Alerts (success, warning, error, info)
-- [ ] Dismissible alerts
-- [ ] Toast notifications
+- [x] Alerts (success, warning, error, info)
+- [x] Dismissible alerts
+- [x] Toast notifications
 - [ ] Toast with actions
 - [ ] Notification center
-- [ ] Modal popup
-- [ ] Confirmation modal
+- [x] Modal popup
+- [x] Confirmation modal
 - [ ] Slide-over panel
 - [ ] Drawer (left/right/top/bottom)
 - [ ] Bottom sheet (mobile)
-- [ ] Loading spinner
-- [ ] Skeleton loader
+- [x] Loading spinner
+- [x] Skeleton loader
 - [ ] Skeleton card
 - [ ] Skeleton table
-- [ ] Progress bar
+- [x] Progress bar
 - [ ] Circular progress
 - [ ] Steps indicator
 - [ ] Tooltip
@@ -337,7 +337,7 @@ Complete list of UI components to implement in the starter kit.
 ## 1️⃣6️⃣ Advanced/Interactive
 
 - [ ] Drag & drop list
-- [ ] Sortable table columns
+- [x] Sortable table columns
 - [ ] Resizable panels
 - [ ] Split pane view
 - [ ] Kanban board
