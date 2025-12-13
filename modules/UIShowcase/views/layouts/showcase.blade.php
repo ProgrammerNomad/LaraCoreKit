@@ -127,6 +127,16 @@
                             <a href="{{ route('showcase.forms') }}#datetime-picker" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">DateTime Picker</a>
                             <a href="{{ route('showcase.forms') }}#color-picker" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Color Picker</a>
                             <a href="{{ route('showcase.forms') }}#auto-resize-textarea" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Auto-resize Textarea</a>
+                            <a href="{{ route('showcase.forms') }}#slug-generator-input" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Slug Generator</a>
+                            <a href="{{ route('showcase.forms') }}#input-with-character-counter" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Character Counter</a>
+                            <a href="{{ route('showcase.forms') }}#country-select" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Country Select</a>
+                            <a href="{{ route('showcase.forms') }}#language-select" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Language Select</a>
+                            <a href="{{ route('showcase.forms') }}#timezone-select" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Timezone Select</a>
+                            <a href="{{ route('showcase.forms') }}#category-select-with-search" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Category Search</a>
+                            <a href="{{ route('showcase.forms') }}#async-searchable-select" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Async Select</a>
+                            <a href="{{ route('showcase.forms') }}#grouped-select" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Grouped Select</a>
+                            <a href="{{ route('showcase.forms') }}#dual-range-slider" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Dual Range Slider</a>
+                            <a href="{{ route('showcase.forms') }}#date-range-picker" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Date-range Picker</a>
                         </div>
                     </div>
                     
