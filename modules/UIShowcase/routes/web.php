@@ -58,4 +58,16 @@ Route::prefix('ui-showcase')->name('showcase.')->group(function () {
     Route::get('/landing-content', function () {
         return view('showcase::landing-content');
     })->name('landing-content');
+    
+    Route::get('/ecommerce-products', function () {
+        return view('showcase::ecommerce-products');
+    })->name('ecommerce-products');
+    
+    Route::get('/ecommerce-cart', function () {
+        return view('showcase::ecommerce-cart');
+    })->name('ecommerce-cart');
+    
+    Route::get('/ecommerce-reviews', function () {
+        return view('showcase::ecommerce-reviews');
+    })->name('ecommerce-reviews');
 });

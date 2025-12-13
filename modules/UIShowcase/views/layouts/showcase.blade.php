@@ -385,6 +385,31 @@
                             <a href="{{ route('showcase.landing-content') }}#footer-multi-column" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Footer</a>
                         </div>
                     </div>
+                    
+                    <!-- E-commerce -->
+                    <div>
+                        <button @click="toggleSection('ecommerce')" class="w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg {{ request()->routeIs(['showcase.ecommerce-products', 'showcase.ecommerce-cart', 'showcase.ecommerce-reviews']) ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                                E-commerce
+                            </div>
+                            <svg class="w-4 h-4 transition-transform" :class="openSections['ecommerce'] ? 'rotate-90' : ''" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div x-show="openSections['ecommerce']" x-cloak class="ml-8 mt-1 space-y-1">
+                            <a href="{{ route('showcase.ecommerce-products') }}#product-card-grid" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Product Card - Grid</a>
+                            <a href="{{ route('showcase.ecommerce-products') }}#product-filters" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Product Filters</a>
+                            <a href="{{ route('showcase.ecommerce-products') }}#product-detail-page" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Product Detail Page</a>
+                            <a href="{{ route('showcase.ecommerce-cart') }}#shopping-cart" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Shopping Cart</a>
+                            <a href="{{ route('showcase.ecommerce-cart') }}#checkout-flow" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Checkout Flow</a>
+                            <a href="{{ route('showcase.ecommerce-cart') }}#order-confirmation" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Order Confirmation</a>
+                            <a href="{{ route('showcase.ecommerce-reviews') }}#product-reviews" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Product Reviews</a>
+                            <a href="{{ route('showcase.ecommerce-reviews') }}#wishlist" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Wishlist</a>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </aside>
