@@ -162,10 +162,6 @@
                             <a href="{{ route('showcase.navigation') }}#dropdown-menu" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Dropdown Menu</a>
                             <a href="{{ route('showcase.navigation') }}#mobile-menu-hamburger" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Mobile Menu</a>
                             <a href="{{ route('showcase.navigation') }}#stepper-multi-step-wizard" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Stepper / Wizard</a>
-                            <a href="{{ route('showcase.navigation') }}#sticky-header" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Sticky Header</a>
-                            <a href="{{ route('showcase.navigation') }}#nested-sidebar-menu" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Nested Sidebar Menu</a>
-                            <a href="{{ route('showcase.navigation') }}#infinite-scroll-pagination" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Infinite Scroll</a>
-                            <a href="{{ route('showcase.navigation') }}#load-more-button" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Load More Button</a>
                         </div>
                     </div>
                     

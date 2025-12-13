@@ -87,14 +87,14 @@ Complete list of UI components to implement in the starter kit.
 ## 4️⃣ Navigation Components
 
 - [x] Header / Navbar
-- [x] Sticky header
+- [ ] Sticky header
 - [x] Mobile responsive menu
 - [x] Sidebar (expandable / collapsible)
-- [x] Nested sidebar menu
+- [ ] Nested sidebar menu
 - [x] Breadcrumbs
 - [x] Pagination
-- [x] Infinite scroll pagination
-- [x] Load more button
+- [ ] Infinite scroll pagination
+- [ ] Load more button
 - [x] Tabs
 - [ ] Vertical tabs
 - [x] Stepper (multi-step form flow)
