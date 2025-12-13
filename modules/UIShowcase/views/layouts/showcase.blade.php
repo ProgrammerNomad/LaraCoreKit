@@ -320,6 +320,71 @@
                             <a href="{{ route('showcase.auth') }}#api-tokens-management" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">API Tokens Management</a>
                         </div>
                     </div>
+                    
+                    <!-- Landing - Hero & Features -->
+                    <div>
+                        <button @click="toggleSection('landing-hero')" class="w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg {{ request()->routeIs('showcase.landing-hero') ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                                </svg>
+                                Landing - Hero
+                            </div>
+                            <svg class="w-4 h-4 transition-transform" :class="openSections['landing-hero'] ? 'rotate-90' : ''" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div x-show="openSections['landing-hero']" x-cloak class="ml-8 mt-1 space-y-1">
+                            <a href="{{ route('showcase.landing-hero') }}#hero-section-centered" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Hero Section - Centered</a>
+                            <a href="{{ route('showcase.landing-hero') }}#hero-section-split-layout" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Hero Section - Split</a>
+                            <a href="{{ route('showcase.landing-hero') }}#features-grid-icon-cards" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Features Grid</a>
+                            <a href="{{ route('showcase.landing-hero') }}#features-alternating-sections" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Alternating Features</a>
+                            <a href="{{ route('showcase.landing-hero') }}#call-to-action-section" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">CTA Section</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Landing - Pricing & Social Proof -->
+                    <div>
+                        <button @click="toggleSection('landing-pricing')" class="w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg {{ request()->routeIs('showcase.landing-pricing') ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Landing - Pricing
+                            </div>
+                            <svg class="w-4 h-4 transition-transform" :class="openSections['landing-pricing'] ? 'rotate-90' : ''" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div x-show="openSections['landing-pricing']" x-cloak class="ml-8 mt-1 space-y-1">
+                            <a href="{{ route('showcase.landing-pricing') }}#pricing-table-with-toggle" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Pricing Table</a>
+                            <a href="{{ route('showcase.landing-pricing') }}#testimonials-carousel" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Testimonials Carousel</a>
+                            <a href="{{ route('showcase.landing-pricing') }}#logo-cloud-trusted-by" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Logo Cloud</a>
+                            <a href="{{ route('showcase.landing-pricing') }}#stats-metrics-section" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Stats/Metrics</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Landing - Content & Footer -->
+                    <div>
+                        <button @click="toggleSection('landing-content')" class="w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg {{ request()->routeIs('showcase.landing-content') ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                                </svg>
+                                Landing - Content
+                            </div>
+                            <svg class="w-4 h-4 transition-transform" :class="openSections['landing-content'] ? 'rotate-90' : ''" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div x-show="openSections['landing-content']" x-cloak class="ml-8 mt-1 space-y-1">
+                            <a href="{{ route('showcase.landing-content') }}#faq-accordion" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">FAQ Accordion</a>
+                            <a href="{{ route('showcase.landing-content') }}#newsletter-signup" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Newsletter Signup</a>
+                            <a href="{{ route('showcase.landing-content') }}#contact-form" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Contact Form</a>
+                            <a href="{{ route('showcase.landing-content') }}#team-member-cards" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Team Member Cards</a>
+                            <a href="{{ route('showcase.landing-content') }}#footer-multi-column" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Footer</a>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </aside>

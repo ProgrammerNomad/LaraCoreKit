@@ -46,4 +46,16 @@ Route::prefix('ui-showcase')->name('showcase.')->group(function () {
     Route::get('/auth', function () {
         return view('showcase::auth');
     })->name('auth');
+    
+    Route::get('/landing-hero', function () {
+        return view('showcase::landing-hero');
+    })->name('landing-hero');
+    
+    Route::get('/landing-pricing', function () {
+        return view('showcase::landing-pricing');
+    })->name('landing-pricing');
+    
+    Route::get('/landing-content', function () {
+        return view('showcase::landing-content');
+    })->name('landing-content');
 });
