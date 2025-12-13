@@ -70,4 +70,12 @@ Route::prefix('ui-showcase')->name('showcase.')->group(function () {
     Route::get('/ecommerce-reviews', function () {
         return view('showcase::ecommerce-reviews');
     })->name('ecommerce-reviews');
+    
+    Route::get('/advanced-drag-drop', function () {
+        return view('showcase::advanced-drag-drop');
+    })->name('advanced-drag-drop');
+    
+    Route::get('/advanced-ui', function () {
+        return view('showcase::advanced-ui');
+    })->name('advanced-ui');
 });

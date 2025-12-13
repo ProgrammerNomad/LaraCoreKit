@@ -410,6 +410,29 @@
                             <a href="{{ route('showcase.ecommerce-reviews') }}#wishlist" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Wishlist</a>
                         </div>
                     </div>
+                    
+                    <!-- Advanced Features -->
+                    <div>
+                        <button @click="toggleSection('advanced')" class="w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg {{ request()->routeIs(['showcase.advanced-drag-drop', 'showcase.advanced-ui']) ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                                Advanced
+                            </div>
+                            <svg class="w-4 h-4 transition-transform" :class="openSections['advanced'] ? 'rotate-90' : ''" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div x-show="openSections['advanced']" x-cloak class="ml-8 mt-1 space-y-1">
+                            <a href="{{ route('showcase.advanced-drag-drop') }}#sortable-list" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Sortable List</a>
+                            <a href="{{ route('showcase.advanced-drag-drop') }}#kanban-board" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Kanban Board</a>
+                            <a href="{{ route('showcase.advanced-drag-drop') }}#drag-drop-file-upload" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Drag & Drop Upload</a>
+                            <a href="{{ route('showcase.advanced-ui') }}#mini-calendar" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Mini Calendar</a>
+                            <a href="{{ route('showcase.advanced-ui') }}#tree-view" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Tree View</a>
+                            <a href="{{ route('showcase.advanced-ui') }}#command-palette" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Command Palette</a>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </aside>
