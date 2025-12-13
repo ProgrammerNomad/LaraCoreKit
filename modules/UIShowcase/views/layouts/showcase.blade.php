@@ -127,16 +127,6 @@
                             <a href="{{ route('showcase.forms') }}#datetime-picker" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">DateTime Picker</a>
                             <a href="{{ route('showcase.forms') }}#color-picker" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Color Picker</a>
                             <a href="{{ route('showcase.forms') }}#auto-resize-textarea" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Auto-resize Textarea</a>
-                            <a href="{{ route('showcase.forms') }}#slug-generator-input" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Slug Generator</a>
-                            <a href="{{ route('showcase.forms') }}#input-with-character-counter" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Character Counter</a>
-                            <a href="{{ route('showcase.forms') }}#country-select" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Country Select</a>
-                            <a href="{{ route('showcase.forms') }}#language-select" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Language Select</a>
-                            <a href="{{ route('showcase.forms') }}#timezone-select" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Timezone Select</a>
-                            <a href="{{ route('showcase.forms') }}#category-select-with-search" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Category Search</a>
-                            <a href="{{ route('showcase.forms') }}#async-searchable-select" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Async Select</a>
-                            <a href="{{ route('showcase.forms') }}#grouped-select" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Grouped Select</a>
-                            <a href="{{ route('showcase.forms') }}#dual-range-slider" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Dual Range Slider</a>
-                            <a href="{{ route('showcase.forms') }}#date-range-picker" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Date-range Picker</a>
                         </div>
                     </div>
                     
@@ -191,8 +181,6 @@
                             <a href="{{ route('showcase.layouts') }}#hero-section" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Hero Section</a>
                             <a href="{{ route('showcase.layouts') }}#list-with-dividers" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">List with Dividers</a>
                             <a href="{{ route('showcase.layouts') }}#accordion-panel" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Accordion Panel</a>
-                            <a href="{{ route('showcase.layouts') }}#pricing-card" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Pricing Card</a>
-                            <a href="{{ route('showcase.layouts') }}#centered-layout" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Centered Layout</a>
                         </div>
                     </div>
                     
@@ -219,11 +207,6 @@
                             <a href="{{ route('showcase.data-display') }}#avatar-status" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Avatar with Status</a>
                             <a href="{{ route('showcase.data-display') }}#kpi-cards" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">KPI Cards</a>
                             <a href="{{ route('showcase.data-display') }}#code-block" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Code Block Viewer</a>
-                            <a href="{{ route('showcase.data-display') }}#vertical-timeline" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Vertical Timeline</a>
-                            <a href="{{ route('showcase.data-display') }}#horizontal-timeline" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Horizontal Timeline</a>
-                            <a href="{{ route('showcase.data-display') }}#nested-accordion" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Nested Accordion</a>
-                        </div>
-                    </div>
                             <a href="{{ route('showcase.data-display') }}#badge" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Badge</a>
                             <a href="{{ route('showcase.data-display') }}#card" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Card</a>
                             <a href="{{ route('showcase.data-display') }}#stat-card" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Stat Card</a>
