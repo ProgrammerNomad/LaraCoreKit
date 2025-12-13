@@ -60,7 +60,7 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
 });
 </script>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 tasks: [
                     { id: 1, title: 'Design homepage mockup', completed: false },
@@ -225,7 +225,7 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
 });
 </script>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 columns: {
                     todo: [
@@ -433,7 +433,7 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 files: [],
                 isDragging: false,

@@ -69,7 +69,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ open: null }" class="bg-white dark:bg-gray-900 py-12 rounded-lg">
                 <div class="max-w-3xl mx-auto px-6">
                     <div class="text-center mb-12">
@@ -160,7 +160,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-gradient-to-r from-blue-600 to-purple-600 py-12 rounded-lg">
                 <div class="max-w-3xl mx-auto px-6 text-center">
                     <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Subscribe to Our Newsletter</h2>
@@ -237,7 +237,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-white dark:bg-gray-900 py-12 rounded-lg">
                 <div class="max-w-2xl mx-auto px-6">
                     <div class="text-center mb-12">
@@ -353,7 +353,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-gray-50 dark:bg-gray-900 py-12 rounded-lg">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="text-center mb-12">
@@ -483,7 +483,7 @@
     </div>
 </footer>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <footer class="bg-gray-900 text-white py-12 rounded-lg">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="grid md:grid-cols-4 gap-8 mb-8">

@@ -52,7 +52,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
                     <div class="relative group">
@@ -169,7 +169,7 @@
     </button>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 priceRange: [0, 1000],
                 selectedColors: [],
@@ -336,7 +336,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 currentImage: 0,
                 images: ['https://picsum.photos/600/600?random=10', 'https://picsum.photos/600/600?random=11', 'https://picsum.photos/600/600?random=12'],

@@ -18,7 +18,7 @@
     <span class="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">Default</span>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="flex flex-wrap gap-2">
                 <span class="px-3 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400">Primary</span>
                 <span class="px-3 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Success</span>
@@ -39,7 +39,7 @@
     <div class="w-14 h-14 rounded-full bg-purple-500 flex items-center justify-center text-white font-medium">XY</div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="flex items-center space-x-4">
                 <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-medium">JD</div>
                 <div class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center text-white font-medium">AB</div>
@@ -59,7 +59,7 @@
     <div class="w-10 h-10 rounded-full bg-gray-500 flex items-center justify-center text-white font-medium border-2 border-white dark:border-gray-800 text-xs">+5</div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="flex -space-x-2">
                 <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-medium border-2 border-white dark:border-gray-800">JD</div>
                 <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white font-medium border-2 border-white dark:border-gray-800">AB</div>
@@ -97,7 +97,7 @@
     </table>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="overflow-x-auto bg-white dark:bg-gray-900 rounded-lg shadow">
                 <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                     <thead class="bg-gray-50 dark:bg-gray-800">
@@ -154,7 +154,7 @@
     </table>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="overflow-x-auto bg-white dark:bg-gray-900 rounded-lg shadow">
                 <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                     <thead class="bg-gray-50 dark:bg-gray-800">
@@ -228,7 +228,7 @@
     </ul>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="flow-root">
                 <ul class="-mb-8">
                     <li>
@@ -286,7 +286,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <div class="flex justify-between mb-1">
                     <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Progress</span>
@@ -321,7 +321,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
                 <div class="flex items-center justify-between">
                     <div>
@@ -366,7 +366,7 @@
     </dl>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
                 <div class="px-6 py-5 border-b border-gray-200 dark:border-gray-700">
                     <h3 class="text-lg font-medium text-gray-900 dark:text-white">User Information</h3>
@@ -406,7 +406,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-12 text-center">
                 <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
@@ -455,7 +455,7 @@
     </table>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="overflow-x-auto bg-white dark:bg-gray-900 rounded-lg shadow">
                 <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                     <thead class="bg-gray-50 dark:bg-gray-800">
@@ -550,7 +550,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 items: [
                     { name: 'John Doe', email: 'john@example.com', role: 'Admin' },
@@ -664,7 +664,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 search: '',
                 users: [
@@ -779,7 +779,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 currentPage: 1,
                 perPage: 3,
@@ -861,7 +861,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ chips: ['React', 'Vue', 'Angular', 'Svelte'] }">
                 <div class="flex flex-wrap gap-2">
                     <template x-for="(chip, index) in chips" :key="chip">
@@ -898,7 +898,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="flex items-center space-x-6">
                 <div class="relative">
                     <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white font-medium">JD</div>
@@ -953,7 +953,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg p-6 text-white">
                     <div class="text-sm opacity-90 mb-1">Total Sales</div>
@@ -1018,7 +1018,7 @@ console.log(greet(\'World\'));</code></pre>
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ copied: false, copyCode() { 
                 navigator.clipboard.writeText($refs.codeBlock.textContent); 
                 this.copied = true; 

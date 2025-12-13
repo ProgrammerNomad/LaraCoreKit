@@ -87,7 +87,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 cartItems: [
                     { id: 1, name: 'Wireless Headphones', price: 299.99, quantity: 1, image: 'https://picsum.photos/100/100?random=20' },
@@ -268,7 +268,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 step: 1,
                 shippingInfo: {},
@@ -403,7 +403,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 md:p-8 text-center max-w-2xl mx-auto">
                 <div class="w-16 h-16 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">

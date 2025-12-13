@@ -17,7 +17,7 @@
 <h5 class="text-lg font-medium text-gray-900 dark:text-white">Heading 5</h5>
 <h6 class="text-base font-medium text-gray-900 dark:text-white">Heading 6</h6>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <h1 class="text-4xl font-bold text-gray-900 dark:text-white">Heading 1</h1>
             <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Heading 2</h2>
             <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Heading 3</h3>
@@ -37,7 +37,7 @@
     dolore magna aliqua.
 </p>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <p class="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                 This is a standard paragraph with normal text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
             </p>
@@ -52,7 +52,7 @@
     This is lead text, typically used for introductions or to emphasize important content.
 </p>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
                 This is lead text, typically used for introductions or to emphasize important content. It draws more attention than regular paragraphs.
             </p>
@@ -67,7 +67,7 @@
     This is muted text for less important information, captions, or helper text.
 </p>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <p class="text-sm text-gray-500 dark:text-gray-400">
                 This is muted text for less important information, captions, or helper text.
             </p>
@@ -82,7 +82,7 @@
     Use the <code class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-red-600 dark:text-red-400 rounded text-sm font-mono">npm install</code> command to install packages.
 </p>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <p class="text-gray-700 dark:text-gray-300">
                 Use the <code class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-red-600 dark:text-red-400 rounded text-sm font-mono">npm install</code> command to install packages.
             </p>
@@ -100,7 +100,7 @@
     <footer class="text-sm text-gray-500 dark:text-gray-400 mt-2">— Alan Kay</footer>
 </blockquote>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <blockquote class="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50 dark:bg-blue-900/20 rounded">
                 <p class="text-gray-700 dark:text-gray-300 italic">
                     "The best way to predict the future is to invent it."
@@ -121,7 +121,7 @@
     <li>Fourth item in the list</li>
 </ul>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <ul class="space-y-2 text-gray-700 dark:text-gray-300 list-disc list-inside">
                 <li>First item in the list</li>
                 <li>Second item in the list</li>
@@ -142,7 +142,7 @@
     <li>Fourth step in the process</li>
 </ol>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <ol class="space-y-2 text-gray-700 dark:text-gray-300 list-decimal list-inside">
                 <li>First step in the process</li>
                 <li>Second step in the process</li>
@@ -171,7 +171,7 @@
     </div>
 </dl>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <dl class="space-y-4">
                 <div>
                     <dt class="text-sm font-semibold text-gray-900 dark:text-white">Name</dt>
@@ -198,7 +198,7 @@
     This is a very long text that will be truncated with ellipsis when it overflows the container
 </p>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <p class="max-w-xs truncate text-gray-700 dark:text-gray-300" title="This is a very long text that will be truncated with ellipsis when it overflows the container">
                 This is a very long text that will be truncated with ellipsis when it overflows the container
             </p>
@@ -213,7 +213,7 @@
     This text has a <mark class="bg-yellow-200 dark:bg-yellow-700 px-1 rounded">highlighted portion</mark> in the middle.
 </p>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <p class="text-gray-700 dark:text-gray-300">
                 This text has a <mark class="bg-yellow-200 dark:bg-yellow-700 px-1 rounded">highlighted portion</mark> in the middle.
             </p>
@@ -230,7 +230,7 @@
     to open command palette
 </p>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <p class="text-gray-700 dark:text-gray-300">
                 Press <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded shadow-sm">Ctrl</kbd> 
                 + <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded shadow-sm">K</kbd> 

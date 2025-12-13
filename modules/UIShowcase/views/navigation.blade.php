@@ -26,7 +26,7 @@
     </div>
 </nav>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <nav class="bg-white dark:bg-gray-800 shadow rounded-lg">
                 <div class="max-w-7xl mx-auto px-4">
                     <div class="flex justify-between h-16">
@@ -78,7 +78,7 @@
     </ol>
 </nav>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <nav class="flex" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
@@ -141,7 +141,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ activeTab: 'profile' }">
                 <div class="border-b border-gray-200 dark:border-gray-700">
                     <nav class="-mb-px flex space-x-8">
@@ -204,7 +204,7 @@
     </div>
 </nav>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <nav class="flex items-center justify-between">
                 <div class="flex-1 flex justify-between sm:hidden">
                     <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700">
@@ -275,7 +275,7 @@
     </nav>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="w-64 bg-white dark:bg-gray-800 shadow rounded-lg">
                 <nav class="p-4 space-y-1">
                     <a href="#" class="flex items-center px-4 py-2 text-gray-700 dark:text-gray-300 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
@@ -332,7 +332,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ open: false }" class="relative inline-block text-left">
                 <button @click="open = !open" type="button" class="inline-flex justify-center w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm px-4 py-2 bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
                     Options
@@ -375,7 +375,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ mobileMenuOpen: false }" class="bg-white dark:bg-gray-800 shadow rounded-lg">
                 <div class="px-4 py-3 flex justify-between items-center">
                     <span class="text-xl font-bold text-gray-900 dark:text-white">Logo</span>
@@ -436,7 +436,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <!-- Horizontal Stepper -->
             <div x-data="{ currentStep: 1 }" class="mb-12">
                 <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-4">Horizontal Stepper</h4>

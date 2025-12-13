@@ -14,7 +14,7 @@
     Primary Button
 </button>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition">
                 Primary Button
             </button>
@@ -29,7 +29,7 @@
     Secondary Button
 </button>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <button class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition">
                 Secondary Button
             </button>
@@ -44,7 +44,7 @@
     Outline Button
 </button>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <button class="px-4 py-2 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition">
                 Outline Button
             </button>
@@ -59,7 +59,7 @@
     Ghost Button
 </button>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <button class="px-4 py-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition">
                 Ghost Button
             </button>
@@ -74,7 +74,7 @@
     Delete
 </button>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <button class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition">
                 Delete
             </button>
@@ -89,7 +89,7 @@
     Save Changes
 </button>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition">
                 Save Changes
             </button>
@@ -106,7 +106,7 @@
     </svg>
 </button>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <button class="p-2 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 transition">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -126,7 +126,7 @@
     Create New
 </button>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <button class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -147,7 +147,7 @@
     </svg>
 </button>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <button class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition">
                 Continue
                 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -169,7 +169,7 @@
     Processing...
 </button>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <button class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg opacity-75 cursor-not-allowed" disabled>
                 <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -188,7 +188,7 @@
     Disabled
 </button>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <button class="px-4 py-2 bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-500 rounded-lg cursor-not-allowed" disabled>
                 Disabled
             </button>
@@ -203,7 +203,7 @@
     Full Width Button
 </button>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <button class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition">
                 Full Width Button
             </button>
@@ -226,7 +226,7 @@
     </button>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="inline-flex rounded-lg shadow-sm" role="group">
                 <button class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-l-lg hover:bg-gray-50 dark:hover:bg-gray-700 focus:z-10 focus:ring-2 focus:ring-blue-500">
                     Left
@@ -260,7 +260,7 @@
     Large
 </button>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="flex items-center space-x-4">
                 <button class="px-3 py-1.5 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                     Small
@@ -296,7 +296,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="flex gap-4 flex-wrap">
                 <!-- Basic Dropdown -->
                 <div x-data="{ open: false }" class="relative" @click.away="open = false">
@@ -385,7 +385,7 @@
     </svg>
 </button>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="relative h-64 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden">
                 <p class="p-4 text-gray-600 dark:text-gray-400">Scroll down to see the FAB in the bottom right corner</p>
                 
@@ -444,7 +444,7 @@
     Link Button
 </button>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="flex gap-6 flex-wrap items-center">
                 <!-- Basic Link Button -->
                 <button class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:underline transition">

@@ -1,3 +1,9 @@
+@php
+    use Illuminate\Support\Str;
+@endphp
+
+@props(['title', 'description' => null, 'code', 'id' => null])
+
 <!-- Reusable Component Showcase -->
 <div id="{{ $id ?? Str::slug($title) }}" x-data="{ 
     copied: false,
@@ -10,7 +16,7 @@
     <!-- Component Header -->
     <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
         <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ $title }}</h3>
-        @if(isset($description))
+        @if($description)
             <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{{ $description }}</p>
         @endif
     </div>
@@ -18,7 +24,7 @@
     <!-- Live Preview -->
     <div class="p-6 bg-white dark:bg-gray-900">
         <div class="space-y-4">
-            {{ $preview }}
+            {!! $preview ?? $slot ?? '' !!}
         </div>
     </div>
 

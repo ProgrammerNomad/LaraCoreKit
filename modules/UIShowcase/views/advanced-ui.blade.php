@@ -82,7 +82,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 currentDate: new Date(),
                 selectedDate: null,
@@ -260,7 +260,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 tree: {
                     name: 'Project',
@@ -432,7 +432,7 @@
     <div x-show="open" x-cloak class="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 open: false,
                 search: '',

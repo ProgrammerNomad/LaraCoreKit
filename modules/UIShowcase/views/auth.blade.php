@@ -42,7 +42,7 @@
     </button>
 </form>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <form x-data="{ email: '', password: '', remember: false, loading: false }" 
                 @submit.prevent="loading = true; setTimeout(() => loading = false, 2000)"
                 class="max-w-md mx-auto bg-white dark:bg-gray-800 rounded-lg shadow p-8">
@@ -133,7 +133,7 @@
     </button>
 </form>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <form x-data="{ 
                 password: '', 
                 confirmPassword: '',
@@ -241,7 +241,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 otp: ['', '', '', '', '', ''],
                 timer: 60,
@@ -337,7 +337,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ step: 1 }" class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow p-8">
                 <div class="mb-8">
                     <div class="flex items-center justify-between mb-4">
@@ -427,7 +427,7 @@
     </form>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ saving: false, saved: false }" class="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow p-8">
                 <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Profile Settings</h2>
                 
@@ -525,7 +525,7 @@
     <button class="w-full bg-blue-600 text-white py-2 rounded-lg">Update Password</button>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 current: '', 
                 newPassword: '', 
@@ -628,7 +628,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 sessions: [
                     { id: 1, device: 'Chrome on Windows', location: 'New York, USA', current: true, lastActive: 'Just now' },
@@ -735,7 +735,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 tokens: [
                     { id: 1, name: 'Production API', token: 'sk_live_4A8f9Kx2mN3pQ5rS', lastUsed: '2 hours ago' },

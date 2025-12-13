@@ -19,7 +19,7 @@
            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Full Name
@@ -42,7 +42,7 @@
            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Email Address
@@ -78,7 +78,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ showPassword: false }">
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Password
@@ -114,7 +114,7 @@
            class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="relative">
                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -141,7 +141,7 @@
            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Quantity
@@ -164,7 +164,7 @@
               class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"></textarea>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Description
@@ -191,7 +191,7 @@
     </select>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Country
@@ -220,7 +220,7 @@
     </label>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="flex items-center">
                 <input type="checkbox" id="agree" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
                 <label for="agree" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
@@ -254,7 +254,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
                     Select your interests
@@ -301,7 +301,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
                     Shipping Method
@@ -339,7 +339,7 @@
     </button>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ enabled: false }" class="flex items-center justify-between">
                 <span class="text-sm text-gray-700 dark:text-gray-300">Enable notifications</span>
                 <button @click="enabled = !enabled" type="button" :class="enabled ? 'bg-blue-600' : 'bg-gray-200 dark:bg-gray-700'" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
@@ -361,7 +361,7 @@
            class="block w-full text-sm text-gray-500 dark:text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 dark:file:bg-blue-900/20 dark:file:text-blue-400 dark:hover:file:bg-blue-900/30">
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Upload File
@@ -387,7 +387,7 @@
            class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-blue-600">
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ value: 50 }">
                 <div class="flex justify-between mb-2">
                     <label class="text-sm font-medium text-gray-700 dark:text-gray-300">Volume</label>
@@ -412,7 +412,7 @@
     <p class="mt-2 text-sm text-red-600 dark:text-red-400">Please enter a valid email address</p>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Email
@@ -437,7 +437,7 @@
     <p class="mt-2 text-sm text-green-600 dark:text-green-400">Username is available!</p>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Username
@@ -462,7 +462,7 @@
     <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Include https:// at the beginning</p>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Website URL
@@ -500,7 +500,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ tags: ['Laravel', 'PHP'], newTag: '' }">
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Skills
@@ -547,7 +547,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Phone Number
@@ -586,7 +586,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ otp: ['', '', '', '', '', ''] }">
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Enter OTP Code
@@ -623,7 +623,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Price
@@ -670,7 +670,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ open: false, selected: ['JavaScript', 'Python'], options: ['JavaScript', 'Python', 'PHP', 'Ruby', 'Go', 'Rust'] }">
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Programming Languages
@@ -715,7 +715,7 @@
            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Birth Date
@@ -737,7 +737,7 @@
            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Appointment Time
@@ -759,7 +759,7 @@
            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Event DateTime
@@ -783,7 +783,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ color: '#3B82F6' }">
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Brand Color
@@ -810,7 +810,7 @@
               class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"></textarea>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Comment

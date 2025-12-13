@@ -122,7 +122,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ billing: 'monthly' }" class="bg-gray-50 dark:bg-gray-900 py-12 rounded-lg">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="text-center mb-12">
@@ -299,7 +299,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 current: 0,
                 testimonials: [
@@ -384,7 +384,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-white dark:bg-gray-900 py-12 rounded-lg">
                 <div class="max-w-7xl mx-auto px-6">
                     <p class="text-center text-gray-600 dark:text-gray-400 mb-8 font-medium">Trusted by leading companies</p>
@@ -445,7 +445,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-blue-600 py-16 rounded-lg">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">

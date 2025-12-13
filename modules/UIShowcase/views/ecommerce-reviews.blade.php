@@ -96,7 +96,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 sortBy: 'recent',
                 reviews: [
@@ -234,7 +234,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ 
                 wishlistItems: [
                     { id: 1, name: 'Modern Desk Lamp', price: 79.99, image: 'https://picsum.photos/100/100?random=30', inStock: true },

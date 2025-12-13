@@ -39,7 +39,7 @@ new Chart(ctx, {
 });
 </script>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{}" x-init="
                 const ctx = $refs.canvas.getContext('2d');
                 new Chart(ctx, {
@@ -118,7 +118,7 @@ new Chart(ctx, {
 });
 </script>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{}" x-init="
                 const ctx = $refs.canvas.getContext('2d');
                 new Chart(ctx, {
@@ -197,7 +197,7 @@ new Chart(ctx, {
 });
 </script>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{}" x-init="
                 const ctx = $refs.canvas.getContext('2d');
                 new Chart(ctx, {
@@ -269,7 +269,7 @@ new Chart(ctx, {
 });
 </script>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{}" x-init="
                 const ctx = $refs.canvas.getContext('2d');
                 new Chart(ctx, {
@@ -339,7 +339,7 @@ new Chart(ctx, {
 });
 </script>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{}" x-init="
                 const ctx = $refs.canvas.getContext('2d');
                 new Chart(ctx, {
@@ -425,7 +425,7 @@ new Chart(ctx, {
 });
 </script>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{}" x-init="
                 const ctx = $refs.canvas.getContext('2d');
                 new Chart(ctx, {
@@ -509,7 +509,7 @@ new Chart(ctx, {
 });
 </script>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{}" x-init="
                 const ctx = $refs.canvas.getContext('2d');
                 new Chart(ctx, {
@@ -580,7 +580,7 @@ new Chart(ctx, {
 });
 </script>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{}" x-init="
                 const ctx = $refs.canvas.getContext('2d');
                 new Chart(ctx, {
@@ -671,7 +671,7 @@ new Chart(document.getElementById(&#39;sparkline1&#39;).getContext(&#39;2d&#39;)
 });
 </script>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div x-data="{}" x-init="

@@ -22,7 +22,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
                 <div class="flex">
                     <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
@@ -53,7 +53,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
                 <div class="flex">
                     <svg class="w-5 h-5 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
@@ -84,7 +84,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
                 <div class="flex">
                     <svg class="w-5 h-5 text-yellow-600 dark:text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -115,7 +115,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
                 <div class="flex">
                     <svg class="w-5 h-5 text-red-600 dark:text-red-400" fill="currentColor" viewBox="0 0 20 20">
@@ -152,7 +152,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ show: true }" x-show="show" class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
                 <div class="flex justify-between items-start">
                     <div class="flex">
@@ -196,7 +196,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ open: false }">
                 <button @click="open = true" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                     Open Modal
@@ -243,7 +243,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ show: false, message: 'Changes saved successfully!' }">
                 <button @click="show = true; setTimeout(() => show = false, 3000)" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                     Show Toast
@@ -277,7 +277,7 @@
     <div class="w-12 h-12 border-4 border-purple-600 border-t-transparent rounded-full animate-spin"></div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="flex space-x-4">
                 <div class="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
                 <div class="w-10 h-10 border-4 border-green-600 border-t-transparent rounded-full animate-spin"></div>
@@ -303,7 +303,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 space-y-4 animate-pulse">
                 <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
                 <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded"></div>
@@ -351,7 +351,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ open: false }">
                 <button @click="open = true" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">
                     Delete Item
@@ -425,7 +425,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ open: false }">
                 <button @click="open = true" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
                     Open Drawer
@@ -505,7 +505,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ open: false }">
                 <button @click="open = true" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
                     Open Left Drawer
@@ -595,7 +595,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ open: false }">
                 <button @click="open = true" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
                     Open Bottom Drawer
@@ -661,7 +661,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ show: false }" class="relative inline-block">
                 <button @mouseenter="show = true" @mouseleave="show = false" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded">
                     Hover me
@@ -696,7 +696,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ open: false }" @click.away="open = false" class="relative inline-block">
                 <button @click="open = !open" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
                     Open Popover
@@ -739,7 +739,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ progress: 75 }" class="flex items-center space-x-4">
                 <div class="relative w-24 h-24">
                     <svg class="transform -rotate-90 w-24 h-24">
@@ -783,7 +783,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ currentStep: 2 }">
                 <div class="flex items-center justify-between">
                     <template x-for="step in 4" :key="step">
@@ -827,7 +827,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div x-data="{ show: true }" x-show="show" x-cloak class="bg-indigo-600 dark:bg-indigo-700 text-white">
                 <div class="max-w-7xl mx-auto px-4 py-3">
                     <div class="flex items-center justify-between">
@@ -861,7 +861,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 space-y-4 animate-pulse">
                 <div class="h-48 bg-gray-200 dark:bg-gray-700 rounded"></div>
                 <div class="space-y-3">
@@ -900,7 +900,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden animate-pulse">
                 <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
                     <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/4"></div>
@@ -940,7 +940,7 @@
     </button>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="flex gap-4 flex-wrap">
                 <!-- Top Tooltip -->
                 <div x-data="{ showTooltip: false }">
@@ -1003,7 +1003,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="flex gap-4 flex-wrap items-start">
                 <!-- Basic Popover -->
                 <div x-data="{ showPopover: false }" class="relative" @click.away="showPopover = false">

@@ -29,7 +29,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="relative bg-gradient-to-br from-blue-600 to-purple-700 text-white rounded-lg overflow-hidden">
                 <div class="max-w-7xl mx-auto px-6 py-24 md:py-32 text-center">
                     <h1 class="text-4xl md:text-6xl font-bold mb-6">
@@ -84,7 +84,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-white dark:bg-gray-900 rounded-lg p-6">
                 <div class="max-w-7xl mx-auto">
                     <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -171,7 +171,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-gray-50 dark:bg-gray-900 py-20 rounded-lg">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="text-center mb-16">
@@ -295,7 +295,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-white dark:bg-gray-900 py-12 rounded-lg">
                 <div class="max-w-7xl mx-auto px-6 space-y-16">
                     <!-- Feature 1 - Image Left -->
@@ -380,7 +380,7 @@
     </div>
 </div>'
     ])
-        @slot('preview')
+        @slot('preview', null, [])
             <div class="bg-blue-600 rounded-lg">
                 <div class="max-w-7xl mx-auto px-6 py-16 text-center">
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
