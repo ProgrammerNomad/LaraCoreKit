@@ -2,7 +2,7 @@
 
 Complete list of UI components to implement in the starter kit.
 
-## 1️⃣ Typography + Text Components
+## 1 Typography + Text Components
 
 - [x] Headings (H1–H6)
 - [x] Paragraphs
@@ -16,7 +16,7 @@ Complete list of UI components to implement in the starter kit.
 - [x] Text highlight/mark
 - [x] Keyboard shortcut display (kbd tag)
 
-## 2️⃣ Buttons
+## 2 Buttons
 
 - [x] Primary button
 - [x] Secondary button
@@ -34,7 +34,7 @@ Complete list of UI components to implement in the starter kit.
 - [x] Link button
 - [x] Disabled button state
 
-## 3️⃣ Form Elements
+## 3 Form Elements
 
 ### Input Fields
 - [x] Text input
@@ -84,7 +84,7 @@ Complete list of UI components to implement in the starter kit.
 - [x] Form helper text
 - [ ] Required field indicator
 
-## 4️⃣ Navigation Components
+## 4 Navigation Components
 
 - [x] Header / Navbar
 - [ ] Sticky header
@@ -103,7 +103,7 @@ Complete list of UI components to implement in the starter kit.
 - [ ] Context menu (right-click)
 - [ ] Bottom navigation (mobile)
 
-## 5️⃣ Layout Components
+## 5 Layout Components
 
 - [x] Container
 - [x] Grid system
@@ -123,7 +123,7 @@ Complete list of UI components to implement in the starter kit.
 - [ ] Centered layout
 - [x] Max-width wrapper
 
-## 6️⃣ Data Display Components
+## 6 Data Display Components
 
 - [x] Table (simple)
 - [x] Table (striped)
@@ -157,7 +157,7 @@ Complete list of UI components to implement in the starter kit.
 - [ ] Key-value pairs display
 - [ ] Label list
 
-## 7️⃣ Feedback Components
+## 7 Feedback Components
 
 - [x] Alerts (success, warning, error, info)
 - [x] Dismissible alerts
@@ -181,7 +181,7 @@ Complete list of UI components to implement in the starter kit.
 - [x] Banner notification
 - [ ] Inline notification
 
-## 8️⃣ Charts & Visualizations
+## 8 Charts & Visualizations
 
 - [x] Line chart
 - [x] Bar chart
@@ -198,7 +198,7 @@ Complete list of UI components to implement in the starter kit.
 
 **Libraries:** Chart.js, ApexCharts, or Recharts
 
-## 9️⃣ Media Components
+## 9 Media Components
 
 - [ ] Image component
 - [ ] Responsive image
@@ -217,7 +217,7 @@ Complete list of UI components to implement in the starter kit.
 - [x] PDF viewer
 - [ ] Media thumbnail grid
 
-## 🔟 Auth Components
+## 10 Auth Components
 
 - [x] Login form
 - [x] Register form
@@ -237,7 +237,7 @@ Complete list of UI components to implement in the starter kit.
 - [x] Sessions management
 - [x] API tokens management
 
-## 1️⃣1️⃣ Landing Page Components
+## 11 Landing Page Components
 
 - [x] Hero section
 - [ ] Hero with background image
@@ -262,7 +262,7 @@ Complete list of UI components to implement in the starter kit.
 - [x] Statistics counter
 - [ ] Progress/milestone section
 
-## 1️⃣2️⃣ E-commerce Components (Bonus)
+## 12 E-commerce Components (Bonus)
 
 - [x] Product card
 - [x] Product grid
@@ -281,7 +281,7 @@ Complete list of UI components to implement in the starter kit.
 - [ ] Star rating
 - [x] Wishlist button
 
-## 1️⃣3️⃣ Admin Dashboard Components
+## 13 Admin Dashboard Components
 
 - [ ] Dashboard stats cards
 - [ ] Recent activity feed
@@ -297,7 +297,7 @@ Complete list of UI components to implement in the starter kit.
 - [ ] Date range filter
 - [ ] Status filter dropdown
 
-## 1️⃣4️⃣ Social & Communication
+## 14 Social & Communication
 
 - [ ] Comment component
 - [ ] Comment thread (nested)
@@ -313,7 +313,7 @@ Complete list of UI components to implement in the starter kit.
 - [ ] Unread count indicator
 - [ ] Online status indicator
 
-## 1️⃣5️⃣ Utility Components
+## 15 Utility Components
 
 - [x] Copy to clipboard button
 - [x] QR code generator
@@ -334,7 +334,7 @@ Complete list of UI components to implement in the starter kit.
 - [ ] Calendar component
 - [ ] Map integration (Google Maps/Leaflet)
 
-## 1️⃣6️⃣ Advanced/Interactive
+## 16 Advanced/Interactive
 
 - [x] Drag & drop list
 - [x] Sortable table columns
