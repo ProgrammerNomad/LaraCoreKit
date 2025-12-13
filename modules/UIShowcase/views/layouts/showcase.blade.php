@@ -243,6 +243,58 @@
                             <a href="{{ route('showcase.feedback') }}#skeleton-table" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Skeleton Table</a>
                         </div>
                     </div>
+                    
+                    <!-- Charts Section -->
+                    <div>
+                        <button @click="toggleSection('charts')" class="w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg {{ request()->routeIs('showcase.charts') ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                </svg>
+                                Charts
+                            </div>
+                            <svg class="w-4 h-4 transition-transform" :class="openSections.charts ? 'rotate-90' : ''" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div x-show="openSections.charts" x-cloak class="ml-8 mt-1 space-y-1">
+                            <a href="{{ route('showcase.charts') }}#line-chart" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Line Chart</a>
+                            <a href="{{ route('showcase.charts') }}#bar-chart" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Bar Chart</a>
+                            <a href="{{ route('showcase.charts') }}#pie-chart" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Pie Chart</a>
+                            <a href="{{ route('showcase.charts') }}#donut-chart" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Donut Chart</a>
+                            <a href="{{ route('showcase.charts') }}#area-chart" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Area Chart</a>
+                            <a href="{{ route('showcase.charts') }}#multi-line-chart" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Multi-line Chart</a>
+                            <a href="{{ route('showcase.charts') }}#horizontal-bar-chart" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Horizontal Bar Chart</a>
+                            <a href="{{ route('showcase.charts') }}#radar-chart" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Radar Chart</a>
+                            <a href="{{ route('showcase.charts') }}#sparklines" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Sparklines</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Media Section -->
+                    <div>
+                        <button @click="toggleSection('media')" class="w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg {{ request()->routeIs('showcase.media') ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                Media
+                            </div>
+                            <svg class="w-4 h-4 transition-transform" :class="openSections.media ? 'rotate-90' : ''" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div x-show="openSections.media" x-cloak class="ml-8 mt-1 space-y-1">
+                            <a href="{{ route('showcase.media') }}#image-upload-with-preview" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Image Upload with Preview</a>
+                            <a href="{{ route('showcase.media') }}#drag-drop-file-uploader" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Drag & Drop Uploader</a>
+                            <a href="{{ route('showcase.media') }}#multiple-file-upload-with-progress" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Multiple Upload with Progress</a>
+                            <a href="{{ route('showcase.media') }}#image-gallery-with-lightbox" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Image Gallery with Lightbox</a>
+                            <a href="{{ route('showcase.media') }}#image-carousel-slider" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Image Carousel/Slider</a>
+                            <a href="{{ route('showcase.media') }}#video-player-with-controls" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Video Player</a>
+                            <a href="{{ route('showcase.media') }}#audio-player" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Audio Player</a>
+                            <a href="{{ route('showcase.media') }}#pdf-viewer" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">PDF Viewer</a>
+                            <a href="{{ route('showcase.media') }}#avatar-upload-with-crop-preview" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Avatar Upload</a>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </aside>

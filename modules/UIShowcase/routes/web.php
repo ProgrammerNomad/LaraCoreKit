@@ -34,4 +34,12 @@ Route::prefix('ui-showcase')->name('showcase.')->group(function () {
     Route::get('/feedback', function () {
         return view('showcase::feedback');
     })->name('feedback');
+    
+    Route::get('/charts', function () {
+        return view('showcase::charts');
+    })->name('charts');
+    
+    Route::get('/media', function () {
+        return view('showcase::media');
+    })->name('media');
 });
