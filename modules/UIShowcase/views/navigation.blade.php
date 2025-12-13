@@ -585,5 +585,417 @@
         @endslot
     @endcomponent
 
+    {{-- Sticky Header --}}
+    @component('showcase::components.showcase-item', [
+        'title' => 'Sticky Header',
+        'description' => 'Navigation header that sticks to the top when scrolling',
+        'code' => <<<'HTML'
+<!-- Sticky Header -->
+<div class="relative h-[600px] overflow-y-auto border border-gray-300 dark:border-gray-600 rounded-lg">
+    <nav class="sticky top-0 z-10 bg-white dark:bg-gray-800 shadow-md">
+        <div class="px-4 py-3">
+            <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-gray-900 dark:text-white">🚀 StickyNav</span>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Home</a>
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Features</a>
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Pricing</a>
+                    <button class="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="p-6 space-y-4">
+        <div class="h-40 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white text-xl font-bold">Hero Section</div>
+        <div class="h-32 bg-gray-100 dark:bg-gray-700 rounded-lg"></div>
+        <div class="h-32 bg-gray-100 dark:bg-gray-700 rounded-lg"></div>
+        <div class="h-32 bg-gray-100 dark:bg-gray-700 rounded-lg"></div>
+        <div class="h-32 bg-gray-100 dark:bg-gray-700 rounded-lg"></div>
+        <p class="text-center text-gray-500 dark:text-gray-400">Scroll to see sticky header in action ⬆️</p>
+    </div>
+</div>
+
+<!-- Sticky Header with Scroll Effect -->
+<div x-data="{ scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)" class="relative">
+    <nav :class="scrolled ? 'shadow-lg py-2' : 'py-4'" class="sticky top-0 z-50 bg-white dark:bg-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <span class="text-lg font-bold" :class="scrolled ? 'text-sm' : 'text-xl'">📱 AppName</span>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-blue-600">Products</a>
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-blue-600">About</a>
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-blue-600">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+HTML
+    ])
+        @slot('preview')
+            {{-- Sticky Header --}}
+            <div class="relative h-[600px] overflow-y-auto border border-gray-300 dark:border-gray-600 rounded-lg">
+                <nav class="sticky top-0 z-10 bg-white dark:bg-gray-800 shadow-md">
+                    <div class="px-4 py-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-gray-900 dark:text-white">🚀 StickyNav</span>
+                            <div class="flex items-center space-x-4">
+                                <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Home</a>
+                                <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Features</a>
+                                <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Pricing</a>
+                                <button class="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                
+                <div class="p-6 space-y-4">
+                    <div class="h-40 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white text-xl font-bold">Hero Section</div>
+                    <div class="h-32 bg-gray-100 dark:bg-gray-700 rounded-lg"></div>
+                    <div class="h-32 bg-gray-100 dark:bg-gray-700 rounded-lg"></div>
+                    <div class="h-32 bg-gray-100 dark:bg-gray-700 rounded-lg"></div>
+                    <div class="h-32 bg-gray-100 dark:bg-gray-700 rounded-lg"></div>
+                    <p class="text-center text-gray-500 dark:text-gray-400">Scroll to see sticky header in action ⬆️</p>
+                </div>
+            </div>
+        @endslot
+    @endcomponent
+
+    {{-- Nested Sidebar Menu --}}
+    @component('showcase::components.showcase-item', [
+        'title' => 'Nested Sidebar Menu',
+        'description' => 'Multi-level collapsible sidebar navigation with nested items',
+        'code' => <<<'HTML'
+<!-- Nested Sidebar Menu -->
+<div x-data="{
+    openMenus: {},
+    toggleMenu(menu) {
+        this.openMenus[menu] = !this.openMenus[menu];
+    }
+}" class="w-64 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+    <div class="p-4">
+        <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">Menu</h3>
+        
+        <!-- Dashboard -->
+        <a href="#" class="flex items-center px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg mb-1">
+            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+            Dashboard
+        </a>
+        
+        <!-- Users (with nested items) -->
+        <div class="mb-1">
+            <button @click="toggleMenu('users')" class="w-full flex items-center justify-between px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    Users
+                </div>
+                <svg class="w-4 h-4 transition-transform" :class="openMenus.users ? 'rotate-90' : ''" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            <div x-show="openMenus.users" x-cloak class="ml-8 mt-1 space-y-1">
+                <a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg">All Users</a>
+                <a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg">Add New</a>
+                <a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg">Roles</a>
+                <a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg">Permissions</a>
+            </div>
+        </div>
+        
+        <!-- Content (with nested items) -->
+        <div class="mb-1">
+            <button @click="toggleMenu('content')" class="w-full flex items-center justify-between px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    Content
+                </div>
+                <svg class="w-4 h-4 transition-transform" :class="openMenus.content ? 'rotate-90' : ''" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            <div x-show="openMenus.content" x-cloak class="ml-8 mt-1 space-y-1">
+                <a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg">Posts</a>
+                <a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg">Pages</a>
+                <a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg">Categories</a>
+                <a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg">Tags</a>
+            </div>
+        </div>
+        
+        <!-- Settings -->
+        <a href="#" class="flex items-center px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            Settings
+        </a>
+    </div>
+</div>
+HTML
+    ])
+        @slot('preview')
+            {{-- Nested Sidebar Menu --}}
+            <div x-data="{
+                openMenus: {},
+                toggleMenu(menu) {
+                    this.openMenus[menu] = !this.openMenus[menu];
+                }
+            }" class="w-64 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">Menu</h3>
+                    
+                    {{-- Dashboard --}}
+                    <a href="#" class="flex items-center px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg mb-1">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                        Dashboard
+                    </a>
+                    
+                    {{-- Users (with nested items) --}}
+                    <div class="mb-1">
+                        <button @click="toggleMenu('users')" class="w-full flex items-center justify-between px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                                Users
+                            </div>
+                            <svg class="w-4 h-4 transition-transform" :class="openMenus.users ? 'rotate-90' : ''" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div x-show="openMenus.users" x-cloak class="ml-8 mt-1 space-y-1">
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg">All Users</a>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg">Add New</a>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg">Roles</a>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg">Permissions</a>
+                        </div>
+                    </div>
+                    
+                    {{-- Content (with nested items) --}}
+                    <div class="mb-1">
+                        <button @click="toggleMenu('content')" class="w-full flex items-center justify-between px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                Content
+                            </div>
+                            <svg class="w-4 h-4 transition-transform" :class="openMenus.content ? 'rotate-90' : ''" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div x-show="openMenus.content" x-cloak class="ml-8 mt-1 space-y-1">
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg">Posts</a>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg">Pages</a>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg">Categories</a>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg">Tags</a>
+                        </div>
+                    </div>
+                    
+                    {{-- Settings --}}
+                    <a href="#" class="flex items-center px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        Settings
+                    </a>
+                </div>
+            </div>
+        @endslot
+    @endcomponent
+
+    {{-- Infinite Scroll Pagination --}}
+    @component('showcase::components.showcase-item', [
+        'title' => 'Infinite Scroll Pagination',
+        'description' => 'Automatically load more content as user scrolls to the bottom',
+        'code' => <<<'HTML'
+<!-- Infinite Scroll Container -->
+<div x-data="{
+    items: Array.from({ length: 10 }, (_, i) => ({ id: i + 1, title: `Item ${i + 1}` })),
+    loading: false,
+    hasMore: true,
+    loadMore() {
+        if (this.loading || !this.hasMore) return;
+        this.loading = true;
+        
+        setTimeout(() => {
+            const start = this.items.length + 1;
+            const newItems = Array.from({ length: 10 }, (_, i) => ({ id: start + i, title: `Item ${start + i}` }));
+            this.items = [...this.items, ...newItems];
+            this.loading = false;
+            
+            if (this.items.length >= 50) {
+                this.hasMore = false;
+            }
+        }, 1000);
+    }
+}" class="h-96 overflow-y-auto border border-gray-300 dark:border-gray-600 rounded-lg">
+    <div class="p-4 space-y-3">
+        <template x-for="item in items" :key="item.id">
+            <div class="p-4 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg">
+                <h4 class="font-medium text-gray-900 dark:text-white" x-text="item.title"></h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Some content for this item...</p>
+            </div>
+        </template>
+        
+        <div x-show="loading" class="flex justify-center py-4">
+            <svg class="animate-spin h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+        </div>
+        
+        <div x-show="!hasMore" class="text-center py-4 text-gray-500 dark:text-gray-400">
+            No more items to load
+        </div>
+        
+        <div x-intersect="loadMore" class="h-4"></div>
+    </div>
+</div>
+HTML
+    ])
+        @slot('preview')
+            {{-- Infinite Scroll Container --}}
+            <div x-data="{
+                items: Array.from({ length: 10 }, (_, i) => ({ id: i + 1, title: `Item ${i + 1}` })),
+                loading: false,
+                hasMore: true,
+                loadMore() {
+                    if (this.loading || !this.hasMore) return;
+                    this.loading = true;
+                    
+                    setTimeout(() => {
+                        const start = this.items.length + 1;
+                        const newItems = Array.from({ length: 10 }, (_, i) => ({ id: start + i, title: `Item ${start + i}` }));
+                        this.items = [...this.items, ...newItems];
+                        this.loading = false;
+                        
+                        if (this.items.length >= 50) {
+                            this.hasMore = false;
+                        }
+                    }, 1000);
+                }
+            }" class="h-96 overflow-y-auto border border-gray-300 dark:border-gray-600 rounded-lg">
+                <div class="p-4 space-y-3">
+                    <template x-for="item in items" :key="item.id">
+                        <div class="p-4 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg">
+                            <h4 class="font-medium text-gray-900 dark:text-white" x-text="item.title"></h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Some content for this item...</p>
+                        </div>
+                    </template>
+                    
+                    <div x-show="loading" class="flex justify-center py-4">
+                        <svg class="animate-spin h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                    </div>
+                    
+                    <div x-show="!hasMore" class="text-center py-4 text-gray-500 dark:text-gray-400">
+                        No more items to load
+                    </div>
+                    
+                    <div x-intersect="loadMore" class="h-4"></div>
+                </div>
+            </div>
+        @endslot
+    @endcomponent
+
+    {{-- Load More Button --}}
+    @component('showcase::components.showcase-item', [
+        'title' => 'Load More Button',
+        'description' => 'Click to load additional content with loading state',
+        'code' => <<<'HTML'
+<!-- Load More Button -->
+<div x-data="{
+    items: Array.from({ length: 6 }, (_, i) => ({ id: i + 1, name: `Product ${i + 1}`, price: `$${(Math.random() * 100 + 20).toFixed(2)}` })),
+    loading: false,
+    hasMore: true,
+    loadMore() {
+        this.loading = true;
+        setTimeout(() => {
+            const start = this.items.length + 1;
+            const newItems = Array.from({ length: 6 }, (_, i) => ({ id: start + i, name: `Product ${start + i}`, price: `$${(Math.random() * 100 + 20).toFixed(2)}` }));
+            this.items = [...this.items, ...newItems];
+            this.loading = false;
+            if (this.items.length >= 24) this.hasMore = false;
+        }, 800);
+    }
+}">
+    <div class="grid grid-cols-3 gap-4 mb-6">
+        <template x-for="item in items" :key="item.id">
+            <div class="p-4 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-center">
+                <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg mx-auto mb-3"></div>
+                <h4 class="font-medium text-gray-900 dark:text-white" x-text="item.name"></h4>
+                <p class="text-blue-600 dark:text-blue-400 font-bold" x-text="item.price"></p>
+            </div>
+        </template>
+    </div>
+    
+    <div class="flex justify-center">
+        <button x-show="hasMore" @click="loadMore" :disabled="loading"
+                class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2">
+            <svg x-show="loading" class="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span x-text="loading ? 'Loading...' : 'Load More Products'"></span>
+        </button>
+        <p x-show="!hasMore" class="text-gray-500 dark:text-gray-400">All products loaded</p>
+    </div>
+</div>
+HTML
+    ])
+        @slot('preview')
+            {{-- Load More Button --}}
+            <div x-data="{
+                items: Array.from({ length: 6 }, (_, i) => ({ id: i + 1, name: `Product ${i + 1}`, price: `$${(Math.random() * 100 + 20).toFixed(2)}` })),
+                loading: false,
+                hasMore: true,
+                loadMore() {
+                    this.loading = true;
+                    setTimeout(() => {
+                        const start = this.items.length + 1;
+                        const newItems = Array.from({ length: 6 }, (_, i) => ({ id: start + i, name: `Product ${start + i}`, price: `$${(Math.random() * 100 + 20).toFixed(2)}` }));
+                        this.items = [...this.items, ...newItems];
+                        this.loading = false;
+                        if (this.items.length >= 24) this.hasMore = false;
+                    }, 800);
+                }
+            }">
+                <div class="grid grid-cols-3 gap-4 mb-6">
+                    <template x-for="item in items" :key="item.id">
+                        <div class="p-4 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg mx-auto mb-3"></div>
+                            <h4 class="font-medium text-gray-900 dark:text-white" x-text="item.name"></h4>
+                            <p class="text-blue-600 dark:text-blue-400 font-bold" x-text="item.price"></p>
+                        </div>
+                    </template>
+                </div>
+                
+                <div class="flex justify-center">
+                    <button x-show="hasMore" @click="loadMore" :disabled="loading"
+                            class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2">
+                        <svg x-show="loading" class="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span x-text="loading ? 'Loading...' : 'Load More Products'"></span>
+                    </button>
+                    <p x-show="!hasMore" class="text-gray-500 dark:text-gray-400">All products loaded</p>
+                </div>
+            </div>
+        @endslot
+    @endcomponent
+
 </div>
 @endsection
