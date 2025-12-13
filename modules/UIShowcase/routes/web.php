@@ -35,6 +35,10 @@ Route::prefix('ui-showcase')->name('showcase.')->group(function () {
         return view('showcase::feedback');
     })->name('feedback');
     
+    Route::get('/feedback-drawers', function () {
+        return view('showcase::feedback-drawers');
+    })->name('feedback-drawers');
+    
     Route::get('/charts', function () {
         return view('showcase::charts');
     })->name('charts');

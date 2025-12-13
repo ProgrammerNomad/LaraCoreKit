@@ -205,11 +205,9 @@
     
     <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">File Explorer</h3>
     
-    <div x-ref="treeRoot">
-        <template x-teleport="$refs.treeRoot">
-            <div class="space-y-1">
-                <div &#64;click="toggleNode(tree)" class="flex items-center gap-2 px-2 py-1.5 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
-                    <svg x-show="tree.type === &#39;folder&#39; && tree.expanded" class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div class="space-y-1">
+        <div @click="toggleNode(tree)" class="flex items-center gap-2 px-2 py-1.5 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer">
+            <svg x-show="tree.type === 'folder' && tree.expanded" class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                     </svg>
                     <svg x-show="tree.type === &#39;folder&#39; && !tree.expanded" class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">

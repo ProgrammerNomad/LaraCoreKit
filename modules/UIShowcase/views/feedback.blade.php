@@ -926,5 +926,144 @@
         @endslot
     @endcomponent
 
+    <!-- Tooltip -->
+    @component('showcase::components.showcase-item', [
+        'title' => 'Tooltip',
+        'description' => 'Hover to show tooltip with additional information',
+        'code' => '<div x-data="{ showTooltip: false }">
+    <button @mouseenter="showTooltip = true" @mouseleave="showTooltip = false" class="relative px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+        Hover me
+        <div x-show="showTooltip" x-cloak class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 dark:bg-gray-700 text-white text-sm rounded-lg shadow-lg whitespace-nowrap">
+            This is a tooltip
+            <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-900 dark:border-t-gray-700"></div>
+        </div>
+    </button>
+</div>'
+    ])
+        @slot('preview')
+            <div class="flex gap-4 flex-wrap">
+                <!-- Top Tooltip -->
+                <div x-data="{ showTooltip: false }">
+                    <button @mouseenter="showTooltip = true" @mouseleave="showTooltip = false" class="relative px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                        Top Tooltip
+                        <div x-show="showTooltip" x-cloak class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 dark:bg-gray-700 text-white text-sm rounded-lg shadow-lg whitespace-nowrap">
+                            This is a top tooltip
+                            <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-900 dark:border-t-gray-700"></div>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Bottom Tooltip -->
+                <div x-data="{ showTooltip: false }">
+                    <button @mouseenter="showTooltip = true" @mouseleave="showTooltip = false" class="relative px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                        Bottom Tooltip
+                        <div x-show="showTooltip" x-cloak class="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-2 bg-gray-900 dark:bg-gray-700 text-white text-sm rounded-lg shadow-lg whitespace-nowrap">
+                            This is a bottom tooltip
+                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 -mb-1 border-4 border-transparent border-b-gray-900 dark:border-b-gray-700"></div>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Left Tooltip -->
+                <div x-data="{ showTooltip: false }">
+                    <button @mouseenter="showTooltip = true" @mouseleave="showTooltip = false" class="relative px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">
+                        Left Tooltip
+                        <div x-show="showTooltip" x-cloak class="absolute right-full top-1/2 -translate-y-1/2 mr-2 px-3 py-2 bg-gray-900 dark:bg-gray-700 text-white text-sm rounded-lg shadow-lg whitespace-nowrap">
+                            This is a left tooltip
+                            <div class="absolute left-full top-1/2 -translate-y-1/2 -ml-1 border-4 border-transparent border-l-gray-900 dark:border-l-gray-700"></div>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Right Tooltip -->
+                <div x-data="{ showTooltip: false }">
+                    <button @mouseenter="showTooltip = true" @mouseleave="showTooltip = false" class="relative px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700">
+                        Right Tooltip
+                        <div x-show="showTooltip" x-cloak class="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-3 py-2 bg-gray-900 dark:bg-gray-700 text-white text-sm rounded-lg shadow-lg whitespace-nowrap">
+                            This is a right tooltip
+                            <div class="absolute right-full top-1/2 -translate-y-1/2 -mr-1 border-4 border-transparent border-r-gray-900 dark:border-r-gray-700"></div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        @endslot
+    @endcomponent
+
+    <!-- Popover -->
+    @component('showcase::components.showcase-item', [
+        'title' => 'Popover',
+        'description' => 'Click to show popover with rich content',
+        'code' => '<div x-data="{ showPopover: false }" @click.away="showPopover = false">
+    <button @click="showPopover = !showPopover" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+        Click for Info
+    </button>
+    <div x-show="showPopover" x-cloak class="absolute mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-4 z-50">
+        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Popover Title</h4>
+        <p class="text-sm text-gray-600 dark:text-gray-400">This is a popover with rich content. It can contain text, images, and even interactive elements.</p>
+    </div>
+</div>'
+    ])
+        @slot('preview')
+            <div class="flex gap-4 flex-wrap items-start">
+                <!-- Basic Popover -->
+                <div x-data="{ showPopover: false }" class="relative" @click.away="showPopover = false">
+                    <button @click="showPopover = !showPopover" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                        Basic Popover
+                    </button>
+                    <div x-show="showPopover" x-cloak class="absolute mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-4 z-50">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Information</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">This is a popover with rich content. It can contain text, images, and interactive elements.</p>
+                    </div>
+                </div>
+
+                <!-- Popover with Actions -->
+                <div x-data="{ showPopover: false }" class="relative" @click.away="showPopover = false">
+                    <button @click="showPopover = !showPopover" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                        With Actions
+                    </button>
+                    <div x-show="showPopover" x-cloak class="absolute mt-2 w-72 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden z-50">
+                        <div class="p-4">
+                            <h4 class="font-semibold text-gray-900 dark:text-white mb-2">User Profile</h4>
+                            <div class="flex items-center gap-3 mb-3">
+                                <img src="https://picsum.photos/40/40" alt="Avatar" class="w-10 h-10 rounded-full">
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900 dark:text-white">John Doe</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">john@example.com</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Senior Developer with 5 years of experience.</p>
+                        </div>
+                        <div class="border-t border-gray-200 dark:border-gray-700 p-2 flex gap-2">
+                            <button class="flex-1 px-3 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700">View Profile</button>
+                            <button class="flex-1 px-3 py-2 text-sm border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-50 dark:hover:bg-gray-700">Message</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Confirmation Popover -->
+                <div x-data="{ showPopover: false }" class="relative" @click.away="showPopover = false">
+                    <button @click="showPopover = !showPopover" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">
+                        Delete Popover
+                    </button>
+                    <div x-show="showPopover" x-cloak class="absolute mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-4 z-50">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                            </svg>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Are you sure?</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">This action cannot be undone.</p>
+                                <div class="flex gap-2">
+                                    <button @click="showPopover = false" class="px-3 py-1.5 text-sm bg-red-600 text-white rounded hover:bg-red-700">Delete</button>
+                                    <button @click="showPopover = false" class="px-3 py-1.5 text-sm border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-50 dark:hover:bg-gray-700">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endslot
+    @endcomponent
+
 </div>
 @endsection
