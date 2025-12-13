@@ -295,6 +295,31 @@
                             <a href="{{ route('showcase.media') }}#avatar-upload-with-crop-preview" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Avatar Upload</a>
                         </div>
                     </div>
+                    
+                    <!-- Auth Flows -->
+                    <div>
+                        <button @click="toggleSection('auth')" class="w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg {{ request()->routeIs('showcase.auth') ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                </svg>
+                                Auth Flows
+                            </div>
+                            <svg class="w-4 h-4 transition-transform" :class="openSections.auth ? 'rotate-90' : ''" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div x-show="openSections.auth" x-cloak class="ml-8 mt-1 space-y-1">
+                            <a href="{{ route('showcase.auth') }}#enhanced-login-form" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Enhanced Login Form</a>
+                            <a href="{{ route('showcase.auth') }}#enhanced-register-form" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Enhanced Register Form</a>
+                            <a href="{{ route('showcase.auth') }}#otp-verification" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">OTP Verification</a>
+                            <a href="{{ route('showcase.auth') }}#2fa-setup-wizard" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">2FA Setup Wizard</a>
+                            <a href="{{ route('showcase.auth') }}#profile-settings-page" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Profile Settings Page</a>
+                            <a href="{{ route('showcase.auth') }}#password-change-form" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Password Change Form</a>
+                            <a href="{{ route('showcase.auth') }}#active-sessions-management" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Active Sessions Management</a>
+                            <a href="{{ route('showcase.auth') }}#api-tokens-management" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">API Tokens Management</a>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </aside>

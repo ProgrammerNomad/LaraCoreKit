@@ -42,4 +42,8 @@ Route::prefix('ui-showcase')->name('showcase.')->group(function () {
     Route::get('/media', function () {
         return view('showcase::media');
     })->name('media');
+    
+    Route::get('/auth', function () {
+        return view('showcase::auth');
+    })->name('auth');
 });
