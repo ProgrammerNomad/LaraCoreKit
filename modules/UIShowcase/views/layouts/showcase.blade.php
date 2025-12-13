@@ -151,6 +151,7 @@
                             <a href="{{ route('showcase.navigation') }}#vertical-sidebar-menu" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Vertical Sidebar Menu</a>
                             <a href="{{ route('showcase.navigation') }}#dropdown-menu" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Dropdown Menu</a>
                             <a href="{{ route('showcase.navigation') }}#mobile-menu-hamburger" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Mobile Menu</a>
+                            <a href="{{ route('showcase.navigation') }}#stepper-multi-step-wizard" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Stepper / Wizard</a>
                         </div>
                     </div>
                     
@@ -290,7 +291,8 @@
                             <a href="{{ route('showcase.media') }}#image-upload-with-preview" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Image Upload with Preview</a>
                             <a href="{{ route('showcase.media') }}#drag-drop-file-uploader" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Drag & Drop Uploader</a>
                             <a href="{{ route('showcase.media') }}#multiple-file-upload-with-progress" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Multiple Upload with Progress</a>
-                            <a href="{{ route('showcase.media') }}#image-gallery-with-lightbox" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Image Gallery with Lightbox</a>
+                            <a href="{{ route('showcase.media') }}#image-gallery-grid" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Image Gallery Grid</a>
+                            <a href="{{ route('showcase.media') }}#gallery-lightbox" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Gallery Lightbox</a>
                             <a href="{{ route('showcase.media') }}#image-carousel-slider" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Image Carousel/Slider</a>
                             <a href="{{ route('showcase.media') }}#video-player-with-controls" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Video Player</a>
                             <a href="{{ route('showcase.media') }}#audio-player" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Audio Player</a>
@@ -400,6 +402,29 @@
                             <a href="{{ route('showcase.advanced-ui') }}#mini-calendar" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Mini Calendar</a>
                             <a href="{{ route('showcase.advanced-ui') }}#tree-view" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Tree View</a>
                             <a href="{{ route('showcase.advanced-ui') }}#command-palette" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Command Palette</a>
+                        </div>
+                    </div>
+
+                    <!-- Utility Components -->
+                    <div>
+                        <button @click="toggleSection('utilities')" class="w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg {{ request()->routeIs('showcase.utilities') ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                Utilities
+                            </div>
+                            <svg class="w-4 h-4 transition-transform" :class="openSections['utilities'] ? 'rotate-90' : ''" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div x-show="openSections['utilities']" x-cloak class="ml-8 mt-1 space-y-1">
+                            <a href="{{ route('showcase.utilities') }}#copy-to-clipboard" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Copy to Clipboard</a>
+                            <a href="{{ route('showcase.utilities') }}#qr-code-generator" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">QR Code Generator</a>
+                            <a href="{{ route('showcase.utilities') }}#export-to-csv" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Export to CSV</a>
+                            <a href="{{ route('showcase.utilities') }}#back-to-top-button" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Back to Top</a>
+                            <a href="{{ route('showcase.utilities') }}#download-button" class="block px-3 py-1.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Download Button</a>
                         </div>
                     </div>
                 </nav>

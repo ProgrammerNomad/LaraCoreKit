@@ -396,5 +396,194 @@
         @endslot
     @endcomponent
 
+    <!-- Stepper / Multi-step Wizard -->
+    @component('showcase::components.showcase-item', [
+        'title' => 'Stepper / Multi-step Wizard',
+        'description' => 'Step-by-step progress indicator for forms and processes',
+        'code' => '<div x-data="{ currentStep: 1 }">
+    <!-- Stepper Header -->
+    <div class="flex items-center justify-between mb-8">
+        <div class="flex-1 flex items-center" :class="currentStep >= 1 ? \'text-blue-600\' : \'text-gray-400\'">
+            <div class="flex items-center justify-center w-10 h-10 rounded-full" :class="currentStep >= 1 ? \'bg-blue-600 text-white\' : \'bg-gray-200 dark:bg-gray-700 text-gray-600\'">
+                1
+            </div>
+            <span class="ml-2 text-sm font-medium">Account</span>
+        </div>
+        <div class="flex-1 h-1" :class="currentStep >= 2 ? \'bg-blue-600\' : \'bg-gray-200 dark:bg-gray-700\'"></div>
+        <div class="flex-1 flex items-center" :class="currentStep >= 2 ? \'text-blue-600\' : \'text-gray-400\'">
+            <div class="flex items-center justify-center w-10 h-10 rounded-full" :class="currentStep >= 2 ? \'bg-blue-600 text-white\' : \'bg-gray-200 dark:bg-gray-700 text-gray-600\'">
+                2
+            </div>
+            <span class="ml-2 text-sm font-medium">Profile</span>
+        </div>
+        <div class="flex-1 h-1" :class="currentStep >= 3 ? \'bg-blue-600\' : \'bg-gray-200 dark:bg-gray-700\'"></div>
+        <div class="flex-1 flex items-center" :class="currentStep >= 3 ? \'text-blue-600\' : \'text-gray-400\'">
+            <div class="flex items-center justify-center w-10 h-10 rounded-full" :class="currentStep >= 3 ? \'bg-blue-600 text-white\' : \'bg-gray-200 dark:bg-gray-700 text-gray-600\'">
+                3
+            </div>
+            <span class="ml-2 text-sm font-medium">Complete</span>
+        </div>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <div class="flex justify-between">
+        <button @click="currentStep > 1 && currentStep--" :disabled="currentStep === 1" class="px-4 py-2 border rounded-lg disabled:opacity-50">
+            Previous
+        </button>
+        <button @click="currentStep < 3 && currentStep++" :disabled="currentStep === 3" class="px-4 py-2 bg-blue-600 text-white rounded-lg disabled:opacity-50">
+            Next
+        </button>
+    </div>
+</div>'
+    ])
+        @slot('preview')
+            <!-- Horizontal Stepper -->
+            <div x-data="{ currentStep: 1 }" class="mb-12">
+                <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-4">Horizontal Stepper</h4>
+                
+                <!-- Stepper Header -->
+                <div class="flex items-center mb-8">
+                    <div class="flex items-center flex-1">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full transition-all" :class="currentStep >= 1 ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400'">
+                            <svg x-show="currentStep > 1" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span x-show="currentStep <= 1">1</span>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium" :class="currentStep >= 1 ? 'text-blue-600 dark:text-blue-400' : 'text-gray-500 dark:text-gray-400'">Step 1</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Account Info</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-1 h-1 mx-4 transition-all" :class="currentStep >= 2 ? 'bg-blue-600' : 'bg-gray-200 dark:bg-gray-700'"></div>
+                    
+                    <div class="flex items-center flex-1">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full transition-all" :class="currentStep >= 2 ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400'">
+                            <svg x-show="currentStep > 2" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span x-show="currentStep <= 2">2</span>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium" :class="currentStep >= 2 ? 'text-blue-600 dark:text-blue-400' : 'text-gray-500 dark:text-gray-400'">Step 2</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Personal Details</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-1 h-1 mx-4 transition-all" :class="currentStep >= 3 ? 'bg-blue-600' : 'bg-gray-200 dark:bg-gray-700'"></div>
+                    
+                    <div class="flex items-center flex-1">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full transition-all" :class="currentStep >= 3 ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400'">
+                            <svg x-show="currentStep > 3" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span x-show="currentStep <= 3">3</span>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium" :class="currentStep >= 3 ? 'text-blue-600 dark:text-blue-400' : 'text-gray-500 dark:text-gray-400'">Step 3</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Confirmation</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step Content -->
+                <div class="bg-gray-50 dark:bg-gray-900/50 rounded-lg p-6 mb-6">
+                    <div x-show="currentStep === 1">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Account Information</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Enter your account details to get started.</p>
+                    </div>
+                    <div x-show="currentStep === 2" x-cloak>
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Personal Details</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Tell us more about yourself.</p>
+                    </div>
+                    <div x-show="currentStep === 3" x-cloak>
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Review & Confirm</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Please review your information before submitting.</p>
+                    </div>
+                </div>
+                
+                <!-- Navigation Buttons -->
+                <div class="flex justify-between">
+                    <button @click="currentStep > 1 && currentStep--" :disabled="currentStep === 1" class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition">
+                        Previous
+                    </button>
+                    <button @click="currentStep < 3 && currentStep++" :disabled="currentStep === 3" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition">
+                        <span x-show="currentStep < 3">Next</span>
+                        <span x-show="currentStep === 3" x-cloak>Submit</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Vertical Stepper -->
+            <div x-data="{ currentStep: 1 }">
+                <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-4">Vertical Stepper</h4>
+                
+                <div class="space-y-4">
+                    <!-- Step 1 -->
+                    <div class="flex">
+                        <div class="flex flex-col items-center mr-4">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full" :class="currentStep >= 1 ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400'">
+                                <svg x-show="currentStep > 1" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span x-show="currentStep <= 1">1</span>
+                            </div>
+                            <div class="w-1 h-16" :class="currentStep > 1 ? 'bg-blue-600' : 'bg-gray-200 dark:bg-gray-700'"></div>
+                        </div>
+                        <div class="flex-1 pb-8">
+                            <h4 class="text-sm font-semibold mb-1" :class="currentStep >= 1 ? 'text-blue-600 dark:text-blue-400' : 'text-gray-900 dark:text-white'">Choose Service</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Select the service you want to purchase</p>
+                            <div x-show="currentStep === 1">
+                                <button @click="currentStep = 2" class="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700">Continue</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex">
+                        <div class="flex flex-col items-center mr-4">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full" :class="currentStep >= 2 ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400'">
+                                <svg x-show="currentStep > 2" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span x-show="currentStep <= 2">2</span>
+                            </div>
+                            <div class="w-1 h-16" :class="currentStep > 2 ? 'bg-blue-600' : 'bg-gray-200 dark:bg-gray-700'"></div>
+                        </div>
+                        <div class="flex-1 pb-8">
+                            <h4 class="text-sm font-semibold mb-1" :class="currentStep >= 2 ? 'text-blue-600 dark:text-blue-400' : 'text-gray-900 dark:text-white'">Enter Details</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Provide your contact information</p>
+                            <div x-show="currentStep === 2" x-cloak class="space-x-2">
+                                <button @click="currentStep = 1" class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">Back</button>
+                                <button @click="currentStep = 3" class="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700">Continue</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex">
+                        <div class="flex flex-col items-center mr-4">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full" :class="currentStep >= 3 ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400'">
+                                <svg x-show="currentStep > 3" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span x-show="currentStep <= 3">3</span>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-sm font-semibold mb-1" :class="currentStep >= 3 ? 'text-blue-600 dark:text-blue-400' : 'text-gray-900 dark:text-white'">Complete</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Review and submit your order</p>
+                            <div x-show="currentStep === 3" x-cloak class="space-x-2">
+                                <button @click="currentStep = 2" class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">Back</button>
+                                <button class="px-4 py-2 bg-green-600 text-white text-sm rounded-lg hover:bg-green-700">Submit Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endslot
+    @endcomponent
+
 </div>
 @endsection

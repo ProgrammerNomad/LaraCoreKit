@@ -82,4 +82,8 @@ Route::prefix('ui-showcase')->name('showcase.')->group(function () {
     Route::get('/advanced-ui', function () {
         return view('showcase::advanced-ui');
     })->name('advanced-ui');
+    
+    Route::get('/utilities', function () {
+        return view('showcase::utilities');
+    })->name('utilities');
 });

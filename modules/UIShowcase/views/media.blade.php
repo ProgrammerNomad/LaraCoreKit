@@ -573,5 +573,248 @@
         @endslot
     @endcomponent
 
+    <!-- Image Gallery Grid -->
+    @component('showcase::components.showcase-item', [
+        'title' => 'Image Gallery Grid',
+        'description' => 'Responsive grid layout for image galleries',
+        'code' => '<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div class="aspect-square overflow-hidden rounded-lg">
+        <img src="https://picsum.photos/300/300?random=1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300 cursor-pointer" alt="Gallery image">
+    </div>
+    <!-- Repeat for more images -->
+</div>'
+    ])
+        @slot('preview')
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="aspect-square overflow-hidden rounded-lg bg-gray-200 dark:bg-gray-700">
+                    <img src="https://picsum.photos/300/300?random=1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300 cursor-pointer" alt="Gallery image 1">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg bg-gray-200 dark:bg-gray-700">
+                    <img src="https://picsum.photos/300/300?random=2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300 cursor-pointer" alt="Gallery image 2">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg bg-gray-200 dark:bg-gray-700">
+                    <img src="https://picsum.photos/300/300?random=3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300 cursor-pointer" alt="Gallery image 3">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg bg-gray-200 dark:bg-gray-700">
+                    <img src="https://picsum.photos/300/300?random=4" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300 cursor-pointer" alt="Gallery image 4">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg bg-gray-200 dark:bg-gray-700">
+                    <img src="https://picsum.photos/300/300?random=5" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300 cursor-pointer" alt="Gallery image 5">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg bg-gray-200 dark:bg-gray-700">
+                    <img src="https://picsum.photos/300/300?random=6" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300 cursor-pointer" alt="Gallery image 6">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg bg-gray-200 dark:bg-gray-700">
+                    <img src="https://picsum.photos/300/300?random=7" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300 cursor-pointer" alt="Gallery image 7">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg bg-gray-200 dark:bg-gray-700">
+                    <img src="https://picsum.photos/300/300?random=8" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300 cursor-pointer" alt="Gallery image 8">
+                </div>
+            </div>
+        @endslot
+    @endcomponent
+
+    <!-- Gallery Lightbox -->
+    @component('showcase::components.showcase-item', [
+        'title' => 'Gallery Lightbox',
+        'description' => 'Click images to view in fullscreen modal with navigation',
+        'code' => '<div x-data="{ 
+    lightboxOpen: false, 
+    currentImage: 0,
+    images: [
+        \'https://picsum.photos/800/600?random=1\',
+        \'https://picsum.photos/800/600?random=2\',
+        \'https://picsum.photos/800/600?random=3\'
+    ]
+}">
+    <div class="grid grid-cols-3 gap-4">
+        <template x-for="(image, index) in images" :key="index">
+            <img :src="image" @click="lightboxOpen = true; currentImage = index" class="w-full aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+        </template>
+    </div>
+    
+    <!-- Lightbox Modal -->
+    <div x-show="lightboxOpen" @click="lightboxOpen = false" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center">
+        <button @click.stop="currentImage > 0 && currentImage--" class="absolute left-4 text-white">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+        </button>
+        <img :src="images[currentImage]" @click.stop class="max-w-4xl max-h-[90vh] rounded-lg">
+        <button @click.stop="currentImage < images.length - 1 && currentImage++" class="absolute right-4 text-white">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+        </button>
+        <button @click="lightboxOpen = false" class="absolute top-4 right-4 text-white">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+    </div>
+</div>'
+    ])
+        @slot('preview')
+            <div x-data="{ 
+                lightboxOpen: false, 
+                currentImage: 0,
+                images: [
+                    'https://picsum.photos/800/600?random=11',
+                    'https://picsum.photos/800/600?random=12',
+                    'https://picsum.photos/800/600?random=13',
+                    'https://picsum.photos/800/600?random=14',
+                    'https://picsum.photos/800/600?random=15',
+                    'https://picsum.photos/800/600?random=16'
+                ]
+            }">
+                <div class="grid grid-cols-3 gap-4">
+                    <template x-for="(image, index) in images" :key="index">
+                        <img :src="image" @click="lightboxOpen = true; currentImage = index" class="w-full aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition" alt="Gallery image">
+                    </template>
+                </div>
+                
+                <!-- Lightbox Modal -->
+                <div x-show="lightboxOpen" x-cloak @click="lightboxOpen = false" @keydown.escape.window="lightboxOpen = false" class="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4">
+                    <!-- Previous Button -->
+                    <button @click.stop="currentImage > 0 && currentImage--" :disabled="currentImage === 0" class="absolute left-4 text-white hover:text-gray-300 transition disabled:opacity-30 disabled:cursor-not-allowed">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    
+                    <!-- Image -->
+                    <div @click.stop class="relative">
+                        <img :src="images[currentImage]" class="max-w-4xl max-h-[90vh] rounded-lg" alt="Lightbox image">
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black bg-opacity-50 text-white px-3 py-1 rounded-full text-sm">
+                            <span x-text="currentImage + 1"></span> / <span x-text="images.length"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Next Button -->
+                    <button @click.stop="currentImage < images.length - 1 && currentImage++" :disabled="currentImage === images.length - 1" class="absolute right-4 text-white hover:text-gray-300 transition disabled:opacity-30 disabled:cursor-not-allowed">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    
+                    <!-- Close Button -->
+                    <button @click="lightboxOpen = false" class="absolute top-4 right-4 text-white hover:text-gray-300 transition">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        @endslot
+    @endcomponent
+
+    <!-- Image Carousel / Slider -->
+    @component('showcase::components.showcase-item', [
+        'title' => 'Image Carousel / Slider',
+        'description' => 'Auto-playing carousel with manual controls and indicators',
+        'code' => '<div x-data="{
+    currentSlide: 0,
+    slides: [
+        \'https://picsum.photos/800/400?random=1\',
+        \'https://picsum.photos/800/400?random=2\',
+        \'https://picsum.photos/800/400?random=3\'
+    ],
+    autoplay: null,
+    startAutoplay() {
+        this.autoplay = setInterval(() => {
+            this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+        }, 3000);
+    },
+    stopAutoplay() {
+        clearInterval(this.autoplay);
+    }
+}" x-init="startAutoplay()" @mouseenter="stopAutoplay()" @mouseleave="startAutoplay()">
+    <div class="relative overflow-hidden rounded-lg">
+        <template x-for="(slide, index) in slides" :key="index">
+            <div x-show="currentSlide === index" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform translate-x-full" x-transition:enter-end="opacity-100 transform translate-x-0">
+                <img :src="slide" class="w-full h-64 object-cover">
+            </div>
+        </template>
+        
+        <!-- Navigation -->
+        <button @click="currentSlide = currentSlide > 0 ? currentSlide - 1 : slides.length - 1" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+        </button>
+        <button @click="currentSlide = (currentSlide + 1) % slides.length" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+        </button>
+        
+        <!-- Indicators -->
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            <template x-for="(slide, index) in slides" :key="index">
+                <button @click="currentSlide = index" class="w-2 h-2 rounded-full transition" :class="currentSlide === index ? \'bg-white\' : \'bg-white/50\'"></button>
+            </template>
+        </div>
+    </div>
+</div>'
+    ])
+        @slot('preview')
+            <div x-data="{
+                currentSlide: 0,
+                slides: [
+                    { img: 'https://picsum.photos/800/400?random=21', title: 'Slide 1', desc: 'Beautiful landscape' },
+                    { img: 'https://picsum.photos/800/400?random=22', title: 'Slide 2', desc: 'Amazing architecture' },
+                    { img: 'https://picsum.photos/800/400?random=23', title: 'Slide 3', desc: 'Nature photography' },
+                    { img: 'https://picsum.photos/800/400?random=24', title: 'Slide 4', desc: 'Urban exploration' }
+                ],
+                autoplay: null,
+                startAutoplay() {
+                    this.autoplay = setInterval(() => {
+                        this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+                    }, 4000);
+                },
+                stopAutoplay() {
+                    clearInterval(this.autoplay);
+                }
+            }" x-init="startAutoplay()" @mouseenter="stopAutoplay()" @mouseleave="startAutoplay()">
+                <div class="relative overflow-hidden rounded-lg bg-gray-900">
+                    <!-- Slides -->
+                    <div class="relative h-96">
+                        <template x-for="(slide, index) in slides" :key="index">
+                            <div x-show="currentSlide === index" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 transform translate-x-full" x-transition:enter-end="opacity-100 transform translate-x-0" x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100 transform translate-x-0" x-transition:leave-end="opacity-0 transform -translate-x-full" class="absolute inset-0">
+                                <img :src="slide.img" class="w-full h-full object-cover" :alt="slide.title">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-8 left-8 text-white">
+                                    <h3 class="text-2xl font-bold mb-2" x-text="slide.title"></h3>
+                                    <p class="text-gray-200" x-text="slide.desc"></p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    
+                    <!-- Previous Button -->
+                    <button @click="currentSlide = currentSlide > 0 ? currentSlide - 1 : slides.length - 1" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-3 rounded-full shadow-lg transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    
+                    <!-- Next Button -->
+                    <button @click="currentSlide = (currentSlide + 1) % slides.length" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-3 rounded-full shadow-lg transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    
+                    <!-- Indicators -->
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                        <template x-for="(slide, index) in slides" :key="index">
+                            <button @click="currentSlide = index" class="w-3 h-3 rounded-full transition-all" :class="currentSlide === index ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/75'"></button>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        @endslot
+    @endcomponent
+
 </div>
 @endsection
