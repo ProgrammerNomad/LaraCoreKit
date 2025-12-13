@@ -112,7 +112,7 @@ Complete list of UI components to implement in the starter kit.
 - [x] Card
 - [x] Card with header/footer
 - [x] Card with image
-- [ ] Pricing card
+- [x] Pricing card
 - [x] Two-column layout
 - [x] Three-column layout
 - [ ] Dashboard layout
@@ -120,7 +120,7 @@ Complete list of UI components to implement in the starter kit.
 - [ ] Auth layout
 - [x] Sidebar layout
 - [x] Split screen layout
-- [ ] Centered layout
+- [x] Centered layout
 - [x] Max-width wrapper
 
 ## 6️⃣ Data Display Components
@@ -144,10 +144,10 @@ Complete list of UI components to implement in the starter kit.
 - [x] Stats component (cards with numbers)
 - [x] KPI cards
 - [x] Timeline
-- [ ] Vertical timeline
-- [ ] Horizontal timeline
+- [x] Vertical timeline
+- [x] Horizontal timeline
 - [x] Accordion
-- [ ] Nested accordion
+- [x] Nested accordion
 - [ ] Collapsible
 - [x] Empty state component
 - [x] Code block viewer

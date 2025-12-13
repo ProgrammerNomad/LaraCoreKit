@@ -1046,5 +1046,355 @@ console.log(greet('World'));</code></pre>
         @endslot
     @endcomponent
 
+    {{-- Vertical Timeline --}}
+    @component('showcase::components.showcase-item', [
+        'title' => 'Vertical Timeline',
+        'description' => 'Chronological event display with vertical layout',
+        'code' => <<<'HTML'
+<!-- Vertical Timeline -->
+<div class="space-y-6">
+    <div class="flex">
+        <div class="flex flex-col items-center mr-4">
+            <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                </svg>
+            </div>
+            <div class="w-0.5 h-full bg-gray-300 dark:bg-gray-600"></div>
+        </div>
+        <div class="flex-1 pb-8">
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">2 hours ago</p>
+            <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-1">Project Created</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">New project "Website Redesign" was created by John Doe</p>
+        </div>
+    </div>
+    
+    <div class="flex">
+        <div class="flex flex-col items-center mr-4">
+            <div class="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center text-white">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+            </div>
+            <div class="w-0.5 h-full bg-gray-300 dark:bg-gray-600"></div>
+        </div>
+        <div class="flex-1 pb-8">
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">5 hours ago</p>
+            <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-1">Task Completed</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Design mockups approved by client</p>
+        </div>
+    </div>
+    
+    <div class="flex">
+        <div class="flex flex-col items-center mr-4">
+            <div class="w-10 h-10 rounded-full bg-yellow-600 flex items-center justify-center text-white">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"></path>
+                    <path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path>
+                </svg>
+            </div>
+            <div class="w-0.5 h-full bg-gray-300 dark:bg-gray-600"></div>
+        </div>
+        <div class="flex-1 pb-8">
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">1 day ago</p>
+            <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-1">Files Uploaded</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">3 new design files added to repository</p>
+        </div>
+    </div>
+    
+    <div class="flex">
+        <div class="flex flex-col items-center mr-4">
+            <div class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center text-white">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                </svg>
+            </div>
+        </div>
+        <div class="flex-1">
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">2 days ago</p>
+            <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-1">Team Member Added</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Sarah joined the project team</p>
+        </div>
+    </div>
+</div>
+HTML
+    ])
+        @slot('preview')
+            <div class="space-y-6">
+                <div class="flex">
+                    <div class="flex flex-col items-center mr-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="w-0.5 h-full bg-gray-300 dark:bg-gray-600"></div>
+                    </div>
+                    <div class="flex-1 pb-8">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">2 hours ago</p>
+                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-1">Project Created</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">New project "Website Redesign" was created by John Doe</p>
+                    </div>
+                </div>
+                
+                <div class="flex">
+                    <div class="flex flex-col items-center mr-4">
+                        <div class="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="w-0.5 h-full bg-gray-300 dark:bg-gray-600"></div>
+                    </div>
+                    <div class="flex-1 pb-8">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">5 hours ago</p>
+                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-1">Task Completed</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Design mockups approved by client</p>
+                    </div>
+                </div>
+                
+                <div class="flex">
+                    <div class="flex flex-col items-center mr-4">
+                        <div class="w-10 h-10 rounded-full bg-yellow-600 flex items-center justify-center text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"></path>
+                                <path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path>
+                            </svg>
+                        </div>
+                        <div class="w-0.5 h-full bg-gray-300 dark:bg-gray-600"></div>
+                    </div>
+                    <div class="flex-1 pb-8">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">1 day ago</p>
+                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-1">Files Uploaded</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">3 new design files added to repository</p>
+                    </div>
+                </div>
+                
+                <div class="flex">
+                    <div class="flex flex-col items-center mr-4">
+                        <div class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">2 days ago</p>
+                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-1">Team Member Added</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Sarah joined the project team</p>
+                    </div>
+                </div>
+            </div>
+        @endslot
+    @endcomponent
+
+    {{-- Horizontal Timeline --}}
+    @component('showcase::components.showcase-item', [
+        'title' => 'Horizontal Timeline',
+        'description' => 'Timeline with horizontal layout for process steps',
+        'code' => <<<'HTML'
+<!-- Horizontal Timeline -->
+<div class="relative">
+    <div class="absolute top-5 left-0 right-0 h-0.5 bg-gray-300 dark:bg-gray-600"></div>
+    
+    <div class="relative flex justify-between">
+        <div class="flex flex-col items-center">
+            <div class="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center text-white mb-2 relative z-10">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+            </div>
+            <p class="text-xs font-medium text-gray-900 dark:text-white">Order Placed</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Jan 1</p>
+        </div>
+        
+        <div class="flex flex-col items-center">
+            <div class="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center text-white mb-2 relative z-10">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+            </div>
+            <p class="text-xs font-medium text-gray-900 dark:text-white">Processing</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Jan 2</p>
+        </div>
+        
+        <div class="flex flex-col items-center">
+            <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white mb-2 relative z-10 border-4 border-white dark:border-gray-900">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
+                    <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"></path>
+                </svg>
+            </div>
+            <p class="text-xs font-medium text-blue-600 dark:text-blue-400">Shipping</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Jan 3</p>
+        </div>
+        
+        <div class="flex flex-col items-center">
+            <div class="w-10 h-10 rounded-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center text-gray-600 dark:text-gray-400 mb-2 relative z-10">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+                </svg>
+            </div>
+            <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Delivered</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Pending</p>
+        </div>
+    </div>
+</div>
+HTML
+    ])
+        @slot('preview')
+            <div class="relative">
+                <div class="absolute top-5 left-0 right-0 h-0.5 bg-gray-300 dark:bg-gray-600"></div>
+                
+                <div class="relative flex justify-between">
+                    <div class="flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center text-white mb-2 relative z-10">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <p class="text-xs font-medium text-gray-900 dark:text-white">Order Placed</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Jan 1</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center text-white mb-2 relative z-10">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <p class="text-xs font-medium text-gray-900 dark:text-white">Processing</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Jan 2</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white mb-2 relative z-10 border-4 border-white dark:border-gray-900">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
+                                <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"></path>
+                            </svg>
+                        </div>
+                        <p class="text-xs font-medium text-blue-600 dark:text-blue-400">Shipping</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Jan 3</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center text-gray-600 dark:text-gray-400 mb-2 relative z-10">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+                            </svg>
+                        </div>
+                        <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Delivered</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Pending</p>
+                    </div>
+                </div>
+            </div>
+        @endslot
+    @endcomponent
+
+    {{-- Nested Accordion --}}
+    @component('showcase::components.showcase-item', [
+        'title' => 'Nested Accordion',
+        'description' => 'Accordion with nested collapsible sections',
+        'code' => <<<'HTML'
+<!-- Nested Accordion -->
+<div x-data="{ open: null, nested: null }" class="space-y-2">
+    <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+        <button @click="open = open === 1 ? null : 1" class="w-full px-4 py-3 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 flex justify-between items-center">
+            <span class="font-medium text-gray-900 dark:text-white">Account Settings</span>
+            <svg :class="open === 1 ? 'rotate-180' : ''" class="w-5 h-5 transform transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+        </button>
+        <div x-show="open === 1" x-cloak class="bg-white dark:bg-gray-900">
+            <div class="border-t border-gray-200 dark:border-gray-700">
+                <button @click="nested = nested === 1 ? null : 1" class="w-full px-6 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-800 flex justify-between items-center text-sm">
+                    <span class="text-gray-700 dark:text-gray-300">Profile Information</span>
+                    <svg :class="nested === 1 ? 'rotate-180' : ''" class="w-4 h-4 transform transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <div x-show="nested === 1" x-cloak class="px-6 py-3 bg-gray-50 dark:bg-gray-800 text-sm text-gray-600 dark:text-gray-400">
+                    Update your name, email, and profile picture settings.
+                </div>
+            </div>
+            <div class="border-t border-gray-200 dark:border-gray-700">
+                <button @click="nested = nested === 2 ? null : 2" class="w-full px-6 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-800 flex justify-between items-center text-sm">
+                    <span class="text-gray-700 dark:text-gray-300">Security</span>
+                    <svg :class="nested === 2 ? 'rotate-180' : ''" class="w-4 h-4 transform transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <div x-show="nested === 2" x-cloak class="px-6 py-3 bg-gray-50 dark:bg-gray-800 text-sm text-gray-600 dark:text-gray-400">
+                    Manage password, two-factor authentication, and security settings.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+        <button @click="open = open === 2 ? null : 2" class="w-full px-4 py-3 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 flex justify-between items-center">
+            <span class="font-medium text-gray-900 dark:text-white">Notifications</span>
+            <svg :class="open === 2 ? 'rotate-180' : ''" class="w-5 h-5 transform transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+        </button>
+        <div x-show="open === 2" x-cloak class="bg-white dark:bg-gray-900 px-6 py-3 text-sm text-gray-600 dark:text-gray-400">
+            Configure email, push, and SMS notification preferences.
+        </div>
+    </div>
+</div>
+HTML
+    ])
+        @slot('preview')
+            <div x-data="{ open: null, nested: null }" class="space-y-2">
+                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                    <button @click="open = open === 1 ? null : 1" class="w-full px-4 py-3 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 flex justify-between items-center">
+                        <span class="font-medium text-gray-900 dark:text-white">Account Settings</span>
+                        <svg :class="open === 1 ? 'rotate-180' : ''" class="w-5 h-5 transform transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open === 1" x-cloak class="bg-white dark:bg-gray-900">
+                        <div class="border-t border-gray-200 dark:border-gray-700">
+                            <button @click="nested = nested === 1 ? null : 1" class="w-full px-6 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-800 flex justify-between items-center text-sm">
+                                <span class="text-gray-700 dark:text-gray-300">Profile Information</span>
+                                <svg :class="nested === 1 ? 'rotate-180' : ''" class="w-4 h-4 transform transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                            <div x-show="nested === 1" x-cloak class="px-6 py-3 bg-gray-50 dark:bg-gray-800 text-sm text-gray-600 dark:text-gray-400">
+                                Update your name, email, and profile picture settings.
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-200 dark:border-gray-700">
+                            <button @click="nested = nested === 2 ? null : 2" class="w-full px-6 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-800 flex justify-between items-center text-sm">
+                                <span class="text-gray-700 dark:text-gray-300">Security</span>
+                                <svg :class="nested === 2 ? 'rotate-180' : ''" class="w-4 h-4 transform transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                            <div x-show="nested === 2" x-cloak class="px-6 py-3 bg-gray-50 dark:bg-gray-800 text-sm text-gray-600 dark:text-gray-400">
+                                Manage password, two-factor authentication, and security settings.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                    <button @click="open = open === 2 ? null : 2" class="w-full px-4 py-3 text-left bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 flex justify-between items-center">
+                        <span class="font-medium text-gray-900 dark:text-white">Notifications</span>
+                        <svg :class="open === 2 ? 'rotate-180' : ''" class="w-5 h-5 transform transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open === 2" x-cloak class="bg-white dark:bg-gray-900 px-6 py-3 text-sm text-gray-600 dark:text-gray-400">
+                        Configure email, push, and SMS notification preferences.
+                    </div>
+                </div>
+            </div>
+        @endslot
+    @endcomponent
+
 </div>
 @endsection
