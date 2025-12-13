@@ -26,12 +26,12 @@ Complete list of UI components to implement in the starter kit.
 - [x] Success button
 - [x] Icon button
 - [x] Button with icon (left/right)
-- [ ] Button with dropdown
+- [x] Button with dropdown
 - [x] Button loading state
 - [x] Full-width button
 - [x] Button group
-- [ ] Floating action button (FAB)
-- [ ] Link button
+- [x] Floating action button (FAB)
+- [x] Link button
 - [x] Disabled button state
 
 ## 3️⃣ Form Elements
@@ -97,7 +97,7 @@ Complete list of UI components to implement in the starter kit.
 - [ ] Load more button
 - [x] Tabs
 - [ ] Vertical tabs
-- [ ] Stepper (multi-step form flow)
+- [x] Stepper (multi-step form flow)
 - [ ] Command palette (Ctrl+K search)
 - [ ] Mega menu
 - [ ] Context menu (right-click)
@@ -166,32 +166,32 @@ Complete list of UI components to implement in the starter kit.
 - [ ] Notification center
 - [x] Modal popup
 - [x] Confirmation modal
-- [ ] Slide-over panel
-- [ ] Drawer (left/right/top/bottom)
-- [ ] Bottom sheet (mobile)
+- [x] Slide-over panel
+- [x] Drawer (left/right/top/bottom)
+- [x] Bottom sheet (mobile)
 - [x] Loading spinner
 - [x] Skeleton loader
-- [ ] Skeleton card
-- [ ] Skeleton table
+- [x] Skeleton card
+- [x] Skeleton table
 - [x] Progress bar
-- [ ] Circular progress
-- [ ] Steps indicator
-- [ ] Tooltip
-- [ ] Popover
-- [ ] Banner notification
+- [x] Circular progress
+- [x] Steps indicator
+- [x] Tooltip
+- [x] Popover
+- [x] Banner notification
 - [ ] Inline notification
 
 ## 8️⃣ Charts & Visualizations
 
-- [ ] Line chart
-- [ ] Bar chart
-- [ ] Horizontal bar chart
-- [ ] Pie chart
-- [ ] Donut chart
-- [ ] Area chart
+- [x] Line chart
+- [x] Bar chart
+- [x] Horizontal bar chart
+- [x] Pie chart
+- [x] Donut chart
+- [x] Area chart
 - [ ] Stacked area chart
-- [ ] Radar chart
-- [ ] Stats with mini-line charts (sparkline)
+- [x] Radar chart
+- [x] Stats with mini-line charts (sparkline)
 - [ ] Heatmap
 - [ ] Gauge chart
 - [ ] Funnel chart
@@ -204,82 +204,82 @@ Complete list of UI components to implement in the starter kit.
 - [ ] Responsive image
 - [ ] Image with lazy loading
 - [ ] Avatar component
-- [ ] Avatar upload with crop
-- [ ] Video player
+- [x] Avatar upload with crop
+- [x] Video player
 - [ ] YouTube/Vimeo embed
-- [ ] Audio player
-- [ ] File uploader drag & drop
-- [ ] Multiple file uploader
-- [ ] Image gallery grid
-- [ ] Gallery lightbox
-- [ ] Carousel/Slider
+- [x] Audio player
+- [x] File uploader drag & drop
+- [x] Multiple file uploader
+- [x] Image gallery grid
+- [x] Gallery lightbox
+- [x] Carousel/Slider
 - [ ] Image zoom on hover
-- [ ] PDF viewer
+- [x] PDF viewer
 - [ ] Media thumbnail grid
 
 ## 🔟 Auth Components
 
-- [ ] Login form
-- [ ] Register form
+- [x] Login form
+- [x] Register form
 - [ ] Forgot password
 - [ ] Reset password
 - [ ] Email verification page
-- [ ] OTP verification page
-- [ ] 2FA setup UI
+- [x] OTP verification page
+- [x] 2FA setup UI
 - [ ] 2FA verification
-- [ ] Profile update form
-- [ ] Change password form
+- [x] Profile update form
+- [x] Change password form
 - [ ] Change email form
 - [ ] Account settings page
 - [ ] Privacy settings
 - [ ] Notification preferences
 - [ ] Connected accounts
-- [ ] Sessions management
-- [ ] API tokens management
+- [x] Sessions management
+- [x] API tokens management
 
 ## 1️⃣1️⃣ Landing Page Components
 
-- [ ] Hero section
+- [x] Hero section
 - [ ] Hero with background image
 - [ ] Hero with video background
-- [ ] Feature cards
-- [ ] Feature grid
-- [ ] Feature list with icons
-- [ ] Pricing table
+- [x] Feature cards
+- [x] Feature grid
+- [x] Feature list with icons
+- [x] Pricing table
 - [ ] Pricing comparison
-- [ ] Testimonials
-- [ ] Testimonial carousel
-- [ ] Logo cloud (client logos)
-- [ ] FAQ accordion
-- [ ] Call to action section
-- [ ] Newsletter signup
-- [ ] Contact form
-- [ ] Footer
-- [ ] Footer with multiple columns
+- [x] Testimonials
+- [x] Testimonial carousel
+- [x] Logo cloud (client logos)
+- [x] FAQ accordion
+- [x] Call to action section
+- [x] Newsletter signup
+- [x] Contact form
+- [x] Footer
+- [x] Footer with multiple columns
 - [ ] Social media links
-- [ ] Team member cards
+- [x] Team member cards
 - [ ] Blog post cards
-- [ ] Statistics counter
+- [x] Statistics counter
 - [ ] Progress/milestone section
 
 ## 1️⃣2️⃣ E-commerce Components (Bonus)
 
-- [ ] Product card
-- [ ] Product grid
-- [ ] Product detail page
+- [x] Product card
+- [x] Product grid
+- [x] Product detail page
 - [ ] Product image gallery
 - [ ] Add to cart button
-- [ ] Cart summary
+- [x] Cart summary
 - [ ] Shopping cart dropdown
-- [ ] Checkout form
-- [ ] Order summary
+- [x] Checkout form
+- [x] Order summary
 - [ ] Quantity selector
 - [ ] Size/variant selector
-- [ ] Product filters
+- [x] Product filters
 - [ ] Price range slider
-- [ ] Product reviews
+- [x] Product reviews
 - [ ] Star rating
-- [ ] Wishlist button
+- [x] Wishlist button
 
 ## 1️⃣3️⃣ Admin Dashboard Components
 
@@ -315,14 +315,14 @@ Complete list of UI components to implement in the starter kit.
 
 ## 1️⃣5️⃣ Utility Components
 
-- [ ] Copy to clipboard button
-- [ ] QR code generator
+- [x] Copy to clipboard button
+- [x] QR code generator
 - [ ] Barcode generator
-- [ ] Export to CSV/Excel
+- [x] Export to CSV/Excel
 - [ ] Print button
-- [ ] Download button
+- [x] Download button
 - [ ] Bookmark button
-- [ ] Back to top button
+- [x] Back to top button
 - [ ] Language switcher dropdown
 - [ ] Theme switcher (dark/light)
 - [ ] Currency switcher
@@ -336,18 +336,19 @@ Complete list of UI components to implement in the starter kit.
 
 ## 1️⃣6️⃣ Advanced/Interactive
 
-- [ ] Drag & drop list
+- [x] Drag & drop list
 - [x] Sortable table columns
 - [ ] Resizable panels
 - [ ] Split pane view
-- [ ] Kanban board
-- [ ] Calendar scheduler
+- [x] Kanban board
+- [x] Calendar scheduler
 - [ ] Gantt chart
-- [ ] Tree view
+- [x] Tree view
 - [ ] File explorer
 - [ ] Org chart
 - [ ] Mind map
 - [ ] Flowchart builder
+- [x] Command palette
 
 ---
 
