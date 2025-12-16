@@ -9,6 +9,34 @@
 
 ---
 
+## 🚀 Live Demo
+
+**[👉 View Live Demo](https://laracorekit.mobrilz.digital/)**
+
+### UI Component Showcase
+
+Explore all 175+ implemented UI components at:
+
+**[🎨 UI Showcase - Full Component Library](https://laracorekit.mobrilz.digital/ui-showcase/)**
+
+**Component Categories:**
+- [Typography](https://laracorekit.mobrilz.digital/ui-showcase/typography) - Headings, paragraphs, lists, code
+- [Buttons](https://laracorekit.mobrilz.digital/ui-showcase/buttons) - All button styles & states
+- [Forms](https://laracorekit.mobrilz.digital/ui-showcase/forms) - Inputs, selects, validation, pickers
+- [Navigation](https://laracorekit.mobrilz.digital/ui-showcase/navigation) - Header, sidebar, breadcrumbs, tabs
+- [Layouts](https://laracorekit.mobrilz.digital/ui-showcase/layouts) - Cards, grids, containers, split layouts
+- [Data Display](https://laracorekit.mobrilz.digital/ui-showcase/data-display) - Tables, badges, avatars, timeline
+- [Feedback](https://laracorekit.mobrilz.digital/ui-showcase/feedback) - Alerts, modals, toasts, progress
+- [Charts](https://laracorekit.mobrilz.digital/ui-showcase/charts) - Line, bar, pie, radar, area charts
+- [Media](https://laracorekit.mobrilz.digital/ui-showcase/media) - File upload, gallery, lightbox, video, audio
+- [Auth](https://laracorekit.mobrilz.digital/ui-showcase/auth) - Login, register, 2FA, profile, sessions
+- [Landing Pages](https://laracorekit.mobrilz.digital/ui-showcase/landing-hero) - Heroes, pricing, testimonials, contact
+- [E-commerce](https://laracorekit.mobrilz.digital/ui-showcase/ecommerce-products) - Products, cart, reviews, checkout
+- [Utilities](https://laracorekit.mobrilz.digital/ui-showcase/utilities) - QR code, clipboard, export, download
+- [Advanced](https://laracorekit.mobrilz.digital/ui-showcase/advanced-drag-drop) - Kanban, drag-drop, calendar, file explorer
+
+---
+
 ## Overview
 
 **LaraCoreKit** is a modular, production-ready **Laravel 12 Starter Kit** for modern full-stack applications.
@@ -356,6 +384,81 @@ Available locales: `en`, `hi`, `ar`
 - Audit log module
 - Search indexing module
 - Module Marketplace (addon installer UI)
+
+---
+
+## Quick Start
+
+### 1. Installation (Local)
+
+```bash
+git clone https://github.com/yourusername/LaraCoreKit.git
+cd LaraCoreKit
+
+# Install dependencies
+composer install
+npm install
+
+# Setup environment
+cp .env.example .env
+php artisan key:generate
+
+# Setup database (SQLite for local dev)
+touch database/database.sqlite
+php artisan migrate --seed
+
+# Build assets
+npm run build
+
+# Start server
+php artisan serve
+```
+
+Access at: `http://localhost:8000`
+
+### 2. Admin Access
+
+Create admin user:
+```bash
+php artisan filament:user
+```
+
+Admin panel: `http://localhost:8000/admin`
+
+### 3. View UI Components
+
+See all 175+ components at:
+```
+http://localhost:8000/ui-showcase/
+```
+
+---
+
+## Demo Credentials
+
+**Website:** https://laracorekit.mobrilz.digital/  
+**Admin Panel:** https://laracorekit.mobrilz.digital/admin
+
+*Contact us for demo credentials if needed.*
+
+---
+
+## Feature Comparison
+
+| Feature | Included | Docs |
+|---------|----------|------|
+| Modular Architecture | ✅ | See `modules/` |
+| Admin Panel (Filament) | ✅ | `/admin` |
+| Blog System | ✅ | `/blog` |
+| Multilingual (EN/HI/AR) | ✅ | Core module |
+| RTL Support | ✅ | Arabic theme |
+| Role-Based Permissions | ✅ | Spatie Permission |
+| File Uploads | ✅ | Media module |
+| API Ready (Sanctum) | ✅ | `/api/v1/*` |
+| 175+ UI Components | ✅ | `/ui-showcase/` |
+| Dark Mode | ✅ | Alpine.js toggle |
+| TailwindCSS 4 | ✅ | All components |
+| Vite Bundling | ✅ | Fast dev build |
 
 ---
 
