@@ -12,10 +12,10 @@ class UserSeeder extends Seeder
     {
         // Create admin user
         $admin = User::firstOrCreate(
-            ['email' => 'admin@laracorekit.com'],
+            ['email' => config('demo.credentials.admin.email', 'admin@laracorekit.com')],
             [
                 'name' => 'Admin User',
-                'password' => Hash::make('password'),
+                'password' => Hash::make(config('demo.credentials.admin.password', 'password')),
                 'email_verified_at' => now(),
             ]
         );
@@ -47,10 +47,10 @@ class UserSeeder extends Seeder
 
         // Create regular user
         $user = User::firstOrCreate(
-            ['email' => 'user@laracorekit.com'],
+            ['email' => config('demo.credentials.user.email', 'user@laracorekit.com')],
             [
-                'name' => 'Regular User',
-                'password' => Hash::make('password'),
+                'name' => 'Demo User',
+                'password' => Hash::make(config('demo.credentials.user.password', 'password')),
                 'email_verified_at' => now(),
             ]
         );
