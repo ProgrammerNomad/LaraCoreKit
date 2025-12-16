@@ -1,7 +1,3 @@
-*
-!private/
-!public/
-!Providers/
-!Filament/
-!Http/
-!.gitignore
+# Keep app directory structure tracked
+# Only ignore specific generated files if needed
+
