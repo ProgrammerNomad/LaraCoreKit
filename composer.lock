@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6ea048e69afd5d01f712256824990b4e",
+    "content-hash": "83fd07bc3ac948bb8210c1867ed5def6",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -4457,6 +4457,73 @@
                 "source": "https://github.com/antonioribeiro/google2fa-qrcode/tree/v3.0.0"
             },
             "time": "2021-08-15T12:53:48+00:00"
+        },
+        {
+            "name": "programmernomad/laracorekit-demo-module",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ProgrammerNomad/laracorekit-demo-module.git",
+                "reference": "f2d1e3e289400715510d84ad46ec023c38491642"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ProgrammerNomad/laracorekit-demo-module/zipball/f2d1e3e289400715510d84ad46ec023c38491642",
+                "reference": "f2d1e3e289400715510d84ad46ec023c38491642",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^11.0|^12.0",
+                "illuminate/database": "^11.0|^12.0",
+                "illuminate/filesystem": "^11.0|^12.0",
+                "illuminate/support": "^11.0|^12.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "filament/filament": "^3.0",
+                "laravel/pint": "^1.0",
+                "orchestra/testbench": "^9.0",
+                "phpunit/phpunit": "^11.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaraCoreKit\\DemoModule\\DemoServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaraCoreKit\\DemoModule\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ProgrammerNomad",
+                    "homepage": "https://github.com/ProgrammerNomad"
+                }
+            ],
+            "description": "Auto-resetting demo environment for Laravel applications with Filament integration",
+            "homepage": "https://github.com/ProgrammerNomad/laracorekit-demo-module",
+            "keywords": [
+                "auto-reset",
+                "demo",
+                "filament",
+                "laracorekit",
+                "laravel",
+                "module"
+            ],
+            "support": {
+                "issues": "https://github.com/ProgrammerNomad/laracorekit-demo-module/issues",
+                "source": "https://github.com/ProgrammerNomad/laracorekit-demo-module"
+            },
+            "time": "2025-12-16T08:48:06+00:00"
         },
         {
             "name": "psr/clock",
@@ -11094,7 +11161,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "programmernomad/laracorekit-demo-module": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

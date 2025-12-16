@@ -12,6 +12,9 @@
             </p>
         </div>
 
+        {{-- Demo Banner --}}
+        <x-demo-login-banner type="user" />
+
         <form wire:submit="login" class="mt-8 space-y-6">
             <div class="rounded-md shadow-sm space-y-4">
                 <div>
