@@ -387,7 +387,7 @@ Available locales: `en`, `hi`, `ar`
 
 ---
 
-## ## Quick Start
+## Quick Start
 
 ### 1. Installation (Local)
 
