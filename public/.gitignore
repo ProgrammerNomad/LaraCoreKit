@@ -1,2 +1,17 @@
-*
+# Ignore everything by default
+/*
+
+# But NOT these directories and files (Vite compiled assets)
 !.gitignore
+!.htaccess
+!index.php
+!favicon.ico
+!robots.txt
+!build/
+!build/**
+!css/
+!css/**
+!js/
+!js/**
+!fonts/
+!images/
