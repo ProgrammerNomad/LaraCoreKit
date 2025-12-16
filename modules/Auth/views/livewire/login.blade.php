@@ -13,7 +13,9 @@
         </div>
 
         {{-- Demo Banner --}}
-        <x-demo-login-banner type="user" />
+        @if(config('demo.enabled') && view()->exists('demo::components.login-banner'))
+            @include('demo::components.login-banner', ['type' => 'user'])
+        @endif
 
         <form wire:submit="login" class="mt-8 space-y-6">
             <div class="rounded-md shadow-sm space-y-4">
