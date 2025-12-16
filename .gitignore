@@ -1,6 +1,5 @@
 # Laravel & Composer
 /node_modules
-/public/build
 /public/hot
 /public/storage
 /storage/*.key
@@ -32,8 +31,10 @@ yarn-error.log
 /modules/**/node_modules
 
 # Build artifacts
-/public/css
-/public/js
+# Note: /public/build, /public/css, and /public/js ARE committed to git (Vite compiled assets)
+# Uncomment below if you want to ignore them:
+# /public/css
+# /public/js
 
 # OS files
 .DS_Store
