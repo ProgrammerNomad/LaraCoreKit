@@ -46,4 +46,13 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Determine if user can access Filament admin panel
+     * Only users with Admin or Editor role can access
+     */
+    public function canAccessPanel(\Filament\Panel $panel): bool
+    {
+        return $this->hasRole(['Admin', 'Editor']);
+    }
 }

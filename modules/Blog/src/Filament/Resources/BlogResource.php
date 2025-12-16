@@ -78,4 +78,36 @@ class BlogResource extends Resource
                 SoftDeletingScope::class,
             ]);
     }
+
+    /**
+     * Check if user can view any blog records in Filament
+     */
+    public static function canViewAny(): bool
+    {
+        return auth()->user()?->can('view-blog') ?? false;
+    }
+
+    /**
+     * Check if user can create blog posts
+     */
+    public static function canCreate(): bool
+    {
+        return auth()->user()?->can('create-blog') ?? false;
+    }
+
+    /**
+     * Check if user can edit a blog post
+     */
+    public static function canEdit($record): bool
+    {
+        return auth()->user()?->can('edit-blog') ?? false;
+    }
+
+    /**
+     * Check if user can delete a blog post
+     */
+    public static function canDelete($record): bool
+    {
+        return auth()->user()?->can('delete-blog') ?? false;
+    }
 }

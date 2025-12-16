@@ -1,102 +1,112 @@
 # Demo Mode Setup Guide
 
-Complete implementation guide for auto-resetting demo environment with Plesk + GitHub CI/CD.
+**Auto-resetting demo environment for LaraCoreKit with Filament integration**
 
-**Demo Module Package**: [laracorekit-demo-module](https://github.com/ProgrammerNomad/laracorekit-demo-module)  
-**Packagist**: [programmernomad/laracorekit-demo-module](https://packagist.org/packages/programmernomad/laracorekit-demo-module)
+**Package**: [programmernomad/laracorekit-demo-module](https://packagist.org/packages/programmernomad/laracorekit-demo-module)  
+**Repository**: [GitHub](https://github.com/ProgrammerNomad/laracorekit-demo-module)
 
 ---
 
-## Quick Start (Packagist Installation)
+## Quick Start
 
-### Installation
+### 1. Install Package
 
 ```bash
-# Install via Composer
 composer require programmernomad/laracorekit-demo-module
+```
 
-# Publish configuration
-php artisan vendor:publish --tag=demo-config
+### 2. Configure Environment
 
-# Update .env
+Add to `.env`:
+
+```env
 DEMO_MODE=true
 DEMO_RESET_INTERVAL=30
 DEMO_ADMIN_EMAIL=admin@demo.test
 DEMO_ADMIN_PASSWORD=Admin@123
 DEMO_USER_EMAIL=user@demo.test
 DEMO_USER_PASSWORD=User@123
+```
 
-# Setup cron job (see Phase 4 below)
+### 3. Update User Seeder
 
-# Test manual reset
+Modify `modules/User/Database/Seeders/UserSeeder.php` to use demo credentials:
+
+```php
+// Admin user
+$admin = User::firstOrCreate(
+    ['email' => config('demo.credentials.admin.email', 'admin@laracorekit.com')],
+    [
+        'name' => 'Admin User',
+        'password' => Hash::make(config('demo.credentials.admin.password', 'password')),
+        'email_verified_at' => now(),
+    ]
+);
+
+// Regular user
+$user = User::firstOrCreate(
+    ['email' => config('demo.credentials.user.email', 'user@laracorekit.com')],
+    [
+        'name' => 'Demo User',
+        'password' => Hash::make(config('demo.credentials.user.password', 'password')),
+        'email_verified_at' => now(),
+    ]
+);
+```
+
+### 4. Add Frontend Banner (Optional)
+
+Edit `modules/Auth/views/livewire/login.blade.php`:
+
+```blade
+{{-- Demo Banner --}}
+@if(config('demo.enabled') && view()->exists('demo::components.login-banner'))
+    @include('demo::components.login-banner', ['type' => 'user'])
+@endif
+```
+
+### 5. Run Database Reset
+
+```bash
 php artisan demo:reset --force
 ```
 
-### Removal
+### 6. Test Login
 
-```bash
-# Disable in .env
-DEMO_MODE=false
+**Frontend**: http://localhost/login
+- Email: `user@demo.test`
+- Password: `User@123`
 
-# Or remove completely
-composer remove programmernomad/laracorekit-demo-module
-```
+**Admin**: http://localhost/admin/login
+- Email: `admin@demo.test`
+- Password: `Admin@123`
 
-**That's it!** The package auto-registers via Laravel's package discovery.
-
----
-
-## Table of Contents
-1. [Architecture Overview](#architecture-overview)
-2. [Installation Methods](#installation-methods)
-3. [Configuration](#configuration)
-4. [Plesk Cron Setup](#plesk-cron-setup)
-5. [UI Integration](#ui-integration)
-6. [Security & Testing](#security--testing)
-7. [CI/CD Integration](#cicd-integration)
-8. [Troubleshooting](#troubleshooting)
+**Done!** ✅ Demo banners appear automatically.
 
 ---
 
-## Architecture Overview
+## What's Included
 
-### Why Separate Package?
-- ✅ **Easy Install/Remove**: `composer require/remove`
-- ✅ **Clean Separation**: Demo logic completely isolated
-- ✅ **Production Safe**: Simply don't install on production
-- ✅ **Maintainable**: Separate repo with independent versioning
-- ✅ **Reusable**: Works with any Laravel project
-- ✅ **Auto-Discovery**: Laravel automatically finds and registers it
+### ✅ Auto-Registered Features
 
-### Package Structure
-```
-programmernomad/laracorekit-demo-module/
-├── src/
-│   ├── DemoServiceProvider.php
-│   ├── Console/
-│   │   └── Commands/
-│   │       └── ResetDemoDatabase.php
-│   ├── Http/
-│   │   └── Middleware/
-│   │       ├── DemoModeMiddleware.php
-│   │       └── BlockDemoActions.php
-│   ├── Filament/
-│   │   └── Widgets/
-│   │       └── DemoBannerWidget.php
-│   └── config/
-│       └── demo.php
-└── views/
-    ├── components/
-    │   ├── login-banner.blade.php
-    │   └── admin-banner.blade.php
-    └── filament/
-        └── widgets/
-            └── demo-banner.blade.php
-```
+The package automatically provides:
+
+1. **Filament Admin Login Banner** - Shows credentials before login form (auto-injected via render hook)
+2. **Artisan Command** - `php artisan demo:reset` to reset database
+3. **Scheduled Reset** - Cron job every 30 minutes (configurable)
+4. **Action Blocking** - Prevents destructive operations (user deletion, etc.)
+5. **Middleware** - `demo` and `demo.block` for route protection
+6. **Blade Component** - `@include('demo::components.login-banner')` for frontend
+
+### 📋 Manual Setup Required
+
+1. **User Seeder** - Update to use demo credentials from config
+2. **Frontend Login** - Add `@include` directive to show banner
+3. **Cron Job** - Setup Laravel scheduler on server
 
 ---
 
-## Installation Methods
+## Features
 
 ### Method 1: Packagist (Recommended)
 

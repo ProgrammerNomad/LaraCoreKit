@@ -6,7 +6,6 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
-use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
@@ -28,6 +27,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->authGuard('web')
             ->brandName('LaraCoreKit')
             ->brandLogo(asset('images/logo.svg'))
             ->darkMode(true)
@@ -45,7 +45,7 @@ class AdminPanelProvider extends PanelProvider
                 \Modules\User\Filament\Resources\Permissions\PermissionResource::class,
             ])
             ->pages([
-                Dashboard::class,
+                \App\Filament\Pages\Dashboard::class,
                 \Modules\Settings\Filament\Pages\Settings::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')

@@ -48,3 +48,4 @@ Thumbs.db
 /storage/logs/*.log
 .github/copilot-instructions.md
 /package-files
+/storage/framework/sessions
