@@ -9,6 +9,17 @@
 
 ---
 
+## 📚 Documentation
+
+**New to LaraCoreKit?** Start here: **[📖 Documentation Index](./DOCUMENTATION_INDEX.md)** - Navigate all guides and resources
+
+**Quick Links:**
+- 🚀 [Quick Start Guide](./FEEDBACK_COMPONENTS_QUICK_START.md) - Get started in 5 minutes
+- 📖 [Complete Usage Guide](./COMPONENT_USAGE_GUIDE.md) - Comprehensive integration guide
+- ✅ [Component Checklist](./UI_COMPONENTS_CHECKLIST.md) - See what's available
+
+---
+
 ## Live Demo
 
 **View Live Demo:** https://laracorekit.mobrilz.digital/
