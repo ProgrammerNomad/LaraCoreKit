@@ -4516,16 +4516,16 @@
         },
         {
             "name": "programmernomad/laracorekit-demo-module",
-            "version": "v1.0.1",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ProgrammerNomad/laracorekit-demo-module.git",
-                "reference": "6228d73a252b11d5d2f7579fa0c3a8da15020da5"
+                "reference": "3c3422dbb99243cda1f68bb0ee8d22b86be06096"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ProgrammerNomad/laracorekit-demo-module/zipball/6228d73a252b11d5d2f7579fa0c3a8da15020da5",
-                "reference": "6228d73a252b11d5d2f7579fa0c3a8da15020da5",
+                "url": "https://api.github.com/repos/ProgrammerNomad/laracorekit-demo-module/zipball/3c3422dbb99243cda1f68bb0ee8d22b86be06096",
+                "reference": "3c3422dbb99243cda1f68bb0ee8d22b86be06096",
                 "shasum": ""
             },
             "require": {
@@ -4578,7 +4578,7 @@
                 "issues": "https://github.com/ProgrammerNomad/laracorekit-demo-module/issues",
                 "source": "https://github.com/ProgrammerNomad/laracorekit-demo-module"
             },
-            "time": "2026-04-21T13:32:04+00:00"
+            "time": "2026-04-21T13:47:26+00:00"
         },
         {
             "name": "psr/clock",
