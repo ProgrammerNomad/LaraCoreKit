@@ -85,6 +85,7 @@ class DocsController extends Controller
                 ['title' => 'Docker',              'slug' => 'deployment/docker'],
                 ['title' => 'Hosting Guide',       'slug' => 'deployment/hosting'],
                 ['title' => 'Performance',         'slug' => 'deployment/optimization'],
+                ['title' => 'Demo Setup',          'slug' => 'deployment/demo-setup'],
             ],
         ],
         'Advanced' => [

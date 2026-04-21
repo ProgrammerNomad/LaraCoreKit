@@ -26,7 +26,7 @@ LaraCoreKit uses **Laravel Sanctum** for API authentication — lightweight, sta
 Sanctum is pre-configured. Verify in `.env`:
 
 ```env
-SANCTUM_STATEFUL_DOMAINS=localhost,127.0.0.1,yourdomain.com
+SANCTUM_STATEFUL_DOMAINS=localhost,127.0.0.1,laracorekit.com
 ```
 
 And in `config/auth.php`, the API guard should use Sanctum:
@@ -71,9 +71,9 @@ Route::post('/tokens', function (Request $request) {
 **Example request:**
 
 ```bash
-curl -X POST https://yourdomain.com/api/tokens \
+curl -X POST https://www.laracorekit.com/api/tokens \
   -H "Content-Type: application/json" \
-  -d '{"email":"user@example.com","password":"secret","device_name":"My App"}'
+  -d '{"email":"user@laracorekit.com","password":"secret","device_name":"My App"}'
 ```
 
 **Example response:**
@@ -84,7 +84,7 @@ curl -X POST https://yourdomain.com/api/tokens \
     "user": {
         "id": 1,
         "name": "John Doe",
-        "email": "john@example.com"
+        "email": "john@laracorekit.com"
     }
 }
 ```
@@ -97,7 +97,7 @@ curl -X POST https://yourdomain.com/api/tokens \
 # Include token in Authorization header
 curl -H "Authorization: Bearer 1|abc123def456..." \
      -H "Accept: application/json" \
-     https://yourdomain.com/api/user
+     https://www.laracorekit.com/api/user
 ```
 
 In JavaScript:
@@ -171,4 +171,6 @@ Set token expiry in `config/sanctum.php`:
 
 ## Next Steps
 
-� **[API Endpoints →](endpoints)**
+**[API Endpoints →](endpoints)**
+
+

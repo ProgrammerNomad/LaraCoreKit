@@ -1,4 +1,4 @@
-@extends('showcase::layouts.showcase')
+﻿@extends('showcase::layouts.showcase')
 
 @section('page-title', 'Form Elements')
 @section('page-description', 'Inputs, selects, checkboxes, and all form controls')
@@ -38,7 +38,7 @@
         Email Address
     </label>
     <input type="email" 
-           placeholder="you@example.com" 
+           placeholder="you@laracorekit.com" 
            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
 </div>'
     ])
@@ -47,7 +47,7 @@
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Email Address
                 </label>
-                <input type="email" placeholder="you@example.com" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+                <input type="email" placeholder="you@laracorekit.com" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
             </div>
         @endslot
     @endcomponent
@@ -457,7 +457,7 @@
         Website URL
     </label>
     <input type="url" 
-           placeholder="https://example.com" 
+           placeholder="https://www.laracorekit.com" 
            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
     <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Include https:// at the beginning</p>
 </div>'
@@ -467,7 +467,7 @@
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Website URL
                 </label>
-                <input type="url" placeholder="https://example.com" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+                <input type="url" placeholder="https://www.laracorekit.com" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
                 <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Include https:// at the beginning</p>
             </div>
         @endslot
@@ -536,10 +536,10 @@
     </label>
     <div class="flex gap-2">
         <select class="w-24 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
-            <option>🇺🇸 +1</option>
-            <option>🇬🇧 +44</option>
-            <option>🇮🇳 +91</option>
-            <option>🇦🇺 +61</option>
+            <option>ðŸ‡ºðŸ‡¸ +1</option>
+            <option>ðŸ‡¬ðŸ‡§ +44</option>
+            <option>ðŸ‡®ðŸ‡³ +91</option>
+            <option>ðŸ‡¦ðŸ‡º +61</option>
         </select>
         <input type="tel" 
                placeholder="(555) 123-4567" 
@@ -554,10 +554,10 @@
                 </label>
                 <div class="flex gap-2">
                     <select class="w-24 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
-                        <option>🇺🇸 +1</option>
-                        <option>🇬🇧 +44</option>
-                        <option>🇮🇳 +91</option>
-                        <option>🇦🇺 +61</option>
+                        <option>ðŸ‡ºðŸ‡¸ +1</option>
+                        <option>ðŸ‡¬ðŸ‡§ +44</option>
+                        <option>ðŸ‡®ðŸ‡³ +91</option>
+                        <option>ðŸ‡¦ðŸ‡º +61</option>
                     </select>
                     <input type="tel" placeholder="(555) 123-4567" class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
                 </div>
@@ -650,7 +650,7 @@
                 <template x-for="item in selected" :key="item">
                     <span class="inline-flex items-center px-2 py-0.5 rounded text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300">
                         <span x-text="item"></span>
-                        <button @click.stop="selected = selected.filter(i => i !== item)" class="ml-1">×</button>
+                        <button @click.stop="selected = selected.filter(i => i !== item)" class="ml-1">Ã—</button>
                     </span>
                 </template>
                 <span x-show="selected.length === 0" class="text-gray-500 dark:text-gray-400">Select languages...</span>
@@ -681,7 +681,7 @@
                             <template x-for="item in selected" :key="item">
                                 <span class="inline-flex items-center px-2 py-0.5 rounded text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300">
                                     <span x-text="item"></span>
-                                    <button @click.stop="selected = selected.filter(i => i !== item)" class="ml-1">×</button>
+                                    <button @click.stop="selected = selected.filter(i => i !== item)" class="ml-1">Ã—</button>
                                 </span>
                             </template>
                             <span x-show="selected.length === 0" class="text-gray-500 dark:text-gray-400">Select languages...</span>
@@ -825,3 +825,5 @@
 
 </div>
 @endsection
+
+

@@ -139,4 +139,4 @@ $service = app(NewsletterService::class);
 
 ## Next Steps
 
-� **[Publishing Modules →](publishing)**
+**[Publishing Modules →](publishing)**

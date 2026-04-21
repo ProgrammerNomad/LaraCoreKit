@@ -13,9 +13,9 @@ LaraCoreKit ships with multilingual support for **English**, **Hindi**, and **Ar
 
 | Code | Language | Direction | Flag |
 |------|----------|-----------|------|
-| `en` | English | LTR | �� |
-| `hi` | Hindi | LTR | �� |
-| `ar` | Arabic | RTL | �� |
+| `en` | English | LTR | |
+| `hi` | Hindi | LTR | |
+| `ar` | Arabic | RTL | |
 
 ---
 
@@ -126,4 +126,4 @@ Use `hreflang` tags for multilingual SEO:
 
 ## Next Steps
 
-� **[RTL Support →](rtl-support)**
+**[RTL Support →](rtl-support)**

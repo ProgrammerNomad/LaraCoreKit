@@ -1,4 +1,4 @@
-# Demo Mode Setup Guide
+﻿# Demo Mode Setup Guide
 
 **Auto-resetting demo environment for LaraCoreKit with Filament integration**
 
@@ -81,13 +81,13 @@ php artisan demo:reset --force
 - Email: `admin@demo.test`
 - Password: `Admin@123`
 
-**Done!** ✅ Demo banners appear automatically.
+**Done!** âœ… Demo banners appear automatically.
 
 ---
 
 ## What's Included
 
-### ✅ Auto-Registered Features
+### âœ… Auto-Registered Features
 
 The package automatically provides:
 
@@ -98,7 +98,7 @@ The package automatically provides:
 5. **Middleware** - `demo` and `demo.block` for route protection
 6. **Blade Component** - `@include('demo::components.login-banner')` for frontend
 
-### 📋 Manual Setup Required
+### ðŸ“‹ Manual Setup Required
 
 1. **User Seeder** - Update to use demo credentials from config
 2. **Frontend Login** - Add `@include` directive to show banner
@@ -452,9 +452,9 @@ php artisan tinker
 ### Step 5.2: Test Blocked Actions
 
 1. Login as admin
-2. Try to delete a user → Should show "Action disabled in demo mode"
-3. Try to modify critical settings → Should be blocked
-4. Upload a file → Should work (will be deleted on reset)
+2. Try to delete a user â†’ Should show "Action disabled in demo mode"
+3. Try to modify critical settings â†’ Should be blocked
+4. Upload a file â†’ Should work (will be deleted on reset)
 
 ### Step 5.3: Security Checklist
 
@@ -546,7 +546,7 @@ jobs:
 
 ### Step 6.2: GitHub Secrets Setup
 
-**In GitHub Repository Settings → Secrets:**
+**In GitHub Repository Settings â†’ Secrets:**
 ```
 DEMO_SERVER_HOST = laracorekit.mobrilz.digital
 DEMO_SERVER_USER = your-ssh-username
@@ -559,7 +559,7 @@ DEMO_SERVER_SSH_KEY = (paste your private SSH key)
 1. Go to **Git** in Plesk
 2. Add repository: `https://github.com/yourusername/LaraCoreKit.git`
 3. Set branch: `main` or `demo`
-4. **Deployment Actions** → Add commands:
+4. **Deployment Actions** â†’ Add commands:
 ```bash
 composer install --no-dev --optimize-autoloader
 php artisan migrate --force
@@ -638,7 +638,7 @@ git push origin main
 - [ ] Demo credentials work
 - [ ] Admin dashboard shows demo widget
 - [ ] Can create blog post (temporary)
-- [ ] Wait 30 minutes → verify auto-reset worked
+- [ ] Wait 30 minutes â†’ verify auto-reset worked
 - [ ] Check logs: `storage/logs/laravel.log`
 
 ### Step 7.4: Post-Deployment Monitoring
@@ -789,11 +789,11 @@ composer dump-autoload
 **This allows users to `composer require/remove` the demo module**
 
 **Benefits:**
-- ✅ Users can install: `composer require laracorekit/demo-module`
-- ✅ Users can remove: `composer remove laracorekit/demo-module`
-- ✅ Version management (1.0.0, 1.1.0, etc.)
-- ✅ Separate repo, separate maintenance
-- ✅ Can be used in other Laravel projects
+- âœ… Users can install: `composer require laracorekit/demo-module`
+- âœ… Users can remove: `composer remove laracorekit/demo-module`
+- âœ… Version management (1.0.0, 1.1.0, etc.)
+- âœ… Separate repo, separate maintenance
+- âœ… Can be used in other Laravel projects
 
 **Steps to extract:**
 
@@ -823,7 +823,7 @@ cp -r modules/Demo/* demo-module/
     "authors": [
         {
             "name": "Your Name",
-            "email": "your.email@example.com"
+            "email": "your.email@laracorekit.com"
         }
     ],
     "require": {
@@ -1027,13 +1027,13 @@ composer remove laracorekit/demo-module
 ## Summary
 
 **Module Benefits:**
-- ✅ Isolated demo logic
-- ✅ Easy to enable/disable
-- ✅ Production-safe (domain whitelisting)
-- ✅ Auto-resetting (30-min cron)
-- ✅ Plesk-compatible
-- ✅ CI/CD integrated
-- ✅ Extractable as package
+- âœ… Isolated demo logic
+- âœ… Easy to enable/disable
+- âœ… Production-safe (domain whitelisting)
+- âœ… Auto-resetting (30-min cron)
+- âœ… Plesk-compatible
+- âœ… CI/CD integrated
+- âœ… Extractable as package
 
 **Next Steps:**
 1. Create module structure (Phase 1)
@@ -1044,3 +1044,4 @@ composer remove laracorekit/demo-module
 
 **Questions? Issues?**
 Refer to troubleshooting section or Laravel docs.
+

@@ -143,4 +143,4 @@ TextInput::make('price')
 
 ## Next Steps
 
-� **[Livewire Basics →](../frontend/livewire)**
+**[Livewire Basics →](../frontend/livewire)**

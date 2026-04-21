@@ -34,7 +34,7 @@ use Modules\User\Models\User;
 $users = User::all();
 
 // Find by email
-$user = User::where('email', 'john@example.com')->first();
+$user = User::where('email', 'john@laracorekit.com')->first();
 
 // Update profile
 $user->update(['name' => 'John Doe', 'bio' => 'Laravel developer']);
@@ -90,4 +90,5 @@ Users are managed at `/admin/users` in the Filament admin panel:
 
 ## Next Steps
 
-� **[Roles & Permissions →](roles-permissions)**
+**[Roles & Permissions →](roles-permissions)**
+

@@ -59,7 +59,7 @@ MAIL_PORT=1025
 MAIL_USERNAME=null
 MAIL_PASSWORD=null
 MAIL_ENCRYPTION=null
-MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_ADDRESS="hello@laracorekit.com"
 MAIL_FROM_NAME="${APP_NAME}"
 ```
 
@@ -253,7 +253,7 @@ MAIL_ENCRYPTION=null
 MAIL_MAILER=smtp
 MAIL_HOST=smtp.mailgun.org
 MAIL_PORT=587
-MAIL_USERNAME=postmaster@yourdomain.com
+MAIL_USERNAME=postmaster@laracorekit.com
 MAIL_PASSWORD=your_password
 MAIL_ENCRYPTION=tls
 ```
@@ -373,5 +373,6 @@ php artisan optimize
 
 ## Next Steps
 
-� Next: [Core Architecture →](core/architecture.md)  
-� Then: [Module System →](core/modules-system.md)
+Next: [Core Architecture →](core/architecture.md)  
+Then: [Module System →](core/modules-system.md)
+

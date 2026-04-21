@@ -104,4 +104,4 @@ php artisan route:list --path=admin
 
 ## Next Steps
 
-� Next: [Middleware →](middleware.md)
+Next: [Middleware →](middleware.md)

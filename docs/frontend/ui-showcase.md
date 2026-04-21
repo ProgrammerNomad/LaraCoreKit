@@ -89,4 +89,4 @@ Advanced
 
 ## Next Steps
 
-� **[API Authentication →](../api/sanctum)**
+**[API Authentication →](../api/sanctum)**

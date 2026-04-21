@@ -207,4 +207,4 @@ docker compose restart app
 
 ## Next Steps
 
-� **[Hosting Guide →](hosting)**
+**[Hosting Guide →](hosting)**

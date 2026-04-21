@@ -151,4 +151,4 @@ Filament auto-discovers resources. If you need manual registration, add to `Admi
 
 ## Next Steps
 
-� **[Custom Pages →](custom-pages)**
+**[Custom Pages →](custom-pages)**

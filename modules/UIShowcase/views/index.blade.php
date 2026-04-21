@@ -1,4 +1,4 @@
-@extends('showcase::layouts.showcase')
+﻿@extends('showcase::layouts.showcase')
 
 @section('page-title', 'UI Showcase Overview')
 @section('page-description', 'Complete component library for LaraCoreKit')
@@ -13,7 +13,7 @@
             <a href="{{ route('showcase.typography') }}" class="px-6 py-3 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition">
                 Browse Components
             </a>
-            <a href="https://github.com/yourusername/laracorekit" target="_blank" class="px-6 py-3 bg-blue-700 text-white rounded-lg font-medium hover:bg-blue-800 transition">
+            <a href="https://github.com/ProgrammerNomad/LaraCoreKit" target="_blank" class="px-6 py-3 bg-blue-700 text-white rounded-lg font-medium hover:bg-blue-800 transition">
                 View on GitHub
             </a>
         </div>
@@ -50,7 +50,7 @@
                 </div>
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Typography</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400">Headings, paragraphs, lists, and text formatting</p>
-                <div class="mt-4 text-sm text-blue-600 dark:text-blue-400 font-medium">8 components →</div>
+                <div class="mt-4 text-sm text-blue-600 dark:text-blue-400 font-medium">8 components â†’</div>
             </div>
         </a>
 
@@ -63,7 +63,7 @@
                 </div>
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Buttons</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400">Primary, secondary, outline, and more button styles</p>
-                <div class="mt-4 text-sm text-blue-600 dark:text-blue-400 font-medium">15 variants →</div>
+                <div class="mt-4 text-sm text-blue-600 dark:text-blue-400 font-medium">15 variants â†’</div>
             </div>
         </a>
 
@@ -76,7 +76,7 @@
                 </div>
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Form Elements</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400">Inputs, selects, checkboxes, and form controls</p>
-                <div class="mt-4 text-sm text-blue-600 dark:text-blue-400 font-medium">30+ elements →</div>
+                <div class="mt-4 text-sm text-blue-600 dark:text-blue-400 font-medium">30+ elements â†’</div>
             </div>
         </a>
 
@@ -89,7 +89,7 @@
                 </div>
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Navigation</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400">Navbars, breadcrumbs, tabs, and pagination</p>
-                <div class="mt-4 text-sm text-blue-600 dark:text-blue-400 font-medium">12 components →</div>
+                <div class="mt-4 text-sm text-blue-600 dark:text-blue-400 font-medium">12 components â†’</div>
             </div>
         </a>
 
@@ -102,7 +102,7 @@
                 </div>
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Layouts</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400">Grid systems, containers, and page layouts</p>
-                <div class="mt-4 text-sm text-blue-600 dark:text-blue-400 font-medium">10 layouts →</div>
+                <div class="mt-4 text-sm text-blue-600 dark:text-blue-400 font-medium">10 layouts â†’</div>
             </div>
         </a>
 
@@ -115,7 +115,7 @@
                 </div>
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Data Display</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400">Tables, cards, badges, and data visualization</p>
-                <div class="mt-4 text-sm text-blue-600 dark:text-blue-400 font-medium">25+ components →</div>
+                <div class="mt-4 text-sm text-blue-600 dark:text-blue-400 font-medium">25+ components â†’</div>
             </div>
         </a>
 
@@ -128,7 +128,7 @@
                 </div>
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Feedback</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400">Alerts, modals, toasts, and notifications</p>
-                <div class="mt-4 text-sm text-blue-600 dark:text-blue-400 font-medium">18 components →</div>
+                <div class="mt-4 text-sm text-blue-600 dark:text-blue-400 font-medium">18 components â†’</div>
             </div>
         </a>
     </div>
@@ -185,3 +185,4 @@
     </div>
 </div>
 @endsection
+

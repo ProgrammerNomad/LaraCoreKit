@@ -41,11 +41,11 @@ LaraCoreKit is built on modern, industry-standard technologies:
 
 ### Perfect for:
 
-- �‍� **Developers** building SaaS applications
-- � **Agencies** needing a reliable starter template
+- ‍**Developers** building SaaS applications
+- **Agencies** needing a reliable starter template
 -  **Startups** wanting to move fast
-- � **Teams** requiring a modular codebase
-- � **Multilingual projects** with RTL support needs
+- **Teams** requiring a modular codebase
+- **Multilingual projects** with RTL support needs
 
 ### Not suitable for:
 
@@ -171,7 +171,7 @@ Ready to dive in? Here's your path:
 ## Demo & Resources
 
 ### Live Demo
-� **Website:** https://www.laracorekit.com/  
+**Website:** https://www.laracorekit.com/  
  **UI Showcase:** https://www.laracorekit.com/ui-showcase/  
  **Admin Panel:** https://www.laracorekit.com/admin
 
@@ -180,8 +180,7 @@ Ready to dive in? Here's your path:
  **Star the repo** if you find it useful!
 
 ### Support
-� **Issues:** [GitHub Issues](https://github.com/ProgrammerNomad/LaraCoreKit/issues)  
-� **Email:** support@laracorekit.com
+ **Issues:** [GitHub Issues](https://github.com/ProgrammerNomad/LaraCoreKit/issues)
 
 ---
 
@@ -193,6 +192,6 @@ LaraCoreKit is open-source software licensed under the **MIT License**. You are 
 
 ## Next Steps
 
-� **[Quick Start Guide →](quick-start.md)**
+**[Quick Start Guide →](quick-start.md)**
 
 Learn how to install and run LaraCoreKit in 5 minutes.

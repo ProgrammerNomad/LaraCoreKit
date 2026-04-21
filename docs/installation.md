@@ -355,7 +355,7 @@ Edit `.env` for production:
 ```env
 APP_ENV=production
 APP_DEBUG=false
-APP_URL=https://yourdomain.com
+APP_URL=https://www.laracorekit.com
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -368,7 +368,7 @@ SESSION_DRIVER=redis
 QUEUE_CONNECTION=redis
 
 MAIL_MAILER=smtp
-MAIL_HOST=smtp.example.com
+MAIL_HOST=smtp.laracorekit.com
 MAIL_PORT=587
 MAIL_USERNAME=your_email
 MAIL_PASSWORD=your_password
@@ -396,7 +396,7 @@ Create `/etc/nginx/sites-available/laracorekit`:
 ```nginx
 server {
     listen 80;
-    server_name yourdomain.com www.yourdomain.com;
+    server_name www.laracorekit.com laracorekit.com;
     root /var/www/LaraCoreKit/public;
 
     add_header X-Frame-Options "SAMEORIGIN";
@@ -439,7 +439,7 @@ sudo systemctl restart nginx
 
 ```bash
 sudo apt install certbot python3-certbot-nginx
-sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
+sudo certbot --nginx -d laracorekit.com -d www.laracorekit.com
 ```
 
 ### 7. Setup Supervisor (Queue Worker)
@@ -574,14 +574,15 @@ php artisan config:show modules
 
  Installation complete! Now:
 
-1. � **[Explore Project Structure →](project-structure.md)**
-2. � **[Learn Module System →](core/modules-system.md)** 
-3. � **[Configure Settings →](features/settings.md)**
+1. **[Explore Project Structure →](project-structure.md)**
+2. **[Learn Module System →](core/modules-system.md)** 
+3. **[Configure Settings →](features/settings.md)**
 
 ---
 
 ## Get Help
 
-- � **[Documentation](introduction.md)**
-- � **[GitHub Issues](https://github.com/ProgrammerNomad/LaraCoreKit/issues)**
-- � **Email:** support@laracorekit.com
+- **[Documentation](introduction.md)**
+- **[GitHub Issues](https://github.com/ProgrammerNomad/LaraCoreKit/issues)**
+
+

@@ -160,13 +160,13 @@ uses(RefreshDatabase::class);
 
 it('subscribes successfully with valid email', function () {
     Livewire::test(Subscribe::class)
-        ->set('email', 'test@example.com')
+        ->set('email', 'test@laracorekit.com')
         ->call('subscribe')
         ->assertHasNoErrors()
         ->assertSet('success', true);
 
     $this->assertDatabaseHas('newsletter_subscribers', [
-        'email' => 'test@example.com',
+        'email' => 'test@laracorekit.com',
     ]);
 });
 
@@ -245,4 +245,5 @@ class PostFactory extends Factory
 
 ## Next Steps
 
-� **[Caching →](caching)**
+**[Caching →](caching)**
+

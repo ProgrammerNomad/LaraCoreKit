@@ -115,4 +115,4 @@ class SiteSettings extends Page
 
 ## Next Steps
 
-� **[Forms & Tables →](forms-tables)**
+**[Forms & Tables →](forms-tables)**

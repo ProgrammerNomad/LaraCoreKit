@@ -202,4 +202,4 @@ Route::get('/search', function (Request $request) {
 
 ## Next Steps
 
-� **[FAQ →](../faq)**
+**[FAQ →](../faq)**

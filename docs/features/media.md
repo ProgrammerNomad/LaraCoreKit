@@ -64,7 +64,7 @@ $post->addMediaFromRequest('cover_image')
      ->toMediaCollection('cover');
 
 // Upload from URL
-$post->addMediaFromUrl('https://example.com/image.jpg')
+$post->addMediaFromUrl('https://www.laracorekit.com/image.jpg')
      ->toMediaCollection('cover');
 
 // Upload from existing file path
@@ -131,4 +131,6 @@ AWS_BUCKET=your-bucket
 
 ## Next Steps
 
-� **[Settings →](settings)**
+**[Settings →](settings)**
+
+

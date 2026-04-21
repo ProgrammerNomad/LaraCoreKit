@@ -196,6 +196,6 @@ Run `php artisan optimize:clear` after changing this.
 
 ## Next Steps
 
-� **[Create a Module →](../modules/create-module)**
+**[Create a Module →](../modules/create-module)**
 
 Step-by-step guide to building your first custom module.

@@ -131,4 +131,4 @@ Manage roles and permissions from the Filament admin:
 
 ## Next Steps
 
-� **[Blog System →](blog)**
+**[Blog System →](blog)**

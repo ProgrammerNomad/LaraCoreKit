@@ -173,4 +173,4 @@ npm run build  # Minified assets
 
 ## Next Steps
 
-� **[UI Showcase →](ui-showcase)**
+**[UI Showcase →](ui-showcase)**

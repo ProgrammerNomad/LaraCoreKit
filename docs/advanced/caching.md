@@ -168,4 +168,4 @@ php artisan optimize:clear
 
 ## Next Steps
 
-� **[Queues →](queues)**
+**[Queues →](queues)**

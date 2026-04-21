@@ -149,7 +149,7 @@ MAIL_HOST=smtp.mailgun.org
 MAIL_PORT=587
 MAIL_USERNAME=your@mailgun.org
 MAIL_PASSWORD=secret
-MAIL_FROM_ADDRESS=noreply@yourdomain.com
+MAIL_FROM_ADDRESS=noreply@laracorekit.com
 ```
 
 ---
@@ -194,6 +194,7 @@ Add a new guard in `config/auth.php` and create a corresponding provider.
 
 ## Next Steps
 
-� **[Users & Profiles →](users)**
+**[Users & Profiles →](users)**
 
 Learn how to manage user profiles, avatars, and extended user data.
+

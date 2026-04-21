@@ -134,4 +134,4 @@ TextInput::make('reading_time')->suffix('min'),
 
 ## Next Steps
 
-� **[Media Management →](media)**
+**[Media Management →](media)**

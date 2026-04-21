@@ -141,9 +141,8 @@
 
 <header class="topbar">
     <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">&#9776;</button>
-    <a href="/" class="topbar-logo">
-        <div class="topbar-logo-badge">LCK</div>
-        LaraCoreKit
+    <a href="/" class="topbar-logo w-auto flex items-center justify-center">
+        <img src="{{ asset('images/logo.svg') }}" alt="LaraCoreKit" style="height: 1.5rem; width: auto; margin-right: 0.2rem;">
     </a>
     <div class="topbar-divider"></div>
     <span class="topbar-section">Docs</span>
@@ -153,9 +152,6 @@
         <input type="text" placeholder="Search docs..." readonly id="searchInput" aria-label="Search">
         <span class="search-kbd">Ctrl+K</span>
     </div>
-    <button class="btn-install" id="installBtn">
-        Install
-    </button>
 </header>
 
 <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search documentation">
@@ -178,25 +174,25 @@
 
 <div class="layout">
     <nav class="sidebar" id="sidebar" aria-label="Documentation navigation">
-        <?php foreach($sidebar as $groupName => $group): ?>
+        @foreach($sidebar as $groupName => $group)
         <div class="sidebar-group">
             <div class="sidebar-group-title">
-                <?php echo $group['icon'] ?? ''; ?> <?php echo $groupName; ?>
+                {!! $group['icon'] ?? '' !!} {{ $groupName }}
             </div>
-            <?php foreach($group['items'] as $item): ?>
-            <a href="<?php echo route('docs.show', ['page' => $item['slug']]); ?>"
-               class="sidebar-item <?php echo ($page === $item['slug']) ? 'active' : ''; ?>">
-                <?php echo $item['title']; ?>
+            @foreach($group['items'] as $item)
+            <a href="{{ route('docs.show', ['page' => $item['slug']]) }}"
+               class="sidebar-item {{ ($page === $item['slug']) ? 'active' : '' }}">
+                {{ $item['title'] }}
             </a>
-            <?php endforeach; ?>
+            @endforeach
         </div>
-        <?php endforeach; ?>
+        @endforeach
     </nav>
 
     <main class="main">
         <div class="content-wrapper">
 
-            <?php if(in_array($page, ['introduction', 'quick-start'])): ?>
+            @if(in_array($page, ['introduction', 'quick-start']))
             <div class="install-strip">
                 <div>
                     <div class="install-strip-label">Get started fast</div>
@@ -204,65 +200,65 @@
                 </div>
                 <button class="install-copy-btn" id="installCopyBtn">Copy</button>
             </div>
-            <?php endif; ?>
+            @endif
 
             <nav class="breadcrumb" aria-label="Breadcrumb">
-                <a href="<?php echo route('docs.index'); ?>">Docs</a>
-                <?php if(count($breadcrumb) > 1): ?>
-                    <?php foreach($breadcrumb as $crumb): ?>
+                <a href="{{ route('docs.index') }}">Docs</a>
+                @if(count($breadcrumb) > 1)
+                    @foreach($breadcrumb as $crumb)
                     <span class="breadcrumb-sep">&#8250;</span>
-                    <?php if(!empty($crumb['slug'])): ?>
-                    <span><?php echo $crumb['title']; ?></span>
-                    <?php else: ?>
-                    <span style="color:var(--text-secondary)"><?php echo $crumb['title']; ?></span>
-                    <?php endif; ?>
-                    <?php endforeach; ?>
-                <?php else: ?>
+                    @if(!empty($crumb['slug']))
+                    <span>{{ $crumb['title'] }}</span>
+                    @else
+                    <span style="color:var(--text-secondary)">{{ $crumb['title'] }}</span>
+                    @endif
+                    @endforeach
+                @else
                     <span class="breadcrumb-sep">&#8250;</span>
-                    <span><?php echo $breadcrumb[0]['title'] ?? ''; ?></span>
-                <?php endif; ?>
+                    <span>{{ $breadcrumb[0]['title'] ?? '' }}</span>
+                @endif
             </nav>
 
-            <?php if(!empty($meta)): ?>
+            @if(!empty($meta))
             <div class="doc-meta">
-                <?php if(isset($meta['time'])): ?>
-                <div class="doc-meta-badge">Estimated time: <span><?php echo $meta['time']; ?></span></div>
-                <?php endif; ?>
-                <?php if(isset($meta['difficulty'])): ?>
-                <div class="doc-meta-badge">Difficulty: <span><?php echo $meta['difficulty']; ?></span></div>
-                <?php endif; ?>
+                @if(isset($meta['time']))
+                <div class="doc-meta-badge">Estimated time: <span>{{ $meta['time'] }}</span></div>
+                @endif
+                @if(isset($meta['difficulty']))
+                <div class="doc-meta-badge">Difficulty: <span>{{ $meta['difficulty'] }}</span></div>
+                @endif
             </div>
-            <?php endif; ?>
+            @endif
 
             <article class="doc-content" id="doc-content">
-                <?php echo $content; ?>
+                {!! $content !!}
             </article>
 
-            <?php if($prevPage || $nextPage): ?>
+            @if($prevPage || $nextPage)
             <nav class="doc-nav" aria-label="Page navigation">
-                <?php if($prevPage): ?>
-                <a href="<?php echo route('docs.show', ['page' => $prevPage['slug']]); ?>" class="doc-nav-link">
+                @if($prevPage)
+                <a href="{{ route('docs.show', ['page' => $prevPage['slug']]) }}" class="doc-nav-link">
                     <span class="doc-nav-label">&#8592; Previous</span>
-                    <span class="doc-nav-title"><?php echo $prevPage['title']; ?></span>
+                    <span class="doc-nav-title">{{ $prevPage['title'] }}</span>
                 </a>
-                <?php else: ?>
+                @else
                 <div></div>
-                <?php endif; ?>
-                <?php if($nextPage): ?>
-                <a href="<?php echo route('docs.show', ['page' => $nextPage['slug']]); ?>" class="doc-nav-link next">
+                @endif
+                @if($nextPage)
+                <a href="{{ route('docs.show', ['page' => $nextPage['slug']]) }}" class="doc-nav-link next">
                     <span class="doc-nav-label">Next &#8594;</span>
-                    <span class="doc-nav-title"><?php echo $nextPage['title']; ?></span>
+                    <span class="doc-nav-title">{{ $nextPage['title'] }}</span>
                 </a>
-                <?php endif; ?>
+                @endif
             </nav>
-            <?php endif; ?>
+            @endif
 
         </div>
     </main>
 </div>
 
 <script>
-var pages = <?php echo json_encode($searchPages); ?>;
+var pages = {!! json_encode($searchPages) !!};
 
 function openSearch() {
     document.getElementById('searchOverlay').classList.add('open');
@@ -302,10 +298,6 @@ document.getElementById('menuBtn').addEventListener('click', function(){
 document.getElementById('sidebarOverlay').addEventListener('click', function(){
     document.getElementById('sidebar').classList.remove('open');
     document.getElementById('sidebarOverlay').classList.remove('open');
-});
-
-document.getElementById('installBtn').addEventListener('click', function(){
-    navigator.clipboard.writeText('git clone https://github.com/ProgrammerNomad/LaraCoreKit.git');
 });
 
 var installCopyBtn = document.getElementById('installCopyBtn');
@@ -358,3 +350,5 @@ document.querySelectorAll('.doc-content h2, .doc-content h3').forEach(function(h
 </script>
 </body>
 </html>
+
+

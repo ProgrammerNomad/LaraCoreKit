@@ -185,4 +185,4 @@ php artisan optimize
 
 ## Next Steps
 
-� **[Contributing →](contributing)**
+**[Contributing →](contributing)**

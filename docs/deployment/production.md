@@ -31,7 +31,7 @@ Before going live, verify:
 APP_NAME="My App"
 APP_ENV=production
 APP_DEBUG=false
-APP_URL=https://yourdomain.com
+APP_URL=https://www.laracorekit.com
 APP_KEY=base64:...  # Generate with: php artisan key:generate
 
 LOG_CHANNEL=stack
@@ -60,7 +60,7 @@ MAIL_HOST=smtp.mailgun.org
 MAIL_PORT=587
 MAIL_USERNAME=your@mailgun.org
 MAIL_PASSWORD=your-mailgun-key
-MAIL_FROM_ADDRESS=noreply@yourdomain.com
+MAIL_FROM_ADDRESS=noreply@laracorekit.com
 MAIL_FROM_NAME="${APP_NAME}"
 ```
 
@@ -116,12 +116,12 @@ chmod +x deploy.sh
 server {
     listen 80;
     listen 443 ssl http2;
-    server_name yourdomain.com www.yourdomain.com;
+    server_name www.laracorekit.com laracorekit.com;
     root /var/www/laracorekit/public;
     index index.php;
 
-    ssl_certificate     /etc/letsencrypt/live/yourdomain.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
+    ssl_certificate     /etc/letsencrypt/live/laracorekit.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/laracorekit.com/privkey.pem;
 
     # Redirect HTTP to HTTPS
     if ($scheme != "https") {
@@ -215,4 +215,6 @@ crontab -e -u www-data
 
 ## Next Steps
 
-� **[Docker →](docker)**
+**[Docker →](docker)**
+
+

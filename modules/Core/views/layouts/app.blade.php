@@ -135,6 +135,9 @@
                                 <a href="/" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition">
                                     {{ __('Home') }}
                                 </a>
+                                <a href="/docs" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition">
+                                    {{ __('Docs') }}
+                                </a>
                                 <a href="/ui-showcase" wire:navigate class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition">
                                     {{ __('UI') }}
                                 </a>
@@ -240,6 +243,7 @@
                             <h4 class="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-3">{{ __('Explore') }}</h4>
                             <ul class="space-y-2 text-sm">
                                 <li><a href="/" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">{{ __('Home') }}</a></li>
+                                <li><a href="/docs" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">{{ __('Documentation') }}</a></li>
                                 <li><a href="/ui-showcase" wire:navigate class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">{{ __('UI Showcase') }}</a></li>
                                 <li><a href="/blog" wire:navigate class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">{{ __('Blog') }}</a></li>
                                 <li><a href="/admin" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">{{ __('Admin Panel') }}</a></li>

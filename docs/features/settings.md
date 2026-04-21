@@ -101,4 +101,4 @@ php artisan optimize:clear
 
 ## Next Steps
 
-� **[Multilingual →](multilingual)**
+**[Multilingual →](multilingual)**

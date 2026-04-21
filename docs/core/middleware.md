@@ -70,4 +70,4 @@ Route::middleware(['auth', 'permission:blog.create'])->group(function () {
 
 ## Next Steps
 
-� Next: [Authentication Feature →](../features/authentication.md)
+Next: [Authentication Feature →](../features/authentication.md)

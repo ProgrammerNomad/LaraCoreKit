@@ -192,4 +192,4 @@ stopwaitsecs=3600
 
 ## Next Steps
 
-� **[Search →](search)**
+**[Search →](search)**

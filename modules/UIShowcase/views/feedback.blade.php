@@ -1,4 +1,4 @@
-@extends('showcase::layouts.showcase')
+﻿@extends('showcase::layouts.showcase')
 
 @section('page-title', 'Feedback Components')
 @section('page-description', 'Alerts, modals, toasts, and user feedback elements')
@@ -1028,7 +1028,7 @@
                                 <img src="https://picsum.photos/40/40" alt="Avatar" class="w-10 h-10 rounded-full">
                                 <div>
                                     <p class="text-sm font-medium text-gray-900 dark:text-white">John Doe</p>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">john@example.com</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">john@laracorekit.com</p>
                                 </div>
                             </div>
                             <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Senior Developer with 5 years of experience.</p>
@@ -1067,3 +1067,4 @@
 
 </div>
 @endsection
+

@@ -1,4 +1,4 @@
-@extends('showcase::layouts.showcase')
+﻿@extends('showcase::layouts.showcase')
 
 @section('page-title', 'Data Display')
 @section('page-description', 'Tables, badges, avatars, and data presentation')
@@ -85,12 +85,12 @@
         <tbody class="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
             <tr>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">John Doe</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">john&#64;example.com</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">john&#64;laracorekit.com</td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">Admin</td>
             </tr>
             <tr>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">Jane Smith</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">jane&#64;example.com</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">jane&#64;laracorekit.com</td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">Editor</td>
             </tr>
         </tbody>
@@ -110,12 +110,12 @@
                     <tbody class="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">John Doe</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">john@example.com</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">john@laracorekit.com</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">Admin</td>
                         </tr>
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">Jane Smith</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">jane@example.com</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">jane@laracorekit.com</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">Editor</td>
                         </tr>
                     </tbody>
@@ -357,7 +357,7 @@
         </div>
         <div class="px-6 py-4 grid grid-cols-3 gap-4">
             <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">Email</dt>
-            <dd class="text-sm text-gray-900 dark:text-white col-span-2">john&#64;example.com</dd>
+            <dd class="text-sm text-gray-900 dark:text-white col-span-2">john&#64;laracorekit.com</dd>
         </div>
         <div class="px-6 py-4 grid grid-cols-3 gap-4">
             <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">Role</dt>
@@ -378,7 +378,7 @@
                     </div>
                     <div class="px-6 py-4 grid grid-cols-3 gap-4">
                         <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">Email</dt>
-                        <dd class="text-sm text-gray-900 dark:text-white col-span-2">john@example.com</dd>
+                        <dd class="text-sm text-gray-900 dark:text-white col-span-2">john@laracorekit.com</dd>
                     </div>
                     <div class="px-6 py-4 grid grid-cols-3 gap-4">
                         <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">Role</dt>
@@ -438,17 +438,17 @@
         <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
             <tr class="bg-white dark:bg-gray-900">
                 <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">John Doe</td>
-                <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">john&#64;example.com</td>
+                <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">john&#64;laracorekit.com</td>
                 <td class="px-6 py-4"><span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Active</span></td>
             </tr>
             <tr class="bg-gray-50 dark:bg-gray-800">
                 <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">Jane Smith</td>
-                <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">jane&#64;example.com</td>
+                <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">jane&#64;laracorekit.com</td>
                 <td class="px-6 py-4"><span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Active</span></td>
             </tr>
             <tr class="bg-white dark:bg-gray-900">
                 <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">Bob Johnson</td>
-                <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">bob&#64;example.com</td>
+                <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">bob&#64;laracorekit.com</td>
                 <td class="px-6 py-4"><span class="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">Inactive</span></td>
             </tr>
         </tbody>
@@ -468,17 +468,17 @@
                     <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                         <tr class="bg-white dark:bg-gray-900">
                             <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">John Doe</td>
-                            <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">john@example.com</td>
+                            <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">john@laracorekit.com</td>
                             <td class="px-6 py-4"><span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Active</span></td>
                         </tr>
                         <tr class="bg-gray-50 dark:bg-gray-800">
                             <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">Jane Smith</td>
-                            <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">jane@example.com</td>
+                            <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">jane@laracorekit.com</td>
                             <td class="px-6 py-4"><span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Active</span></td>
                         </tr>
                         <tr class="bg-white dark:bg-gray-900">
                             <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">Bob Johnson</td>
-                            <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">bob@example.com</td>
+                            <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">bob@laracorekit.com</td>
                             <td class="px-6 py-4"><span class="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">Inactive</span></td>
                         </tr>
                     </tbody>
@@ -493,9 +493,9 @@
         'description' => 'Sortable table columns',
         'code' => '<div x-data="{ 
     items: [
-        { name: \'John Doe\', email: \'john&#64;example.com\', role: \'Admin\' },
-        { name: \'Jane Smith\', email: \'jane&#64;example.com\', role: \'Editor\' },
-        { name: \'Bob Johnson\', email: \'bob&#64;example.com\', role: \'User\' }
+        { name: \'John Doe\', email: \'john&#64;laracorekit.com\', role: \'Admin\' },
+        { name: \'Jane Smith\', email: \'jane&#64;laracorekit.com\', role: \'Editor\' },
+        { name: \'Bob Johnson\', email: \'bob&#64;laracorekit.com\', role: \'User\' }
     ],
     sortBy: \'name\',
     sortDir: \'asc\',
@@ -553,9 +553,9 @@
         @slot('preview', null, [])
             <div x-data="{ 
                 items: [
-                    { name: 'John Doe', email: 'john@example.com', role: 'Admin' },
-                    { name: 'Jane Smith', email: 'jane@example.com', role: 'Editor' },
-                    { name: 'Bob Johnson', email: 'bob@example.com', role: 'User' }
+                    { name: 'John Doe', email: 'john@laracorekit.com', role: 'Admin' },
+                    { name: 'Jane Smith', email: 'jane@laracorekit.com', role: 'Editor' },
+                    { name: 'Bob Johnson', email: 'bob@laracorekit.com', role: 'User' }
                 ],
                 sortBy: 'name',
                 sortDir: 'asc',
@@ -619,10 +619,10 @@
         'code' => '<div x-data="{ 
     search: \'\',
     users: [
-        { name: \'John Doe\', email: \'john&#64;example.com\', dept: \'Engineering\' },
-        { name: \'Jane Smith\', email: \'jane&#64;example.com\', dept: \'Marketing\' },
-        { name: \'Bob Johnson\', email: \'bob&#64;example.com\', dept: \'Sales\' },
-        { name: \'Alice Brown\', email: \'alice&#64;example.com\', dept: \'Engineering\' }
+        { name: \'John Doe\', email: \'john&#64;laracorekit.com\', dept: \'Engineering\' },
+        { name: \'Jane Smith\', email: \'jane&#64;laracorekit.com\', dept: \'Marketing\' },
+        { name: \'Bob Johnson\', email: \'bob&#64;laracorekit.com\', dept: \'Sales\' },
+        { name: \'Alice Brown\', email: \'alice&#64;laracorekit.com\', dept: \'Engineering\' }
     ],
     get filteredUsers() {
         if(!this.search) return this.users;
@@ -668,10 +668,10 @@
             <div x-data="{ 
                 search: '',
                 users: [
-                    { name: 'John Doe', email: 'john@example.com', dept: 'Engineering' },
-                    { name: 'Jane Smith', email: 'jane@example.com', dept: 'Marketing' },
-                    { name: 'Bob Johnson', email: 'bob@example.com', dept: 'Sales' },
-                    { name: 'Alice Brown', email: 'alice@example.com', dept: 'Engineering' }
+                    { name: 'John Doe', email: 'john@laracorekit.com', dept: 'Engineering' },
+                    { name: 'Jane Smith', email: 'jane@laracorekit.com', dept: 'Marketing' },
+                    { name: 'Bob Johnson', email: 'bob@laracorekit.com', dept: 'Sales' },
+                    { name: 'Alice Brown', email: 'alice@laracorekit.com', dept: 'Engineering' }
                 ],
                 get filteredUsers() {
                     if(!this.search) return this.users;
@@ -1048,3 +1048,4 @@ console.log(greet('World'));</code></pre>
 
 </div>
 @endsection
+

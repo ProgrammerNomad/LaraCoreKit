@@ -174,7 +174,7 @@ public function posts()
 # https://k6.io
 
 # Or use Apache Benchmark
-ab -n 1000 -c 10 https://yourdomain.com/blog
+ab -n 1000 -c 10 https://www.laracorekit.com/blog
 ```
 
 ---
@@ -194,4 +194,6 @@ Use these tools in production:
 
 ## Next Steps
 
-� **[Testing →](../advanced/testing)**
+**[Testing →](../advanced/testing)**
+
+

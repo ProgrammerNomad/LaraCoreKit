@@ -12,7 +12,7 @@ LaraCoreKit provides a set of REST API endpoints for accessing data programmatic
 ## Base URL
 
 ```
-https://yourdomain.com/api
+https://www.laracorekit.com/api
 ```
 
 All API responses use JSON format. Always include:
@@ -76,10 +76,10 @@ List endpoints return paginated responses:
         "total": 72
     },
     "links": {
-        "first": "https://yourdomain.com/api/posts?page=1",
-        "next":  "https://yourdomain.com/api/posts?page=2",
+        "first": "https://www.laracorekit.com/api/posts?page=1",
+        "next":  "https://www.laracorekit.com/api/posts?page=2",
         "prev":  null,
-        "last":  "https://yourdomain.com/api/posts?page=5"
+        "last":  "https://www.laracorekit.com/api/posts?page=5"
     }
 }
 ```
@@ -182,4 +182,6 @@ Route::prefix('api')->group(function () {
 
 ## Next Steps
 
-� **[API Auth Flow →](authentication)**
+**[API Auth Flow →](authentication)**
+
+

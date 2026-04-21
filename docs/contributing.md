@@ -13,11 +13,11 @@ Thank you for your interest in contributing to LaraCoreKit! Contributions make t
 
 | Contribution | How |
 |-------------|-----|
-| � Report bugs | [GitHub Issues](https://github.com/ProgrammerNomad/LaraCoreKit/issues) |
+| Report bugs | [GitHub Issues](https://github.com/ProgrammerNomad/LaraCoreKit/issues) |
 |  Suggest features | GitHub Discussions |
-| � Improve docs | Edit docs and submit a PR |
+| Improve docs | Edit docs and submit a PR |
 |  Build modules | Share on GitHub / Packagist |
-| � Add translations | Create/improve language files |
+| Add translations | Create/improve language files |
 |  Star the repo | Helps others discover it |
 
 ---

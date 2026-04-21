@@ -199,7 +199,7 @@ class Subscribe extends Component
 <div class="newsletter-subscribe">
     @if($success)
         <div class="alert-success">
-            � You've subscribed successfully!
+            You've subscribed successfully!
         </div>
     @else
         <form wire:submit="subscribe">
@@ -328,6 +328,6 @@ Move the generated file to `modules/Newsletter/src/Filament/Resources/Subscriber
 
 ## Next Steps
 
-� **[Module Structure →](module-structure)**
+**[Module Structure →](module-structure)**
 
 Deep dive into module conventions and best practices.

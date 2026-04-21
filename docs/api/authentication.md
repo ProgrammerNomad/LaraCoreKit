@@ -45,7 +45,7 @@ const response = await fetch('/api/tokens', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
     body: JSON.stringify({
-        email:       'user@example.com',
+        email:       'user@laracorekit.com',
         password:    'secret',
         device_name: 'My Mobile App',
     }),
@@ -122,4 +122,5 @@ public function store(Request $request)
 
 ## Next Steps
 
-� **[Create a Module →](../modules/create-module)**
+**[Create a Module →](../modules/create-module)**
+

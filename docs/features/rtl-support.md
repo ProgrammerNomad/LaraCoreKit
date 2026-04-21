@@ -101,4 +101,4 @@ Filament v3 also supports RTL. It auto-detects from the `<html dir="">` attribut
 
 ## Next Steps
 
-� **[Admin Panel Overview →](../admin/filament-overview)**
+**[Admin Panel Overview →](../admin/filament-overview)**

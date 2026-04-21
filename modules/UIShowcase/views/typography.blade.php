@@ -1,4 +1,4 @@
-@extends('showcase::layouts.showcase')
+﻿@extends('showcase::layouts.showcase')
 
 @section('page-title', 'Typography')
 @section('page-description', 'Headings, paragraphs, lists, and text formatting components')
@@ -97,7 +97,7 @@
     <p class="text-gray-700 dark:text-gray-300 italic">
         "The best way to predict the future is to invent it."
     </p>
-    <footer class="text-sm text-gray-500 dark:text-gray-400 mt-2">— Alan Kay</footer>
+    <footer class="text-sm text-gray-500 dark:text-gray-400 mt-2">â€” Alan Kay</footer>
 </blockquote>'
     ])
         @slot('preview', null, [])
@@ -105,7 +105,7 @@
                 <p class="text-gray-700 dark:text-gray-300 italic">
                     "The best way to predict the future is to invent it."
                 </p>
-                <footer class="text-sm text-gray-500 dark:text-gray-400 mt-2">— Alan Kay</footer>
+                <footer class="text-sm text-gray-500 dark:text-gray-400 mt-2">â€” Alan Kay</footer>
             </blockquote>
         @endslot
     @endcomponent
@@ -163,7 +163,7 @@
     </div>
     <div>
         <dt class="text-sm font-semibold text-gray-900 dark:text-white">Email</dt>
-        <dd class="text-sm text-gray-600 dark:text-gray-400">john@example.com</dd>
+        <dd class="text-sm text-gray-600 dark:text-gray-400">john@laracorekit.com</dd>
     </div>
     <div>
         <dt class="text-sm font-semibold text-gray-900 dark:text-white">Role</dt>
@@ -179,7 +179,7 @@
                 </div>
                 <div>
                     <dt class="text-sm font-semibold text-gray-900 dark:text-white">Email</dt>
-                    <dd class="text-sm text-gray-600 dark:text-gray-400">john@example.com</dd>
+                    <dd class="text-sm text-gray-600 dark:text-gray-400">john@laracorekit.com</dd>
                 </div>
                 <div>
                     <dt class="text-sm font-semibold text-gray-900 dark:text-white">Role</dt>
@@ -241,3 +241,4 @@
 
 </div>
 @endsection
+

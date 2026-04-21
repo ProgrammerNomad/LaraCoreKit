@@ -37,7 +37,7 @@ Name it: `{vendor}/{module-name}` (e.g., `programmernomad/laracorekit-newsletter
     "authors": [
         {
             "name": "Your Name",
-            "email": "you@example.com"
+            "email": "you@laracorekit.com"
         }
     ],
     "require": {
@@ -178,4 +178,5 @@ git push origin v1.0.0
 
 ## Next Steps
 
-� **[Best Practices →](best-practices)**
+**[Best Practices →](best-practices)**
+

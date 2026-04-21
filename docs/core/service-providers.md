@@ -75,4 +75,4 @@ class BlogServiceProvider extends ServiceProvider
 
 ## Next Steps
 
-� Next: [Routing →](routing.md)
+Next: [Routing →](routing.md)

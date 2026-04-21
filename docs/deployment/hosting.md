@@ -60,7 +60,7 @@ Best balance of control and automation.
 
 ### Step 3: Add Your Site
 
-1. Add site: `yourdomain.com`
+1. Add site: `laracorekit.com`
 2. Connect GitHub repo
 3. Click **Deploy Now**
 
@@ -71,7 +71,7 @@ In Forge → Site → Environment → Edit `.env`:
 ```env
 APP_ENV=production
 APP_DEBUG=false
-APP_URL=https://yourdomain.com
+APP_URL=https://www.laracorekit.com
 DB_DATABASE=laracorekit
 DB_PASSWORD=your-secure-password
 QUEUE_CONNECTION=redis
@@ -81,7 +81,7 @@ CACHE_DRIVER=redis
 ### Step 5: Deployment Script
 
 ```bash
-cd /home/forge/yourdomain.com
+cd /home/forge/laracorekit.com
 git pull origin main
 composer install --no-dev --optimize-autoloader
 npm ci && npm run build
@@ -166,7 +166,7 @@ fly deploy
 sudo apt install certbot python3-certbot-nginx
 
 # Issue certificate
-sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
+sudo certbot --nginx -d laracorekit.com -d www.laracorekit.com
 
 # Auto-renewal (runs twice daily)
 sudo systemctl enable certbot.timer
@@ -176,4 +176,6 @@ sudo systemctl enable certbot.timer
 
 ## Next Steps
 
-� **[Performance Optimization →](optimization)**
+**[Performance Optimization →](optimization)**
+
+

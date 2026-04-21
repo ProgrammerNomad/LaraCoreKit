@@ -105,4 +105,4 @@ Filament's dark mode is enabled by default and follows system preference.
 
 ## Next Steps
 
-� **[Resources →](resources)**
+**[Resources →](resources)**

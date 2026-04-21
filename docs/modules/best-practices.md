@@ -202,4 +202,4 @@ Before shipping a module:
 
 ## Next Steps
 
-� **[Production Setup →](../deployment/production)**
+**[Production Setup →](../deployment/production)**

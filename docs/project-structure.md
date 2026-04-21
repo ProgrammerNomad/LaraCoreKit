@@ -17,7 +17,7 @@ LaraCoreKit/
 ├── bootstrap/              # Framework bootstrap files
 ├── config/                 # Configuration files
 ├── database/              # Migrations, seeders, factories
-├── modules/               # � Feature modules (THE KEY)
+├── modules/               # Feature modules (THE KEY)
 ├── public/                # Web server document root
 ├── resources/             # Views, assets, lang files
 ├── routes/                # Route definitions
@@ -48,7 +48,7 @@ app/
 │   └── User.php                # Base User model
 ├── Providers/
 │   ├── AppServiceProvider.php     # Application services
-│   └── ModuleServiceProvider.php  # � Loads modules
+│   └── ModuleServiceProvider.php  # Loads modules
 └── Filament/
     └── Pages/                  # Global Filament pages (if any)
 ```
@@ -71,7 +71,7 @@ config/
 ├── auth.php                # Authentication config
 ├── database.php            # Database connections
 ├── filesystems.php         # Storage disks
-├── modules.php             # � Module configuration
+├── modules.php             # Module configuration
 ├── permission.php          # Spatie permission config
 ├── filament.php            # Filament admin config
 ├── cache.php               # Cache drivers
@@ -613,9 +613,9 @@ composer dump-autoload
 
 Now that you understand the structure:
 
-1. � **[Learn Module System →](core/modules-system.md)** 
-2. � **[Create Your First Module →](modules/create-module.md)**
-3. � **[Explore Configuration →](configuration.md)**
+1. **[Learn Module System →](core/modules-system.md)** 
+2. **[Create Your First Module →](modules/create-module.md)**
+3. **[Explore Configuration →](configuration.md)**
 
 ---
 
@@ -634,4 +634,4 @@ Now that you understand the structure:
 
 ---
 
-**� Understanding the structure is the first step to mastering LaraCoreKit!**
+**Understanding the structure is the first step to mastering LaraCoreKit!**

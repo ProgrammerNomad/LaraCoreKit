@@ -1,4 +1,4 @@
-@extends('showcase::layouts.showcase')
+﻿@extends('showcase::layouts.showcase')
 
 @section('page-title', 'Utility Components')
 @section('page-description', 'Helper components for common actions like copy, export, download, and more')
@@ -12,7 +12,7 @@
         'description' => 'Click to copy text to clipboard with visual feedback',
         'code' => '<div x-data="{ copied: false }">
     <div class="flex items-center gap-2">
-        <input type="text" value="https://example.com/share/abc123" readonly class="flex-1 px-3 py-2 border rounded-lg">
+        <input type="text" value="https://www.laracorekit.com/share/abc123" readonly class="flex-1 px-3 py-2 border rounded-lg">
         <button @click="
             navigator.clipboard.writeText($el.previousElementSibling.value);
             copied = true;
@@ -29,7 +29,7 @@
                 <!-- Simple Copy Button -->
                 <div x-data="{ copied: false }">
                     <div class="flex items-center gap-2">
-                        <input type="text" value="https://example.com/share/abc123" readonly class="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white">
+                        <input type="text" value="https://www.laracorekit.com/share/abc123" readonly class="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white">
                         <button @click="
                             navigator.clipboard.writeText($el.previousElementSibling.value);
                             copied = true;
@@ -58,13 +58,13 @@ npm run dev</code></pre>
                         setTimeout(() => copied = false, 2000);
                     " class="absolute top-2 right-2 px-3 py-1.5 bg-gray-700 hover:bg-gray-600 text-white text-sm rounded transition">
                         <span x-show="!copied">Copy</span>
-                        <span x-show="copied" x-cloak>✓ Copied</span>
+                        <span x-show="copied" x-cloak>âœ“ Copied</span>
                     </button>
                 </div>
 
                 <!-- Copy with Icon Only -->
                 <div x-data="{ copied: false }" class="flex items-center gap-2">
-                    <code class="px-3 py-2 bg-gray-100 dark:bg-gray-800 rounded text-sm">git clone https://github.com/user/repo.git</code>
+                    <code class="px-3 py-2 bg-gray-100 dark:bg-gray-800 rounded text-sm">git clone https://github.com/ProgrammerNomad/LaraCoreKit.git</code>
                     <button @click="
                         navigator.clipboard.writeText($el.previousElementSibling.textContent);
                         copied = true;
@@ -86,7 +86,7 @@ npm run dev</code></pre>
     @component('showcase::components.showcase-item', [
         'title' => 'QR Code Generator',
         'description' => 'Generate QR codes using external API',
-        'code' => '<div x-data="{ url: \'https://example.com\', qrUrl: \'\' }" x-init="qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}`">
+        'code' => '<div x-data="{ url: \'https://www.laracorekit.com\', qrUrl: \'\' }" x-init="qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}`">
     <input type="text" x-model="url" @input="qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}`" placeholder="Enter URL" class="w-full px-3 py-2 border rounded-lg mb-4">
     <div class="flex justify-center">
         <img :src="qrUrl" alt="QR Code" class="border rounded-lg p-2 bg-white">
@@ -95,7 +95,7 @@ npm run dev</code></pre>
     ])
         @slot('preview', null, [])
             <div x-data="{ 
-                url: 'https://github.com/laravel/laravel', 
+                url: 'https://github.com/ProgrammerNomad/LaraCoreKit', 
                 qrUrl: '',
                 size: 200
             }" x-init="qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(url)}`">
@@ -134,8 +134,8 @@ npm run dev</code></pre>
         'code' => '<button @click="
     const data = [
         [\'Name\', \'Email\', \'Role\'],
-        [\'John Doe\', \'john@example.com\', \'Admin\'],
-        [\'Jane Smith\', \'jane@example.com\', \'User\']
+        [\'John Doe\', \'john@laracorekit.com\', \'Admin\'],
+        [\'Jane Smith\', \'jane@laracorekit.com\', \'User\']
     ];
     const csv = data.map(row => row.join(\',\')).join(\'\\n\');
     const blob = new Blob([csv], { type: \'text/csv\' });
@@ -164,19 +164,19 @@ npm run dev</code></pre>
                         <tbody class="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
                             <tr>
                                 <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">John Doe</td>
-                                <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">john@example.com</td>
+                                <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">john@laracorekit.com</td>
                                 <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">Admin</td>
                                 <td class="px-6 py-4 text-sm"><span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400 rounded">Active</span></td>
                             </tr>
                             <tr>
                                 <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">Jane Smith</td>
-                                <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">jane@example.com</td>
+                                <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">jane@laracorekit.com</td>
                                 <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">User</td>
                                 <td class="px-6 py-4 text-sm"><span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400 rounded">Active</span></td>
                             </tr>
                             <tr>
                                 <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">Bob Johnson</td>
-                                <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">bob@example.com</td>
+                                <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">bob@laracorekit.com</td>
                                 <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">Editor</td>
                                 <td class="px-6 py-4 text-sm"><span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-400 rounded">Pending</span></td>
                             </tr>
@@ -189,9 +189,9 @@ npm run dev</code></pre>
                     <button @click="
                         const data = [
                             ['Name', 'Email', 'Role', 'Status'],
-                            ['John Doe', 'john@example.com', 'Admin', 'Active'],
-                            ['Jane Smith', 'jane@example.com', 'User', 'Active'],
-                            ['Bob Johnson', 'bob@example.com', 'Editor', 'Pending']
+                            ['John Doe', 'john@laracorekit.com', 'Admin', 'Active'],
+                            ['Jane Smith', 'jane@laracorekit.com', 'User', 'Active'],
+                            ['Bob Johnson', 'bob@laracorekit.com', 'Editor', 'Pending']
                         ];
                         const csv = data.map(row => row.join(',')).join('\\n');
                         const blob = new Blob([csv], { type: 'text/csv' });
@@ -211,9 +211,9 @@ npm run dev</code></pre>
                     <button @click="
                         const data = [
                             ['Name', 'Email', 'Role', 'Status'],
-                            ['John Doe', 'john@example.com', 'Admin', 'Active'],
-                            ['Jane Smith', 'jane@example.com', 'User', 'Active'],
-                            ['Bob Johnson', 'bob@example.com', 'Editor', 'Pending']
+                            ['John Doe', 'john@laracorekit.com', 'Admin', 'Active'],
+                            ['Jane Smith', 'jane@laracorekit.com', 'User', 'Active'],
+                            ['Bob Johnson', 'bob@laracorekit.com', 'Editor', 'Pending']
                         ];
                         const json = JSON.stringify(data.slice(1).map(row => ({
                             name: row[0],
@@ -359,3 +359,5 @@ npm run dev</code></pre>
 
 </div>
 @endsection
+
+

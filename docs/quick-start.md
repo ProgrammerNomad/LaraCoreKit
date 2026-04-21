@@ -193,7 +193,7 @@ php artisan filament:user
  > Admin User
 
  Email address:
- > admin@example.com
+ > admin@laracorekit.com
 
  Password:
  > **********
@@ -208,7 +208,7 @@ php artisan filament:user
 Visit: **http://localhost:8000/admin**
 
 Login with:
-- **Email:** admin@example.com
+- **Email:** admin@laracorekit.com
 - **Password:** (what you set above)
 
 You should see the Filament admin dashboard.
@@ -384,9 +384,8 @@ Contact for demo credentials if needed.
 
 ## Get Help
 
-- � **[Full Documentation](introduction.md)**
-- � **[GitHub Issues](https://github.com/ProgrammerNomad/LaraCoreKit/issues)**
-- � **Email:** support@laracorekit.com
+- **[Full Documentation](introduction.md)**
+- **[GitHub Issues](https://github.com/ProgrammerNomad/LaraCoreKit/issues)**
 
 ---
 
@@ -394,10 +393,11 @@ Contact for demo credentials if needed.
 
 Now that you have LaraCoreKit running:
 
-1. � **[Understand Project Structure →](project-structure.md)**
-2. � **[Learn Module System →](core/modules-system.md)** 
-3. � **[Create Your First Module →](modules/create-module.md)**
+1. **[Understand Project Structure →](project-structure.md)**
+2. **[Learn Module System →](core/modules-system.md)** 
+3. **[Create Your First Module →](modules/create-module.md)**
 
 ---
 
-**� Congratulations! You're ready to build something amazing.**
+**Congratulations! You're ready to build something amazing.**
+

@@ -96,7 +96,7 @@ LaraCoreKit ships with **175+ ready-to-use UI components** built with TailwindCS
         label="Email Address"
         type="email"
         wire:model="email"
-        placeholder="you@example.com"
+        placeholder="you@laracorekit.com"
         :error="$errors->first('email')"
     />
 
@@ -157,4 +157,5 @@ php artisan vendor:publish --tag=laracorekit-components
 
 ## Next Steps
 
-� **[Layout System →](layouts)**
+**[Layout System →](layouts)**
+

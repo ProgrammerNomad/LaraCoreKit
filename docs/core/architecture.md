@@ -126,4 +126,4 @@ Example: creating a blog post
 
 ## Next Steps
 
-� Next: [Module System →](modules-system.md) 
+Next: [Module System →](modules-system.md) 

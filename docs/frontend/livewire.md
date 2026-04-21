@@ -118,7 +118,7 @@ class ContactForm extends Component
         $this->validate();
 
         // Send email logic...
-        Mail::to('admin@example.com')->send(new ContactMail($this->all()));
+        Mail::to('admin@laracorekit.com')->send(new ContactMail($this->all()));
 
         $this->reset(['name', 'email', 'message']);
         $this->sent = true;
@@ -222,4 +222,5 @@ class BlogList extends Component
 
 ## Next Steps
 
-� **[UI Components →](components)**
+**[UI Components →](components)**
+
