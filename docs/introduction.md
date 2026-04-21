@@ -171,9 +171,9 @@ Ready to dive in? Here's your path:
 ## Demo & Resources
 
 ### Live Demo
-� **Website:** https://laracorekit.mobrilz.digital/  
- **UI Showcase:** https://laracorekit.mobrilz.digital/ui-showcase/  
- **Admin Panel:** https://laracorekit.mobrilz.digital/admin
+� **Website:** https://www.laracorekit.com/  
+ **UI Showcase:** https://www.laracorekit.com/ui-showcase/  
+ **Admin Panel:** https://www.laracorekit.com/admin
 
 ### GitHub
  **Repository:** https://github.com/ProgrammerNomad/LaraCoreKit  

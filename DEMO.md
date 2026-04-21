@@ -2,28 +2,28 @@
 
 Welcome to the LaraCoreKit UI Component Library! This document contains direct links to all demo components.
 
-**Live Demo:** https://laracorekit.mobrilz.digital/
+**Live Demo:** https://www.laracorekit.com/
 
 ---
 
 ## Dashboard & Landing
 
-- [Home Page](https://laracorekit.mobrilz.digital/) - Main landing page
-- [Blog](https://laracorekit.mobrilz.digital/blog) - Multilingual blog posts
-- [About](https://laracorekit.mobrilz.digital/about) - Company info (if available)
-- [Contact](https://laracorekit.mobrilz.digital/contact) - Contact form (if available)
+- [Home Page](https://www.laracorekit.com/) - Main landing page
+- [Blog](https://www.laracorekit.com/blog) - Multilingual blog posts
+- [About](https://www.laracorekit.com/about) - Company info (if available)
+- [Contact](https://www.laracorekit.com/contact) - Contact form (if available)
 
 ---
 
 ## UI Component Showcase (175+ Components)
 
-**Main Showcase Hub:** https://laracorekit.mobrilz.digital/ui-showcase/
+**Main Showcase Hub:** https://www.laracorekit.com/ui-showcase/
 
 ---
 
 ## 1. Typography (11 components)
 
-**Typography Components:** https://laracorekit.mobrilz.digital/ui-showcase/typography
+**Typography Components:** https://www.laracorekit.com/ui-showcase/typography
 - Headings (H1-H6)
 - Paragraphs
 - Lead text
@@ -39,7 +39,7 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ## 2. Buttons (15 components)
 
-**Button Components:** https://laracorekit.mobrilz.digital/ui-showcase/buttons
+**Button Components:** https://www.laracorekit.com/ui-showcase/buttons
 - Primary Button
 - Secondary Button
 - Outline Button
@@ -60,7 +60,7 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ## 3. Forms (24 components)
 
-**Form Components:** https://laracorekit.mobrilz.digital/ui-showcase/forms
+**Form Components:** https://www.laracorekit.com/ui-showcase/forms
 - Text Input
 - Email Input
 - Number Input
@@ -90,7 +90,7 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ## 4. Navigation (8 components)
 
-**Navigation Components:** https://laracorekit.mobrilz.digital/ui-showcase/navigation
+**Navigation Components:** https://www.laracorekit.com/ui-showcase/navigation
 - Header / Navbar
 - Mobile Responsive Menu
 - Sidebar (Expandable/Collapsible)
@@ -104,7 +104,7 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ## 5. Layouts (12 components)
 
-**Layout Components:** https://laracorekit.mobrilz.digital/ui-showcase/layouts
+**Layout Components:** https://www.laracorekit.com/ui-showcase/layouts
 - Card (Simple)
 - Card with Header/Footer
 - Card with Image
@@ -122,7 +122,7 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ## 6. Data Display (18 components)
 
-**Data Display Components:** https://laracorekit.mobrilz.digital/ui-showcase/data-display
+**Data Display Components:** https://www.laracorekit.com/ui-showcase/data-display
 - Table (Simple)
 - Table (Striped)
 - Table with Sorting
@@ -146,7 +146,7 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ## 7. Feedback (22 components)
 
-**Feedback Components:** https://laracorekit.mobrilz.digital/ui-showcase/feedback
+**Feedback Components:** https://www.laracorekit.com/ui-showcase/feedback
 - Alerts (Info, Success, Warning, Error)
 - Dismissible Alerts
 - Toast Notifications
@@ -174,7 +174,7 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ## 8. Feedback - Drawers (3 components)
 
-**Drawer Components:** https://laracorekit.mobrilz.digital/ui-showcase/feedback-drawers
+**Drawer Components:** https://www.laracorekit.com/ui-showcase/feedback-drawers
 - Slide-Over Panel
 - Navigation Menu Drawer
 - Bottom Sheet (Mobile)
@@ -183,7 +183,7 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ## 9. Charts (9 components)
 
-**Chart Components:** https://laracorekit.mobrilz.digital/ui-showcase/charts
+**Chart Components:** https://www.laracorekit.com/ui-showcase/charts
 - Line Chart
 - Bar Chart
 - Horizontal Bar Chart
@@ -198,7 +198,7 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ## 10. Media (10 components)
 
-**Media Components:** https://laracorekit.mobrilz.digital/ui-showcase/media
+**Media Components:** https://www.laracorekit.com/ui-showcase/media
 - Drag & Drop File Uploader
 - Multiple File Upload with Progress
 - Image Gallery Grid
@@ -214,7 +214,7 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ## 11. Authentication (8 components)
 
-**Auth Components:** https://laracorekit.mobrilz.digital/ui-showcase/auth
+**Auth Components:** https://www.laracorekit.com/ui-showcase/auth
 - Login Form
 - Register Form
 - Email Verification Page
@@ -231,7 +231,7 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ### Landing Hero (5 variants)
 
-**Hero Sections:** https://laracorekit.mobrilz.digital/ui-showcase/landing-hero
+**Hero Sections:** https://www.laracorekit.com/ui-showcase/landing-hero
 - Simple Centered Hero
 - Split Hero with Image
 - Gradient Background Hero
@@ -240,7 +240,7 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ### Landing Content (5 components)
 
-**Landing Content:** https://laracorekit.mobrilz.digital/ui-showcase/landing-content
+**Landing Content:** https://www.laracorekit.com/ui-showcase/landing-content
 - FAQ Accordion
 - Newsletter Signup
 - Contact Form
@@ -249,7 +249,7 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ### Landing Pricing (4 components)
 
-**Pricing Pages:** https://laracorekit.mobrilz.digital/ui-showcase/landing-pricing
+**Pricing Pages:** https://www.laracorekit.com/ui-showcase/landing-pricing
 - Pricing Table (3 tiers)
 - Feature Comparison
 - Testimonials Section
@@ -261,7 +261,7 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ### Products
 
-**Product Pages:** https://laracorekit.mobrilz.digital/ui-showcase/ecommerce-products
+**Product Pages:** https://www.laracorekit.com/ui-showcase/ecommerce-products
 - Product Card
 - Product Grid
 - Product Detail Page
@@ -272,14 +272,14 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ### Shopping
 
-**Shopping Cart:** https://laracorekit.mobrilz.digital/ui-showcase/ecommerce-cart
+**Shopping Cart:** https://www.laracorekit.com/ui-showcase/ecommerce-cart
 - Shopping Cart Summary
 - Multi-step Checkout
 - Order Confirmation Page
 
 ### Reviews
 
-**Customer Reviews:** https://laracorekit.mobrilz.digital/ui-showcase/ecommerce-reviews
+**Customer Reviews:** https://www.laracorekit.com/ui-showcase/ecommerce-reviews
 - Customer Reviews Display
 - Star Rating
 - Review Submission Form
@@ -289,7 +289,7 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ## 14. Utilities (5 components)
 
-**Utility Components:** https://laracorekit.mobrilz.digital/ui-showcase/utilities
+**Utility Components:** https://www.laracorekit.com/ui-showcase/utilities
 - Copy to Clipboard Button
 - QR Code Generator
 - CSV/Excel Export
@@ -302,14 +302,14 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ### Drag & Drop
 
-**Drag & Drop:** https://laracorekit.mobrilz.digital/ui-showcase/advanced-drag-drop
+**Drag & Drop:** https://www.laracorekit.com/ui-showcase/advanced-drag-drop
 - Sortable Task List
 - Kanban Board
 - Reorderable Items
 
 ### Advanced UI
 
-**Advanced Interactions:** https://laracorekit.mobrilz.digital/ui-showcase/advanced-ui
+**Advanced Interactions:** https://www.laracorekit.com/ui-showcase/advanced-ui
 - Calendar Scheduler
 - Tree View / File Explorer
 - Command Palette (Ctrl+K)
@@ -318,7 +318,7 @@ Welcome to the LaraCoreKit UI Component Library! This document contains direct l
 
 ## Admin Panel
 
-**Admin Dashboard:** https://laracorekit.mobrilz.digital/admin
+**Admin Dashboard:** https://www.laracorekit.com/admin
 
 *Contact for demo credentials*
 

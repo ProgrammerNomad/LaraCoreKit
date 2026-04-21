@@ -630,8 +630,8 @@ git push origin main
 ### Step 7.3: Verify Deployment
 
 **Visit site:**
-- Frontend: https://laracorekit.mobrilz.digital/login
-- Admin: https://laracorekit.mobrilz.digital/admin/login
+- Frontend: https://www.laracorekit.com/login
+- Admin: https://www.laracorekit.com/admin/login
 
 **Check:**
 - [ ] Demo banner visible on login pages
@@ -652,7 +652,7 @@ tail -f storage/logs/laravel.log | grep "Demo database reset"
 php artisan schedule:list
 
 # Monitor Telescope
-# Visit: https://laracorekit.mobrilz.digital/telescope
+# Visit: https://www.laracorekit.com/telescope
 ```
 
 ---

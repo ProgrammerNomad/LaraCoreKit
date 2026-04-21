@@ -11,29 +11,29 @@
 
 ## Live Demo
 
-**View Live Demo:** https://laracorekit.mobrilz.digital/
+**View Live Demo:** https://www.laracorekit.com/
 
 ### UI Component Showcase
 
 Explore all 175+ implemented UI components at:
 
-**UI Showcase - Full Component Library:** https://laracorekit.mobrilz.digital/ui-showcase/
+**UI Showcase - Full Component Library:** https://www.laracorekit.com/ui-showcase/
 
 **Component Categories:**
-- **Typography:** https://laracorekit.mobrilz.digital/ui-showcase/typography - Headings, paragraphs, lists, code
-- **Buttons:** https://laracorekit.mobrilz.digital/ui-showcase/buttons - All button styles & states
-- **Forms:** https://laracorekit.mobrilz.digital/ui-showcase/forms - Inputs, selects, validation, pickers
-- **Navigation:** https://laracorekit.mobrilz.digital/ui-showcase/navigation - Header, sidebar, breadcrumbs, tabs
-- **Layouts:** https://laracorekit.mobrilz.digital/ui-showcase/layouts - Cards, grids, containers, split layouts
-- **Data Display:** https://laracorekit.mobrilz.digital/ui-showcase/data-display - Tables, badges, avatars, timeline
-- **Feedback:** https://laracorekit.mobrilz.digital/ui-showcase/feedback - Alerts, modals, toasts, progress
-- **Charts:** https://laracorekit.mobrilz.digital/ui-showcase/charts - Line, bar, pie, radar, area charts
-- **Media:** https://laracorekit.mobrilz.digital/ui-showcase/media - File upload, gallery, lightbox, video, audio
-- **Auth:** https://laracorekit.mobrilz.digital/ui-showcase/auth - Login, register, 2FA, profile, sessions
-- **Landing Pages:** https://laracorekit.mobrilz.digital/ui-showcase/landing-hero - Heroes, pricing, testimonials, contact
-- **E-commerce:** https://laracorekit.mobrilz.digital/ui-showcase/ecommerce-products - Products, cart, reviews, checkout
-- **Utilities:** https://laracorekit.mobrilz.digital/ui-showcase/utilities - QR code, clipboard, export, download
-- **Advanced:** https://laracorekit.mobrilz.digital/ui-showcase/advanced-drag-drop - Kanban, drag-drop, calendar, file explorer
+- **Typography:** https://www.laracorekit.com/ui-showcase/typography - Headings, paragraphs, lists, code
+- **Buttons:** https://www.laracorekit.com/ui-showcase/buttons - All button styles & states
+- **Forms:** https://www.laracorekit.com/ui-showcase/forms - Inputs, selects, validation, pickers
+- **Navigation:** https://www.laracorekit.com/ui-showcase/navigation - Header, sidebar, breadcrumbs, tabs
+- **Layouts:** https://www.laracorekit.com/ui-showcase/layouts - Cards, grids, containers, split layouts
+- **Data Display:** https://www.laracorekit.com/ui-showcase/data-display - Tables, badges, avatars, timeline
+- **Feedback:** https://www.laracorekit.com/ui-showcase/feedback - Alerts, modals, toasts, progress
+- **Charts:** https://www.laracorekit.com/ui-showcase/charts - Line, bar, pie, radar, area charts
+- **Media:** https://www.laracorekit.com/ui-showcase/media - File upload, gallery, lightbox, video, audio
+- **Auth:** https://www.laracorekit.com/ui-showcase/auth - Login, register, 2FA, profile, sessions
+- **Landing Pages:** https://www.laracorekit.com/ui-showcase/landing-hero - Heroes, pricing, testimonials, contact
+- **E-commerce:** https://www.laracorekit.com/ui-showcase/ecommerce-products - Products, cart, reviews, checkout
+- **Utilities:** https://www.laracorekit.com/ui-showcase/utilities - QR code, clipboard, export, download
+- **Advanced:** https://www.laracorekit.com/ui-showcase/advanced-drag-drop - Kanban, drag-drop, calendar, file explorer
 
 ---
 
@@ -436,9 +436,9 @@ http://localhost:8000/ui-showcase/
 
 ## Demo Credentials
 
-**Website:** https://laracorekit.mobrilz.digital/
+**Website:** https://www.laracorekit.com/
 
-**Admin Panel:** https://laracorekit.mobrilz.digital/admin
+**Admin Panel:** https://www.laracorekit.com/admin
 
 *Contact us for demo credentials if needed.*
 

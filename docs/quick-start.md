@@ -374,9 +374,9 @@ npm run build
 
 If using the live demo:
 
-**Website:** https://laracorekit.mobrilz.digital/
+**Website:** https://www.laracorekit.com/
 
-**Admin Panel:** https://laracorekit.mobrilz.digital/admin
+**Admin Panel:** https://www.laracorekit.com/admin
 
 Contact for demo credentials if needed.
 

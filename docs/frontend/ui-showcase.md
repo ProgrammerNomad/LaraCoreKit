@@ -15,7 +15,7 @@ The UI Showcase is an interactive, searchable gallery of all **175+ components**
 http://localhost:8000/ui-showcase
 ```
 
-**Live:** [laracorekit.mobrilz.digital/ui-showcase](https://laracorekit.mobrilz.digital/ui-showcase/)
+**Live:** [laracorekit.mobrilz.digital/ui-showcase](https://www.laracorekit.com/ui-showcase/)
 
 ---
 

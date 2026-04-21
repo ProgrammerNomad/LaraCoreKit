@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html
     lang="{{ str_replace('_', '-', app()->getLocale()) }}"
     dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}"
@@ -199,13 +199,16 @@
                                         </form>
                                     </div>
                                 </div>
-                            @endauth`n                            @guest`n                                <a href="{{ route('login') }}" class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">
+                            @endauth
+                            @guest
+                                <a href="{{ route('login') }}" class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">
                                     {{ __('Login') }}
                                 </a>
                                 <a href="{{ route('register') }}" class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition">
                                     {{ __('Register') }}
                                 </a>
-                            @endguest`n                        </div>`n                    </div>
+                            @endguest
+                        </div>
                 </div>
             </nav>
 
