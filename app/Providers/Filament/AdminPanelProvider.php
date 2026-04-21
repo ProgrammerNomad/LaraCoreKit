@@ -50,6 +50,7 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 AccountWidget::class,
                 FilamentInfoWidget::class,
+                \LaraCoreKit\DemoModule\Filament\Widgets\DemoBannerWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
