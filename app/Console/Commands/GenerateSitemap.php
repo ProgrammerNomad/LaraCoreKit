@@ -39,6 +39,52 @@ class GenerateSitemap extends Command
                     return null;
                 }
 
+                // Set priority and change frequency based on URL patterns
+                $path = $url->path();
+                
+                // Homepage - highest priority
+                if ($path === '/') {
+                    $url->setPriority(1.0)
+                        ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                        ->setLastModificationDate(now());
+                }
+                // Blog posts - high priority, updated frequently
+                elseif (str_starts_with($path, '/blog/')) {
+                    $url->setPriority(0.8)
+                        ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+                        ->setLastModificationDate(now());
+                }
+                // Main sections (blog, docs, ui-showcase)
+                elseif (in_array($path, ['/blog', '/docs', '/ui-showcase'])) {
+                    $url->setPriority(0.9)
+                        ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                        ->setLastModificationDate(now());
+                }
+                // Documentation pages
+                elseif (str_starts_with($path, '/docs/')) {
+                    $url->setPriority(0.7)
+                        ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+                        ->setLastModificationDate(now());
+                }
+                // UI Showcase pages
+                elseif (str_starts_with($path, '/ui-showcase/')) {
+                    $url->setPriority(0.6)
+                        ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                        ->setLastModificationDate(now());
+                }
+                // Auth pages (login, register) - lower priority
+                elseif (in_array($path, ['/login', '/register', '/forgot-password'])) {
+                    $url->setPriority(0.3)
+                        ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                        ->setLastModificationDate(now());
+                }
+                // Everything else - medium priority
+                else {
+                    $url->setPriority(0.5)
+                        ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                        ->setLastModificationDate(now());
+                }
+
                 return $url;
             })
             ->writeToFile(public_path('sitemap.xml'));
