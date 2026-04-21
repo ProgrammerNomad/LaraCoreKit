@@ -11,10 +11,22 @@
     </div>
 
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="prose prose-lg dark:prose-invert max-w-none">
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+            <article class="prose prose-lg prose-blue dark:prose-invert max-w-none p-8
+                prose-headings:font-bold 
+                prose-h1:text-3xl prose-h1:mb-4 prose-h1:mt-8 prose-h1:border-b prose-h1:border-gray-200 prose-h1:pb-2 dark:prose-h1:border-gray-700
+                prose-h2:text-2xl prose-h2:mb-3 prose-h2:mt-6 prose-h2:text-blue-600 dark:prose-h2:text-blue-400
+                prose-h3:text-xl prose-h3:mb-2 prose-h3:mt-4 prose-h3:text-gray-800 dark:prose-h3:text-gray-200
+                prose-h4:text-lg prose-h4:mb-2 prose-h4:mt-3 prose-h4:font-semibold
+                prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-p:mb-4 prose-p:leading-relaxed
+                prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
+                prose-strong:text-gray-900 dark:prose-strong:text-gray-100 prose-strong:font-semibold
+                prose-ul:my-4 prose-ul:list-disc prose-ul:pl-6
+                prose-li:text-gray-700 dark:prose-li:text-gray-300 prose-li:mb-1
+                prose-code:text-pink-600 dark:prose-code:text-pink-400 prose-code:bg-gray-100 dark:prose-code:bg-gray-900 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
+                prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto">
                 {!! str($changelog)->markdown() !!}
-            </div>
+            </article>
         </div>
 
         <div class="mt-8 flex gap-4 flex-wrap">
