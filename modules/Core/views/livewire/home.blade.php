@@ -664,7 +664,7 @@ php artisan serve</pre>
     </div>
 
     <!-- Latest Blog Posts -->
-    <?php if($latestPosts->isNotEmpty()): ?>
+    @if($latestPosts->isNotEmpty())
     <div class="py-20 bg-gray-50 dark:bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center mb-12">
@@ -682,7 +682,7 @@ php artisan serve</pre>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <?php foreach($latestPosts as $blog): ?>
+                @foreach($latestPosts as $blog)
                     <article class="bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="w-full h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
                             <svg class="w-16 h-16 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -691,11 +691,11 @@ php artisan serve</pre>
                         </div>
 
                         <div class="p-6">
-                            <?php if($blog->category): ?>
+                            @if($blog->category)
                                 <span class="inline-block px-3 py-1 text-xs font-semibold text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900 rounded-full mb-3">
                                     {{ $blog->category[app()->getLocale()] ?? $blog->category['en'] ?? '' }}
                                 </span>
-                            <?php endif; ?>
+                            @endif
 
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2">
                                 <a href="{{ route('blog.show', $blog->slug) }}" wire:navigate class="hover:text-blue-600 dark:hover:text-blue-400">
@@ -715,11 +715,11 @@ php artisan serve</pre>
                             </div>
                         </div>
                     </article>
-                <?php endforeach; ?>
+                @endforeach
             </div>
         </div>
     </div>
-    <?php endif; ?>
+    @endif
 
     <!-- FAQ Section -->
     <div class="py-20 bg-gray-50 dark:bg-gray-800">
@@ -866,4 +866,5 @@ php artisan serve</pre>
         </a>
     </div>
 </div>
+
 

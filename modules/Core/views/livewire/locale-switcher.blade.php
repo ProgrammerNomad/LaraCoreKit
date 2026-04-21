@@ -22,20 +22,21 @@
         style="display: none;"
     >
         <div class="py-1">
-            <?php foreach($availableLocales as $locale => $details): ?>
+            @foreach($availableLocales as $locale => $details)
                 <button
                     wire:click="switchLocale('{{ $locale }}')"
                     class="w-full text-{{ app()->getLocale() == 'ar' ? 'right' : 'left' }} flex items-center justify-between px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition {{ $currentLocale === $locale ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300' }}"
                 >
                     <span>{{ $details['native'] }}</span>
-                    <?php if($currentLocale === $locale): ?>
+                    @if($currentLocale === $locale)
                         <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                         </svg>
-                    <?php endif; ?>
+                    @endif
                 </button>
-            <?php endforeach; ?>
+            @endforeach
         </div>
     </div>
 </div>
+
 

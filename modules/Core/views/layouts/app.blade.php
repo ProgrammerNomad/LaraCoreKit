@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html
     lang="{{ str_replace('_', '-', app()->getLocale()) }}"
     dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}"
@@ -86,19 +86,19 @@
         <!-- JSON-LD Structured Data -->
         <script type="application/ld+json">
         {
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
+            "@@context": "https://schema.org",
+            "@@type": "SoftwareApplication",
             "name": "LaraCoreKit",
             "applicationCategory": "DeveloperApplication",
             "operatingSystem": "Web",
             "description": "Modular Laravel starter kit with Filament admin panel, 175+ UI components, multilingual support, and role-based permissions.",
             "offers": {
-                "@type": "Offer",
+                "@@type": "Offer",
                 "price": "0",
                 "priceCurrency": "USD"
             },
             "author": {
-                "@type": "Person",
+                "@@type": "Person",
                 "name": "Shiv Singh"
             },
             "url": "{{ url('/') }}",
@@ -167,7 +167,7 @@
                             @livewire('locale-switcher')
 
                             <!-- User Menu -->
-                            <?php if(auth()->check()): ?>
+                            @auth
                                 <div x-data="{ open: false }" class="relative">
                                     <button @click="open = !open" class="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                                         <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
@@ -182,15 +182,15 @@
                                             <p class="text-sm font-medium text-gray-900 dark:text-white">{{ auth()->user()->name }}</p>
                                             <p class="text-xs text-gray-500 dark:text-gray-400">{{ auth()->user()->email }}</p>
                                         </div>
-                                        <?php if(auth()->user()->hasRole(['Admin', 'Editor'])): ?>
+                                        @if(auth()->user()->hasRole(['Admin', 'Editor']))
                                             <a href="/admin" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
                                                 {{ __('Admin Dashboard') }}
                                             </a>
-                                        <?php else: ?>
+                                        @else
                                             <a href="/dashboard" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
                                                 {{ __('Dashboard') }}
                                             </a>
-                                        <?php endif; ?>
+                                        @endif
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
                                             <button type="submit" class="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
@@ -199,16 +199,13 @@
                                         </form>
                                     </div>
                                 </div>
-                            <?php else: ?>
-                                <a href="{{ route('login') }}" class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">
+                            @endauth`n                            @guest`n                                <a href="{{ route('login') }}" class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">
                                     {{ __('Login') }}
                                 </a>
                                 <a href="{{ route('register') }}" class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition">
                                     {{ __('Register') }}
                                 </a>
-                            <?php endif; ?>
-                        </div>
-                    </div>
+                            @endguest`n                        </div>`n                    </div>
                 </div>
             </nav>
 
@@ -277,3 +274,5 @@
         @livewireScripts
     </body>
 </html>
+
+
