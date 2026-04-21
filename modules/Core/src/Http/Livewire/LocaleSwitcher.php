@@ -10,9 +10,9 @@ class LocaleSwitcher extends Component
 {
     public string $currentLocale;
     public array $availableLocales = [
-        'en' => ['name' => 'English', 'flag' => '🇬🇧'],
-        'hi' => ['name' => 'हिंदी', 'flag' => '🇮🇳'],
-        'ar' => ['name' => 'العربية', 'flag' => '🇸🇦'],
+        'en' => ['name' => 'English', 'native' => 'English'],
+        'hi' => ['name' => 'Hindi',   'native' => 'Hindi - हिंदी'],
+        'ar' => ['name' => 'Arabic',  'native' => 'Arabic - عربي'],
     ];
 
     public function mount()

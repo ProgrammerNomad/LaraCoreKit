@@ -361,10 +361,10 @@ Select language from the dropdown:
 
 ## Technology Stack
 
-- Backend: Laravel 12
-- Frontend: Livewire 3, Alpine.js v3
+- Backend: Laravel 13
+- Frontend: Livewire 4, Alpine.js v3
 - Styling: TailwindCSS 4
-- Admin: Filament v3
+- Admin: Filament v5
 - Charts: Chart.js
 - Build: Vite
 - Database: MySQL / PostgreSQL / SQLite

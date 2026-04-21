@@ -1,9 +1,9 @@
 # LaraCoreKit
-**A Universal Modular Laravel 12 Starter Kit with Livewire, TailwindCSS, Filament Admin, Multilingual Blog (EN/HI/AR), RTL Support & Role-Based Permissions**
+**A Universal Modular Laravel 13 Starter Kit with Livewire, TailwindCSS, Filament Admin, Multilingual Blog (EN/HI/AR), RTL Support & Role-Based Permissions**
 
-[![Laravel](https://img.shields.io/badge/Laravel-12-red.svg)]()
-[![Livewire](https://img.shields.io/badge/Livewire-3-purple)]()
-[![Filament](https://img.shields.io/badge/Filament-3-blue.svg)]()
+[![Laravel](https://img.shields.io/badge/Laravel-13-red.svg)]()
+[![Livewire](https://img.shields.io/badge/Livewire-4-purple)]()
+[![Filament](https://img.shields.io/badge/Filament-5-blue.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)]()
 [![Open Source](https://img.shields.io/badge/Open%20Source-brightgreen)]()
 
@@ -39,7 +39,7 @@ Explore all 175+ implemented UI components at:
 
 ## Overview
 
-**LaraCoreKit** is a modular, production-ready **Laravel 12 Starter Kit** for modern full-stack applications.
+**LaraCoreKit** is a modular, production-ready **Laravel 13 Starter Kit** for modern full-stack applications.
 It includes first-class module-based architecture, allowing built-in features (User, Blog, Settings, Media) and optional addons (E-commerce, Payments, Analytics) to plug into your project cleanly.
 
 Designed for speed, scalability, multilingual apps, admin dashboards, and enterprise-grade role/permission management, LaraCoreKit provides everything you need to start any serious Laravel project.
@@ -48,10 +48,10 @@ Designed for speed, scalability, multilingual apps, admin dashboards, and enterp
 
 ## Core Technologies
 
-- Laravel 12 (latest modern backend framework)
-- Livewire 3 (dynamic frontend components with Alpine.js bundled)
+- Laravel 13 (latest modern backend framework)
+- Livewire 4 (dynamic frontend components with Alpine.js bundled)
 - TailwindCSS 4 (full utility-first styling)
-- Filament Admin v3 (beautiful admin panel)
+- Filament Admin v5 (beautiful admin panel)
 - Spatie Permission (RBAC)
 - Spatie Media Library (file uploads & image handling)
 - Sanctum (API authentication)

@@ -32,5 +32,10 @@ return [
             'namespace' => 'Modules\Media',
             'provider' => 'Modules\Media\MediaServiceProvider',
         ],
+        'Docs' => [
+            'enabled' => true,
+            'namespace' => 'Modules\Docs',
+            'provider' => 'Modules\Docs\DocsServiceProvider',
+        ],
     ],
 ];

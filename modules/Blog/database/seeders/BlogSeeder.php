@@ -19,20 +19,20 @@ class BlogSeeder extends Seeder
         $blogs = [
             [
                 'title' => [
-                    'en' => 'Getting Started with Laravel 12',
-                    'hi' => 'Laravel 12 के साथ शुरुआत करना',
-                    'ar' => 'البدء مع Laravel 12',
+                    'en' => 'Getting Started with Laravel 13',
+                    'hi' => 'Laravel 13 ke saath shuruaat karna',
+                    'ar' => 'Getting Started with Laravel 13',
                 ],
                 'slug' => 'getting-started-with-laravel-12',
                 'excerpt' => [
-                    'en' => 'Learn the fundamentals of Laravel 12 and build modern web applications with ease.',
-                    'hi' => 'Laravel 12 की बुनियादी बातें सीखें और आसानी से आधुनिक वेब एप्लिकेशन बनाएं।',
-                    'ar' => 'تعلم أساسيات Laravel 12 وقم ببناء تطبيقات ويب حديثة بسهولة.',
+                    'en' => 'Learn the fundamentals of Laravel 13 and build modern web applications with ease.',
+                    'hi' => 'Laravel 13 ki bunyaadi baaten seekhen aur aasaani se aadhunik web application banaen.',
+                    'ar' => 'Learn the fundamentals of Laravel 13 and build modern web applications with ease.',
                 ],
                 'content' => [
-                    'en' => '<p>Laravel 12 brings exciting new features and improvements to the PHP ecosystem. In this article, we\'ll explore the key features and how to get started.</p><h2>What\'s New in Laravel 12</h2><p>Laravel 12 introduces several groundbreaking features including improved performance, better developer experience, and enhanced security measures.</p><h3>Installation</h3><p>Getting started with Laravel 12 is easier than ever. Simply run the following command:</p><pre><code>composer create-project laravel/laravel my-app</code></pre><p>This will set up a fresh Laravel installation with all the latest features ready to use.</p>',
-                    'hi' => '<p>Laravel 12 PHP इकोसिस्टम में रोमांचक नई सुविधाएँ और सुधार लाता है। इस लेख में, हम मुख्य विशेषताओं और शुरुआत करने के तरीके का पता लगाएंगे।</p><h2>Laravel 12 में क्या नया है</h2><p>Laravel 12 में बेहतर प्रदर्शन, बेहतर डेवलपर अनुभव और बढ़ी हुई सुरक्षा उपायों सहित कई अभूतपूर्व विशेषताएं हैं।</p>',
-                    'ar' => '<p>يجلب Laravel 12 ميزات وتحسينات جديدة ومثيرة لنظام PHP البيئي. في هذا المقال، سنستكشف الميزات الرئيسية وكيفية البدء.</p><h2>ما الجديد في Laravel 12</h2><p>يقدم Laravel 12 العديد من الميزات الرائدة بما في ذلك تحسين الأداء وتجربة مطور أفضل وتدابير أمنية معززة.</p>',
+                    'en' => '<p>Laravel 13 brings exciting new features and improvements to the PHP ecosystem. In this article, we will explore the key features and how to get started.</p><h2>What is New in Laravel 13</h2><p>Laravel 13 introduces several groundbreaking features including improved performance, better developer experience, and enhanced security measures.</p><h3>Installation</h3><p>Getting started with Laravel 13 is easier than ever. Simply run the following command:</p><pre><code>composer create-project laravel/laravel my-app</code></pre><p>This will set up a fresh Laravel installation with all the latest features ready to use.</p>',
+                    'hi' => '<p>Laravel 13 PHP ecosystem mein nai suvidhaen aur sudhar laata hai. Is lekh mein, hum mukhya visheshataon aur shuruaat karne ke tarike ka pata lagaenge.</p><h2>Laravel 13 mein kya naya hai</h2><p>Laravel 13 mein behtar pradarshan, behtar developer anubhav aur badhi hui suraksha upaayon sahit kai visheshataen hain.</p>',
+                    'ar' => '<p>Laravel 13 brings exciting new features and improvements to the PHP ecosystem. In this article, we will explore the key features and how to get started.</p><h2>What is New in Laravel 13</h2><p>Laravel 13 introduces several groundbreaking features including improved performance, better developer experience, and enhanced security measures.</p>',
                 ],
                 'category' => [
                     'en' => 'Development',
@@ -40,14 +40,14 @@ class BlogSeeder extends Seeder
                     'ar' => 'تطوير',
                 ],
                 'meta_title' => [
-                    'en' => 'Laravel 12 Tutorial - Getting Started Guide',
-                    'hi' => 'Laravel 12 ट्यूटोरियल - शुरुआती गाइड',
-                    'ar' => 'دروس Laravel 12 - دليل البدء',
+                    'en' => 'Laravel 13 Tutorial - Getting Started Guide',
+                    'hi' => 'Laravel 13 Tutorial - Shuruaati Guide',
+                    'ar' => 'Laravel 13 Tutorial - Getting Started Guide',
                 ],
                 'meta_description' => [
-                    'en' => 'Complete guide to getting started with Laravel 12, including installation, features, and best practices.',
-                    'hi' => 'Laravel 12 के साथ शुरुआत करने के लिए पूर्ण गाइड, जिसमें इंस्टॉलेशन, फीचर्स और बेस्ट प्रैक्टिस शामिल हैं।',
-                    'ar' => 'دليل كامل للبدء مع Laravel 12، بما في ذلك التثبيت والميزات وأفضل الممارسات.',
+                    'en' => 'Complete guide to getting started with Laravel 13, including installation, features, and best practices.',
+                    'hi' => 'Laravel 13 ke saath shuruaat karne ke liye poorna guide, jisme installation, features aur best practices shamil hain.',
+                    'ar' => 'Complete guide to getting started with Laravel 13, including installation, features, and best practices.',,
                 ],
                 'meta_keywords' => [
                     'en' => 'Laravel, PHP, Tutorial, Web Development',

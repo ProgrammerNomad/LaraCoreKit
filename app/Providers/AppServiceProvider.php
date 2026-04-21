@@ -19,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Register Docs module view namespace
+        $this->loadViewsFrom(base_path('modules/Docs/views'), 'docs');
     }
 }
