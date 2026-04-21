@@ -452,9 +452,9 @@ php artisan tinker
 ### Step 5.2: Test Blocked Actions
 
 1. Login as admin
-2. Try to delete a user â†’ Should show "Action disabled in demo mode"
-3. Try to modify critical settings â†’ Should be blocked
-4. Upload a file â†’ Should work (will be deleted on reset)
+2. Try to delete a user  Should show "Action disabled in demo mode"
+3. Try to modify critical settings  Should be blocked
+4. Upload a file  Should work (will be deleted on reset)
 
 ### Step 5.3: Security Checklist
 
@@ -546,7 +546,7 @@ jobs:
 
 ### Step 6.2: GitHub Secrets Setup
 
-**In GitHub Repository Settings â†’ Secrets:**
+**In GitHub Repository Settings  Secrets:**
 ```
 DEMO_SERVER_HOST = laracorekit.mobrilz.digital
 DEMO_SERVER_USER = your-ssh-username
@@ -559,7 +559,7 @@ DEMO_SERVER_SSH_KEY = (paste your private SSH key)
 1. Go to **Git** in Plesk
 2. Add repository: `https://github.com/yourusername/LaraCoreKit.git`
 3. Set branch: `main` or `demo`
-4. **Deployment Actions** â†’ Add commands:
+4. **Deployment Actions**  Add commands:
 ```bash
 composer install --no-dev --optimize-autoloader
 php artisan migrate --force
@@ -638,7 +638,7 @@ git push origin main
 - [ ] Demo credentials work
 - [ ] Admin dashboard shows demo widget
 - [ ] Can create blog post (temporary)
-- [ ] Wait 30 minutes â†’ verify auto-reset worked
+- [ ] Wait 30 minutes  verify auto-reset worked
 - [ ] Check logs: `storage/logs/laravel.log`
 
 ### Step 7.4: Post-Deployment Monitoring
