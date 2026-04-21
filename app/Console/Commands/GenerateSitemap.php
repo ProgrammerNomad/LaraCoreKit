@@ -32,7 +32,7 @@ class GenerateSitemap extends Command
 
         $this->info("Crawling {$appUrl} to generate sitemap...");
 
-        SitemapGenerator::create($appUrl)
+        $sitemap = SitemapGenerator::create($appUrl)
             ->hasCrawled(function (Url $url) {
                 // Ignore admin panel and livewire internal routes
                 if ($url->segment(1) === 'admin' || $url->segment(1) === 'livewire') {
@@ -66,7 +66,13 @@ class GenerateSitemap extends Command
                         ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
                         ->setLastModificationDate(now());
                 }
-                // UI Showcase pages
+                // UI Showcase component pages
+                elseif (str_starts_with($path, '/ui-showcase/') && substr_count($path, '/') >= 2) {
+                    $url->setPriority(0.7)
+                        ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+                        ->setLastModificationDate(now());
+                }
+                // UI Showcase category pages
                 elseif (str_starts_with($path, '/ui-showcase/')) {
                     $url->setPriority(0.6)
                         ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
@@ -87,7 +93,38 @@ class GenerateSitemap extends Command
 
                 return $url;
             })
-            ->writeToFile(public_path('sitemap.xml'));
+            ->getSitemap();
+
+        // Add component URLs from config that might not be crawled
+        $categories = config('showcase.components.categories', []);
+        foreach ($categories as $categorySlug => $category) {
+            if (isset($category['components'])) {
+                foreach ($category['components'] as $componentSlug => $component) {
+                    $componentUrl = "{$appUrl}/ui-showcase/{$categorySlug}/{$componentSlug}";
+                    
+                    // Check if URL already exists in sitemap
+                    $exists = false;
+                    foreach ($sitemap->getTags() as $tag) {
+                        if ($tag->url === $componentUrl) {
+                            $exists = true;
+                            break;
+                        }
+                    }
+                    
+                    // Add if it doesn't exist
+                    if (!$exists) {
+                        $sitemap->add(
+                            Url::create($componentUrl)
+                                ->setPriority(0.7)
+                                ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+                                ->setLastModificationDate(now())
+                        );
+                    }
+                }
+            }
+        }
+
+        $sitemap->writeToFile(public_path('sitemap.xml'));
 
         $this->info('Sitemap generated successfully in public/sitemap.xml!');
     }

@@ -7,83 +7,59 @@ Route::prefix('ui-showcase')->name('showcase.')->group(function () {
         return view('showcase::index');
     })->name('index');
     
-    Route::get('/typography', function () {
-        return view('showcase::typography');
-    })->name('typography');
+    // Auto-generated component routes from config
+    $components = config('showcase.components.categories', []);
     
-    Route::get('/buttons', function () {
-        return view('showcase::buttons');
-    })->name('buttons');
+    // Category-level routes: redirect to first component in the category
+    foreach ($components as $categorySlug => $category) {
+        if (isset($category['components']) && count($category['components']) > 0) {
+            $firstComponentSlug = array_key_first($category['components']);
+            Route::get("/{$categorySlug}", function () use ($categorySlug, $firstComponentSlug) {
+                return redirect()->route("showcase.component.{$categorySlug}.{$firstComponentSlug}");
+            })->name($categorySlug);
+        }
+    }
+
+    foreach ($components as $categorySlug => $category) {
+        if (isset($category['components'])) {
+            foreach ($category['components'] as $componentSlug => $component) {
+                Route::get("/{$categorySlug}/{$componentSlug}", function () use ($categorySlug, $componentSlug, $category, $component, $components) {
+                    // Get all components in this category for prev/next navigation
+                    $categoryComponents = array_keys($category['components']);
+                    $currentIndex = array_search($componentSlug, $categoryComponents);
+                    
+                    $prevComponent = null;
+                    $nextComponent = null;
+                    
+                    if ($currentIndex > 0) {
+                        $prevSlug = $categoryComponents[$currentIndex - 1];
+                        $prevComponent = [
+                            'slug' => $prevSlug,
+                            'title' => $category['components'][$prevSlug]['title'],
+                        ];
+                    }
+                    
+                    if ($currentIndex < count($categoryComponents) - 1) {
+                        $nextSlug = $categoryComponents[$currentIndex + 1];
+                        $nextComponent = [
+                            'slug' => $nextSlug,
+                            'title' => $category['components'][$nextSlug]['title'],
+                        ];
+                    }
+                    
+                    return view("showcase::components.{$categorySlug}.{$componentSlug}", [
+                        'category' => $categorySlug,
+                        'categoryName' => $category['name'],
+                        'title' => $component['title'],
+                        'description' => $component['description'],
+                        'seoTitle' => $component['seo_title'] ?? $component['title'],
+                        'seoDescription' => $component['seo_description'] ?? $component['description'],
+                        'prevComponent' => $prevComponent,
+                        'nextComponent' => $nextComponent,
+                    ]);
+                })->name("component.{$categorySlug}.{$componentSlug}");
+            }
+        }
+    }
     
-    Route::get('/forms', function () {
-        return view('showcase::forms');
-    })->name('forms');
-    
-    Route::get('/navigation', function () {
-        return view('showcase::navigation');
-    })->name('navigation');
-    
-    Route::get('/layouts', function () {
-        return view('showcase::layouts');
-    })->name('layouts');
-    
-    Route::get('/data-display', function () {
-        return view('showcase::data-display');
-    })->name('data-display');
-    
-    Route::get('/feedback', function () {
-        return view('showcase::feedback');
-    })->name('feedback');
-    
-    Route::get('/feedback-drawers', function () {
-        return view('showcase::feedback-drawers');
-    })->name('feedback-drawers');
-    
-    Route::get('/charts', function () {
-        return view('showcase::charts');
-    })->name('charts');
-    
-    Route::get('/media', function () {
-        return view('showcase::media');
-    })->name('media');
-    
-    Route::get('/auth', function () {
-        return view('showcase::auth');
-    })->name('auth');
-    
-    Route::get('/landing-hero', function () {
-        return view('showcase::landing-hero');
-    })->name('landing-hero');
-    
-    Route::get('/landing-pricing', function () {
-        return view('showcase::landing-pricing');
-    })->name('landing-pricing');
-    
-    Route::get('/landing-content', function () {
-        return view('showcase::landing-content');
-    })->name('landing-content');
-    
-    Route::get('/ecommerce-products', function () {
-        return view('showcase::ecommerce-products');
-    })->name('ecommerce-products');
-    
-    Route::get('/ecommerce-cart', function () {
-        return view('showcase::ecommerce-cart');
-    })->name('ecommerce-cart');
-    
-    Route::get('/ecommerce-reviews', function () {
-        return view('showcase::ecommerce-reviews');
-    })->name('ecommerce-reviews');
-    
-    Route::get('/advanced-drag-drop', function () {
-        return view('showcase::advanced-drag-drop');
-    })->name('advanced-drag-drop');
-    
-    Route::get('/advanced-ui', function () {
-        return view('showcase::advanced-ui');
-    })->name('advanced-ui');
-    
-    Route::get('/utilities', function () {
-        return view('showcase::utilities');
-    })->name('utilities');
 });

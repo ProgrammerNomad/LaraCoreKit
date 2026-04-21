@@ -8,7 +8,8 @@ class UIShowcaseServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        //
+        // Merge config
+        $this->mergeConfigFrom(__DIR__ . '/../config/components.php', 'showcase.components');
     }
 
     public function boot(): void
