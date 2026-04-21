@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "775766a49336024a13d4f498acf35b3f",
+    "content-hash": "93eb9debd6e9465ad388573beaa2715d",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -4516,11 +4516,17 @@
         },
         {
             "name": "programmernomad/laracorekit-demo-module",
-            "version": "dev-main",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ProgrammerNomad/laracorekit-demo-module.git",
+                "reference": "6228d73a252b11d5d2f7579fa0c3a8da15020da5"
+            },
             "dist": {
-                "type": "path",
-                "url": "../laracorekit-demo-module",
-                "reference": "7bb018bdc3afbf00ec52478b150dd7f7b7baccdb"
+                "type": "zip",
+                "url": "https://api.github.com/repos/ProgrammerNomad/laracorekit-demo-module/zipball/6228d73a252b11d5d2f7579fa0c3a8da15020da5",
+                "reference": "6228d73a252b11d5d2f7579fa0c3a8da15020da5",
+                "shasum": ""
             },
             "require": {
                 "illuminate/console": "^11.0|^12.0|^13.0",
@@ -4530,9 +4536,9 @@
                 "php": "^8.2|^8.3"
             },
             "require-dev": {
-                "filament/filament": "^3.0",
+                "filament/filament": "^3.0|^4.0|^5.0",
                 "laravel/pint": "^1.0",
-                "orchestra/testbench": "^9.0",
+                "orchestra/testbench": "^9.0|^10.0",
                 "phpunit/phpunit": "^11.0"
             },
             "type": "library",
@@ -4548,11 +4554,7 @@
                     "LaraCoreKit\\DemoModule\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "LaraCoreKit\\DemoModule\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4576,10 +4578,7 @@
                 "issues": "https://github.com/ProgrammerNomad/laracorekit-demo-module/issues",
                 "source": "https://github.com/ProgrammerNomad/laracorekit-demo-module"
             },
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "time": "2026-04-21T13:32:04+00:00"
         },
         {
             "name": "psr/clock",
@@ -11571,9 +11570,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "programmernomad/laracorekit-demo-module": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

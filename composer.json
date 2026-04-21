@@ -12,7 +12,7 @@
         "laravel/framework": "^13.0",
         "laravel/tinker": "^2.10|^3.0",
         "livewire/livewire": "^4.0",
-        "programmernomad/laracorekit-demo-module": "dev-main@dev",
+        "programmernomad/laracorekit-demo-module": "^1.0",
         "spatie/laravel-medialibrary": "^11.17",
         "spatie/laravel-permission": "^6.23",
         "spatie/laravel-sitemap": "^8.0"
@@ -72,15 +72,6 @@
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite"
         ]
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../laracorekit-demo-module",
-            "options": {
-                "symlink": true
-            }
-        }
-    ],
     "extra": {
         "branch-alias": {
             "dev-master": "13.x-dev"
