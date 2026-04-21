@@ -81,13 +81,13 @@ php artisan demo:reset --force
 - Email: `admin@laracorekit.com`
 - Password: `Admin@123`
 
-**Done!** âœ… Demo banners appear automatically.
+**Done!** Demo banners appear automatically.
 
 ---
 
 ## What's Included
 
-### âœ… Auto-Registered Features
+### Auto-Registered Features
 
 The package automatically provides:
 
@@ -789,11 +789,11 @@ composer dump-autoload
 **This allows users to `composer require/remove` the demo module**
 
 **Benefits:**
-- âœ… Users can install: `composer require laracorekit/demo-module`
-- âœ… Users can remove: `composer remove laracorekit/demo-module`
-- âœ… Version management (1.0.0, 1.1.0, etc.)
-- âœ… Separate repo, separate maintenance
-- âœ… Can be used in other Laravel projects
+- Users can install: `composer require laracorekit/demo-module`
+- Users can remove: `composer remove laracorekit/demo-module`
+- Version management (1.0.0, 1.1.0, etc.)
+- Separate repo, separate maintenance
+- Can be used in other Laravel projects
 
 **Steps to extract:**
 
@@ -1027,13 +1027,13 @@ composer remove laracorekit/demo-module
 ## Summary
 
 **Module Benefits:**
-- âœ… Isolated demo logic
-- âœ… Easy to enable/disable
-- âœ… Production-safe (domain whitelisting)
-- âœ… Auto-resetting (30-min cron)
-- âœ… Plesk-compatible
-- âœ… CI/CD integrated
-- âœ… Extractable as package
+- Isolated demo logic
+- Easy to enable/disable
+- Production-safe (domain whitelisting)
+- Auto-resetting (30-min cron)
+- Plesk-compatible
+- CI/CD integrated
+- Extractable as package
 
 **Next Steps:**
 1. Create module structure (Phase 1)
