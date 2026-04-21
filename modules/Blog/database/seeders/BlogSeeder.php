@@ -47,7 +47,7 @@ class BlogSeeder extends Seeder
                 'meta_description' => [
                     'en' => 'Complete guide to getting started with Laravel 13, including installation, features, and best practices.',
                     'hi' => 'Laravel 13 ke saath shuruaat karne ke liye poorna guide, jisme installation, features aur best practices shamil hain.',
-                    'ar' => 'Complete guide to getting started with Laravel 13, including installation, features, and best practices.',,
+                    'ar' => 'Complete guide to getting started with Laravel 13, including installation, features, and best practices.',
                 ],
                 'meta_keywords' => [
                     'en' => 'Laravel, PHP, Tutorial, Web Development',

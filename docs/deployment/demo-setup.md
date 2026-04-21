@@ -1,4 +1,4 @@
-﻿# Demo Mode Setup Guide
+# Demo Mode Setup Guide
 
 **Auto-resetting demo environment for LaraCoreKit with Filament integration**
 
@@ -22,9 +22,9 @@ Add to `.env`:
 ```env
 DEMO_MODE=true
 DEMO_RESET_INTERVAL=30
-DEMO_ADMIN_EMAIL=admin@demo.test
+DEMO_ADMIN_EMAIL=admin@laracorekit.com
 DEMO_ADMIN_PASSWORD=Admin@123
-DEMO_USER_EMAIL=user@demo.test
+DEMO_USER_EMAIL=user@laracorekit.com
 DEMO_USER_PASSWORD=User@123
 ```
 
@@ -74,11 +74,11 @@ php artisan demo:reset --force
 ### 6. Test Login
 
 **Frontend**: http://localhost/login
-- Email: `user@demo.test`
+- Email: `user@laracorekit.com`
 - Password: `User@123`
 
 **Admin**: http://localhost/admin/login
-- Email: `admin@demo.test`
+- Email: `admin@laracorekit.com`
 - Password: `Admin@123`
 
 **Done!** âœ… Demo banners appear automatically.
@@ -177,9 +177,9 @@ DEMO_MODE=true
 DEMO_RESET_INTERVAL=30
 
 # Demo Credentials (displayed on login pages)
-DEMO_ADMIN_EMAIL=admin@demo.test
+DEMO_ADMIN_EMAIL=admin@laracorekit.com
 DEMO_ADMIN_PASSWORD=Admin@123
-DEMO_USER_EMAIL=user@demo.test
+DEMO_USER_EMAIL=user@laracorekit.com
 DEMO_USER_PASSWORD=User@123
 ```
 
@@ -190,9 +190,9 @@ DEMO_USER_PASSWORD=User@123
 # Demo Mode (set to true on demo server only)
 DEMO_MODE=false
 DEMO_RESET_INTERVAL=30
-DEMO_ADMIN_EMAIL=admin@demo.test
+DEMO_ADMIN_EMAIL=admin@laracorekit.com
 DEMO_ADMIN_PASSWORD=Admin@123
-DEMO_USER_EMAIL=user@demo.test
+DEMO_USER_EMAIL=user@laracorekit.com
 DEMO_USER_PASSWORD=User@123
 ```
 
