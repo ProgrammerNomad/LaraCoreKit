@@ -6,9 +6,7 @@
     <title>{{ $title ?? 'Documentation' }} - LaraCoreKit</title>
     <meta name="description" content="LaraCoreKit documentation - Production-ready modular Laravel starter kit.">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Fonts - Self Hosted (Inter and Fira Code are loaded via Tailwind/Vite) -->
     
     <style>
         *,*::before,*::after{box-sizing:border-box}

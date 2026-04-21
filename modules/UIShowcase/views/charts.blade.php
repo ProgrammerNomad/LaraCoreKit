@@ -15,7 +15,6 @@
     <canvas id="lineChart"></canvas>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 const ctx = document.getElementById(&#39;lineChart&#39;).getContext(&#39;2d&#39;);
 new Chart(ctx, {
@@ -759,6 +758,4 @@ new Chart(document.getElementById(&#39;sparkline1&#39;).getContext(&#39;2d&#39;)
 
 </div>
 
-<!-- Load Chart.js from CDN -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 @endsection

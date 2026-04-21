@@ -46,7 +46,7 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
 <script>
 document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
     const el = document.getElementById(&#39;sortable-list&#39;);
@@ -98,7 +98,6 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
                 </div>
             </div>
             
-            <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
             <script>
             document.addEventListener('alpine:init', () => {
                 setTimeout(() => {
@@ -209,7 +208,6 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 <script>
 document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
     [&#39;kanban-todo&#39;, &#39;kanban-progress&#39;, &#39;kanban-done&#39;].forEach(id => {
