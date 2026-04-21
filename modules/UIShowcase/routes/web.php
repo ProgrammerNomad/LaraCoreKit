@@ -3,12 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('ui-showcase')->name('showcase.')->group(function () {
-    Route::get('/', function () {
-        return view('showcase::index');
-    })->name('index');
-    
-    // Auto-generated component routes from config
     $components = config('showcase.components.categories', []);
+
+    Route::get('/', function () use ($components) {
+        return view('showcase::index', ['categories' => $components]);
+    })->name('index');
     
     // Category-level routes: redirect to first component in the category
     foreach ($components as $categorySlug => $category) {
