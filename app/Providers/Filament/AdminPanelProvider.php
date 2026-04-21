@@ -29,7 +29,6 @@ class AdminPanelProvider extends PanelProvider
             ->brandName('LaraCoreKit')
             ->brandLogo(asset('images/logo.svg'))
             ->darkMode(true)
-            ->renderHook('panels::topbar.end', fn() => view('filament.dark-mode-toggle'))
             ->renderHook('panels::body.end', fn() => view('filament.login-placeholders'))
             ->colors([
                 'primary' => Color::Red,
