@@ -1,0 +1,32 @@
+# Code Owners for LaraCoreKit
+
+# Default owners for everything in the repo
+*       @ProgrammerNomad @shivsingh
+
+# Core modules
+/modules/Core/      @ProgrammerNomad
+/modules/Auth/      @ProgrammerNomad
+/modules/User/      @ProgrammerNomad
+
+# Feature modules
+/modules/Blog/      @ProgrammerNomad
+/modules/Media/     @ProgrammerNomad
+/modules/Settings/  @ProgrammerNomad
+
+# Documentation
+/docs/              @ProgrammerNomad
+README.md           @ProgrammerNomad
+CONTRIBUTING.md     @ProgrammerNomad
+SECURITY.md         @ProgrammerNomad
+
+# Configuration
+/config/            @ProgrammerNomad
+composer.json       @ProgrammerNomad
+package.json        @ProgrammerNomad
+
+# GitHub workflows and templates
+/.github/           @ProgrammerNomad
+
+# Database migrations and seeders
+/database/migrations/   @ProgrammerNomad
+/database/seeders/      @ProgrammerNomad

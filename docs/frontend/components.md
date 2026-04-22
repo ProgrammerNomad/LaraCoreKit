@@ -139,7 +139,7 @@ Pre-built interactive components:
 
 ## Dark Mode
 
-All components support dark mode automatically via TailwindCSS `dark:` variants. No extra configuration needed — just set `dark` class on `<html>`.
+All components support dark mode automatically via TailwindCSS `dark:` variants. No extra configuration needed - just set `dark` class on `<html>`.
 
 ---
 

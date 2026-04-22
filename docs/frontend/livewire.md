@@ -5,7 +5,7 @@
 
 ---
 
-LaraCoreKit is built on **Livewire v4** — Laravel's full-stack component framework that lets you build dynamic, reactive UIs without writing JavaScript.
+LaraCoreKit is built on **Livewire v4** - Laravel's full-stack component framework that lets you build dynamic, reactive UIs without writing JavaScript.
 
 ---
 

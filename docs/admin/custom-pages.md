@@ -1,11 +1,12 @@
 ﻿# Custom Admin Pages
 
-**Estimated time:** 8 minutes  
-**Difficulty:** Intermediate
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Last Updated:** April 22, 2026  
+**Source Files:** [Settings Page example](../../modules/Settings/views/filament/pages/settings.blade.php)
 ---
 
-Filament Custom Pages let you build completely custom screens in the admin panel — dashboards, reports, settings forms, and more — without being tied to a specific Eloquent model.
+Filament Custom Pages let you build completely custom screens in the admin panel - dashboards, reports, settings forms, and more - without being tied to a specific Eloquent model.
 
 ---
 

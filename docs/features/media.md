@@ -1,8 +1,10 @@
 ﻿# Media Management
 
-**Estimated time:** 6 minutes  
-**Difficulty:** Beginner
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Module Status:** Core  
+**Last Updated:** April 22, 2026  
+**Source Files:** [Media Module](../../modules/Media/) | [MediaResource](../../modules/Media/src/Filament/Resources/MediaResource.php)
 ---
 
 LaraCoreKit uses **Spatie Laravel MediaLibrary** for file uploads, image optimization, and media management.

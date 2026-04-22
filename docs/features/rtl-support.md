@@ -1,8 +1,9 @@
 ﻿# RTL Support
 
-**Estimated time:** 5 minutes  
-**Difficulty:** Beginner
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Module Status:** Core  
+**Last Updated:** April 22, 2026
 ---
 
 LaraCoreKit automatically enables RTL (right-to-left) layout when the Arabic locale is active, without any additional setup required.
@@ -20,7 +21,7 @@ The layout detects the current locale and sets the HTML `dir` attribute automati
 >
 ```
 
-When `ar` locale is set, the entire page flips to RTL — text, navigation, sidebars, and all components.
+When `ar` locale is set, the entire page flips to RTL - text, navigation, sidebars, and all components.
 
 ---
 
@@ -95,7 +96,7 @@ You should see the entire layout mirror to right-to-left.
 
 ## Filament RTL
 
-Filament v3 also supports RTL. It auto-detects from the `<html dir="">` attribute.
+Filament 5 also supports RTL. It auto-detects from the `<html dir="">` attribute.
 
 ---
 

@@ -1,8 +1,10 @@
 ﻿# Multilingual Support
 
-**Estimated time:** 8 minutes  
-**Difficulty:** Intermediate
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Module Status:** Core  
+**Last Updated:** April 22, 2026  
+**Source Files:** [LocaleSwitcher](../../modules/Core/src/Http/Livewire/LocaleSwitcher.php) | [Middleware](../../modules/Core/src/Http/Middleware/SetLocale.php)
 ---
 
 LaraCoreKit ships with multilingual support for **English**, **Hindi**, and **Arabic** out of the box, including automatic RTL layout switching for Arabic.

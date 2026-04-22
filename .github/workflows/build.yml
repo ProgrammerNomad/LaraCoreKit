@@ -1,0 +1,38 @@
+name: Build Assets
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build Frontend Assets
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build assets
+        run: npm run build
+        
+      - name: Check for build errors
+        run: |
+          if [ -d "public/build" ]; then
+            echo "Build directory created successfully"
+            ls -la public/build
+          else
+            echo "Build directory not found!"
+            exit 1
+          fi

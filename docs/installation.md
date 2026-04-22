@@ -1,8 +1,10 @@
 ﻿# Installation
 
-**Estimated time:** 10 minutes  
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Last Updated:** April 22, 2026  
+**Estimated Time:** 10 minutes  
 **Difficulty:** Beginner
-
 ---
 
 This guide covers detailed installation instructions for LaraCoreKit in various environments.
@@ -13,7 +15,7 @@ This guide covers detailed installation instructions for LaraCoreKit in various 
 
 ### Minimum Requirements
 
-- **PHP:** 8.2 or higher
+- **PHP:** 8.3 or higher
 - **Composer:** 2.0 or higher
 - **Node.js:** 18.0 or higher
 - **Database:** MySQL 8.0+, PostgreSQL 13+, or SQLite 3.35+
@@ -239,7 +241,7 @@ docker run --rm \
 ```
 
 This starts:
-- PHP 8.2 with Laravel
+- PHP 8.3 with Laravel
 - MySQL 8.0
 - Redis
 - Mailhog (email testing)
@@ -304,11 +306,11 @@ Install required software on Ubuntu/Debian:
 # Update system
 sudo apt update && sudo apt upgrade -y
 
-# Install PHP 8.2
+# Install PHP 8.3
 sudo add-apt-repository ppa:ondrej/php
-sudo apt install php8.2-fpm php8.2-cli php8.2-mysql php8.2-pgsql \
-    php8.2-xml php8.2-mbstring php8.2-curl php8.2-zip \
-    php8.2-gd php8.2-bcmath php8.2-intl
+sudo apt install php8.3-fpm php8.3-cli php8.3-mysql php8.3-pgsql \
+    php8.3-xml php8.3-mbstring php8.3-curl php8.3-zip \
+    php8.3-gd php8.3-bcmath php8.3-intl
 
 # Install Composer
 curl -sS https://getcomposer.org/installer | php

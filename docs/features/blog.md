@@ -1,8 +1,10 @@
 ﻿# Blog System
 
-**Estimated time:** 8 minutes  
-**Difficulty:** Beginner
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Module Status:** Core  
+**Last Updated:** April 22, 2026  
+**Source Files:** [BlogResource](../../modules/Blog/src/Filament/Resources/BlogResource.php) | [Routes](../../modules/Blog/routes/web.php) | [Post Model](../../modules/Blog/src/Models/Post.php)
 ---
 
 The Blog module in LaraCoreKit provides a fully multilingual blog system with SEO-friendly slugs, categories, and Filament admin integration.

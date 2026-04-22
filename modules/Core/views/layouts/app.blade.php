@@ -83,6 +83,12 @@
         <!-- Canonical URL -->
         <link rel="canonical" href="{{ url()->current() }}">
 
+        <!-- Multilingual hreflang tags for SEO -->
+        <link rel="alternate" hreflang="en" href="{{ str_replace('/' . app()->getLocale(), '/en', url()->current()) }}">
+        <link rel="alternate" hreflang="hi" href="{{ str_replace('/' . app()->getLocale(), '/hi', url()->current()) }}">
+        <link rel="alternate" hreflang="ar" href="{{ str_replace('/' . app()->getLocale(), '/ar', url()->current()) }}">
+        <link rel="alternate" hreflang="x-default" href="{{ str_replace('/' . app()->getLocale(), '/en', url()->current()) }}">
+
         <!-- JSON-LD Structured Data -->
         <script type="application/ld+json">
         {

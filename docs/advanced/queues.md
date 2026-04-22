@@ -128,7 +128,7 @@ class RegisterForm extends Component
     {
         $user = User::create($this->validated());
 
-        // Dispatch to queue — don't block the response
+        // Dispatch to queue - don't block the response
         SendWelcomeEmail::dispatch($user);
         SendVerificationEmail::dispatch($user);
 

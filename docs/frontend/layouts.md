@@ -65,7 +65,7 @@ class BlogList extends Component
     {
         return view('blog::livewire.blog-list')
             ->layout('core::layouts.app', [
-                'title' => 'Blog — ' . config('app.name'),
+                'title' => 'Blog - ' . config('app.name'),
             ]);
     }
 }

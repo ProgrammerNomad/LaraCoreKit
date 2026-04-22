@@ -1,11 +1,13 @@
 ﻿# Module Best Practices
 
-**Estimated time:** 8 minutes  
-**Difficulty:** Intermediate
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Last Updated:** April 22, 2026  
+**Estimated Time:** 8 minutes  
+**Source Files:** [Module examples](../../modules/)
 ---
 
-Building good modules isn't just about making them work — it's about making them maintainable, testable, and enjoyable for other developers (including future you).
+Building good modules isn't just about making them work - it's about making them maintainable, testable, and enjoyable for other developers (including future you).
 
 ---
 
@@ -26,11 +28,11 @@ Each module should handle **one feature domain** only.
 ### 2. Prefix ALL Database Tables
 
 ```php
-//  Good — prefix with module name
+//  Good - prefix with module name
 Schema::create('blog_posts', function (Blueprint $table) { ... });
 Schema::create('blog_categories', function (Blueprint $table) { ... });
 
-// ❌ Bad — generic names cause conflicts
+// ❌ Bad - generic names cause conflicts
 Schema::create('posts', ...);
 Schema::create('categories', ...);
 ```
@@ -40,11 +42,11 @@ Schema::create('categories', ...);
 ### 3. Always Use Module View Namespaces
 
 ```blade
-{{--  Good — explicit namespace --}}
+{{--  Good - explicit namespace --}}
 @extends('blog::layouts.base')
 @include('blog::partials.card')
 
-{{-- ❌ Bad — implicit, breaks when moved --}}
+{{-- ❌ Bad - implicit, breaks when moved --}}
 @extends('layouts.app')
 ```
 
@@ -65,7 +67,7 @@ class SubscribeController extends Controller
     }
 }
 
-// ❌ Bad — business logic inside controller
+// ❌ Bad - business logic inside controller
 public function store(Request $request)
 {
     Subscriber::create(['email' => $request->email]);
@@ -79,11 +81,11 @@ public function store(Request $request)
 ### 5. Use `__DIR__` for All Paths
 
 ```php
-//  Good — relative, portable
+//  Good - relative, portable
 $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 $this->loadViewsFrom(__DIR__ . '/../views', 'newsletter');
 
-// ❌ Bad — absolute path, breaks on different machines
+// ❌ Bad - absolute path, breaks on different machines
 $this->loadMigrationsFrom('/var/www/app/modules/Newsletter/database/migrations');
 ```
 
@@ -128,7 +130,7 @@ Every module should have a `README.md`:
 ### Don't Import Cross-Module Classes Directly
 
 ```php
-// ❌ Bad — tight coupling between modules
+// ❌ Bad - tight coupling between modules
 use Modules\User\Models\User;
 use Modules\Blog\Models\Post;
 
@@ -144,7 +146,7 @@ class Newsletter extends Model
 Instead, use **events** or **contracts**:
 
 ```php
-//  Good — loose coupling via events
+//  Good - loose coupling via events
 event(new NewPostPublished($post));
 
 // In Newsletter module's listener:

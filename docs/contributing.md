@@ -52,10 +52,10 @@ git checkout -b fix/bug-description
 ```
 
 **Branch naming:**
-- `feature/` — New feature
-- `fix/` — Bug fix
-- `docs/` — Documentation improvement
-- `refactor/` — Code refactoring
+- `feature/` - New feature
+- `fix/` - Bug fix
+- `docs/` - Documentation improvement
+- `refactor/` - Code refactoring
 
 ### Step 4: Make Your Changes
 
@@ -114,7 +114,7 @@ Guidelines:
 - Include `**Estimated time:**` and `**Difficulty:**`
 - Use real, working code examples
 - End with a **"Next Steps"** section
-- Avoid vague descriptions — be specific
+- Avoid vague descriptions - be specific
 
 ---
 

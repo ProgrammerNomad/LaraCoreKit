@@ -1,8 +1,9 @@
 ﻿# Filament Resources
 
-**Estimated time:** 10 minutes  
-**Difficulty:** Intermediate
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Last Updated:** April 22, 2026  
+**Source Files:** [PostResource example](../../modules/Blog/src/Filament/Resources/PostResource.php)
 ---
 
 Filament Resources are the primary way to manage Eloquent models in the LaraCoreKit admin panel. LaraCoreKit places each module's resources inside the module directory.

@@ -1,8 +1,10 @@
 ﻿# Features: Authentication
 
-**Estimated time:** 8 minutes  
-**Difficulty:** Beginner
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Module Status:** Core  
+**Last Updated:** April 22, 2026  
+**Source Files:** [Auth Module](../../modules/Auth/) | [Login Component](../../modules/Auth/views/livewire/login.blade.php)
 ---
 
 LaraCoreKit's Auth module provides a complete, production-ready authentication system built on **Laravel Breeze** with added enhancements for multilingual support, admin integration, and API token management.

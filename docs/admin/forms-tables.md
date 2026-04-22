@@ -1,8 +1,9 @@
 ﻿# Forms & Tables in Filament
 
-**Estimated time:** 10 minutes  
-**Difficulty:** Intermediate
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Last Updated:** April 22, 2026  
+**Source Files:** [Filament Forms Docs](https://filamentphp.com/docs/5.x/forms) | [Example Resource](../../modules/User/src/Filament/Resources/UserResource.php)
 ---
 
 Filament provides rich declarative builders for forms and tables that power all admin resources in LaraCoreKit.

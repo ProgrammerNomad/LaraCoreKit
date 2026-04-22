@@ -58,7 +58,7 @@ return [
 ];
 ```
 
-Setting `enabled => false` completely disables a module — no routes registered, no migrations run.
+Setting `enabled => false` completely disables a module - no routes registered, no migrations run.
 
 ---
 

@@ -1,8 +1,11 @@
 ﻿# Configuration
 
-**Estimated time:** 8 minutes  
-**Difficulty:** Intermediate
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Last Updated:** April 22, 2026  
+**Estimated Time:** 8 minutes  
+**Difficulty:** Intermediate  
+**Source Files:** [config/modules.php](../../config/modules.php) | [config/app.php](../../config/app.php)
 ---
 
 This guide explains all key configuration points in LaraCoreKit, including app settings, module configuration, multilingual setup, and environment-specific options.

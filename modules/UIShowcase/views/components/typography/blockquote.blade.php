@@ -8,7 +8,7 @@
     <p class="text-gray-700 dark:text-gray-300 italic">
         "The best way to predict the future is to invent it."
     </p>
-    <footer class="text-sm text-gray-500 dark:text-gray-400 mt-2">— Alan Kay</footer>
+    <footer class="text-sm text-gray-500 dark:text-gray-400 mt-2">- Alan Kay</footer>
 </blockquote>
 @endsection
 
@@ -17,6 +17,6 @@
     <p class="text-gray-700 dark:text-gray-300 italic">
         "The best way to predict the future is to invent it."
     </p>
-    <footer class="text-sm text-gray-500 dark:text-gray-400 mt-2">— Alan Kay</footer>
+    <footer class="text-sm text-gray-500 dark:text-gray-400 mt-2">- Alan Kay</footer>
 </blockquote>
 @endsection

@@ -1,8 +1,10 @@
 ﻿# Publishing Modules
 
-**Estimated time:** 12 minutes  
-**Difficulty:** Advanced
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Last Updated:** April 22, 2026  
+**Estimated Time:** 12 minutes  
+**Example:** [Demo Module Package](https://github.com/ProgrammerNomad/laracorekit-demo-module)
 ---
 
 LaraCoreKit modules can be extracted and distributed as standalone **Composer packages**, making them reusable across projects and shareable with the community.
@@ -153,17 +155,17 @@ Use in Blade:
 
 ## Step 6: Enable Auto-discovery (Already Done)
 
-Because the `extra.laravel.providers` key is set in `composer.json`, the ServiceProvider is automatically registered by Laravel — no manual registration needed.
+Because the `extra.laravel.providers` key is set in `composer.json`, the ServiceProvider is automatically registered by Laravel - no manual registration needed.
 
 ---
 
 ## Versioning
 
 Follow **Semantic Versioning**:
-- `1.0.0` — Initial stable release
-- `1.0.1` — Bug fix
-- `1.1.0` — New feature (backward compatible)
-- `2.0.0` — Breaking change
+- `1.0.0` - Initial stable release
+- `1.0.1` - Bug fix
+- `1.1.0` - New feature (backward compatible)
+- `2.0.0` - Breaking change
 
 ---
 

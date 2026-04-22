@@ -1,8 +1,10 @@
 ﻿# Roles & Permissions
 
-**Estimated time:** 8 minutes  
-**Difficulty:** Intermediate
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Module Status:** Core  
+**Last Updated:** April 22, 2026  
+**Source Files:** [RoleResource](../../modules/User/src/Filament/Resources/RoleResource.php) | [Config](../../config/permission.php)
 ---
 
 LaraCoreKit uses **Spatie Laravel Permission** for role-based access control (RBAC), pre-configured and seeded with sensible defaults.
@@ -124,8 +126,8 @@ $role->givePermissionTo('moderate comments');
 ## Admin Panel
 
 Manage roles and permissions from the Filament admin:
-- `/admin/roles` — Create, edit, delete roles
-- `/admin/users` — Assign roles to users
+- `/admin/roles` - Create, edit, delete roles
+- `/admin/users` - Assign roles to users
 
 ---
 

@@ -98,13 +98,13 @@ Check for missing indexes using Laravel Telescope or the query log.
 ## Eager Loading (Avoid N+1)
 
 ```php
-// ❌ Bad — N+1 queries
+// ❌ Bad - N+1 queries
 $posts = Post::all();
 foreach ($posts as $post) {
     echo $post->author->name; // Query per post
 }
 
-//  Good — 2 queries total
+//  Good - 2 queries total
 $posts = Post::with('author', 'tags', 'media')->get();
 ```
 

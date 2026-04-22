@@ -1,8 +1,9 @@
 ﻿# Module Structure
 
-**Estimated time:** 6 minutes  
-**Difficulty:** Beginner
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Last Updated:** April 22, 2026  
+**Source Files:** Example modules in [modules/](../../modules/)
 ---
 
 Every module in LaraCoreKit follows a consistent, predictable directory structure. Once you learn it for one module, you know it for all.

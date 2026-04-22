@@ -1,8 +1,10 @@
 ﻿# Settings
 
-**Estimated time:** 5 minutes  
-**Difficulty:** Beginner
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Module Status:** Core  
+**Last Updated:** April 22, 2026  
+**Source Files:** [Settings Module](../../modules/Settings/) | [Setting Model](../../modules/Settings/src/Models/Setting.php)
 ---
 
 The Settings module provides a centralized key-value store for site-wide configuration, fully managed from the Filament admin panel.
@@ -14,12 +16,12 @@ The Settings module provides a centralized key-value store for site-wide configu
 | Key | Default | Description |
 |-----|---------|-------------|
 | `site_name` | LaraCoreKit | Site display name |
-| `site_description` | — | Meta description |
+| `site_description` | - | Meta description |
 | `default_locale` | `en` | Default language |
 | `maintenance_mode` | `false` | Maintenance toggle |
-| `logo` | — | Site logo path |
-| `social_twitter` | — | Twitter/X URL |
-| `social_github` | — | GitHub URL |
+| `logo` | - | Site logo path |
+| `social_twitter` | - | Twitter/X URL |
+| `social_github` | - | GitHub URL |
 
 ---
 
@@ -65,7 +67,7 @@ Settings are auto-shared as a view global:
 
 ## Admin Panel
 
-All settings are editable at `/admin/settings` — no code changes needed.
+All settings are editable at `/admin/settings` - no code changes needed.
 
 The settings admin shows a clean form UI generated from the settings schema.
 

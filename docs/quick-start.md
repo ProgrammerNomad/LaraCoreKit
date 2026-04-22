@@ -1,11 +1,13 @@
 ﻿# Quick Start
 
-**Estimated time:** 5 minutes  
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Last Updated:** April 22, 2026  
+**Estimated Time:** 5 minutes  
 **Difficulty:** Beginner
-
 ---
 
-Get LaraCoreKit running locally in just a few commands. This guide assumes you have PHP 8.2+, Composer, and Node.js installed.
+Get LaraCoreKit running locally in just a few commands. This guide assumes you have PHP 8.3+, Composer, and Node.js installed.
 
 ---
 
@@ -13,7 +15,7 @@ Get LaraCoreKit running locally in just a few commands. This guide assumes you h
 
 Before starting, ensure you have:
 
--  PHP 8.2 or higher
+-  PHP 8.3 or higher
 -  Composer 2.x
 -  Node.js 18+ & npm
 -  MySQL, PostgreSQL, or SQLite

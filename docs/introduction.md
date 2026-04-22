@@ -1,8 +1,9 @@
 ﻿# Introduction
 
-**Estimated time:** 5 minutes  
-**Difficulty:** Beginner
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Last Updated:** April 22, 2026  
+**Version:** v0.1.0 (unreleased)
 ---
 
 ## What is LaraCoreKit?
@@ -13,12 +14,12 @@ LaraCoreKit is a **production-ready, modular Laravel 13 starter kit** designed f
 
 Building modern web applications requires integrating multiple packages, setting up authentication, creating admin panels, and structuring your codebase for long-term maintainability. LaraCoreKit solves these challenges by providing:
 
- **Modular Architecture** - Build features as independent modules  
- **Production-Ready** - Battle-tested code ready for deployment  
- **Admin Panel** - Beautiful Filament v3 admin interface  
- **175+ UI Components** - Complete TailwindCSS component library  
- **Multilingual** - Built-in support for EN, HI, AR with RTL  
- **Developer-Friendly** - Clear structure, excellent DX
+**Modular Architecture** - Build features as independent modules  
+**Production-Ready** - Battle-tested code ready for deployment  
+**Admin Panel** - Beautiful Filament 5 admin interface  
+**175+ UI Components** - Complete Tailwind CSS component library  
+**Multilingual** - Built-in support for EN, HI, AR with RTL  
+**Developer-Friendly** - Clear structure, excellent DX
 
 ---
 
@@ -30,8 +31,8 @@ LaraCoreKit is built on modern, industry-standard technologies:
 |------------|---------|---------|
 | **Laravel** | 13 | Backend framework |
 | **Livewire** | 4 | Dynamic frontend components |
-| **TailwindCSS** | 4 | Utility-first styling |
-| **Filament** | 3 | Admin panel |
+| **Tailwind CSS** | 4 | Utility-first styling |
+| **Filament** | 5 | Admin panel |
 | **Alpine.js** | 3.x | Lightweight JavaScript |
 | **Vite** | 5.x | Fast build tool |
 
@@ -41,9 +42,9 @@ LaraCoreKit is built on modern, industry-standard technologies:
 
 ### Perfect for:
 
-- ‍**Developers** building SaaS applications
+- **Developers** building SaaS applications
 - **Agencies** needing a reliable starter template
--  **Startups** wanting to move fast
+- **Startups** wanting to move fast
 - **Teams** requiring a modular codebase
 - **Multilingual projects** with RTL support needs
 
@@ -113,7 +114,7 @@ This means you can:
 
 ### 2. **Production-Ready, Not a Tutorial**
 
-LaraCoreKit isn't a learning project—it's production code used in real applications. It includes:
+LaraCoreKit isn't a learning project-it's production code used in real applications. It includes:
 
 - Proper error handling
 - Security best practices

@@ -1,11 +1,13 @@
 ﻿# Project Structure
 
-**Estimated time:** 10 minutes  
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Last Updated:** April 22, 2026  
+**Estimated Time:** 10 minutes  
 **Difficulty:** Beginner to Intermediate
-
 ---
 
-Understanding LaraCoreKit's structure is essential for efficient development. This guide explains how the codebase is organized and where to find everything.
+Understanding LaraCoreKit's modular structure is essential for efficient development. This guide explains how the codebase is organized and where to find everything.
 
 ---
 

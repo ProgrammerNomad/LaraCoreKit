@@ -1,8 +1,10 @@
 ﻿# Create a Module
 
-**Estimated time:** 15 minutes  
-**Difficulty:** Beginner
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Last Updated:** April 22, 2026  
+**Estimated Time:** 15 minutes  
+**Source Files:** [ServiceProvider example](../../modules/Blog/src/BlogServiceProvider.php)
 ---
 
 This guide walks you through creating a complete custom module in LaraCoreKit from scratch. We'll build a **Newsletter** module as the real-world example.

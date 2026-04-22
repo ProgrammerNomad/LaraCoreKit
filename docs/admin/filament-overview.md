@@ -1,11 +1,12 @@
 ﻿# Admin Panel Overview (Filament)
 
-**Estimated time:** 6 minutes  
-**Difficulty:** Beginner
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Last Updated:** April 22, 2026  
+**Source Files:** [AdminPanelProvider](../../app/Providers/Filament/AdminPanelProvider.php)
 ---
 
-LaraCoreKit includes a **Filament v3** admin panel — a beautiful, powerful TALL-stack admin interface built for Laravel.
+LaraCoreKit includes a **Filament 5** admin panel - a beautiful, powerful TALL-stack admin interface built for Laravel.
 
 ---
 

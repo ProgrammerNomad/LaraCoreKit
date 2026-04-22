@@ -30,7 +30,7 @@ class SettingSeeder extends Seeder
             ],
             [
                 'key' => 'contact_email',
-                'value' => 'info@laracorekit.com',
+                'value' => 'shiv@srapsware.com',
                 'type' => 'string',
                 'is_translatable' => false,
                 'description' => 'Main contact email address',

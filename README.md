@@ -1,502 +1,518 @@
 # LaraCoreKit
-**A Universal Modular Laravel 13 Starter Kit with Livewire, TailwindCSS, Filament Admin, Multilingual Blog (EN/HI/AR), RTL Support & Role-Based Permissions**
 
-[![Laravel](https://img.shields.io/badge/Laravel-13-red.svg)]()
-[![Livewire](https://img.shields.io/badge/Livewire-4-purple)]()
-[![Filament](https://img.shields.io/badge/Filament-5-blue.svg)]()
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)]()
-[![Open Source](https://img.shields.io/badge/Open%20Source-brightgreen)]()
+**A modular Laravel 13 starter kit for building admin-driven and content-driven apps with Filament 5, Livewire 4, and Tailwind 4.**
 
----
-
-## Live Demo
-
-**View Live Demo:** https://www.laracorekit.com/
-
-### UI Component Showcase
-
-Explore all 175+ implemented UI components at:
-
-**UI Showcase - Full Component Library:** https://www.laracorekit.com/ui-showcase/
-
-**Component Categories:**
-- **Typography:** https://www.laracorekit.com/ui-showcase/typography - Headings, paragraphs, lists, code
-- **Buttons:** https://www.laracorekit.com/ui-showcase/buttons - All button styles & states
-- **Forms:** https://www.laracorekit.com/ui-showcase/forms - Inputs, selects, validation, pickers
-- **Navigation:** https://www.laracorekit.com/ui-showcase/navigation - Header, sidebar, breadcrumbs, tabs
-- **Layouts:** https://www.laracorekit.com/ui-showcase/layouts - Cards, grids, containers, split layouts
-- **Data Display:** https://www.laracorekit.com/ui-showcase/data-display - Tables, badges, avatars, timeline
-- **Feedback:** https://www.laracorekit.com/ui-showcase/feedback - Alerts, modals, toasts, progress
-- **Charts:** https://www.laracorekit.com/ui-showcase/charts - Line, bar, pie, radar, area charts
-- **Media:** https://www.laracorekit.com/ui-showcase/media - File upload, gallery, lightbox, video, audio
-- **Auth:** https://www.laracorekit.com/ui-showcase/auth - Login, register, 2FA, profile, sessions
-- **Landing Pages:** https://www.laracorekit.com/ui-showcase/landing-hero - Heroes, pricing, testimonials, contact
-- **E-commerce:** https://www.laracorekit.com/ui-showcase/ecommerce-products - Products, cart, reviews, checkout
-- **Utilities:** https://www.laracorekit.com/ui-showcase/utilities - QR code, clipboard, export, download
-- **Advanced:** https://www.laracorekit.com/ui-showcase/advanced-drag-drop - Kanban, drag-drop, calendar, file explorer
+[![Laravel 13](https://img.shields.io/badge/Laravel-13-FF2D20?style=flat&logo=laravel&logoColor=white)](https://laravel.com)
+[![Filament 5](https://img.shields.io/badge/Filament-5-F59E0B?style=flat)](https://filamentphp.com)
+[![Livewire 4](https://img.shields.io/badge/Livewire-4-FB70A9?style=flat)](https://livewire.laravel.com)
+[![Tailwind 4](https://img.shields.io/badge/Tailwind-4-06B6D4?style=flat&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Tests](https://github.com/ProgrammerNomad/LaraCoreKit/workflows/Tests/badge.svg)](https://github.com/ProgrammerNomad/LaraCoreKit/actions)
+[![Code Quality](https://github.com/ProgrammerNomad/LaraCoreKit/workflows/Code%20Quality/badge.svg)](https://github.com/ProgrammerNomad/LaraCoreKit/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Latest Release](https://img.shields.io/github/v/release/ProgrammerNomad/LaraCoreKit)](https://github.com/ProgrammerNomad/LaraCoreKit/releases)
 
 ---
 
-## Overview
+LaraCoreKit gives you a clean starting point with auth, users, roles/permissions, blog, settings, media, multilingual content, and RTL support already structured for real projects. Each official module follows the same contract: migrations, routes, policies, translations, UI, admin resources, tests, and docs.
 
-**LaraCoreKit** is a modular, production-ready **Laravel 13 Starter Kit** for modern full-stack applications.
-It includes first-class module-based architecture, allowing built-in features (User, Blog, Settings, Media) and optional addons (E-commerce, Payments, Analytics) to plug into your project cleanly.
-
-Designed for speed, scalability, multilingual apps, admin dashboards, and enterprise-grade role/permission management, LaraCoreKit provides everything you need to start any serious Laravel project.
+**Live Demo:** [https://www.laracorekit.com](https://www.laracorekit.com) | **Documentation:** [https://www.laracorekit.com/docs](https://www.laracorekit.com/docs)
 
 ---
 
-## Core Technologies
+## Screenshots
 
-- Laravel 13 (latest modern backend framework)
-- Livewire 4 (dynamic frontend components with Alpine.js bundled)
-- TailwindCSS 4 (full utility-first styling)
-- Filament Admin v5 (beautiful admin panel)
-- Spatie Permission (RBAC)
-- Spatie Media Library (file uploads & image handling)
-- Sanctum (API authentication)
-- Vite (fast dev bundler)
-- MySQL / PostgreSQL / SQLite ready
+### Admin Dashboard
+![Admin Dashboard](docs/images/screenshots/admin-dashboard.png)
+*Filament 5 admin panel with dark mode support, resource management, and widgets*
 
----
+### Blog Editor
+![Blog Editor](docs/images/screenshots/blog-editor.png)
+*Rich text editor with multilingual support, SEO fields, and draft management*
 
-## Modular Architecture
+### UI Component Library
+![UI Component Showcase](docs/images/screenshots/ui-showcase.png)
+*175+ production-ready Tailwind components across 12 categories*
 
-LaraCoreKit supports module-based development, where each feature lives inside its own module (with its own routes, migrations, Livewire components, Filament Resources, translations, config, etc.)
+### RTL Support
+![RTL Layout Support](docs/images/screenshots/rtl-support.png)
+*Full right-to-left layout support for Arabic and other RTL languages*
 
-### Default Included Modules
+### Demo Animations
 
-| Module | Admin | Frontend | Description |
-|--------|-------|----------|-------------|
-| Core | Yes | - | Bootstrapping, module loader, locale, layouts |
-| Auth | Yes | Yes | Login, register, email verify, 2FA, Sanctum API |
-| User | Yes | Yes | User profiles, role/permission assignment |
-| Blog | Yes | Yes | Multilingual blog system (EN/HI/AR, JSON fields) |
-| Settings | Yes | API | Site config, SEO defaults, language settings |
-| Media | Yes | Yes | File uploads, media management |
+**Creating a Blog Post**
 
-### Optional Addon Modules (External Repos)
+![Create Blog Post](docs/images/screenshots/create-blog-post.gif)
 
-- Ecommerce (multilingual products + checkout)
-- Payment Gateways (Stripe, Razorpay, PayPal, Paytm, Paystack)
-- Analytics Dashboard (admin widgets + user insights)
-- Notifications system
-- Search (Meilisearch / fulltext)
-- API v2 / GraphQL
+**Language Switching**
 
-Modules can be enabled/disabled, versioned, moved to separate repositories, or installed via Composer.
+![Language Switch](docs/images/screenshots/language-switching.gif)
 
 ---
 
-## Key Features
+---
 
-### Authentication & Security (Module: Auth)
-- Laravel Breeze scaffolding
-- Email verification
-- Password reset
-- Sanctum token authentication
-- Two-factor authentication ready
-- CSRF protection
-- Brute-force throttling
+## What Ships Today
 
-### User Management (Module: User)
-- User profile with avatar
-- Account settings
-- Role & Permission Management (Spatie)
-- Activity logging support
-- Public or private user profiles
-- Filament UserResource
+LaraCoreKit includes these official modules out of the box:
 
-### Blog System (Module: Blog)
-- Multilingual blog (EN / HI / AR)
-- JSON-based translation fields
-- Livewire frontend blog pages
-- Filament admin for blog CRUD
-- SEO-friendly slugs
-- Draft / Published / Archived statuses
-- Rich text editor support
-- RTL support for Arabic pages
+- **Auth** - Login, registration, password reset, email verification, Sanctum API tokens
+- **User Management** - User profiles, account settings, avatar uploads
+- **Role & Permission System** - Full RBAC with Spatie Permission
+- **Blog Module** - Multilingual blog with draft/published states, SEO fields, rich text editor
+- **Settings Module** - Global site configuration, SEO defaults, multilingual settings
+- **Media Module** - File uploads, image management, automatic thumbnails, S3/local storage
+- **Multilingual Content** - English, Hindi, and Arabic translations built-in
+- **RTL Support** - Full right-to-left layout support for Arabic
+- **Admin Panel** - Filament 5 admin with resources, pages, and widgets
+- **UI Components** - 175+ production-ready Tailwind components
 
-### Global Settings (Module: Settings)
-- Filament Admin Settings Page
-- Multilingual site configuration
-- SEO defaults (title, meta, social sharing)
-- Logo, favicon, theme color settings
+## What is Optional
 
-### Media Management (Module: Media)
-- Image/file uploads
-- Automatic thumbnail generation
-- S3/local storage support
-- Media organizer (categories, tags)
+These features are available as separate addon modules or are planned for future releases:
 
-### Role & Permission System
-- Full RBAC using spatie/laravel-permission
-- Module-level CRUD permissions
-- User-specific permission assignment
-- Admin can assign roles per module
-- Filament Permission Management UI
-
-### Developer Tools
-- Laravel Telescope (debugging)
-- Laravel Pint (PSR-12 formatting)
-- Debugbar (development only)
-- IDE Helper
-- PHPUnit test suite
-- Scribe API documentation generator
-
-### SEO & Analytics
-- Meta tags management
-- Sitemap generator (Spatie Sitemap)
-- Open Graph + Twitter Cards
-- Google Analytics integration ready
+- Billing and subscriptions
+- Search integration (Meilisearch/Scout)
+- Analytics dashboard
+- Advanced notifications
+- Teams / multi-tenancy
+- E-commerce module
+- Payment gateways (Stripe, Razorpay, PayPal)
+- Module marketplace
 
 ---
 
-## Multilingual System (EN / HI / AR)
+## Supported Stack
 
-- Filament-native `->translatable()` fields
-- JSON stored translations in same row
-- Livewire auto-switch rendering
-- RTL layout switch for Arabic
-- Locale middleware
-- Frontend locale switcher
-
-```blade
-<html lang="{{ app()->getLocale() }}" 
-      dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
-```
-
----
-
-## Directory Structure
-
-```
-LaraCoreKit/
-├── app/
-│   ├── Console/
-│   ├── Exceptions/
-│   ├── Http/
-│   │   ├── Controllers/
-│   │   └── Middleware/
-│   ├── Providers/
-│   │   ├── AppServiceProvider.php
-│   │   └── ModuleServiceProvider.php       # registers modules at boot
-│   ├── Filament/                            # global Filament customizations (if any)
-│   └── Models/                              # core models (User, etc.) — keep minimal
-│
-├── bootstrap/
-│
-├── config/
-│   ├── app.php
-│   ├── modules.php                          # list of default modules & metadata
-│   └── ...                                  # other configs
-│
-├── modules/                                  # default bundled modules (local path)
-│   ├── Core/
-│   │   ├── composer.json
-│   │   └── src/
-│   │       ├── CoreServiceProvider.php
-│   │       ├── Console/
-│   │       ├── Http/
-│   │       └── ...
-│   │
-│   ├── Auth/
-│   │   ├── composer.json
-│   │   └── src/
-│   │       ├── AuthServiceProvider.php
-│   │       ├── Http/Controllers/
-│   │       └── Views/
-│   │
-│   ├── User/
-│   │   ├── composer.json
-│   │   └── src/
-│   │       ├── UserServiceProvider.php
-│   │       ├── Models/                      # e.g., Profile (if separate)
-│   │       ├── Filament/Resources/          # UserResource.php
-│   │       ├── Http/Controllers/
-│   │       └── Database/
-│   │           ├── migrations/
-│   │           └── seeders/
-│   │
-│   ├── Blog/
-│   │   ├── composer.json
-│   │   └── src/
-│   │       ├── BlogServiceProvider.php
-│   │       ├── Models/                      # Blog.php
-│   │       ├── Filament/Resources/          # BlogResource.php
-│   │       ├── Http/Controllers/
-│   │       ├── Http/Livewire/               # Livewire components for frontend editors/listing
-│   │       ├── resources/
-│   │       │   ├── views/
-│   │       │   └── lang/
-│   │       └── Database/
-│   │           ├── migrations/
-│   │           └── seeders/
-│   │
-│   ├── Settings/
-│   │   ├── composer.json
-│   │   └── src/
-│   │       ├── SettingsServiceProvider.php
-│   │       ├── Filament/Pages/              # SettingsPage.php (Filament single page)
-│   │       └── Database/
-│   │
-│   └── Media/
-│       ├── composer.json
-│       └── src/
-│           ├── MediaServiceProvider.php
-│           ├── Models/                      # if using custom media model
-│           └── Http/Controllers/            # upload endpoints
-│
-├── database/
-│   ├── migrations/                           # core migrations
-│   ├── seeders/                              # calls module seeders if needed
-│   └── factories/
-│
-├── resources/
-│   ├── views/                                # main layout wrappers & shared partials
-│   ├── css/                                  # tailwind entry (resources/css/app.css)
-│   └── js/                                   # vite entry (resources/js/app.js)
-│
-├── routes/
-│   ├── web.php                               # core web routes and module bootstrapping
-│   ├── api.php
-│   └── filament.php                          # special filament routes (if needed)
-│
-├── tests/
-│   ├── Feature/
-│   └── Unit/
-│
-├── .github/
-│   ├── workflows/                            # CI (tests, lint)
-│   └── ISSUE_TEMPLATE.md
-│
-├── docs/                                     # documentation (architecture, modules guide)
-│
-├── vendor/
-│
-├── composer.json
-├── package.json
-├── vite.config.js
-├── .env.example
-└── README.md
-```
-
----
-
-## Installation
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/ProgrammerNomad/LaraCoreKit.git
-cd LaraCoreKit
-```
-
-### 2. Install Dependencies
-
-```bash
-composer install
-npm install
-```
-
-### 3. Environment Setup
-
-```bash
-cp .env.example .env
-php artisan key:generate
-```
-
-Update database settings in `.env`.
-
-### 4. Migrate & Seed
-
-```bash
-php artisan migrate --seed
-```
-
-Includes:
-- Admin user (optional)
-- Demo blog posts
-- Default roles & permissions
-
-### Admin Panel Access
-
-Create an admin user:
-
-```bash
-php artisan filament:user
-```
-
-Default Admin URL: `/admin`
-
-### Language Switching
-
-Use the provided `SetLocale` middleware.
-
-Available locales: `en`, `hi`, `ar`
-
-### Screenshots (Coming Soon)
-
-- screenshots/dashboard.png
-- screenshots/blog-editor.png
-- screenshots/rtl-layout.png
-
----
-
-## Included Packages
-
-### Laravel Official
-
-- Breeze - Authentication scaffolding
-- Sanctum - API authentication
-- Telescope - Application debugging
-- Sail (optional) - Docker development environment
-- Pint - Code style formatter
-
-### Spatie
-
-- laravel-permission - Role and permission management
-- laravel-medialibrary - Media/file management
-- laravel-sitemap - Sitemap generation
-- laravel-backup - Database and file backups
-
-### Filament Ecosystem
-
-- Filament Admin v3 - Admin panel
-- Filament Translatable Plugin - Multilingual content
-
-### Developer Tools
-
-- laravel/debugbar - Development debugging
-- laravel-ide-helper - IDE autocompletion
-
----
-
-## Roadmap
-
-### Coming Soon
-
-- GraphQL API support
-- Blog categories & tags
-- Advanced analytics dashboard
-- Social login (Google, GitHub)
-- Import/export tools
-- Audit log module
-- Search indexing module
-- Module Marketplace (addon installer UI)
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| **PHP** | 8.3+ | Server-side language |
+| **Laravel** | 13.x | Backend framework |
+| **Filament** | 5.x | Admin panel |
+| **Livewire** | 4.x | Dynamic frontend components |
+| **Tailwind CSS** | 4.x | Utility-first styling |
+| **Alpine.js** | 3.x | Lightweight JavaScript (bundled with Livewire) |
+| **Vite** | 5.x | Asset bundler |
+| **MySQL/PostgreSQL/SQLite** | Latest | Database options |
 
 ---
 
 ## Quick Start
 
-### 1. Installation (Local)
+### Installation
 
 ```bash
-git clone https://github.com/yourusername/LaraCoreKit.git
-cd LaraCoreKit
+# Clone the repository
+git clone https://github.com/ProgrammerNomad/LaraCoreKit.git my-app
+cd my-app
 
-# Install dependencies
+# Install PHP dependencies
 composer install
+
+# Install Node dependencies
 npm install
 
 # Setup environment
 cp .env.example .env
 php artisan key:generate
 
-# Setup database (SQLite for local dev)
+# Create and setup database (SQLite for quick start)
 touch database/database.sqlite
 php artisan migrate --seed
 
-# Build assets
+# Link storage
+php artisan storage:link
+
+# Create admin user
+php artisan filament:user
+
+# Build frontend assets
 npm run build
 
-# Start server
+# Start development server
 php artisan serve
 ```
 
-Access at: `http://localhost:8000`
+Your application will be available at `http://localhost:8000`
 
-### 2. Admin Access
+Admin panel at `http://localhost:8000/admin`
 
-Create admin user:
+### Development Mode
+
+For active development with hot-reload:
+
 ```bash
-php artisan filament:user
-```
+# Terminal 1: Start Laravel dev server
+php artisan serve
 
-Admin panel: `http://localhost:8000/admin`
-
-### 3. View UI Components
-
-See all 175+ components at:
-```
-http://localhost:8000/ui-showcase/
+# Terminal 2: Start Vite dev server
+npm run dev
 ```
 
 ---
 
 ## Demo Credentials
 
-**Website:** https://www.laracorekit.com/
+**Live Demo:** [https://www.laracorekit.com](https://www.laracorekit.com)
 
-**Admin Panel:** https://www.laracorekit.com/admin
+**Admin Panel:** [https://www.laracorekit.com/admin](https://www.laracorekit.com/admin)
 
-*Contact us for demo credentials if needed.*
+### Demo Accounts
+
+| Role | Email | Password |
+|------|-------|----------|
+| **Admin** | admin@laracorekit.com | password |
+| **Editor** | editor@laracorekit.com | password |
+| **User** | user@laracorekit.com | password |
+
+> **Note:** Demo site resets every 24 hours. Destructive actions are blocked in demo mode.
 
 ---
 
-## Feature Comparison
+---
 
-| Feature | Included | Docs |
-|---------|----------|------|
-| Modular Architecture | ✅ | See `modules/` |
-| Admin Panel (Filament) | ✅ | `/admin` |
-| Blog System | ✅ | `/blog` |
-| Multilingual (EN/HI/AR) | ✅ | Core module |
-| RTL Support | ✅ | Arabic theme |
-| Role-Based Permissions | ✅ | Spatie Permission |
-| File Uploads | ✅ | Media module |
-| API Ready (Sanctum) | ✅ | `/api/v1/*` |
-| 175+ UI Components | ✅ | `/ui-showcase/` |
-| Dark Mode | ✅ | Alpine.js toggle |
-| TailwindCSS 4 | ✅ | All components |
-| Vite Bundling | ✅ | Fast dev build |
+## Included Modules
+
+Every official LaraCoreKit module is installable, removable, versioned, and documented. Each module includes routes, migrations, seeders, permissions, policies, translations, frontend UI, Filament resources/pages, tests, and upgrade notes.
+
+### Core Module
+- Application bootstrapping
+- Module loader system
+- Locale management
+- Shared layouts and components
+
+### Auth Module
+- User authentication (login, register, logout)
+- Email verification
+- Password reset functionality
+- Sanctum API token authentication
+- Two-factor authentication ready
+- Session management
+
+### User Module
+- User profile management
+- Avatar uploads
+- Account settings
+- Role and permission assignment
+- Filament UserResource for admin
+- Public/private profile options
+
+### Blog Module
+- Multilingual blog posts (EN/HI/AR)
+- JSON-based translation storage
+- Draft, Published, Archived statuses
+- SEO-friendly slugs
+- Rich text editor
+- Featured images
+- Meta tags and descriptions
+- Categories and tags
+- Livewire frontend
+- Filament BlogResource for admin
+
+### Settings Module
+- Global site configuration
+- Multilingual settings
+- SEO defaults (title, meta, OG tags)
+- Contact information
+- Theme settings
+- Filament SettingsPage
+
+### Media Module
+- File and image uploads
+- Automatic thumbnail generation
+- S3 and local storage support
+- Media categories and organization
+- Image optimization
+- Spatie Media Library integration
+
+---
+
+## Features
+
+---
+
+## Features
+
+### Modular Architecture
+- Clean separation of concerns
+- Each feature in its own module
+- Predictable structure: routes, migrations, views, tests
+- Easy to enable/disable modules
+- Version control per module
+
+### Admin Panel (Filament 5)
+- Beautiful, responsive admin interface
+- CRUD resources for all modules
+- Custom pages and widgets
+- Form builder with validation
+- Table builder with filters and actions
+- Dark mode support
+- Role-based access control
+
+### Frontend (Livewire 4 + Tailwind 4)
+- Dynamic components without writing JavaScript
+- 175+ pre-built UI components
+- Responsive and mobile-friendly
+- Dark mode toggle
+- Alpine.js for interactions
+- Fast page loads with Vite
+
+### Multilingual System
+- English, Hindi, and Arabic included
+- JSON-based translation storage
+- Locale middleware and switcher
+- Translatable database fields
+- RTL layout support for Arabic
+- Easy to add more languages
+
+### Role & Permission System
+- Full RBAC with Spatie Permission
+- Module-level permissions
+- Role-based resource access
+- Permission assignment UI in admin
+- Policy-driven authorization
+- Customizable permission structure
+
+### Developer Experience
+- Laravel Pint for code formatting
+- PHPStan for static analysis
+- PHPUnit test suite included
+- GitHub Actions workflows
+- Well-documented code
+- IDE helper support
+
+---
+
+## UI Component Library
+
+LaraCoreKit includes 175+ production-ready UI components built with Tailwind CSS and Livewire. View them all at [https://www.laracorekit.com/ui-showcase](https://www.laracorekit.com/ui-showcase)
+
+**Component Categories:**
+- Typography (headings, paragraphs, lists, code blocks)
+- Buttons (variants, sizes, states, groups)
+- Forms (inputs, selects, checkboxes, radios, file uploads)
+- Navigation (headers, sidebars, breadcrumbs, tabs, pagination)
+- Layouts (cards, grids, containers, sections)
+- Data Display (tables, lists, badges, avatars, stats)
+- Feedback (alerts, modals, notifications, progress bars)
+- Charts (line, bar, pie, radar, area charts)
+- Media (galleries, lightbox, video, audio players)
+- Auth (login, register, profile, sessions)
+- E-commerce (products, cart, checkout, reviews)
+- Advanced (drag-drop, calendar, Kanban boards)
+
+---
+
+## Module Development
+
+### Official Module Contract
+
+Each LaraCoreKit module follows this structure:
+
+```
+modules/YourModule/
+├── src/
+│   ├── YourModuleServiceProvider.php
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   ├── Livewire/
+│   │   └── Middleware/
+│   ├── Models/
+│   ├── Policies/
+│   ├── Filament/
+│   │   ├── Resources/
+│   │   ├── Pages/
+│   │   └── Widgets/
+│   └── Console/
+├── database/
+│   ├── migrations/
+│   ├── seeders/
+│   └── factories/
+├── routes/
+│   ├── web.php
+│   └── api.php
+├── views/
+├── lang/
+│   ├── en.json
+│   ├── hi.json
+│   └── ar.json
+├── config/
+├── tests/
+│   ├── Feature/
+│   └── Unit/
+├── composer.json
+├── README.md
+└── CHANGELOG.md
+```
+
+### Creating a Module
+
+Documentation for creating custom modules: [https://www.laracorekit.com/docs/contributing/module-development](https://www.laracorekit.com/docs/contributing/module-development)
+
+---
+
+---
+
+## Quality Assurance
+
+### Code Quality Tools
+
+```bash
+# Run tests
+composer test
+php artisan test
+
+# Run code style fixer
+composer pint
+./vendor/bin/pint
+
+# Run static analysis
+./vendor/bin/phpstan analyse
+
+# Run all quality checks
+composer review
+```
+
+### Continuous Integration
+
+LaraCoreKit uses GitHub Actions for automated testing:
+- PHPUnit tests on every push and pull request
+- Laravel Pint code style checks
+- PHPStan static analysis
+- Frontend asset build verification
+
+View workflows: [.github/workflows](.github/workflows)
+
+---
+
+## Included Packages
+
+### Laravel Official
+- **Breeze** - Authentication scaffolding
+- **Sanctum** - API authentication
+- **Pint** - Code style formatter
+- **Tinker** - REPL for Laravel
+
+### Spatie
+- **laravel-permission** - Role and permission management
+- **laravel-medialibrary** - Media/file handling
+- **laravel-sitemap** - Sitemap generation
+
+### Filament
+- **filament/filament** - Admin panel framework
+
+### Livewire
+- **livewire/livewire** - Full-stack framework
+
+---
+
+## Roadmap
+
+### Version 1.0 (Next Release)
+- [ ] Module marketplace/registry
+- [ ] CLI module installer
+- [ ] Packagist/Laravel installer support
+- [ ] Enhanced documentation with screenshots
+- [ ] Video tutorials
+- [ ] Example applications
+
+### Future Releases
+- [ ] Search module (Meilisearch/Scout)
+- [ ] Analytics dashboard module
+- [ ] Notification center module
+- [ ] Social authentication (Google, GitHub)
+- [ ] Teams/multi-tenancy module
+- [ ] E-commerce addon module
+- [ ] Payment gateway integrations
+- [ ] GraphQL API support
+- [ ] Webhook system
+- [ ] Audit log module
+- [ ] Two-factor authentication UI
+
+See full roadmap: [https://github.com/ProgrammerNomad/LaraCoreKit/issues](https://github.com/ProgrammerNomad/LaraCoreKit/issues)
+
+---
+
+## Documentation
+
+Comprehensive documentation is available at [https://www.laracorekit.com/docs](https://www.laracorekit.com/docs)
+
+### Quick Links
+- [Introduction](https://www.laracorekit.com/docs/introduction)
+- [Installation](https://www.laracorekit.com/docs/installation)
+- [Quick Start](https://www.laracorekit.com/docs/quick-start)
+- [Project Structure](https://www.laracorekit.com/docs/project-structure)
+- [Module System](https://www.laracorekit.com/docs/core/modules-system)
+- [Multilingual Support](https://www.laracorekit.com/docs/features/multilingual)
+- [Contributing](https://www.laracorekit.com/docs/contributing)
 
 ---
 
 ## Contributing
 
-We welcome all contributions!
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
-- Fork this repo
-- Create a feature branch
-- Commit changes
-- Open a Pull Request
+### Ways to Contribute
+- Report bugs via [GitHub Issues](https://github.com/ProgrammerNomad/LaraCoreKit/issues)
+- Suggest features or improvements
+- Submit pull requests
+- Improve documentation
+- Share your LaraCoreKit projects
+- Help others in discussions
 
-Follow PSR-12 and good coding practices.
+### Development Process
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Write/update tests
+5. Run quality checks
+6. Submit a pull request
+
+Read the full guide: [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
 
-## Code of Conduct
+## Security
 
-This project follows the Contributor Covenant code of conduct.
+If you discover a security vulnerability, please use GitHub Security Advisories:
+
+- Go to https://github.com/ProgrammerNomad/LaraCoreKit/security/advisories/new
+- Or contact the repository owner directly through GitHub
+
+All security vulnerabilities will be promptly addressed. See [SECURITY.md](SECURITY.md) for details.
+
+Please see our [Security Policy](SECURITY.md) for more information.
 
 ---
 
 ## License
 
-LaraCoreKit is open-source software licensed under the MIT License.
+LaraCoreKit is open-source software licensed under the [MIT license](LICENSE).
 
 ---
 
-## Maintainer
+## Support
 
-Shiv Singh (ProgrammerNomad)
-
-GitHub: [https://github.com/ProgrammerNomad](https://github.com/ProgrammerNomad)
+- **Documentation:** https://www.laracorekit.com/docs
+- **Issues:** https://github.com/ProgrammerNomad/LaraCoreKit/issues
+- **Discussions:** https://github.com/ProgrammerNomad/LaraCoreKit/discussions
 
 ---
 
-## Support LaraCoreKit
+## Credits
+
+Created and maintained by [Shiv Singh](https://github.com/ProgrammerNomad)
+
+Built with these amazing open-source projects:
+- [Laravel](https://laravel.com)
+- [Filament](https://filamentphp.com)
+- [Livewire](https://livewire.laravel.com)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Alpine.js](https://alpinejs.dev)
+- [Spatie Packages](https://spatie.be/open-source)
+
+---
+
+**Star this project on GitHub if you find it useful!**
 
 If this project helps you:
 
@@ -508,4 +524,4 @@ Thank you for supporting open-source!
 
 ---
 
-**Happy Coding — Build Something Amazing!**
+**Happy Coding - Build Something Amazing!**

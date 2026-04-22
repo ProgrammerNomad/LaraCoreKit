@@ -1,8 +1,10 @@
 ﻿# Users & Profiles
 
-**Estimated time:** 6 minutes  
-**Difficulty:** Beginner
-
+---
+**Supported Stack:** Laravel 13 / Filament 5 / Livewire 4 / Tailwind 4  
+**Module Status:** Core  
+**Last Updated:** April 22, 2026  
+**Source Files:** [User Model](../../modules/User/src/Models/User.php) | [User Resource](../../modules/User/src/Filament/Resources/UserResource.php)
 ---
 
 The User module manages user profiles, avatars, and extended user data beyond the core `users` table.

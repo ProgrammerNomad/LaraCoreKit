@@ -5,7 +5,7 @@
 
 ---
 
-LaraCoreKit uses **Laravel Sanctum** for API authentication — lightweight, stateless token authentication perfect for mobile apps, SPAs, and third-party integrations.
+LaraCoreKit uses **Laravel Sanctum** for API authentication - lightweight, stateless token authentication perfect for mobile apps, SPAs, and third-party integrations.
 
 ---
 
