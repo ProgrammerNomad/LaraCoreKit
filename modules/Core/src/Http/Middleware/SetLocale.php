@@ -21,6 +21,7 @@ class SetLocale
         
         if (in_array($locale, ['en', 'hi', 'ar'])) {
             App::setLocale($locale);
+            config(['app.locale' => $locale]); // Sync config to ensure components pick it up
         }
         
         return $next($request);

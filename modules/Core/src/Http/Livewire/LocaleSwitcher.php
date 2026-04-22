@@ -26,11 +26,10 @@ class LocaleSwitcher extends Component
             return;
         }
 
-        Session::put('locale', $locale);
-        App::setLocale($locale);
-        $this->currentLocale = $locale;
+        session()->put('locale', $locale);
+        session()->save();
 
-        $this->redirect(url()->previous(fallback: '/'), navigate: false);
+        return redirect(request()->header('Referer', '/'));
     }
 
     public function render()

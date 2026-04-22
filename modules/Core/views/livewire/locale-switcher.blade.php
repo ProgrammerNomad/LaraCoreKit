@@ -23,8 +23,9 @@
     >
         <div class="py-1">
             @foreach($availableLocales as $locale => $details)
-                <button
-                    wire:click="switchLocale('{{ $locale }}')"
+                <a
+                    href="{{ route('locale.switch', $locale) }}"
+                    wire:key="locale-{{ $locale }}"
                     class="w-full text-{{ app()->getLocale() == 'ar' ? 'right' : 'left' }} flex items-center justify-between px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition {{ $currentLocale === $locale ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300' }}"
                 >
                     <span>{{ $details['native'] }}</span>
@@ -33,7 +34,7 @@
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                         </svg>
                     @endif
-                </button>
+                </a>
             @endforeach
         </div>
     </div>
