@@ -23,7 +23,7 @@ class BlogSeeder extends Seeder
                     'hi' => 'Laravel 13 ke saath shuruaat karna',
                     'ar' => 'Getting Started with Laravel 13',
                 ],
-                'slug' => 'getting-started-with-laravel-12',
+                'slug' => 'getting-started-with-laravel-13',
                 'excerpt' => [
                     'en' => 'Learn the fundamentals of Laravel 13 and build modern web applications with ease.',
                     'hi' => 'Laravel 13 ki bunyaadi baaten seekhen aur aasaani se aadhunik web application banaen.',

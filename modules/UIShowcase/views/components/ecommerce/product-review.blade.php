@@ -32,7 +32,7 @@
                     </div>
                     <p class="text-gray-600 dark:text-gray-400 text-sm">Amazing sound quality! The noise cancellation is top-notch. Battery life easily lasts 30+ hours.</p>
                     <div class="flex items-center gap-4 mt-3 text-xs text-gray-500">
-                        <span>April 15, 2025</span>
+                        <span>April 15, 2026</span>
                         <button @click="helpful++" class="flex items-center gap-1 hover:text-green-600 transition">👍 <span x-text="helpful"></span></button>
                         <button @click="notHelpful++" class="flex items-center gap-1 hover:text-red-600 transition">👎 <span x-text="notHelpful"></span></button>
                     </div>

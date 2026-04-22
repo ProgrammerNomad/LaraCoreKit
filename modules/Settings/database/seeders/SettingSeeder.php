@@ -45,9 +45,9 @@ class SettingSeeder extends Seeder
             [
                 'key' => 'footer_text',
                 'value' => [
-                    'en' => '© 2025 LaraCoreKit. All rights reserved.',
-                    'hi' => '© 2025 लारा कोर किट। सर्वाधिकार सुरक्षित।',
-                    'ar' => '© 2025 لارا كور كيت. جميع الحقوق محفوظة.',
+                    'en' => '© 2026 LaraCoreKit. All rights reserved.',
+                    'hi' => '© 2026 लारा कोर किट। सर्वाधिकार सुरक्षित।',
+                    'ar' => '© 2026 لارا كور كيت. جميع الحقوق محفوظة.',
                 ],
                 'type' => 'json',
                 'is_translatable' => true,
@@ -67,9 +67,9 @@ class SettingSeeder extends Seeder
             [
                 'key' => 'meta_description',
                 'value' => [
-                    'en' => 'A modular Laravel 12 starter kit with Filament admin, multilingual support, and role-based permissions.',
-                    'hi' => 'फिलामेंट एडमिन, बहुभाषी समर्थन और भूमिका-आधारित अनुमतियों के साथ एक मॉड्यूलर लारावेल 12 स्टार्टर किट।',
-                    'ar' => 'مجموعة بداية Laravel 12 المعيارية مع لوحة تحكم Filament ودعم متعدد اللغات وأذونات قائمة على الأدوار.',
+                    'en' => 'A modular Laravel 13 starter kit with Filament admin, multilingual support, and role-based permissions.',
+                    'hi' => 'फिलामेंट एडमिन, बहुभाषी समर्थन और भूमिका-आधारित अनुमतियों के साथ एक मॉड्यूलर लारावेल 13 स्टार्टर किट।',
+                    'ar' => 'مجموعة بداية Laravel 13 المعيارية مع لوحة تحكم Filament ودعم متعدد اللغات وأذونات قائمة على الأدوار.',
                 ],
                 'type' => 'json',
                 'is_translatable' => true,
