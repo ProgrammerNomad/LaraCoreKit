@@ -21,7 +21,7 @@ A detailed comparison between LaraCoreKit and Larament to help you choose the ri
 | **UI Components** | 175+ components | Minimal |
 | **Role/Permissions** | Yes (Spatie Permission) | Yes (Spatie Permission) |
 | **API Auth** | Sanctum | Sanctum |
-| **GitHub Stars** | 3 (new project) | 369 (established) |
+| **GitHub** | [LaraCoreKit](https://github.com/ProgrammerNomad/LaraCoreKit) (new) | [Larament](https://github.com/lara-zeus/larament) (established) |
 | **Active Development** | Yes | Yes |
 | **Documentation** | Comprehensive | Comprehensive |
 | **CI/CD** | GitHub Actions | GitHub Actions |
@@ -173,7 +173,7 @@ A detailed comparison between LaraCoreKit and Larament to help you choose the ri
 
 **Larament:**
 - Excellent documentation
-- Proven track record (369 GitHub stars)
+- Established project with proven track record
 - Active community
 - Production-tested
 - Clean, idiomatic Laravel code
@@ -187,17 +187,16 @@ A detailed comparison between LaraCoreKit and Larament to help you choose the ri
 
 **LaraCoreKit:**
 - New project (launched 2026)
-- 3 GitHub stars (growing)
+- Growing community
 - Active development
 - Documentation site
-- Email support
 - GitHub issues and discussions
 
 **Larament:**
 - Established project
-- 369 GitHub stars
-- 27 forks
-- 68 releases
+- Large community
+- Multiple forks and contributors
+- Many releases
 - Proven in production
 - Active community
 - Regular updates

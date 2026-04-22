@@ -60,6 +60,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Placeholder clone URLs in documentation
 - Duplicate content sections from README
 - Old "screenshots coming soon" placeholder text
+- Fake social proof statistics section from homepage (GitHub stars, contributors counts)
+- Specific GitHub star counts from comparison documentation (replaced with general descriptions)
 
 ## [0.0.2] - 2026-04-21
 

@@ -21,7 +21,7 @@ A detailed comparison between LaraCoreKit and the official Laravel Livewire star
 | **UI Components** | 175+ Tailwind | Flux UI Pro Components |
 | **Authentication** | Breeze + Custom | Breeze + Flux |
 | **Role/Permissions** | Yes (Spatie) | No (DIY) |
-| **GitHub Stars** | 3 (new) | 496 (official) |
+| **GitHub** | [LaraCoreKit](https://github.com/ProgrammerNomad/LaraCoreKit) (new) | [Livewire Starter](https://github.com/laravel/starter-kit) (official) |
 | **Documentation** | Comprehensive | Official Laravel Docs |
 
 ## Detailed Comparison
