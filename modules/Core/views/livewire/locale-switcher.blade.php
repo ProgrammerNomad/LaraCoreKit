@@ -1,7 +1,7 @@
 ﻿<div class="relative" x-data="{ open: false }">
     <button 
         @click="open = !open" 
-        @click.away="open = false"
+        @click.outside="open = false"
         class="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition"
     >
         <span>{{ $availableLocales[$currentLocale]['native'] }}</span>

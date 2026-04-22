@@ -49,8 +49,6 @@ LaraCoreKit gives you a clean starting point with auth, users, roles/permissions
 
 ---
 
----
-
 ## What Ships Today
 
 LaraCoreKit includes these official modules out of the box:
@@ -160,13 +158,11 @@ npm run dev
 
 | Role | Email | Password |
 |------|-------|----------|
-| **Admin** | admin@laracorekit.com | password |
-| **Editor** | editor@laracorekit.com | password |
-| **User** | user@laracorekit.com | password |
+| **Admin** | admin@laracorekit.com | Admin@123 |
+| **Editor** | editor@laracorekit.com | Admin@123 |
+| **User** | user@laracorekit.com | User@123 |
 
-> **Note:** Demo site resets every 24 hours. Destructive actions are blocked in demo mode.
-
----
+> **Note:** Demo site resets every 30 minutes. Destructive actions are blocked in demo mode.
 
 ---
 
@@ -223,10 +219,6 @@ Every official LaraCoreKit module is installable, removable, versioned, and docu
 - Media categories and organization
 - Image optimization
 - Spatie Media Library integration
-
----
-
-## Features
 
 ---
 

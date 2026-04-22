@@ -27,11 +27,10 @@ class LocaleSwitcher extends Component
         }
 
         Session::put('locale', $locale);
+        App::setLocale($locale);
         $this->currentLocale = $locale;
 
-        // Use JavaScript redirect instead of server-side redirect
-        $this->dispatch('locale-switched');
-        $this->js('window.location.reload()');
+        $this->redirect(url()->previous(fallback: '/'), navigate: false);
     }
 
     public function render()
