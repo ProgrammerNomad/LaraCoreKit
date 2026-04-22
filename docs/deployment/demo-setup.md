@@ -211,7 +211,7 @@ DEMO_USER_PASSWORD=User@123
 // config/demo.php
 
 'allowed_hosts' => [
-    'laracorekit.mobrilz.digital',  // Your demo domain
+    'www.laracorekit.com',  // Your demo domain
     'localhost',
     '127.0.0.1',
 ],
@@ -240,13 +240,13 @@ The demo module automatically schedules database resets using Laravel's task sch
 
 1. Log into Plesk Control Panel
 2. Go to **Websites & Domains**
-3. Select **laracorekit.mobrilz.digital**
+3. Select **www.laracorekit.com**
 4. Click **Scheduled Tasks (Cron Jobs)**
 
 ### Step 2: Add Laravel Scheduler Cron
 
 **Settings:**
-- **Command**: `cd /var/www/vhosts/mobrilz.digital/laracorekit.mobrilz.digital && php artisan schedule:run >> /dev/null 2>&1`
+- **Command**: `cd /var/www/vhosts/laracorekit.com && php artisan schedule:run >> /dev/null 2>&1`
 - **Run**: Every minute (*/1)
 - **Minute**: `*`
 - **Hour**: `*`
@@ -267,15 +267,15 @@ which php
 
 **Full command with explicit PHP version:**
 ```bash
-cd /var/www/vhosts/mobrilz.digital/laracorekit.mobrilz.digital && /usr/bin/php8.2 artisan schedule:run >> /dev/null 2>&1
+cd /var/www/vhosts/laracorekit.com && /usr/bin/php8.2 artisan schedule:run >> /dev/null 2>&1
 ```
 
 ### Step 3: Verify Cron is Running
 
 **SSH into server:**
 ```bash
-ssh username@laracorekit.mobrilz.digital
-cd /var/www/vhosts/mobrilz.digital/laracorekit.mobrilz.digital
+ssh username@www.laracorekit.com
+cd /var/www/vhosts/laracorekit.com
 
 # Test schedule manually
 php artisan schedule:list
@@ -288,7 +288,7 @@ php artisan schedule:work
 
 **Create log output (temporary for testing):**
 ```bash
-cd /var/www/vhosts/mobrilz.digital/laracorekit.mobrilz.digital && php artisan schedule:run >> storage/logs/cron.log 2>&1
+cd /var/www/vhosts/laracorekit.com && php artisan schedule:run >> storage/logs/cron.log 2>&1
 ```
 
 **Check logs:**
@@ -373,13 +373,13 @@ protected function getHeaderWidgets(): array
 
 1. Log into Plesk Control Panel
 2. Go to **Websites & Domains**
-3. Select **laracorekit.mobrilz.digital**
+3. Select **www.laracorekit.com**
 4. Click **Scheduled Tasks (Cron Jobs)**
 
 ### Step 4.2: Add Laravel Scheduler Cron
 
 **Settings:**
-- **Command**: `cd /var/www/vhosts/mobrilz.digital/laracorekit.mobrilz.digital && php artisan schedule:run >> /dev/null 2>&1`
+- **Command**: `cd /var/www/vhosts/laracorekit.com && php artisan schedule:run >> /dev/null 2>&1`
 - **Run**: Every minute (*/1)
 - **Minute**: `*`
 - **Hour**: `*`
@@ -400,15 +400,15 @@ which php
 
 **Full command with explicit PHP version:**
 ```bash
-cd /var/www/vhosts/mobrilz.digital/laracorekit.mobrilz.digital && /usr/bin/php8.2 artisan schedule:run >> /dev/null 2>&1
+cd /var/www/vhosts/laracorekit.com && /usr/bin/php8.2 artisan schedule:run >> /dev/null 2>&1
 ```
 
 ### Step 4.3: Verify Cron is Running
 
 **SSH into server:**
 ```bash
-ssh username@laracorekit.mobrilz.digital
-cd /var/www/vhosts/mobrilz.digital/laracorekit.mobrilz.digital
+ssh username@www.laracorekit.com
+cd /var/www/vhosts/laracorekit.com
 
 # Test schedule manually
 php artisan schedule:list
@@ -421,7 +421,7 @@ php artisan schedule:work
 
 **Create log output (temporary for testing):**
 ```bash
-cd /var/www/vhosts/mobrilz.digital/laracorekit.mobrilz.digital && php artisan schedule:run >> storage/logs/cron.log 2>&1
+cd /var/www/vhosts/laracorekit.com && php artisan schedule:run >> storage/logs/cron.log 2>&1
 ```
 
 **Check logs:**
@@ -438,7 +438,7 @@ tail -f storage/logs/laravel.log
 
 **SSH into server:**
 ```bash
-cd /var/www/vhosts/mobrilz.digital/laracorekit.mobrilz.digital
+cd /var/www/vhosts/laracorekit.com
 
 # Run manual reset
 php artisan demo:reset --force
@@ -459,7 +459,7 @@ php artisan tinker
 ### Step 5.3: Security Checklist
 
 - [ ] `DEMO_MODE=false` in local `.env`
-- [ ] `DEMO_MODE=true` only on `laracorekit.mobrilz.digital`
+- [ ] `DEMO_MODE=true` only on `www.laracorekit.com`
 - [ ] Verify `allowed_hosts` in config includes demo domain
 - [ ] Test that demo banner shows on login pages
 - [ ] Test that cron job runs every 30 minutes
@@ -517,7 +517,7 @@ jobs:
           username: ${{ secrets.DEMO_SERVER_USER }}
           key: ${{ secrets.DEMO_SERVER_SSH_KEY }}
           script: |
-            cd /var/www/vhosts/mobrilz.digital/laracorekit.mobrilz.digital
+            cd /var/www/vhosts/laracorekit.com
             
             # Pull latest code
             git pull origin main
@@ -548,7 +548,7 @@ jobs:
 
 **In GitHub Repository Settings  Secrets:**
 ```
-DEMO_SERVER_HOST = laracorekit.mobrilz.digital
+DEMO_SERVER_HOST = www.laracorekit.com
 DEMO_SERVER_USER = your-ssh-username
 DEMO_SERVER_SSH_KEY = (paste your private SSH key)
 ```
@@ -587,9 +587,9 @@ php artisan demo:reset --force
 **Option A: Manual Deployment**
 ```bash
 # SSH into server
-ssh username@laracorekit.mobrilz.digital
+ssh username@www.laracorekit.com
 
-cd /var/www/vhosts/mobrilz.digital/laracorekit.mobrilz.digital
+cd /var/www/vhosts/laracorekit.com
 
 # Pull latest code
 git pull origin main
@@ -670,7 +670,7 @@ sudo service cron status
 tail -f /var/log/cron
 
 # Manually test Laravel scheduler
-cd /var/www/vhosts/mobrilz.digital/laracorekit.mobrilz.digital
+cd /var/www/vhosts/laracorekit.com
 php artisan schedule:work
 ```
 
