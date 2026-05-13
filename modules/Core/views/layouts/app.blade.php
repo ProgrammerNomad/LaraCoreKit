@@ -57,39 +57,47 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ $title ?? 'LaraCoreKit - Modular Laravel Starter Kit with Admin Panel, UI Components & Multilingual Support' }}</title>
-        
+        @php
+            $pageTitle       = trim((string)($title ?? '')) ?: 'LaraCoreKit - Modular Laravel Starter Kit with Admin Panel, UI Components & Multilingual Support';
+            $pageDescription = trim((string)($metaDescription ?? '')) ?: 'Build production-ready Laravel apps in minutes with LaraCoreKit. Includes Filament admin, 175+ UI components, multilingual support, and modular architecture.';
+            $pageKeywords    = trim((string)($metaKeywords ?? '')) ?: 'Laravel starter kit, Laravel admin panel, Filament, Livewire, Laravel boilerplate, Laravel template, multilingual Laravel, Laravel UI components, Laravel modular architecture';
+            $pageRobots      = trim((string)($robots ?? '')) ?: 'index, follow';
+            $pageOgTitle     = trim((string)($ogTitle ?? '')) ?: $pageTitle;
+            $pageOgDesc      = trim((string)($ogDescription ?? '')) ?: $pageDescription;
+            $pageOgImage     = trim((string)($ogImage ?? '')) ?: asset('images/og-preview.png');
+            $pageOgType      = trim((string)($ogType ?? '')) ?: 'website';
+        @endphp
+
+        <title>{{ $pageTitle }}</title>
+
         <!-- SEO Meta Tags -->
-        <meta name="description" content="Build production-ready Laravel apps in minutes with LaraCoreKit. Includes Filament admin, 175+ UI components, multilingual support, and modular architecture.">
-        <meta name="keywords" content="Laravel starter kit, Laravel admin panel, Filament, Livewire, Laravel boilerplate, Laravel template, multilingual Laravel, Laravel UI components, Laravel modular architecture">
+        <meta name="description" content="{{ $pageDescription }}">
+        <meta name="keywords" content="{{ $pageKeywords }}">
         <meta name="author" content="LaraCoreKit">
-        <meta name="robots" content="index, follow">
+        <meta name="robots" content="{{ $pageRobots }}">
 
         <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="{{ $pageOgType }}">
         <meta property="og:url" content="{{ url()->current() }}">
-        <meta property="og:title" content="LaraCoreKit - Modular Laravel Starter Kit">
-        <meta property="og:description" content="Build production-ready Laravel apps in minutes. Includes Filament admin, 175+ UI components, multilingual support (EN/HI/AR), and modular architecture.">
-        <meta property="og:image" content="{{ asset('images/og-preview.png') }}">
+        <meta property="og:title" content="{{ $pageOgTitle }}">
+        <meta property="og:description" content="{{ $pageOgDesc }}">
+        <meta property="og:image" content="{{ $pageOgImage }}">
         <meta property="og:site_name" content="LaraCoreKit">
 
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:url" content="{{ url()->current() }}">
-        <meta name="twitter:title" content="LaraCoreKit - Modular Laravel Starter Kit">
-        <meta name="twitter:description" content="Build production-ready Laravel apps in minutes with Filament admin, 175+ UI components & multilingual support.">
-        <meta name="twitter:image" content="{{ asset('images/og-preview.png') }}">
+        <meta name="twitter:title" content="{{ $pageOgTitle }}">
+        <meta name="twitter:description" content="{{ $pageOgDesc }}">
+        <meta name="twitter:image" content="{{ $pageOgImage }}">
 
         <!-- Canonical URL -->
         <link rel="canonical" href="{{ url()->current() }}">
 
-        <!-- Multilingual hreflang tags for SEO -->
-        <link rel="alternate" hreflang="en" href="{{ str_replace('/' . app()->getLocale(), '/en', url()->current()) }}">
-        <link rel="alternate" hreflang="hi" href="{{ str_replace('/' . app()->getLocale(), '/hi', url()->current()) }}">
-        <link rel="alternate" hreflang="ar" href="{{ str_replace('/' . app()->getLocale(), '/ar', url()->current()) }}">
-        <link rel="alternate" hreflang="x-default" href="{{ str_replace('/' . app()->getLocale(), '/en', url()->current()) }}">
-
-        <!-- JSON-LD Structured Data -->
+        <!-- JSON-LD Structured Data (default: SoftwareApplication; override via $structuredData slot) -->
+        @if(isset($structuredData) && trim((string)$structuredData) !== '')
+            {!! $structuredData !!}
+        @else
         <script type="application/ld+json">
         {
             "@@context": "https://schema.org",
@@ -116,6 +124,7 @@
             "runtimePlatform": "Laravel 13"
         }
         </script>
+        @endif
 
         <!-- Fonts - Self Hosted -->
         <!-- Fonts are included in Tailwind config via Inter and Poppins -->

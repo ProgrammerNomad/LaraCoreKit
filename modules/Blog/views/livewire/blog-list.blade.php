@@ -1,3 +1,7 @@
+<x-slot:title>Blog - Laravel Tutorials &amp; Insights | LaraCoreKit</x-slot:title>
+<x-slot:metaDescription>Explore the LaraCoreKit blog for Laravel tutorials, best practices, and insights on building modular production-ready applications.</x-slot:metaDescription>
+<x-slot:metaKeywords>Laravel blog, Laravel tutorials, Filament admin, Livewire tutorials, Laravel best practices</x-slot:metaKeywords>
+
 <div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header -->

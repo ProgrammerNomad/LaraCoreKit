@@ -1,18 +1,9 @@
 @extends('showcase::layouts.showcase')
 
 @section('title', $seoTitle ?? $title)
-@section('page-title', $seoTitle ?? $title)
-@section('page-description', $seoDescription ?? $description)
-
-@push('meta')
-    <meta property="og:title" content="{{ $seoTitle ?? $title }}">
-    <meta property="og:description" content="{{ $seoDescription ?? $description }}">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ url()->current() }}">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $seoTitle ?? $title }}">
-    <meta name="twitter:description" content="{{ $seoDescription ?? $description }}">
-@endpush
+@section('meta-description', $seoDescription ?? $description)
+@section('page-title', $title)
+@section('page-description', $description)
 
 @section('content')
 <div class="max-w-7xl w-full mx-auto space-y-6">

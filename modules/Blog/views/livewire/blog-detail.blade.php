@@ -1,3 +1,27 @@
+@php
+    $locale    = app()->getLocale();
+    $postTitle = $blog->meta_title[$locale] ?? $blog->meta_title['en'] ?? $blog->title[$locale] ?? $blog->title['en'] ?? '';
+    $postDesc  = strip_tags((string)($blog->meta_description[$locale] ?? $blog->meta_description['en'] ?? $blog->excerpt[$locale] ?? $blog->excerpt['en'] ?? ''));
+    $postImage = rescue(fn() => $blog->getFirstMediaUrl('featured_image'), asset('images/og-preview.png')) ?: asset('images/og-preview.png');
+    $postJsonLd = json_encode([
+        '@context'      => 'https://schema.org',
+        '@type'         => 'Article',
+        'headline'      => $postTitle,
+        'description'   => \Illuminate\Support\Str::limit($postDesc, 200),
+        'image'         => $postImage,
+        'datePublished' => $blog->published_at?->toIso8601String(),
+        'dateModified'  => $blog->updated_at?->toIso8601String(),
+        'author'        => ['@type' => 'Person', 'name' => $blog->author->name ?? 'LaraCoreKit'],
+        'publisher'     => ['@type' => 'Organization', 'name' => 'LaraCoreKit', 'url' => url('/')],
+        'url'           => url()->current(),
+    ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+@endphp
+<x-slot:title>{{ $postTitle }} - LaraCoreKit</x-slot:title>
+<x-slot:metaDescription>{{ \Illuminate\Support\Str::limit($postDesc, 160) }}</x-slot:metaDescription>
+<x-slot:ogType>article</x-slot:ogType>
+<x-slot:ogImage>{{ $postImage }}</x-slot:ogImage>
+<x-slot:structuredData><script type="application/ld+json">{!! $postJsonLd !!}</script></x-slot:structuredData>
+
 <div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
     <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Back Button -->

@@ -24,7 +24,7 @@
         <div class="py-1">
             @foreach($availableLocales as $locale => $details)
                 <a
-                    href="{{ route('locale.switch', $locale) }}"
+                    :href="'{{ route('locale.switch', $locale) }}?return_to=' + encodeURIComponent(window.location.href)"
                     wire:key="locale-{{ $locale }}"
                     class="w-full text-{{ app()->getLocale() == 'ar' ? 'right' : 'left' }} flex items-center justify-between px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition {{ $currentLocale === $locale ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300' }}"
                 >

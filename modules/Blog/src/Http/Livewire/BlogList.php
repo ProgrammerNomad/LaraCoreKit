@@ -14,12 +14,6 @@ class BlogList extends Component
 
     public string $search = '';
     public string $category = '';
-    public string $locale;
-
-    public function mount()
-    {
-        $this->locale = app()->getLocale();
-    }
 
     public function updatingSearch()
     {
@@ -33,16 +27,18 @@ class BlogList extends Component
 
     public function render()
     {
+        $locale = app()->getLocale();
+
         $blogs = Blog::query()
             ->where('status', 'published')
-            ->when($this->search, function ($query) {
-                $query->where(function ($q) {
-                    $q->whereRaw("JSON_EXTRACT(title, '$.{$this->locale}') LIKE ?", ["%{$this->search}%"])
-                      ->orWhereRaw("JSON_EXTRACT(content, '$.{$this->locale}') LIKE ?", ["%{$this->search}%"]);
+            ->when($this->search, function ($query) use ($locale) {
+                $query->where(function ($q) use ($locale) {
+                    $q->whereRaw("JSON_EXTRACT(title, '$.{$locale}') LIKE ?", ["%{$this->search}%"])
+                      ->orWhereRaw("JSON_EXTRACT(content, '$.{$locale}') LIKE ?", ["%{$this->search}%"]);
                 });
             })
-            ->when($this->category, function ($query) {
-                $query->whereRaw("JSON_EXTRACT(category, '$.{$this->locale}') = ?", [$this->category]);
+            ->when($this->category, function ($query) use ($locale) {
+                $query->whereRaw("JSON_EXTRACT(category, '$.{$locale}') = ?", [$this->category]);
             })
             ->with(['author'])
             ->latest('published_at')
@@ -53,7 +49,7 @@ class BlogList extends Component
             ->get()
             ->pluck('category')
             ->filter()
-            ->map(fn ($cat) => is_array($cat) ? ($cat[$this->locale] ?? '') : $cat)
+            ->map(fn ($cat) => is_array($cat) ? ($cat[$locale] ?? '') : $cat)
             ->filter()
             ->unique()
             ->values();
@@ -61,6 +57,7 @@ class BlogList extends Component
         return view('blog::livewire.blog-list', [
             'blogs' => $blogs,
             'categories' => $categories,
+            'locale' => $locale,
         ]);
     }
 }

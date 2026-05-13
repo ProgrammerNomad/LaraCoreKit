@@ -18,6 +18,7 @@ class UIShowcaseServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../views', 'showcase');
         
         // Load routes
-        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+        \Illuminate\Support\Facades\Route::middleware('web')
+            ->group(__DIR__ . '/../routes/web.php');
     }
 }

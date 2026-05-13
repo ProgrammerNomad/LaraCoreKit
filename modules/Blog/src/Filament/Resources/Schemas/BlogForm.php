@@ -10,6 +10,8 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Tabs;
+use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
 
@@ -21,13 +23,32 @@ class BlogForm
             ->components([
                 Section::make('Content')
                     ->schema([
-                        TextInput::make('title')
-                            ->required()
-                            ->live(onBlur: true)
-                            ->afterStateUpdated(fn (string $operation, $state, callable $set) => 
-                                $operation === 'create' ? $set('slug', Str::slug($state)) : null
-                            )
-                            ->helperText('Enter title in English, Hindi, and Arabic'),
+                        Tabs::make('title_translations')
+                            ->label('Title')
+                            ->tabs([
+                                Tab::make('English (EN)')
+                                    ->schema([
+                                        TextInput::make('title.en')
+                                            ->label('Title (EN)')
+                                            ->required()
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(fn (string $operation, $state, callable $set) =>
+                                                $operation === 'create' ? $set('slug', Str::slug($state)) : null
+                                            ),
+                                    ]),
+                                Tab::make('हिन्दी (HI)')
+                                    ->schema([
+                                        TextInput::make('title.hi')
+                                            ->label('Title (HI)'),
+                                    ]),
+                                Tab::make('العربية (AR)')
+                                    ->schema([
+                                        TextInput::make('title.ar')
+                                            ->label('Title (AR)')
+                                            ->extraInputAttributes(['dir' => 'rtl']),
+                                    ]),
+                            ])
+                            ->columnSpanFull(),
 
                         TextInput::make('slug')
                             ->required()
@@ -35,14 +56,55 @@ class BlogForm
                             ->maxLength(255)
                             ->helperText('Auto-generated from English title'),
 
-                        Textarea::make('excerpt')
-                            ->rows(3)
-                            ->helperText('Short summary in all languages'),
+                        Tabs::make('excerpt_translations')
+                            ->label('Excerpt')
+                            ->tabs([
+                                Tab::make('English (EN)')
+                                    ->schema([
+                                        Textarea::make('excerpt.en')
+                                            ->label('Excerpt (EN)')
+                                            ->rows(3),
+                                    ]),
+                                Tab::make('हिन्दी (HI)')
+                                    ->schema([
+                                        Textarea::make('excerpt.hi')
+                                            ->label('Excerpt (HI)')
+                                            ->rows(3),
+                                    ]),
+                                Tab::make('العربية (AR)')
+                                    ->schema([
+                                        Textarea::make('excerpt.ar')
+                                            ->label('Excerpt (AR)')
+                                            ->rows(3)
+                                            ->extraInputAttributes(['dir' => 'rtl']),
+                                    ]),
+                            ])
+                            ->columnSpanFull(),
 
-                        Textarea::make('content')
-                            ->required()
-                            ->rows(10)
-                            ->helperText('Blog content (stored as JSON for multilingual support)')
+                        Tabs::make('content_translations')
+                            ->label('Content')
+                            ->tabs([
+                                Tab::make('English (EN)')
+                                    ->schema([
+                                        Textarea::make('content.en')
+                                            ->label('Content (EN)')
+                                            ->required()
+                                            ->rows(10),
+                                    ]),
+                                Tab::make('हिन्दी (HI)')
+                                    ->schema([
+                                        Textarea::make('content.hi')
+                                            ->label('Content (HI)')
+                                            ->rows(10),
+                                    ]),
+                                Tab::make('العربية (AR)')
+                                    ->schema([
+                                        Textarea::make('content.ar')
+                                            ->label('Content (AR)')
+                                            ->rows(10)
+                                            ->extraInputAttributes(['dir' => 'rtl']),
+                                    ]),
+                            ])
                             ->columnSpanFull(),
                     ])
                     ->columns(2),

@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title ?? 'Documentation' }} - LaraCoreKit</title>
-    <meta name="description" content="LaraCoreKit documentation - Production-ready modular Laravel starter kit.">
+    <meta name="description" content="LaraCoreKit documentation - Production-ready modular Laravel starter kit with Filament admin, Livewire, multilingual support, and modular architecture.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ ($title ?? 'Documentation') }} - LaraCoreKit Docs">
+    <meta property="og:description" content="LaraCoreKit documentation - Production-ready modular Laravel starter kit.">
+    <meta property="og:image" content="{{ asset('images/og-preview.png') }}">
+    <meta property="og:site_name" content="LaraCoreKit">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ ($title ?? 'Documentation') }} - LaraCoreKit Docs">
+    <meta name="twitter:description" content="LaraCoreKit documentation - Production-ready modular Laravel starter kit.">
+    <meta name="twitter:image" content="{{ asset('images/og-preview.png') }}">
     
     <!-- Fonts - Self Hosted (Inter and Fira Code are loaded via Tailwind/Vite) -->
     

@@ -25,6 +25,7 @@ class BlogServiceProvider extends ServiceProvider
         Livewire::component('blog.blog-detail', \Modules\Blog\Http\Livewire\BlogDetail::class);
 
         // Load routes
-        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+        \Illuminate\Support\Facades\Route::middleware('web')
+            ->group(__DIR__ . '/../routes/web.php');
     }
 }

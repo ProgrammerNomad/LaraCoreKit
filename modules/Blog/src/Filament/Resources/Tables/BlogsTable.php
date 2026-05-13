@@ -23,8 +23,20 @@ class BlogsTable
         return $table
             ->columns([
                 TextColumn::make('title')
-                    ->searchable()
-                    ->sortable()
+                    ->getStateUsing(function ($record) {
+                        $title = $record->title;
+                        if (is_array($title)) {
+                            $locale = app()->getLocale();
+                            return $title[$locale] ?? $title['en'] ?? reset($title) ?? '';
+                        }
+                        return $title;
+                    })
+                    ->searchable(query: function ($query, string $search) {
+                        $query->where('title->en', 'like', "%{$search}%")
+                              ->orWhere('title->hi', 'like', "%{$search}%")
+                              ->orWhere('title->ar', 'like', "%{$search}%");
+                    })
+                    ->sortable(query: fn ($query, $direction) => $query->orderByRaw("JSON_UNQUOTE(JSON_EXTRACT(title, '$.en')) {$direction}"))
                     ->weight('bold')
                     ->limit(50),
 

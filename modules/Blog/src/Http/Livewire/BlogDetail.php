@@ -10,12 +10,9 @@ use Livewire\Attributes\Layout;
 class BlogDetail extends Component
 {
     public Blog $blog;
-    public string $locale;
 
     public function mount(string $slug)
     {
-        $this->locale = app()->getLocale();
-        
         $this->blog = Blog::query()
             ->where('slug', $slug)
             ->where('status', 'published')
@@ -25,10 +22,12 @@ class BlogDetail extends Component
 
     public function render()
     {
+        $locale = app()->getLocale();
+
         $relatedBlogs = Blog::query()
             ->where('status', 'published')
             ->where('id', '!=', $this->blog->id)
-            ->whereRaw("JSON_EXTRACT(category, '$.{$this->locale}') = ?", [$this->blog->category[$this->locale] ?? ''])
+            ->whereRaw("JSON_EXTRACT(category, '$.{$locale}') = ?", [$this->blog->category[$locale] ?? ''])
             ->with(['author'])
             ->latest('published_at')
             ->limit(3)
@@ -36,6 +35,7 @@ class BlogDetail extends Component
 
         return view('blog::livewire.blog-detail', [
             'relatedBlogs' => $relatedBlogs,
+            'locale' => $locale,
         ]);
     }
 }

@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Installed `bezhansalleh/filament-language-switch` plugin for a native Filament admin topbar language switcher
+- Configured `LanguageSwitch` in `AppServiceProvider` with locales `en`, `hi`, `ar`, native labels, and circular avatars
+- Created custom Filament theme at `resources/css/filament/admin/theme.css` via `php artisan make:filament-theme`
+- Added `@source` directive for the language switch plugin to the Filament theme CSS so plugin classes are compiled
+- Published and ran `spatie/laravel-medialibrary` migration to create the `media` table (was missing from initial setup)
+
+### Changed
+- Replaced manual `panels::topbar.end` render hook (which injected the public frontend `LocaleSwitcher` Livewire component, looking unstyled) with the official language switch plugin — auto-places a native icon button in the Filament topbar
+- Rebuilt Vite assets (`npm run build`) to include the language switch plugin CSS in the compiled theme
+- Wrapped `$blog->getFirstMediaUrl()` call in `blog-detail.blade.php` with Laravel's `rescue()` helper to fall back to the default OG image instead of crashing when the media table is unavailable
+- Removed broken `@php` block from `modules/UIShowcase/views/layouts/showcase.blade.php` that referenced the non-existent `\Illuminate\Support\View::yieldContent()` method, causing a 500 error on all UIShowcase pages
+
 - SECURITY.md file with security policy and disclosure process
 - CONTRIBUTING.md file with comprehensive contribution guidelines
 - CODEOWNERS file for repository maintainers

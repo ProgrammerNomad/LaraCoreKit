@@ -1,5 +1,7 @@
 @extends('showcase::layouts.showcase')
 
+@section('title', 'UI Component Library - LaraCoreKit')
+@section('meta-description', 'Browse 175+ production-ready UI components for Laravel — buttons, forms, data tables, charts, modals, and more. Built with Tailwind CSS, Alpine.js and Livewire.')
 @section('page-title', 'UI Showcase Overview')
 @section('page-description', 'Complete component library for LaraCoreKit')
 
