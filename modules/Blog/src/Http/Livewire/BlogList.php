@@ -44,15 +44,17 @@ class BlogList extends Component
             ->latest('published_at')
             ->paginate(9);
 
-        $categories = Blog::query()
-            ->where('status', 'published')
-            ->get()
-            ->pluck('category')
-            ->filter()
-            ->map(fn ($cat) => is_array($cat) ? ($cat[$locale] ?? '') : $cat)
-            ->filter()
-            ->unique()
-            ->values();
+        $categories = \Illuminate\Support\Facades\Cache::remember('blog_categories_list', 3600, function () use ($locale) {
+            return Blog::query()
+                ->where('status', 'published')
+                ->whereNotNull('category')
+                ->pluck('category')
+                ->map(fn ($cat) => is_string($cat) ? json_decode($cat, true) : $cat)
+                ->map(fn ($cat) => is_array($cat) ? ($cat[$locale] ?? '') : $cat)
+                ->filter()
+                ->unique()
+                ->values();
+        });
 
         return view('blog::livewire.blog-list', [
             'blogs' => $blogs,
