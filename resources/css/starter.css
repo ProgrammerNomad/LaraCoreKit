@@ -1,0 +1,8 @@
+@import 'tailwindcss' source(none);
+@plugin '@tailwindcss/typography';
+@custom-variant dark (&:where(.dark, .dark *));
+@source '../../modules/**/*.blade.php';
+@source '../views/**/*.blade.php';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+[x-cloak] { display:none!important; }
+.lck-brand svg { width:100px; height:36px; }

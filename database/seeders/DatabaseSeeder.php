@@ -11,8 +11,5 @@ class DatabaseSeeder extends Seeder
     {
         // Safe defaults: roles only. Demo content requires an explicit DemoSeeder invocation.
         $this->call(RolePermissionSeeder::class);
-        if (config('demo.enabled')) {
-            $this->call(DemoSeeder::class);
-        }
     }
 }

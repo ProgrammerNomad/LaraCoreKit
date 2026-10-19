@@ -1,6 +1,6 @@
 # Configuration
 
-After [creating a Laravel application and requiring the package](/docs/installation), run `php artisan laracorekit:install` to publish `config/laracorekit.php` and public CSS. Existing configuration is preserved.
+The starter includes editable `config/laracorekit.php` and built assets. Edit configuration directly; no vendor publishing or laracorekit:install command is needed.
 
 | Setting | Default | Purpose |
 | --- | --- | --- |

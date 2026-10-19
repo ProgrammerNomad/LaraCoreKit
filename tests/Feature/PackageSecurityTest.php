@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-use Database\Seeders\DemoSeeder;
 use Filament\Facades\Filament;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -91,12 +90,6 @@ class PackageSecurityTest extends TestCase
             ->expectsQuestion('Email', $user->email)
             ->assertFailed();
         $this->assertFalse($user->fresh()->hasRole('Admin'));
-    }
-
-    public function test_sample_seeder_refuses_to_run_outside_demo_mode(): void
-    {
-        $this->expectException(\RuntimeException::class);
-        $this->seed(DemoSeeder::class);
     }
 
     public function test_role_seeding_does_not_promote_accounts_with_a_known_email(): void

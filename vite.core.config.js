@@ -5,10 +5,10 @@ export default defineConfig({
     publicDir: false,
     plugins: [tailwindcss()],
     build: {
-        outDir: 'packages/core/resources/dist',
+        outDir: 'public/vendor/laracorekit',
         emptyOutDir: true,
         rollupOptions: {
-            input: 'packages/core/resources/css/app.css',
+            input: 'resources/css/starter.css',
             output: { assetFileNames: 'laracorekit.css' },
         },
     },

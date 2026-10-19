@@ -9,8 +9,8 @@
 @source "../**/*.vue";
 @source "../../modules/**/views/**/*.blade.php";
 @source "../../modules/**/src/**/*.php";
-@source "../../packages/core/modules/**/*.blade.php";
-@source "../../packages/core/modules/**/*.php";
+@source "../../modules/**/*.blade.php";
+@source "../../modules/**/*.php";
 @plugin "@tailwindcss/typography";
 [x-cloak] { display: none !important; }
 

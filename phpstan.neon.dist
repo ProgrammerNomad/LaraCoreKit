@@ -5,14 +5,11 @@ parameters:
     level: 5
     configDirectories:
         - config
-        - packages/core/config
     paths:
         - app
         - config
         - database
         - modules
-        - packages/core/src
-        - packages/core/modules
         - routes
     excludePaths:
         - */vendor/*

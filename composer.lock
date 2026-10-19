@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a81939bfb1a2f06af50e3d0fa1b5d5ec",
+    "content-hash": "78f4eda11f32edba0b66cf5a228a22d1",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -1301,62 +1301,6 @@
                 }
             ],
             "time": "2025-03-06T22:45:56+00:00"
-        },
-        {
-            "name": "erusev/parsedown",
-            "version": "1.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/erusev/parsedown.git",
-                "reference": "96baaad00f71ba04d76e45b4620f54d3beabd6f7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/96baaad00f71ba04d76e45b4620f54d3beabd6f7",
-                "reference": "96baaad00f71ba04d76e45b4620f54d3beabd6f7",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^7.5|^8.5|^9.6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Parsedown": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Emanuil Rusev",
-                    "email": "hello@erusev.com",
-                    "homepage": "http://erusev.com"
-                }
-            ],
-            "description": "Parser for Markdown.",
-            "homepage": "http://parsedown.org",
-            "keywords": [
-                "markdown",
-                "parser"
-            ],
-            "support": {
-                "issues": "https://github.com/erusev/parsedown/issues",
-                "source": "https://github.com/erusev/parsedown/tree/1.8.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/erusev",
-                    "type": "github"
-                }
-            ],
-            "time": "2026-02-16T11:41:01+00:00"
         },
         {
             "name": "filament/actions",
@@ -4792,144 +4736,6 @@
                 "source": "https://github.com/antonioribeiro/google2fa-qrcode/tree/v4.0.0"
             },
             "time": "2026-05-08T19:24:44+00:00"
-        },
-        {
-            "name": "programmernomad/laracorekit",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "packages/core",
-                "reference": "5ebe60c79a9ba823b081caa1516ba2462f354b9f"
-            },
-            "require": {
-                "filament/filament": "^5.10",
-                "laravel/framework": "^13.37",
-                "livewire/livewire": "^4.4",
-                "php": "^8.3",
-                "spatie/laravel-medialibrary": "^11.23",
-                "spatie/laravel-permission": "^6.23"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "LaraCoreKit\\Core\\CoreServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "LaraCoreKit\\Core\\": "src/",
-                    "Modules\\Core\\": "modules/Core/src/",
-                    "Modules\\Auth\\": "modules/Auth/src/",
-                    "Modules\\User\\Database\\Seeders\\": "modules/User/database/seeders/",
-                    "Modules\\User\\Database\\Factories\\": "modules/User/database/factories/",
-                    "Modules\\User\\": "modules/User/src/",
-                    "Modules\\Settings\\": "modules/Settings/src/",
-                    "Modules\\Media\\": "modules/Media/src/",
-                    "Modules\\Blog\\": "modules/Blog/src/"
-                }
-            },
-            "archive": {
-                "exclude": [
-                    "/tests",
-                    "/phpunit.xml",
-                    "/.github"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "ProgrammerNomad",
-                    "homepage": "https://github.com/ProgrammerNomad"
-                }
-            ],
-            "description": "Modular Laravel application foundation with Filament administration, authentication, roles, settings, blog and media.",
-            "homepage": "https://www.laracorekit.com",
-            "keywords": [
-                "filament",
-                "laracorekit",
-                "laravel",
-                "livewire",
-                "modular",
-                "starter-kit"
-            ],
-            "support": {
-                "source": "https://github.com/ProgrammerNomad/laracorekit-package",
-                "issues": "https://github.com/ProgrammerNomad/LaraCoreKit/issues"
-            },
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
-        },
-        {
-            "name": "programmernomad/laracorekit-demo-module",
-            "version": "v1.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ProgrammerNomad/laracorekit-demo-module.git",
-                "reference": "7237b3b79d8b5927ba17feed39fc030a40e0a34f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ProgrammerNomad/laracorekit-demo-module/zipball/7237b3b79d8b5927ba17feed39fc030a40e0a34f",
-                "reference": "7237b3b79d8b5927ba17feed39fc030a40e0a34f",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/console": "^11.0|^12.0|^13.0",
-                "illuminate/database": "^11.0|^12.0|^13.0",
-                "illuminate/filesystem": "^11.0|^12.0|^13.0",
-                "illuminate/support": "^11.0|^12.0|^13.0",
-                "php": "^8.2|^8.3"
-            },
-            "require-dev": {
-                "filament/filament": "^3.0|^4.0|^5.0",
-                "laravel/pint": "^1.0",
-                "orchestra/testbench": "^9.0|^10.0",
-                "phpunit/phpunit": "^11.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "LaraCoreKit\\DemoModule\\DemoServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "LaraCoreKit\\DemoModule\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "ProgrammerNomad",
-                    "homepage": "https://github.com/ProgrammerNomad"
-                }
-            ],
-            "description": "Auto-resetting demo environment for Laravel applications with Filament integration",
-            "homepage": "https://github.com/ProgrammerNomad/laracorekit-demo-module",
-            "keywords": [
-                "auto-reset",
-                "demo",
-                "filament",
-                "laracorekit",
-                "laravel",
-                "module"
-            ],
-            "support": {
-                "issues": "https://github.com/ProgrammerNomad/laracorekit-demo-module/issues",
-                "source": "https://github.com/ProgrammerNomad/laracorekit-demo-module"
-            },
-            "time": "2026-04-21T14:16:55+00:00"
         },
         {
             "name": "psr/clock",
@@ -11972,9 +11778,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "programmernomad/laracorekit": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

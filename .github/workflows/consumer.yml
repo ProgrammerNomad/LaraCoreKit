@@ -1,4 +1,4 @@
-name: Clean Package Consumer
+name: Clean Starter Installation
 on:
   push:
     branches: [main, develop]
@@ -9,11 +9,6 @@ permissions:
 jobs:
   install:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        source: [path, packagist]
-    name: Install from ${{ matrix.source }}
     steps:
       - uses: actions/checkout@v6
       - uses: shivammathur/setup-php@v2
@@ -21,4 +16,4 @@ jobs:
           php-version: '8.3'
           extensions: dom, curl, mbstring, zip, pdo_sqlite, bcmath, intl, gd, exif
           coverage: none
-      - run: python3 tools/consumer-smoke.py --source ${{ matrix.source }}
+      - run: python3 tools/starter-install-smoke.py

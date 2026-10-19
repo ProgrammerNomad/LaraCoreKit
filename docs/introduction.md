@@ -2,7 +2,7 @@
 
 LaraCoreKit is an MIT-licensed modular Laravel foundation for a **public website and an admin workspace**. It combines Laravel 13, Filament 5, Livewire 4 and Tailwind CSS 4.
 
-The reusable package is `programmernomad/laracorekit`, with source in `packages/core`. Its internal modules are Core, Auth, User, Settings, Blog and Media. The repository root hosts the marketing website, documentation viewer, UI showcase and optional demo behavior.
+The Composer project is `programmernomad/laracorekit`. Its editable modules live in `modules/`. The promotional website and docs viewer live in the separate laracorekit-website repository.
 
 ## What is implemented
 
@@ -21,6 +21,4 @@ The reusable package is `programmernomad/laracorekit`, with source in `packages/
 3. [Review production setup](/docs/deployment/production).
 4. [Read the upgrade guide](/docs/upgrade-guide).
 
-First create a fresh Laravel 13 application using the [installation guide](/docs/installation), then install the published package from Packagist with `composer require programmernomad/laracorekit:"~0.2.0"`. There is no mandatory account or installation telemetry. API tokens, enforced email verification, billing and tenancy need additional implementation.
-
-The main project repository is [ProgrammerNomad/LaraCoreKit](https://github.com/ProgrammerNomad/LaraCoreKit). The supporting laracorekit-package repository is only the package-only Composer distribution export; project documentation, demo GIF, screenshots, issues and development remain in the main repository.
+Follow the [installation guide](installation.md) to create the whole project. No separate Laravel installation or core package requirement is needed.

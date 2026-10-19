@@ -1,9 +1,13 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+## 1.0.0 - Editable modular starter
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+- Change distribution from a vendor-installed library to a complete Composer project.
+- Move reusable source into application-owned modules/ with explicit local autoloading and provider registration.
+- Include editable public homepage, shared frontend, administration and UI examples with prebuilt assets.
+- Initialize a fresh SQLite application through create-project scripts without creating sample accounts.
+- Preserve the promotional website and history in ProgrammerNomad/laracorekit-website.
+- Existing 0.x applications require a planned migration, not a drop-in composer require update. Retain legacy repository/tags for old lockfiles.
 
 ## [Unreleased]
 

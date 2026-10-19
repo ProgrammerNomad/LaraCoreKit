@@ -25,4 +25,4 @@ jobs:
       - run: npm audit
       - run: npm run build:core
       - run: npm run build
-      - run: git diff --exit-code -- packages/core/resources/dist
+      - run: git diff --exit-code -- public/vendor/laracorekit

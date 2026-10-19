@@ -1,8 +1,8 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "programmernomad/laracorekit-site",
+    "name": "programmernomad/laracorekit",
     "type": "project",
-    "description": "Documentation and demo host for the LaraCoreKit Composer package.",
+    "description": "Editable modular Laravel starter with public frontend, Filament administration and UI components.",
     "keywords": [
         "laravel",
         "filament",
@@ -13,15 +13,12 @@
     "require": {
         "php": "^8.3",
         "bezhansalleh/filament-language-switch": "^4.3",
-        "erusev/parsedown": "^1.8",
         "filament/filament": "^5.0",
         "laravel/framework": "^13.0",
         "laravel/tinker": "^2.10|^3.0",
         "livewire/livewire": "^4.0",
-        "programmernomad/laracorekit-demo-module": "^1.0",
         "spatie/laravel-medialibrary": "^11.17",
-        "spatie/laravel-permission": "^6.23",
-        "programmernomad/laracorekit": "dev-main"
+        "spatie/laravel-permission": "^6.23"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -37,9 +34,17 @@
         "psr-4": {
             "App\\": "app/",
             "Modules\\UIShowcase\\": "modules/UIShowcase/src/",
-            "Modules\\Docs\\": "modules/Docs/src/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "LaraCoreKit\\Core\\": "modules/Core/Foundation/",
+            "Modules\\Core\\": "modules/Core/src/",
+            "Modules\\Auth\\": "modules/Auth/src/",
+            "Modules\\User\\": "modules/User/src/",
+            "Modules\\Blog\\": "modules/Blog/src/",
+            "Modules\\Settings\\": "modules/Settings/src/",
+            "Modules\\Media\\": "modules/Media/src/",
+            "Modules\\User\\Database\\Seeders\\": "modules/User/database/seeders/",
+            "Modules\\User\\Database\\Factories\\": "modules/User/database/factories/"
         }
     },
     "autoload-dev": {
@@ -62,7 +67,8 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
-            "@php artisan migrate --graceful --ansi"
+            "@php artisan migrate --seed --ansi",
+            "@php artisan storage:link --ansi"
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
@@ -102,16 +108,16 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "path",
-            "url": "packages/core",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "programmernomad/laracorekit": "dev-main"
-                }
-            }
-        }
-    ]
+    "archive": {
+        "exclude": [
+            "/.github",
+            "/docs/images",
+            "/tools",
+            "/tests",
+            "/phpunit*",
+            "/storage/app/releases",
+            "/node_modules",
+            "/vendor"
+        ]
+    }
 }

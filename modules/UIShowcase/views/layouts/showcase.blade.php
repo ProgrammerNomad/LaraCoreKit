@@ -25,7 +25,9 @@
     <meta name="twitter:image" content="{{ asset('images/screenshots/ui-showcase.png') }}">
 
     @stack('meta')
-    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/showcase.js'])
+    <link rel="stylesheet" href="{{ asset('vendor/laracorekit/laracorekit.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/laracorekit/showcase.css') }}">
+    <script src="{{ asset('vendor/laracorekit/showcase.js') }}"></script>
     @livewireStyles
     <style>
         [x-cloak] { display: none !important; }

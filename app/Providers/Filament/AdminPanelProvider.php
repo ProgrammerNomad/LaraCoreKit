@@ -17,7 +17,6 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use LaraCoreKit\Core\Filament\LocalAvatarProvider;
 use LaraCoreKit\Core\Filament\OverviewStats;
-use LaraCoreKit\DemoModule\Filament\Widgets\DemoBannerWidget;
 use Modules\Blog\Filament\Resources\BlogResource;
 use Modules\Settings\Filament\Pages\Settings;
 use Modules\User\Filament\Resources\Permissions\PermissionResource;
@@ -58,8 +57,6 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 AccountWidget::class,
                 OverviewStats::class,
-                ...(config('demo.enabled') && class_exists(DemoBannerWidget::class)
-                    ? [DemoBannerWidget::class] : []),
             ])
             ->middleware([
                 EncryptCookies::class,

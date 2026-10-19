@@ -1,3 +1,7 @@
+# Historical implementation report
+
+This report describes the previous 0.x library architecture. For the current application-owned module structure, see README.md and core/architecture.md.
+
 # Package and website implementation report
 
 Reviewed 19 October 2026.

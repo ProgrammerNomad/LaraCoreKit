@@ -1,6 +1,6 @@
 # Module structure
 
-Bundled modules are under `packages/core/modules/{Name}`. Source is in src/, migrations in database/migrations, routes in routes/, and Blade views in views/ where applicable. Providers register their resources explicitly.
+Bundled modules are under `modules/{Name}`. Source is in src/, migrations in database/migrations, routes in routes/, and Blade views in views/ where applicable. Providers register their resources explicitly.
 
 The package's composer.json owns autoload mappings, including separate factory/seeder namespaces. Website modules Docs and UIShowcase remain under the repository root's modules/ directory.
 
