@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2
+
+- Include prebuilt frontend and showcase assets in GitHub/Composer archives and assert their presence during installation tests.
+
 ## 1.0.1
 
 - Include application tests and PHPUnit configuration in the Composer project archive so developers can run and extend the starter test suite.

@@ -20,6 +20,9 @@ app = work/'app'
 subprocess.run([composer, 'create-project', '--repository='+str(repository), 'programmernomad/laracorekit', str(app), '1.0.0', '--no-interaction'], check=True)
 assert not (app/'vendor/programmernomad/laracorekit').exists()
 assert (app/'modules/Auth/src/Http/Livewire/Login.php').exists()
+for asset in ['laracorekit.css', 'showcase.css', 'showcase.js']:
+    assert (app/'public/vendor/laracorekit'/asset).is_file(), asset
+assert (app/'tests/Feature/StarterTest.php').is_file()
 probe = r'''<?php
 require __DIR__.'/vendor/autoload.php';
 $app = require __DIR__.'/bootstrap/app.php';

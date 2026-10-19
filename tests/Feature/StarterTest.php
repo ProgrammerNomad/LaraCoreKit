@@ -16,6 +16,13 @@ class StarterTest extends TestCase
         $this->get('/docs')->assertNotFound();
     }
 
+    public function test_prebuilt_frontend_assets_are_included(): void
+    {
+        foreach (['laracorekit.css', 'showcase.css', 'showcase.js'] as $asset) {
+            $this->assertFileExists(public_path('vendor/laracorekit/'.$asset));
+        }
+    }
+
     public function test_core_classes_are_loaded_from_application_modules(): void
     {
         $source = (new \ReflectionClass(User::class))->getFileName();

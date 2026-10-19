@@ -15,3 +15,8 @@
 !js/**
 !fonts/
 !images/
+
+# Prebuilt starter assets required for Composer project installs
+!vendor/
+!vendor/laracorekit/
+!vendor/laracorekit/**
