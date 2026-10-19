@@ -14,14 +14,14 @@ The reusable Composer package is **`programmernomad/laracorekit`**, maintained u
 
 This repository also hosts the marketing website, documentation viewer, component showcase and the separately published [demo module](https://packagist.org/packages/programmernomad/laracorekit-demo-module). Those features and sample accounts stay outside the reusable package.
 
-**Release status:** the first standalone Packagist release is being prepared. The registry command below is the intended stable interface, not a claim that the package is already published:
+**Release status:** stable releases are on [Packagist](https://packagist.org/packages/programmernomad/laracorekit) (`^0.1`). Install into a fresh Laravel 13 application:
 
 ```bash
-composer require programmernomad/laracorekit
+composer require programmernomad/laracorekit:"^0.1"
 php artisan laracorekit:install
 ```
 
-Until publication, install only the package directly from its GitHub VCS repository using the commands in the [installation guide](docs/installation.md). Start with a fresh Laravel 13 application; existing user models and route names need a compatibility review.
+See the [installation guide](docs/installation.md) for database setup, GitHub `dev-main` installs and compatibility notes for existing user models and route names.
 
 ## Run the complete GitHub host
 

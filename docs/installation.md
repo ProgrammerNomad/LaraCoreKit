@@ -4,17 +4,16 @@ LaraCoreKit is a reusable Laravel package for **both a public frontend and a Fil
 
 ## Release status
 
-The package source is in `packages/core`, named `programmernomad/laracorekit`. The [standalone GitHub source](https://github.com/ProgrammerNomad/laracorekit-package) is available; its first standalone Packagist release is being prepared. Do not assume that `composer require programmernomad/laracorekit` works until the package is registered and a stable tag exists. No account, activation key or telemetry is required.
+Stable releases are published on [Packagist](https://packagist.org/packages/programmernomad/laracorekit) as `programmernomad/laracorekit` (current stable line: `^0.1`). The package source is maintained in this monorepo under `packages/core`; the [distribution repository](https://github.com/ProgrammerNomad/laracorekit-package) tracks tagged releases. No account, activation key or telemetry is required.
 
-## Option A: install only the package directly from GitHub now
+## Option A: install from Packagist (recommended)
 
 Start with a **fresh Laravel 13 application**. The first release uses `Modules\User\Models\User` and the stock Laravel `users` table; integrating an existing authentication system needs a separate migration plan.
 
 ```bash
 composer create-project laravel/laravel my-app "^13.0"
 cd my-app
-composer config repositories.laracorekit vcs https://github.com/ProgrammerNomad/laracorekit-package
-composer require programmernomad/laracorekit:dev-main
+composer require programmernomad/laracorekit:"^0.1"
 php artisan laracorekit:install
 ```
 
@@ -32,6 +31,13 @@ Open `/admin` for administration and `/blog` for the public frontend. Your own `
 The administrator command prompts for a unique email and a hidden password. It does not promote an existing account. Default seeding does not create sample users. Prebuilt package CSS is published by the installer, so consuming the default package views does not require the demo's npm dependencies.
 
 Package discovery registers providers, views, routes and migrations. Composer installs dependencies; it does **not** configure your database or run package installation migrations automatically. `laracorekit:install --migrate` is available when you explicitly want the installer to run outstanding migrations. Re-running the installer preserves existing configuration.
+
+To track `main` before a tagged release, add a VCS repository and require `dev-main`:
+
+```bash
+composer config repositories.laracorekit vcs https://github.com/ProgrammerNomad/laracorekit-package
+composer require programmernomad/laracorekit:dev-main
+```
 
 ## Option B: run the complete GitHub demo/development host
 
@@ -58,17 +64,7 @@ This repository uses a Composer **path repository** pointing at `packages/core`;
 
 Only on a disposable demo database, explicitly enable `DEMO_MODE=true` and seed `Database\Seeders\DemoSeeder`. Demo mode permits known sample credentials and scheduled resets. Never enable it for a customer deployment. See [demo setup](/docs/deployment/demo-setup).
 
-## After the stable Packagist release
-
-```bash
-composer require programmernomad/laracorekit
-php artisan laracorekit:install
-php artisan migrate
-php artisan laracorekit:admin
-php artisan storage:link
-```
-
-Use the commands above only after release availability is verified. The package installs Laravel dependencies into an existing app; it does not download the demo website. See [release preparation](/docs/package-release) and [upgrading](/docs/upgrade-guide).
+The package installs Laravel dependencies into an existing app; it does not download the demo website. See [release preparation](/docs/package-release) and [upgrading](/docs/upgrade-guide).
 
 ## Customization
 

@@ -1,6 +1,6 @@
 # Security policy
 
-The standalone `programmernomad/laracorekit` package is currently unreleased. The development branch is being prepared for its first reviewed release. Older demo tags do not imply that their dependency lockfiles remain secure; audit and upgrade before deploying.
+The standalone `programmernomad/laracorekit` package is published on Packagist; report issues against the reviewed tag you deploy. Older demo tags do not imply that their dependency lockfiles remain secure; audit and upgrade before deploying.
 
 ## Reporting a vulnerability
 
