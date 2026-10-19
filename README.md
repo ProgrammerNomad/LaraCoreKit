@@ -19,9 +19,9 @@ Start with a **fresh Laravel 13 application**. The first release uses `Modules\U
 The `create-project` command installs Laravel and initializes its `.env`, application key and default SQLite database. Run the remaining commands inside `my-app`. `composer require` and `laracorekit:install` alone assume Laravel already exists and do not create the complete demo website.
 
 ```bash
-composer create-project laravel/laravel my-app "^13.0"
+composer create-project laravel/laravel my-app "~13.0"
 cd my-app
-composer require programmernomad/laracorekit:"^0.1"
+composer require programmernomad/laracorekit:"~0.1.0"
 php artisan laracorekit:install
 ```
 
@@ -36,7 +36,7 @@ php artisan serve
 
 Open `/admin` for administration and `/blog` for the public frontend. Your own `/` route remains under your application's control. `/login`, `/forgot-password`, `/reset-password/{token}` and `/dashboard` are provided by the Auth module. Public registration is disabled by default; enable `registration` in `config/laracorekit.php` when needed.
 
-The administrator command prompts for a unique email and a hidden password. It does not promote an existing account. Default seeding does not create sample users. Prebuilt package CSS is published by the installer, so consuming the default package views does not require the demo's npm dependencies.
+From v0.1.1, the administrator command prompts for a unique email and a hidden password of at least 8 characters; invalid passwords can be retried without restarting. Longer unique passwords are recommended. A rejected password does not undo installation or migrations. It does not promote an existing account. Default seeding does not create sample users. Prebuilt package CSS is published by the installer, so consuming the default package views does not require the demo's npm dependencies.
 
 Package discovery registers providers, views, routes and migrations. Composer installs dependencies; it does **not** configure your database or run package installation migrations automatically. `laracorekit:install --migrate` is available when you explicitly want the installer to run outstanding migrations. Re-running the installer preserves existing configuration.
 
@@ -83,3 +83,15 @@ composer require programmernomad/laracorekit:dev-main
 ```
 
 A development branch can change without a release. Pin and review a tested commit for evaluation; use a reviewed tagged release for production. The monorepo host already configures the local path and an explicit dev-main version for CI.
+
+## Updating an existing 0.1 installation
+
+The commands use `~0.1.0` (the 0.1 patch series) to avoid caret escaping problems with Composer on Windows PowerShell. If an earlier command saved `0.1` as an exact constraint, run:
+
+```bash
+composer require programmernomad/laracorekit:"~0.1.0"
+php artisan laracorekit:install
+php artisan laracorekit:admin
+```
+
+Run the administrator command only if you still need to create an administrator. Existing accounts and passwords remain unchanged. You do not need to recreate Laravel or repeat successful migrations for this password-prompt fix. Pushing repository code alone does not update stable Composer installs: a new package tag must be indexed by Packagist. Existing applications update only when their maintainers run Composer.
