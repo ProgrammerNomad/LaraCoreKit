@@ -6,6 +6,8 @@ The reusable package is `programmernomad/laracorekit`, with source in `packages/
 
 ## What is implemented
 
+- Editable starter homepage, responsive shared header/footer, persistent theme switching and local UI component showcase.
+
 - Public login, registration when enabled, password recovery and account dashboard.
 - Filament administration for users, roles, permissions, blog posts and settings.
 - Multilingual blog fields, public blog pages, media attachments and language switching for English, Hindi and Arabic.

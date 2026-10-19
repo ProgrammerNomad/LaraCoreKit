@@ -6,7 +6,7 @@ No. The package provides a public Livewire frontend and a Filament admin workspa
 
 ## Should I clone GitHub or install with Composer?
 
-Install `programmernomad/laracorekit:"^0.1"` from Packagist in a fresh Laravel application for your product. Clone the full repository to run the demo website, docs and showcase or contribute. GitHub dev-main is for testing unreleased changes.
+Install `programmernomad/laracorekit:"~0.2.0"` from Packagist in a fresh Laravel application for your product. The Composer package includes the editable frontend and showcase. Clone the full repository for the project marketing site, docs viewer or contributions. GitHub dev-main is for testing unreleased changes.
 
 For Composer, first run `composer create-project laravel/laravel my-app "~13.0"` and enter `my-app`. Requiring the core and running its installer alone do not finish setup: configure the database, migrate and create an administrator. A GitHub clone already contains Laravel, but still needs environment setup and asset builds. Follow the [complete installation commands](/docs/installation) for your chosen path.
 

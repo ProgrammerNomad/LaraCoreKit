@@ -11,7 +11,9 @@ LaraCoreKit/
     src/Filament/                default package admin panel
     config/laracorekit.php       package defaults
     modules/                    Core, Auth, User, Settings, Media, Blog
-    resources/dist/              prebuilt public frontend CSS
+    showcase/                   packaged UI example views and routes
+    resources/stubs/            editable homepage template
+    resources/dist/              prebuilt public CSS and showcase JavaScript
   app/                          demo/site application and custom panel
   modules/Docs/                 website documentation viewer
   modules/UIShowcase/           component demonstration application
