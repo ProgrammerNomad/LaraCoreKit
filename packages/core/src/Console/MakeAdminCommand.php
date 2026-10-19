@@ -26,12 +26,10 @@ class MakeAdminCommand extends Command
         $data = [
             'name' => $this->ask('Name'),
             'email' => $this->ask('Email'),
-            'password' => $this->secret('Password (at least 12 characters)'),
         ];
         $validator = Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', 'unique:users,email'],
-            'password' => ['required', Password::min(12)],
         ]);
 
         if ($validator->fails()) {
@@ -41,6 +39,18 @@ class MakeAdminCommand extends Command
 
             return self::FAILURE;
         }
+
+        $this->info('Choose a unique password of at least 8 characters. Input is hidden; longer passwords are recommended.');
+        do {
+            $data['password'] = $this->secret('Password (at least 8 characters)');
+            $passwordValidator = Validator::make(
+                ['password' => $data['password']],
+                ['password' => ['required', Password::min(8)]],
+            );
+            foreach ($passwordValidator->errors()->all() as $error) {
+                $this->error($error);
+            }
+        } while ($passwordValidator->fails());
 
         DB::transaction(function () use ($data): void {
             (new RolePermissionSeeder)->run();

@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.1.1 - 2026-10-19
+
+- Accept administrator passwords of at least 8 characters and retry invalid hidden input without restarting setup.
+- Keep unique-account validation, password hashing and noninteractive-input protection.
+- Document Windows-compatible Composer constraints and recovery after rejected administrator passwords.
+
 ## 0.1.0 - 2026-10-19
 
 - Extract the reusable public and admin modules into `programmernomad/laracorekit`.

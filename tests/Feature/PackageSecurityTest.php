@@ -52,11 +52,35 @@ class PackageSecurityTest extends TestCase
         $this->artisan('laracorekit:admin')
             ->expectsQuestion('Name', 'Maintainer')
             ->expectsQuestion('Email', 'maintainer@example.test')
-            ->expectsQuestion('Password (at least 12 characters)', 'a-long-unique-test-password')
+            ->expectsQuestion('Password (at least 8 characters)', 'a-long-unique-test-password')
             ->assertSuccessful();
         $user = User::where('email', 'maintainer@example.test')->firstOrFail();
         $this->assertTrue($user->hasRole('Admin'));
         $this->assertTrue(Hash::check('a-long-unique-test-password', $user->password));
+    }
+
+    public function test_administrator_can_retry_invalid_passwords_and_use_eight_characters(): void
+    {
+        $this->artisan('laracorekit:admin')
+            ->expectsQuestion('Name', 'Maintainer')
+            ->expectsQuestion('Email', 'retry@example.test')
+            ->expectsQuestion('Password (at least 8 characters)', '')
+            ->expectsOutput('The password field is required.')
+            ->expectsQuestion('Password (at least 8 characters)', 'short77')
+            ->expectsOutput('The password field must be at least 8 characters.')
+            ->expectsQuestion('Password (at least 8 characters)', 'Eight!42')
+            ->assertSuccessful();
+
+        $this->assertDatabaseCount('users', 1);
+        $user = User::where('email', 'retry@example.test')->firstOrFail();
+        $this->assertTrue($user->hasRole('Admin'));
+        $this->assertTrue(Hash::check('Eight!42', $user->password));
+    }
+
+    public function test_administrator_creation_rejects_noninteractive_input(): void
+    {
+        $this->artisan('laracorekit:admin', ['--no-interaction' => true])->assertFailed();
+        $this->assertDatabaseCount('users', 0);
     }
 
     public function test_administrator_command_cannot_promote_an_existing_account(): void
@@ -65,7 +89,6 @@ class PackageSecurityTest extends TestCase
         $this->artisan('laracorekit:admin')
             ->expectsQuestion('Name', 'Maintainer')
             ->expectsQuestion('Email', $user->email)
-            ->expectsQuestion('Password (at least 12 characters)', 'a-long-unique-test-password')
             ->assertFailed();
         $this->assertFalse($user->fresh()->hasRole('Admin'));
     }

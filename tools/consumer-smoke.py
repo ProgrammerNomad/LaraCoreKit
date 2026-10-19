@@ -28,7 +28,7 @@ def run(args, cwd=None):
 if not composer or not php:
     raise SystemExit('PHP and Composer must be on PATH.')
 
-run([composer, 'create-project', 'laravel/laravel', str(target), '^13.0', '--no-install', '--no-scripts', '--no-interaction'])
+run([composer, 'create-project', 'laravel/laravel', str(target), '~13.0', '--no-install', '--no-scripts', '--no-interaction'])
 manifest = target / 'composer.json'
 config = json.loads(manifest.read_text(encoding='utf-8'))
 if args.source == 'path':

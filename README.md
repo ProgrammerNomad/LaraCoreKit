@@ -21,9 +21,9 @@ Install the published public frontend and Filament admin bundle in a fresh Larav
 The `create-project` command installs Laravel and initializes its `.env`, application key and default SQLite database. Run the remaining commands inside `my-app`. `composer require` and `laracorekit:install` alone assume Laravel already exists and do not create the complete demo website.
 
 ```bash
-composer create-project laravel/laravel my-app "^13.0"
+composer create-project laravel/laravel my-app "~13.0"
 cd my-app
-composer require programmernomad/laracorekit:"^0.1"
+composer require programmernomad/laracorekit:"~0.1.0"
 php artisan laracorekit:install
 ```
 

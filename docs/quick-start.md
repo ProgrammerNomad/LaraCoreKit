@@ -7,9 +7,9 @@ LaraCoreKit is published on Packagist. Choose the core package for your own appl
 Requires PHP 8.3+ and Composer 2. First create Laravel; the package does not create the application for you.
 
 ```bash
-composer create-project laravel/laravel my-app "^13.0"
+composer create-project laravel/laravel my-app "~13.0"
 cd my-app
-composer require programmernomad/laracorekit:"^0.1"
+composer require programmernomad/laracorekit:"~0.1.0"
 php artisan laracorekit:install
 ```
 
