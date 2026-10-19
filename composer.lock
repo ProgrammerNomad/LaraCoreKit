@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a81939bfb1a2f06af50e3d0fa1b5d5ec",
+    "content-hash": "600cf8eb563bfa781fee51f7b61ac89e",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -73,16 +73,16 @@
         },
         {
             "name": "bezhansalleh/filament-language-switch",
-            "version": "4.3.0",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bezhanSalleh/filament-language-switch.git",
-                "reference": "18a199c0573de0513dee3de3c0d417fd92fbdb2a"
+                "reference": "737ed66c8c9a79e73e582980d77892e37713622a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bezhanSalleh/filament-language-switch/zipball/18a199c0573de0513dee3de3c0d417fd92fbdb2a",
-                "reference": "18a199c0573de0513dee3de3c0d417fd92fbdb2a",
+                "url": "https://api.github.com/repos/bezhanSalleh/filament-language-switch/zipball/737ed66c8c9a79e73e582980d77892e37713622a",
+                "reference": "737ed66c8c9a79e73e582980d77892e37713622a",
                 "shasum": ""
             },
             "require": {
@@ -148,7 +148,7 @@
             ],
             "support": {
                 "issues": "https://github.com/bezhanSalleh/filament-language-switch/issues",
-                "source": "https://github.com/bezhanSalleh/filament-language-switch/tree/4.3.0"
+                "source": "https://github.com/bezhanSalleh/filament-language-switch/tree/5.0.0"
             },
             "funding": [
                 {
@@ -156,7 +156,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-04-05T00:51:57+00:00"
+            "time": "2026-06-27T23:33:56+00:00"
         },
         {
             "name": "blade-ui-kit/blade-heroicons",
