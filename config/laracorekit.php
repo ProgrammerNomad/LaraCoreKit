@@ -15,6 +15,7 @@ return [
         'Media' => true,
         'Blog' => true,
     ],
+    'showcase' => ['enabled' => true],
     'registration' => false,
     'locales' => ['en', 'hi', 'ar'],
 ];
