@@ -81,21 +81,21 @@ If active-installation measurement becomes necessary, design a separately review
 No dependencies were upgraded, package published, telemetry installed, or remote repository settings changed as part of this audit. The Dependabot configuration prepares update proposals; it does not establish that the application is up to date.
 
 
-## Follow-up status — 19 October 2026
+## Follow-up status - 19 October 2026
 
 This audit is **not fully closed**. The historical project/core names above are superseded by the single reusable library `programmernomad/laracorekit`; the website remains separate.
 
 | Area | Status |
 | --- | --- |
 | Dependency advisories, safe seeding, authentication throttling, analysis tooling | Implemented; local checks passed. See implementation report. |
-| Regression coverage | Expanded to 24 tests / 95 assertions; upload validation, password-reset flows and disabled-module dependency combinations still need dedicated regression coverage. |
+| Regression coverage | Expanded to 31 tests / 135 assertions, including upload validation, password-reset flows and disabled-module dependency combinations; passed on both supported test databases. |
 | Package extraction, clean installation, docs, actual screenshots | Implemented; GitHub VCS consumer installation verified. |
 | PHP matrix, locked/compatible CI, audits, builds, clean-consumer workflow | Configured; remote execution blocked by GitHub account billing lock. |
-| Database support matrix | SQLite checked; additional database engines remain unverified. |
+| Database support matrix | SQLite and isolated MySQL 8.0.45 checks passed. MySQL CI job added; PostgreSQL, MariaDB and SQL Server are outside the verified initial matrix. |
 | Responsive header and original logo | Follow-up fixes align controls, remove template BOM, use original red/black SVG and test seven viewport widths. |
-| Automated distribution | Daily draft sync PR workflow prepared; waits for host merge and working Actions. Release tags remain a maintainer decision. |
+| Automated distribution | Daily draft sync PR and manual release-notes PR workflows prepared; await host merge and working Actions. Release tags remain a maintainer decision. |
 | Adoption statistics | Optional daily Packagist snapshot command implemented; activation awaits package registration and persistent deployment storage. |
 | Packagist, initial tag, production deployment | Pending. No stable release or deployment claimed. |
-| Repository security settings | Dependabot configuration exists; alert/security-update settings need verification. |
+| Repository security settings | Vulnerability alerts and automated security-fix PRs enabled on both repositories and verified through the GitHub API. |
 
 See [implementation report](implementation-report.md) for validation evidence and release limitations.

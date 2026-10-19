@@ -5,11 +5,11 @@ const { chromium } = require('playwright');
   const page = await browser.newPage();
   for (const width of [320,375,640,790,890,1024,1440]) {
    await page.setViewportSize({width,height:900});
-   await page.goto('http://127.0.0.1:8765/');
+   await page.goto(process.env.LARACOREKIT_PREVIEW_URL || 'http://127.0.0.1:8765/');
    await page.waitForFunction(()=>document.querySelector('[aria-label="Toggle navigation"]').hasAttribute('aria-expanded'));
    const result = await page.locator('header').evaluate(header=>{
     const controls=[...header.querySelectorAll('button,a[href="/admin"]')].filter(e=>e.getBoundingClientRect().width);
-    return {height:header.getBoundingClientRect().height,centers:controls.map(e=>{const r=e.getBoundingClientRect();return r.y+r.height/2}),overflow:header.scrollWidth>innerWidth};
+    return {height:header.getBoundingClientRect().height,centers:controls.map(e=>{const r=e.getBoundingClientRect();return r.y+r.height/2}),overflow:document.documentElement.scrollWidth>innerWidth};
    });
    if(result.height!==65 || result.overflow || Math.max(...result.centers)-Math.min(...result.centers)>1) throw Error(JSON.stringify({width,...result}));
    if(width<1024){

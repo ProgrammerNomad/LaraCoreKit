@@ -4,11 +4,17 @@ namespace Tests\Feature;
 
 use Database\Seeders\DemoSeeder;
 use Filament\Facades\Filament;
+use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Storage;
 use LaraCoreKit\Core\Filament\LocalAvatarProvider;
 use Livewire\Livewire;
+use Modules\Auth\Http\Livewire\ForgotPassword;
 use Modules\Auth\Http\Livewire\Login;
 use Modules\Auth\Http\Livewire\Register;
 use Modules\Blog\Models\Blog;
@@ -158,5 +164,59 @@ class PackageSecurityTest extends TestCase
             'content' => ['en' => '<p>Safe paragraph</p><script>alert("unsafe-marker")</script>'],
             'status' => 'published', 'published_at' => now()->subMinute()]);
         $this->get('/blog/safe-post')->assertOk()->assertSee('Safe paragraph')->assertDontSee('<script>alert("unsafe-marker")</script>', false);
+    }
+
+    public function test_reset_link_response_does_not_disclose_account_existence(): void
+    {
+        Notification::fake();
+        $user = User::factory()->create();
+        foreach ([$user->email, 'missing@example.test'] as $email) {
+            Livewire::test(ForgotPassword::class)
+                ->set('email', $email)->call('sendResetLink')->assertHasNoErrors()
+                ->assertSet('message', __('If an account exists, a password reset link will be sent.'));
+        }
+        Notification::assertSentTo($user, ResetPassword::class);
+    }
+
+    public function test_reset_link_requests_are_throttled_before_contacting_broker(): void
+    {
+        RateLimiter::clear('laracorekit:reset:127.0.0.1');
+        Password::shouldReceive('sendResetLink')->times(5)->andReturn('passwords.sent');
+        for ($i = 0; $i < 6; $i++) {
+            Livewire::test(ForgotPassword::class)
+                ->set('email', 'visitor@example.test')->call('sendResetLink')->assertHasNoErrors();
+        }
+    }
+
+    public function test_password_reset_rejects_invalid_tokens_and_consumes_valid_tokens(): void
+    {
+        $user = User::factory()->create(['password' => 'original-password']);
+        $token = Password::createToken($user);
+        $form = Livewire::test(\Modules\Auth\Http\Livewire\ResetPassword::class, ['token' => 'invalid-token'])
+            ->set('email', $user->email)->set('password', 'replacement-password')
+            ->set('password_confirmation', 'replacement-password');
+        $form->call('resetPassword')->assertHasErrors('email');
+        $this->assertTrue(Hash::check('original-password', $user->fresh()->password));
+        $form->set('token', $token)->call('resetPassword')->assertHasNoErrors()->assertRedirect(route('login'));
+        $this->assertTrue(Hash::check('replacement-password', $user->fresh()->password));
+        $this->assertFalse(Password::tokenExists($user->fresh(), $token));
+    }
+
+    public function test_settings_upload_rejects_executable_and_oversized_images(): void
+    {
+        Storage::fake('public');
+        $this->seed(RolePermissionSeeder::class);
+        $admin = User::factory()->create();
+        $admin->assignRole('Admin');
+        $this->actingAs($admin);
+        Filament::setCurrentPanel(Filament::getPanel('admin'));
+        Livewire::test(Settings::class)
+            ->set('data.site_logo', [UploadedFile::fake()->create('shell.php', 1, 'application/x-php')])
+            ->call('save')->assertHasErrors('data.site_logo');
+        Livewire::test(Settings::class)
+            ->set('data.site_logo', [UploadedFile::fake()->image('large.png')->size(2049)])
+            ->call('save')->assertHasErrors('data.site_logo');
+        $this->assertDatabaseCount('settings', 0);
+        $this->assertSame([], Storage::disk('public')->allFiles('settings'));
     }
 }

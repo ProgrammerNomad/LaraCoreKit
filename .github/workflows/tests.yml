@@ -32,3 +32,32 @@ jobs:
       - run: php artisan key:generate
       - run: composer audit --locked
       - run: composer test
+
+  mysql:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: testing
+          MYSQL_DATABASE: laracorekit_test
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="mysqladmin ping -ptesting"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+    env:
+      DB_PORT: '3306'
+      DB_PASSWORD: testing
+    steps:
+      - uses: actions/checkout@v6
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: dom, curl, mbstring, zip, pdo_mysql, bcmath, intl, gd, exif
+          coverage: none
+      - run: composer install --prefer-dist --no-interaction
+      - run: cp .env.example .env
+      - run: php artisan key:generate
+      - run: php vendor/bin/phpunit --configuration phpunit.mysql.xml

@@ -32,7 +32,7 @@ These are tested improvements, not a claim of a completed independent security a
 ## Website and documentation
 
 - Rebuilt the public homepage around the actual frontend/admin bundle, explicit installation paths and accurate release status.
-- Added responsive site/showcase navigation, accessible theme controls and improved documentation search keyboard/focus behavior.
+- Added responsive site/showcase navigation, accessible theme controls and improved documentation search keyboard/focus behavior. Restored the original red/black logo, removed the locale-template BOM that shifted the language control, reduced header height and fixed narrow-screen installation-card overflow; browser regression checks pass at seven widths from 320px to 1440px.
 - Added permission-aware admin overview statistics and real screenshots from disposable fixtures.
 - Corrected unsupported feature claims in installation, architecture, feature, deployment and addon guides.
 - Added Markdown source endpoints, `/llms.txt`, page descriptions, source-code metadata and a dynamic documentation sitemap. A pre-existing local static sitemap containing localhost URLs was moved into private storage so it cannot mask the route.
@@ -40,7 +40,7 @@ These are tested improvements, not a claim of a completed independent security a
 
 ## Validation
 
-- 24 PHPUnit tests, 95 assertions passed locally on PHP 8.3.
+- 31 PHPUnit tests, 135 assertions passed on both SQLite and an isolated MySQL 8.0.45 server, locally on PHP 8.3.
 - Pint and PHPStan passed.
 - Root and package Composer schemas validated strictly.
 - Composer and npm dependency audits reported zero advisories.
@@ -50,7 +50,7 @@ These are tested improvements, not a claim of a completed independent security a
 
 ## Automation and external status
 
-Weekly Dependabot proposals, scheduled dependency audits, PHP locked/compatible CI lanes, clean-consumer CI and a manual package-preview archive workflow are configured in source.
+Weekly Dependabot proposals, scheduled dependency audits, PHP locked/compatible CI lanes, a MySQL 8 service job, clean-consumer CI and a manual package-preview archive workflow are configured in source. GitHub vulnerability alerts and automated security-fix PRs are enabled and API-verified on both repositories. The distribution repository also has a manual draft release-notes PR workflow; it does not tag or publish.
 
 The distribution repository has a daily source-sync workflow using its own short-lived GITHUB_TOKEN. It proposes draft PRs rather than merging or tagging automatically, and waits for the extraction to reach the monorepo main branch.
 
