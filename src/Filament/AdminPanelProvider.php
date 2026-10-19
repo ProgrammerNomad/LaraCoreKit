@@ -47,6 +47,7 @@ class AdminPanelProvider extends PanelProvider
             ->path(config('laracorekit.panel.path'))
             ->login()->authGuard('web')
             ->brandName(config('app.name'))
+            ->defaultAvatarProvider(LocalAvatarProvider::class)
             ->colors(['primary' => Color::Indigo])
             ->resources($resources)->pages($pages)->widgets([AccountWidget::class, OverviewStats::class])
             ->middleware([
