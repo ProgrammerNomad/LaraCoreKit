@@ -44,6 +44,10 @@ class CoreServiceProvider extends ServiceProvider
             }
         }
 
+        if (config('laracorekit.showcase.enabled')) {
+            $this->app->register(ShowcaseServiceProvider::class);
+        }
+
         if (config('laracorekit.panel.enabled')) {
             $this->app->register(AdminPanelProvider::class);
         }
@@ -55,6 +59,12 @@ class CoreServiceProvider extends ServiceProvider
         $this->publishes([__DIR__.'/../config/laracorekit.php' => config_path('laracorekit.php')], 'laracorekit-config');
         $this->publishes([__DIR__.'/../resources/dist' => public_path('vendor/laracorekit')], 'laracorekit-assets');
         $this->publishes([__DIR__.'/../modules/Core/views' => resource_path('views/vendor/core')], 'laracorekit-views');
+
+        $this->publishes([
+            __DIR__.'/../resources/stubs/home.blade.php' => resource_path('views/home.blade.php'),
+            __DIR__.'/../modules/Core/views/layouts/app.blade.php' => resource_path('views/vendor/core/layouts/app.blade.php'),
+        ], 'laracorekit-starter');
+        $this->publishes([__DIR__.'/../showcase/views' => resource_path('views/vendor/showcase')], 'laracorekit-showcase-views');
 
         $this->app['router']->pushMiddlewareToGroup('web', SetLocale::class);
 

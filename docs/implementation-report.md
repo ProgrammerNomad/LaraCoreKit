@@ -65,3 +65,7 @@ Remaining operational actions: resolve the GitHub Actions account lock, pass rem
 Packagist's Composer feed confirms v0.1.0. A fresh Laravel consumer installed the tagged package directly from Packagist with no path/VCS override and passed route, asset, migration, safe-default and cached configuration checks. CI now tests both local source and the published package.
 
 Composer installation is the primary path in the homepage, host README, distribution README, installation guide and demo module introduction. Updated release-status documents remove the former publication-pending claim. Real screenshots and a four-view, 12-second GIF illustrate the public site/admin/docs host. Production deployment and the account-blocked remote CI remain separate operational requirements.
+
+## v0.2 frontend distribution
+
+The package now includes an editable starter homepage, shared responsive header/footer, persisted dark mode, language switching and packaged UI examples. The installer only replaces the unchanged Laravel welcome route and retains a backup. Source-consumer checks cover opt-out, repeat installation, preservation, homepage/showcase routing and cached routes. Browser checks cover five widths, RTL, theme persistence, a rendered Chart.js chart and 122 showcase routes. Project marketing/docs and demo resets remain separate. Earlier statements about excluding all showcase pages describe the 0.1 architecture.

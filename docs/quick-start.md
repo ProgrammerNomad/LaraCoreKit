@@ -9,7 +9,7 @@ Requires PHP 8.3+ and Composer 2. First create Laravel; the package does not cre
 ```bash
 composer create-project laravel/laravel my-app "~13.0"
 cd my-app
-composer require programmernomad/laracorekit:"~0.1.0"
+composer require programmernomad/laracorekit:"~0.2.0"
 php artisan laracorekit:install
 ```
 
@@ -22,7 +22,7 @@ php artisan storage:link
 php artisan serve
 ```
 
-Visit `/blog`, `/login` and `/admin` at `http://127.0.0.1:8000`. The administrator command prompts for your own credentials. No sample users are created. Your application's `/` route remains yours; the marketing website, docs, showcase and sample content are not installed by the core. Default package assets are prebuilt, so npm is not required.
+Visit `/blog`, `/login` and `/admin` at `http://127.0.0.1:8000`. The administrator command prompts for your own credentials. No sample users are created. On a fresh Laravel app the installer replaces the default welcome route with an editable homepage at `/` and includes `/ui-showcase`. Custom routes are preserved. The project marketing site, docs viewer and sample content remain separate. Default package assets are prebuilt, so npm is not required.
 
 ## Complete website/demo from GitHub
 

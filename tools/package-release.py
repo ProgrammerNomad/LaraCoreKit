@@ -17,7 +17,7 @@ files = sorted(p for p in package.rglob('*') if p.is_file()
                and p.name not in {'composer.lock', '.env'})
 if not (package/'resources/dist/laracorekit.css').is_file():
     raise SystemExit('Build package assets before export.')
-if any(p.is_file() and p.name != 'laracorekit.css' for p in (package/'resources/dist').rglob('*')):
+if any(p.is_file() and p.name not in {'laracorekit.css', 'showcase.css', 'showcase.js'} for p in (package/'resources/dist').rglob('*')):
     raise SystemExit('Unexpected files in package assets. Core build must not copy the host public directory.')
 with zipfile.ZipFile(archive, 'w', compression=zipfile.ZIP_DEFLATED) as bundle:
     for file in files:

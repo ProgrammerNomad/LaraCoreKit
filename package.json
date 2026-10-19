@@ -4,7 +4,7 @@
     "scripts": {
         "build": "vite build",
         "dev": "vite",
-        "build:core": "vite build --config vite.core.config.js"
+        "build:core": "vite build --config vite.core.config.js && vite build --config vite.showcase.config.js"
     },
     "devDependencies": {
         "@tailwindcss/typography": "^0.5.19",

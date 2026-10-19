@@ -4,12 +4,12 @@ Package name: **`programmernomad/laracorekit`**. Package root: `packages/core`. 
 
 ## Current release
 
-[v0.1.1](https://github.com/ProgrammerNomad/laracorekit-package/releases/tag/v0.1.1) fixes administrator password retries and documents Windows-compatible install commands. Packagist automatically indexes package tags through the configured GitHub push webhook. The recommended application install is:
+[v0.2.0](https://github.com/ProgrammerNomad/laracorekit-package/releases/tag/v0.2.0) adds the editable starter homepage, shared frontend and packaged UI showcase. Upgrading from 0.1 requires selecting the 0.2 series explicitly. Packagist automatically indexes package tags through the configured GitHub push webhook. The recommended application install is:
 
 ```bash
 composer create-project laravel/laravel my-app "~13.0"
 cd my-app
-composer require programmernomad/laracorekit:"~0.1.0"
+composer require programmernomad/laracorekit:"~0.2.0"
 php artisan laracorekit:install
 ```
 
@@ -55,7 +55,7 @@ The job uses the distribution repository's own short-lived GITHUB_TOKEN, so no c
 
 1. Resolve the GitHub Actions account lock and pass the host checks. Source extraction is on main; daily synchronization requires a working Actions account.
 2. Review the standalone package-only source export and prebuilt CSS. Keep its Composer name unchanged and omit a manual version field.
-3. Run **Prepare Release PR** with the next reviewed version, for example `0.1.2` for a compatible patch. Review and merge its release notes. Do not reuse a published tag.
+3. Run **Prepare Release PR** with the next reviewed version, for example `0.2.1` for a compatible patch. Review and merge its release notes. Do not reuse a published tag.
 4. In the package repository, publish a GitHub release with a new semantic tag targeting the reviewed commit. Never move existing tags or tag the demo repository as the core package.
 5. Packagist registration is already complete. Verify the GitHub update integration is enabled and the new version appears on [the package page](https://packagist.org/packages/programmernomad/laracorekit). See [integration setup](https://packagist.org/about#how-to-update-packages) if needed; keep API tokens out of source and chat.
 6. Test the new version in a fresh Laravel application:
@@ -63,7 +63,7 @@ The job uses the distribution repository's own short-lived GITHUB_TOKEN, so no c
 ```bash
 composer create-project laravel/laravel my-app "~13.0"
 cd my-app
-composer require programmernomad/laracorekit:"~0.1.0"
+composer require programmernomad/laracorekit:"~0.2.0"
 php artisan laracorekit:install
 # Configure the application's .env and its database first.
 php artisan migrate

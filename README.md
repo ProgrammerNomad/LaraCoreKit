@@ -12,7 +12,7 @@ Laravel 13 · Filament 5 · Livewire 4 · Tailwind CSS 4 · PHP 8.3+ · MIT
 
 ![LaraCoreKit walkthrough: public site, blog, administration and documentation](docs/images/screenshots/walkthrough.gif)
 
-Real views from the disposable demonstration application. The documentation viewer, component showcase, sample content and demo controls are host features outside the core package.
+Real views from the disposable demonstration application. The package includes an editable starter homepage and the component showcase. The project marketing website, documentation viewer, sample content and reset controls remain host features.
 
 ## Install with Composer (recommended)
 
@@ -23,7 +23,7 @@ The `create-project` command installs Laravel and initializes its `.env`, applic
 ```bash
 composer create-project laravel/laravel my-app "~13.0"
 cd my-app
-composer require programmernomad/laracorekit:"~0.1.0"
+composer require programmernomad/laracorekit:"~0.2.0"
 php artisan laracorekit:install
 ```
 
@@ -36,7 +36,9 @@ php artisan storage:link
 php artisan serve
 ```
 
-Visit `/blog`, `/login` and `/admin`. Prebuilt assets ship with the package; the default package UI does not require npm. [Full installation and customization guide](docs/installation.md).
+Visit `/` for the starter homepage, `/ui-showcase` for components, `/blog`, `/login` and `/admin`. Prebuilt assets ship with the package; the default package UI does not require npm. [Full installation and customization guide](docs/installation.md).
+
+![Editable homepage included with the Composer package](docs/images/screenshots/starter-homepage.png)
 
 ## Package and demo are separate
 
@@ -114,3 +116,28 @@ No registration, activation or telemetry is required. Packagist downloads measur
 ## License
 
 [MIT](LICENSE). Report sensitive vulnerabilities through the [security policy](SECURITY.md).
+
+## Editable frontend and component library (v0.2)
+
+The normal `laracorekit:install` command now installs the frontend too. On a fresh Laravel application, `/` shows your starter homepage with a responsive header, footer, language menu, light/dark theme and links to the blog and component library. `/ui-showcase` includes the existing example pages, copyable source, charts and sortable examples. These are UI examples; commerce, payments and other example-specific backend behavior are not implemented by preview markup.
+
+Edit these application-owned files:
+
+- `resources/views/home.blade.php`: homepage sections, copy and links.
+- `resources/views/vendor/core/layouts/app.blade.php`: shared header, footer, logo and navigation.
+- `.env`: your `APP_NAME`, `APP_URL` and other environment settings.
+- `resources/views/vendor/showcase/`: editable component examples after running `php artisan vendor:publish --tag=laracorekit-showcase-views`.
+
+The installer does not overwrite edited views or custom routes. Only Laravel's unchanged default welcome route is replaced; its backup is `routes/web.php.laracorekit-backup`. For a custom application, resolve the existing `/` route yourself and point it at `Route::view('/', 'home')->name('home');`. Clear cached routes with `php artisan optimize:clear` after changing them. Use `--without-frontend` to skip publishing starter views and changing the welcome route. Set `showcase.enabled=false` in `config/laracorekit.php` to disable the component library routes.
+
+Default views use prebuilt assets and need no npm build. When adding Tailwind utility classes that are not present in the shipped stylesheet, compile your application's Tailwind CSS and load it in the published layout; never edit files in `vendor`. Laravel view overrides also let you customize individual blog/auth pages using `php artisan vendor:publish --tag=laracorekit-views`.
+
+### Upgrade from 0.1 without recreating your application
+
+```bash
+composer require programmernomad/laracorekit:"~0.2.0"
+php artisan laracorekit:install
+php artisan optimize:clear
+```
+
+Keep your existing database and administrator. Do not rerun `create-project` or reset the database. If you previously published a custom layout, it stays unchanged: compare it with the new package layout and merge the header/footer/theme features you want. The starter is an application foundation, not a copy of the project's promotional website or demo reset service.

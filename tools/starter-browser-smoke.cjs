@@ -1,0 +1,11 @@
+const {chromium}=require('playwright');
+const base=process.env.LARACOREKIT_PREVIEW_URL || 'http://127.0.0.1:8766';
+const output=require('os').tmpdir();
+(async()=>{const browser=await chromium.launch({channel:'msedge',headless:true});const page=await browser.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
+for(const width of [320,375,768,1024,1440]){await page.setViewportSize({width,height:900});await page.goto(base+'/');await page.getByRole('button',{name:'Toggle dark theme'}).waitFor();await page.waitForFunction(()=>!!window.Alpine);if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('Overflow '+width);if(width<1024){await page.getByRole('button',{name:'Toggle navigation',exact:true}).click();await page.locator('#starter-navigation').waitFor({state:'visible'});await page.keyboard.press('Escape');await page.locator('#starter-navigation').waitFor({state:'hidden'});}console.log('Responsive homepage passed',width);}
+await page.getByRole('button',{name:'Toggle dark theme'}).click();await page.waitForFunction(()=>document.documentElement.classList.contains('dark'));await page.reload();await page.waitForFunction(()=>document.documentElement.classList.contains('dark'));
+await page.getByRole('button',{name:'Choose language'}).click();await page.locator('a[href$="/locale/ar"]').click();await page.waitForFunction(()=>document.documentElement.dir==='rtl');await page.getByText('اجعلها خاصة بك.',{exact:true}).waitFor();await page.screenshot({path:output+'/laracorekit-starter-ar.png',fullPage:true});
+await page.goto(base+'/locale/en');await page.getByRole('button',{name:'Toggle dark theme'}).click();await page.screenshot({path:output+'/laracorekit-starter-home.png',fullPage:true});
+await page.goto(base+'/ui-showcase/charts/line-chart');await page.waitForFunction(()=>window.Chart && Chart.getChart(document.querySelector('canvas')));console.log('Chart rendered');
+await page.goto(base+'/ui-showcase');const urls=await page.locator('a[href*="/ui-showcase/"]').evaluateAll(es=>[...new Set(es.map(e=>e.href))]);for(const url of urls){const r=await page.request.get(url);if(!r.ok())throw Error(url+' '+r.status());}console.log('Showcase routes passed',urls.length);
+if(errors.length)throw Error(errors.join('\n'));await browser.close();})().catch(e=>{console.error(e);process.exit(1)});

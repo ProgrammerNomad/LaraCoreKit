@@ -36,7 +36,7 @@ if args.source == 'path':
     config['require']['programmernomad/laracorekit'] = 'dev-main'
 else:
     config.pop('repositories', None)
-    config['require']['programmernomad/laracorekit'] = '^0.1'
+    config['require']['programmernomad/laracorekit'] = '~0.2.0'
 manifest.write_text(json.dumps(config, indent=4)+'\n', encoding='utf-8')
 database = target / 'database/database.sqlite'
 database.touch()
@@ -53,10 +53,23 @@ if args.source == 'packagist' and ('dev' in installed['version'] or installed.ge
     raise SystemExit('Registry test did not resolve a tagged public release.')
 print('Verified consumer source:', args.source, 'version:', installed['version'], flush=True)
 run([composer, 'audit', '--locked'], target)
+stock_routes = (target/'routes/web.php').read_text(encoding='utf-8')
+run([php, 'artisan', 'laracorekit:install', '--without-frontend', '--no-interaction'], target)
+assert (target/'routes/web.php').read_text(encoding='utf-8') == stock_routes
+assert not (target/'resources/views/home.blade.php').exists()
 run([php, 'artisan', 'laracorekit:install', '--migrate', '--no-interaction'], target)
+assert (target/'routes/web.php.laracorekit-backup').read_text(encoding='utf-8') == stock_routes
+home = target/'resources/views/home.blade.php'
+assert 'Make it yours.' in home.read_text(encoding='utf-8')
+home.write_text(home.read_text(encoding='utf-8')+'\n{{-- preserved-home-customization --}}\n', encoding='utf-8')
+# A customized routes file must never be replaced on repeat installation.
+custom_routes = (target/'routes/web.php').read_text(encoding='utf-8')+'\n// preserved-custom-route\n'
+(target/'routes/web.php').write_text(custom_routes, encoding='utf-8')
 published_config = target/'config/laracorekit.php'
 published_config.write_text(published_config.read_text(encoding='utf-8')+'\n// preserved-consumer-customization\n', encoding='utf-8')
 run([php, 'artisan', 'laracorekit:install', '--no-interaction'], target)
+assert 'preserved-home-customization' in home.read_text(encoding='utf-8')
+assert (target/'routes/web.php').read_text(encoding='utf-8') == custom_routes
 if 'preserved-consumer-customization' not in published_config.read_text(encoding='utf-8'):
     raise SystemExit('The installer overwrote existing consumer configuration.')
 
@@ -64,7 +77,7 @@ probe = r'''<?php
 require __DIR__.'/vendor/autoload.php';
 $app = require __DIR__.'/bootstrap/app.php';
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-foreach (['/login', '/forgot-password', '/blog', '/admin/login'] as $path) {
+foreach (['/', '/ui-showcase', '/ui-showcase/charts/line-chart', '/login', '/forgot-password', '/blog', '/admin/login'] as $path) {
     $request = Illuminate\Http\Request::create($path);
     $response = $kernel->handle($request);
     if ($response->getStatusCode() !== 200) {
@@ -73,6 +86,7 @@ foreach (['/login', '/forgot-password', '/blog', '/admin/login'] as $path) {
     }
     $kernel->terminate($request, $response);
 }
+if (! is_file(__DIR__.'/public/vendor/laracorekit/showcase.js')) { exit(10); }
 if (Illuminate\Support\Facades\Route::has('register')) { exit(2); }
 if (Modules\User\Models\User::count() !== 0) { exit(3); }
 if (class_exists(LaraCoreKit\DemoModule\DemoServiceProvider::class)) { exit(4); }

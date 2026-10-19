@@ -8,6 +8,7 @@ After [creating a Laravel application and requiring the package](/docs/installat
 | `panel.enabled` | `true` | Register the package's Filament panel |
 | `panel.id` / `panel.path` | `admin` | Panel identity and URL path |
 | `modules` | all bundled modules enabled | Register module providers and matching panel resources |
+| `showcase.enabled` | `true` | Enable the packaged `/ui-showcase` component examples |
 | `registration` | `false` | Enable public registration |
 | `locales` | `en`, `hi`, `ar` | Accepted language-switch values |
 

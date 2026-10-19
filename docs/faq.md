@@ -12,7 +12,7 @@ For Composer, first run `composer create-project laravel/laravel my-app "~13.0"`
 
 ## Does Composer install the demo too?
 
-No. The package has no dependency on the demo module, marketing website, Docs module or UIShowcase module. Its own Laravel/Filament dependencies still need to be downloaded.
+The package installs a starter homepage and local component showcase with prebuilt assets. It does not install the project marketing site, Docs viewer, sample accounts or automatic database resets. Its own Laravel/Filament dependencies still need to be downloaded.
 
 ## Can I update my application later?
 

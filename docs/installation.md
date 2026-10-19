@@ -4,7 +4,7 @@ LaraCoreKit is a reusable Laravel package for **both a public frontend and a Fil
 
 ## Release status
 
-Stable releases are published on [Packagist](https://packagist.org/packages/programmernomad/laracorekit) as `programmernomad/laracorekit` (current stable line: `^0.1`). The package source is maintained in this monorepo under `packages/core`; the [distribution repository](https://github.com/ProgrammerNomad/laracorekit-package) tracks tagged releases. No account, activation key or telemetry is required.
+Stable releases are published on [Packagist](https://packagist.org/packages/programmernomad/laracorekit) as `programmernomad/laracorekit` (current stable line: `~0.2.0`). The package source is maintained in this monorepo under `packages/core`; the [distribution repository](https://github.com/ProgrammerNomad/laracorekit-package) tracks tagged releases. No account, activation key or telemetry is required.
 
 ## Option A: install from Packagist (recommended)
 
@@ -15,7 +15,7 @@ The `create-project` command installs Laravel and initializes its `.env`, applic
 ```bash
 composer create-project laravel/laravel my-app "~13.0"
 cd my-app
-composer require programmernomad/laracorekit:"~0.1.0"
+composer require programmernomad/laracorekit:"~0.2.0"
 php artisan laracorekit:install
 ```
 
@@ -28,7 +28,7 @@ php artisan storage:link
 php artisan serve
 ```
 
-Open `/admin` for administration and `/blog` for the public frontend. Your own `/` route remains under your application's control. `/login`, `/forgot-password`, `/reset-password/{token}` and `/dashboard` are provided by the Auth module. Public registration is disabled by default; enable `registration` in `config/laracorekit.php` when needed.
+Open `/admin` for administration and `/blog` for the public frontend. From v0.2.0, the installer replaces Laravel's unchanged welcome route with an editable starter homepage. Custom homepage routes are preserved. `/login`, `/forgot-password`, `/reset-password/{token}` and `/dashboard` are provided by the Auth module. Public registration is disabled by default; enable `registration` in `config/laracorekit.php` when needed.
 
 From v0.1.1, the administrator command prompts for a unique email and a hidden password of at least 8 characters; invalid passwords can be retried without restarting. Longer unique passwords are recommended. A rejected password does not undo installation or migrations. It does not promote an existing account. Default seeding does not create sample users. Prebuilt package CSS is published by the installer, so consuming the default package views does not require the demo's npm dependencies.
 
@@ -64,7 +64,7 @@ npm run build
 php artisan serve
 ```
 
-This repository uses a Composer **path repository** pointing at `packages/core`; keep that directory with the checkout. It includes the marketing website, docs viewer, showcase and the separately published demo-module dependency. The reusable package does not require any of those.
+This repository uses a Composer **path repository** pointing at `packages/core`; keep that directory with the checkout. It includes the marketing website, docs viewer, showcase and the separately published demo-module dependency. The package now includes its own starter homepage and the same UI examples with prebuilt assets; it does not depend on the marketing site, Docs module or reset/demo module.
 
 Only on a disposable demo database, explicitly enable `DEMO_MODE=true` and seed `Database\Seeders\DemoSeeder`. Demo mode permits known sample credentials and scheduled resets. Never enable it for a customer deployment. See [demo setup](/docs/deployment/demo-setup).
 
@@ -103,14 +103,27 @@ composer require programmernomad/laracorekit:dev-main
 
 A development branch can change without a release. Pin and review a tested commit for evaluation; use a reviewed tagged release for production when available. The monorepo host already configures the local path and an explicit dev-main version for CI.
 
-## Updating an existing 0.1 installation
+## Editable frontend and component library (v0.2)
 
-The commands use `~0.1.0` (the 0.1 patch series) to avoid caret escaping problems with Composer on Windows PowerShell. If an earlier command saved `0.1` as an exact constraint, run:
+The normal `laracorekit:install` command now installs the frontend too. On a fresh Laravel application, `/` shows your starter homepage with a responsive header, footer, language menu, light/dark theme and links to the blog and component library. `/ui-showcase` includes the existing example pages, copyable source, charts and sortable examples. These are UI examples; commerce, payments and other example-specific backend behavior are not implemented by preview markup.
+
+Edit these application-owned files:
+
+- `resources/views/home.blade.php`: homepage sections, copy and links.
+- `resources/views/vendor/core/layouts/app.blade.php`: shared header, footer, logo and navigation.
+- `.env`: your `APP_NAME`, `APP_URL` and other environment settings.
+- `resources/views/vendor/showcase/`: editable component examples after running `php artisan vendor:publish --tag=laracorekit-showcase-views`.
+
+The installer does not overwrite edited views or custom routes. Only Laravel's unchanged default welcome route is replaced; its backup is `routes/web.php.laracorekit-backup`. For a custom application, resolve the existing `/` route yourself and point it at `Route::view('/', 'home')->name('home');`. Clear cached routes with `php artisan optimize:clear` after changing them. Use `--without-frontend` to skip publishing starter views and changing the welcome route. Set `showcase.enabled=false` in `config/laracorekit.php` to disable the component library routes.
+
+Default views use prebuilt assets and need no npm build. When adding Tailwind utility classes that are not present in the shipped stylesheet, compile your application's Tailwind CSS and load it in the published layout; never edit files in `vendor`. Laravel view overrides also let you customize individual blog/auth pages using `php artisan vendor:publish --tag=laracorekit-views`.
+
+### Upgrade from 0.1 without recreating your application
 
 ```bash
-composer require programmernomad/laracorekit:"~0.1.0"
+composer require programmernomad/laracorekit:"~0.2.0"
 php artisan laracorekit:install
-php artisan laracorekit:admin
+php artisan optimize:clear
 ```
 
-Run the administrator command only if you still need to create an administrator. Existing accounts and passwords remain unchanged. You do not need to recreate Laravel or repeat successful migrations for this password-prompt fix. Pushing repository code alone does not update stable Composer installs: a new package tag must be indexed by Packagist. Existing applications update only when their maintainers run Composer.
+Keep your existing database and administrator. Do not rerun `create-project` or reset the database. If you previously published a custom layout, it stays unchanged: compare it with the new package layout and merge the header/footer/theme features you want. The starter is an application foundation, not a copy of the project's promotional website or demo reset service.

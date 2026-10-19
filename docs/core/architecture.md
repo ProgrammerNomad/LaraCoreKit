@@ -25,13 +25,13 @@ Composer loads package namespaces and Laravel discovers `LaraCoreKit\Core\CoreSe
 
 ## Public and admin features
 
-Auth and Blog register public routes and Livewire components. User, Settings, Blog and Media provide the models, migrations and admin resources. Core supplies the shared layout, locale component and middleware. The homepage, changelog, docs and UI demonstration are website responsibilities and are excluded from the Composer package.
+Auth and Blog register public routes and Livewire components. User, Settings, Blog and Media provide the models, migrations and admin resources. Core supplies the shared layout, locale component and middleware. The package includes an editable starter homepage, shared header/footer, theme and language controls, and UI showcase examples. The project marketing homepage, changelog viewer, docs viewer and reset controls remain host responsibilities.
 
 The first release bundles functional modules in one package to keep compatibility and releases manageable. Their internal boundaries remain available for future extraction. Installing the bundle installs its PHP dependencies; disabling Blog does not uninstall Media Library or remove database tables.
 
 ## Application ownership
 
-Keep application logic and view overrides outside `vendor/`. Your app owns its homepage, environment, mail, database, storage, queues and deployment. The installer publishes configuration and prebuilt public CSS. It does not overwrite your routes or create demo accounts. The default admin uses Filament's theme; the host's custom admin theme is separate.
+Keep application logic and view overrides outside `vendor/`. Your app owns its homepage, environment, mail, database, storage, queues and deployment. The installer publishes configuration, starter views and prebuilt CSS/JavaScript. It backs up and replaces only the unchanged Laravel welcome route; custom routes and edited views are preserved. It creates no demo accounts. The default admin uses Filament's theme; the host's custom admin theme is separate.
 
 The public model namespaces remain `Modules\...` for compatibility with existing code. Applications that already use those namespaces or the package's route names need conflict resolution. Existing applications must review user-model and data compatibility before installation.
 

@@ -15,7 +15,7 @@
                     <div class="space-y-7 p-7 font-mono text-sm leading-7 sm:p-9">
                         <div><p class="text-slate-500">// Your application, your decisions</p><p><span class="text-violet-300">app/</span> <span class="text-slate-400">your business logic</span></p><p><span class="text-violet-300">resources/views/</span> <span class="text-slate-400">your experience</span></p></div>
                         <div><p class="text-slate-500">// Reusable Composer package</p><p class="text-emerald-300">programmernomad/laracorekit</p><p class="text-slate-300">├── Public frontend & authentication</p><p class="text-slate-300">├── Filament admin & permissions</p><p class="text-slate-300">└── Blog, settings & media</p></div>
-                        <div class="rounded-lg border border-slate-800 bg-slate-900 p-4 text-xs text-slate-300">{{ __('Demo controls and showcase pages stay outside the package.') }}</div>
+                        <div class="rounded-lg border border-slate-800 bg-slate-900 p-4 text-xs text-slate-300">{{ __('Editable frontend and components included. Demo reset controls stay separate.') }}</div>
                     </div>
                 </div>
                 <p class="mt-4 text-center text-xs text-slate-500">{{ __('One foundation. Two sides of your application.') }}</p>
@@ -38,17 +38,17 @@
 
     <section id="quick-start" class="border-y border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900/40">
         <div class="mx-auto grid grid-cols-1 max-w-7xl gap-10 px-5 py-20 sm:px-8 lg:grid-cols-2">
-            <div><p class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">{{ __('Install with Composer') }}</p><h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{{ __('Start with the package.') }}</h2><p class="mt-5 max-w-md text-base leading-8 text-slate-600 dark:text-slate-400">{{ __('Install the public frontend and admin bundle from Packagist in a fresh Laravel 13 application. Clone the demo repository only to explore the website, documentation, showcase or contribute.') }}</p><a href="/docs/installation" class="mt-6 inline-block text-sm font-semibold text-indigo-600 dark:text-indigo-400">{{ __('Read the complete installation guide') }} →</a></div>
+            <div><p class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">{{ __('Install with Composer') }}</p><h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{{ __('Start with the package.') }}</h2><p class="mt-5 max-w-md text-base leading-8 text-slate-600 dark:text-slate-400">{{ __('Install the public frontend and admin bundle from Packagist in a fresh Laravel 13 application. The starter homepage and component showcase are included. Clone the main repository for the project marketing site, documentation viewer or contributions.') }}</p><a href="/docs/installation" class="mt-6 inline-block text-sm font-semibold text-indigo-600 dark:text-indigo-400">{{ __('Read the complete installation guide') }} →</a></div>
             <div class="min-w-0 space-y-4">
                 <article class="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-950"><div class="flex flex-wrap items-center justify-between gap-2"><h3 class="font-semibold"><a href="https://packagist.org/packages/programmernomad/laracorekit" class="hover:underline">{{ __('Composer package') }}</a></h3><span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">{{ __('Available on Packagist') }}</span></div><pre class="mt-4 overflow-x-auto rounded-lg bg-slate-900 p-4 text-xs leading-6 text-emerald-300"><code>composer create-project laravel/laravel my-app &quot;~13.0&quot;
 cd my-app
-composer require programmernomad/laracorekit:&quot;~0.1.0&quot;
+composer require programmernomad/laracorekit:&quot;~0.2.0&quot;
 php artisan laracorekit:install
 # Configure .env and your database before continuing
 php artisan migrate
 php artisan laracorekit:admin
 php artisan storage:link
-php artisan serve</code></pre><p class="mt-3 text-xs leading-6 text-slate-500">{{ __('Requires PHP 8.3+ and Composer 2. Creates Laravel first, then adds the core. Open /blog, /login and /admin. Your homepage stays yours; the demo website, showcase and sample content are not installed. No npm build is needed for default package views.') }}</p></article>
+php artisan serve</code></pre><p class="mt-3 text-xs leading-6 text-slate-500">{{ __('Requires PHP 8.3+ and Composer 2. Creates Laravel first, then adds the core. Open / for your editable starter homepage, /ui-showcase for components, and /admin for administration. Custom homepage routes and edited views are preserved. Sample accounts and reset controls are not installed. No npm build is needed for default package views.') }}</p></article>
                 <article class="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-950"><h3 class="font-semibold">{{ __('GitHub demo and development host') }}</h3><pre class="mt-4 overflow-x-auto rounded-lg bg-slate-900 p-4 text-xs leading-6 text-slate-200"><code>git clone https://github.com/ProgrammerNomad/LaraCoreKit.git
 cd LaraCoreKit
 php -r &quot;copy('.env.example', '.env');&quot;

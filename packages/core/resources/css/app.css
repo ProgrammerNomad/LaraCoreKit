@@ -6,3 +6,7 @@
 @source '../../../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 
 [x-cloak] { display: none !important; }
+
+@source '../../showcase/**/*.blade.php';
+@source '../stubs/**/*.blade.php';
+.lck-brand svg { width: 100px; height: 36px; }
