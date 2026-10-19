@@ -6,7 +6,7 @@
 
     <title>@yield('title', 'UI Showcase') - LaraCoreKit UI Components</title>
 
-    <meta name="description" content="@yield('meta-description', 'LaraCoreKit UI Component Library — interface examples built with Tailwind CSS, Alpine.js and Livewire for Laravel applications.')">
+    <meta name="description" content="@yield('meta-description', 'LaraCoreKit UI Component Library - interface examples built with Tailwind CSS, Alpine.js and Livewire for Laravel applications.')">
     <meta name="robots" content="@yield('robots', 'index, follow')">
     <link rel="canonical" href="{{ url()->current() }}">
 
@@ -14,14 +14,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="@yield('title', 'UI Showcase') - LaraCoreKit">
-    <meta property="og:description" content="@yield('meta-description', 'LaraCoreKit UI Component Library — interface examples built with Tailwind CSS, Alpine.js and Livewire for Laravel applications.')">
+    <meta property="og:description" content="@yield('meta-description', 'LaraCoreKit UI Component Library - interface examples built with Tailwind CSS, Alpine.js and Livewire for Laravel applications.')">
     <meta property="og:image" content="{{ asset('images/screenshots/ui-showcase.png') }}">
     <meta property="og:site_name" content="LaraCoreKit">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="@yield('title', 'UI Showcase') - LaraCoreKit">
-    <meta name="twitter:description" content="@yield('meta-description', 'LaraCoreKit UI Component Library — interface examples built with Tailwind CSS, Alpine.js and Livewire for Laravel applications.')">
+    <meta name="twitter:description" content="@yield('meta-description', 'LaraCoreKit UI Component Library - interface examples built with Tailwind CSS, Alpine.js and Livewire for Laravel applications.')">
     <meta name="twitter:image" content="{{ asset('images/screenshots/ui-showcase.png') }}">
 
     @stack('meta')

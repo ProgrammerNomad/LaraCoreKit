@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-## 0.1.0 — 2026-10-19
+## 0.1.0 - 2026-10-19
 
 - Extract the reusable public and admin modules into `programmernomad/laracorekit`.
 - Add provider discovery, explicit configuration/asset installation and interactive administrator creation.

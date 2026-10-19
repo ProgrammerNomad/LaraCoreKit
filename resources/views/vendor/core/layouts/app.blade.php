@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @php
-        $pageTitle = trim((string) ($title ?? '')) ?: 'LaraCoreKit — Laravel for your public site and admin';
+        $pageTitle = trim((string) ($title ?? '')) ?: 'LaraCoreKit - Laravel for your public site and admin';
         $pageDescription = trim((string) ($metaDescription ?? '')) ?: 'An MIT-licensed modular Laravel foundation with a public frontend, Filament administration, Livewire authentication, roles, multilingual content and media.';
         $pageImage = trim((string) ($ogImage ?? '')) ?: asset('images/screenshots/homepage.png');
     @endphp

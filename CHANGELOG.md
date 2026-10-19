@@ -28,7 +28,7 @@ This package release is prepared locally; registry publication and deployment ar
 - Published and ran `spatie/laravel-medialibrary` migration to create the `media` table (was missing from initial setup)
 
 ### Changed
-- Replaced manual `panels::topbar.end` render hook (which injected the public frontend `LocaleSwitcher` Livewire component, looking unstyled) with the official language switch plugin — auto-places a native icon button in the Filament topbar
+- Replaced manual `panels::topbar.end` render hook (which injected the public frontend `LocaleSwitcher` Livewire component, looking unstyled) with the official language switch plugin - auto-places a native icon button in the Filament topbar
 - Rebuilt Vite assets (`npm run build`) to include the language switch plugin CSS in the compiled theme
 - Wrapped `$blog->getFirstMediaUrl()` call in `blog-detail.blade.php` with Laravel's `rescue()` helper to fall back to the default OG image instead of crashing when the media table is unavailable
 - Removed broken `@php` block from `modules/UIShowcase/views/layouts/showcase.blade.php` that referenced the non-existent `\Illuminate\Support\View::yieldContent()` method, causing a 500 error on all UIShowcase pages
