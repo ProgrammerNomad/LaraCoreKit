@@ -40,11 +40,29 @@
         <div class="mx-auto grid grid-cols-1 max-w-7xl gap-10 px-5 py-20 sm:px-8 lg:grid-cols-2">
             <div><p class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">{{ __('Install with Composer') }}</p><h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{{ __('Start with the package.') }}</h2><p class="mt-5 max-w-md text-base leading-8 text-slate-600 dark:text-slate-400">{{ __('Install the public frontend and admin bundle from Packagist in a fresh Laravel 13 application. Clone the demo repository only to explore the website, documentation, showcase or contribute.') }}</p><a href="/docs/installation" class="mt-6 inline-block text-sm font-semibold text-indigo-600 dark:text-indigo-400">{{ __('Read the complete installation guide') }} →</a></div>
             <div class="min-w-0 space-y-4">
-                <article class="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-950"><div class="flex flex-wrap items-center justify-between gap-2"><h3 class="font-semibold"><a href="https://packagist.org/packages/programmernomad/laracorekit" class="hover:underline">{{ __('Composer package') }}</a></h3><span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">{{ __('Available on Packagist') }}</span></div><pre class="mt-4 overflow-x-auto rounded-lg bg-slate-900 p-4 text-xs leading-6 text-emerald-300"><code>composer require programmernomad/laracorekit:&quot;^0.1&quot;
-php artisan laracorekit:install</code></pre><p class="mt-3 text-xs leading-6 text-slate-500">{{ __('Recommended for your application. Includes public pages and administration, with prebuilt assets. Configure your database, run migrations and create your administrator using the installation guide.') }}</p></article>
+                <article class="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-950"><div class="flex flex-wrap items-center justify-between gap-2"><h3 class="font-semibold"><a href="https://packagist.org/packages/programmernomad/laracorekit" class="hover:underline">{{ __('Composer package') }}</a></h3><span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">{{ __('Available on Packagist') }}</span></div><pre class="mt-4 overflow-x-auto rounded-lg bg-slate-900 p-4 text-xs leading-6 text-emerald-300"><code>composer create-project laravel/laravel my-app &quot;^13.0&quot;
+cd my-app
+composer require programmernomad/laracorekit:&quot;^0.1&quot;
+php artisan laracorekit:install
+# Configure .env and your database before continuing
+php artisan migrate
+php artisan laracorekit:admin
+php artisan storage:link
+php artisan serve</code></pre><p class="mt-3 text-xs leading-6 text-slate-500">{{ __('Requires PHP 8.3+ and Composer 2. Creates Laravel first, then adds the core. Open /blog, /login and /admin. Your homepage stays yours; the demo website, showcase and sample content are not installed. No npm build is needed for default package views.') }}</p></article>
                 <article class="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-950"><h3 class="font-semibold">{{ __('GitHub demo and development host') }}</h3><pre class="mt-4 overflow-x-auto rounded-lg bg-slate-900 p-4 text-xs leading-6 text-slate-200"><code>git clone https://github.com/ProgrammerNomad/LaraCoreKit.git
 cd LaraCoreKit
-composer install</code></pre><p class="mt-3 text-xs leading-6 text-slate-500">{{ __('Includes the website and local package source. Follow the guide to configure the environment and database.') }}</p></article>
+php -r &quot;copy('.env.example', '.env');&quot;
+composer install
+php artisan key:generate
+# Configure .env; for the default SQLite database:
+php -r &quot;file_exists('database/database.sqlite') || touch('database/database.sqlite');&quot;
+php artisan migrate --seed
+php artisan laracorekit:admin
+php artisan storage:link
+npm ci
+npm run build:core
+npm run build
+php artisan serve</code></pre><p class="mt-3 text-xs leading-6 text-slate-500">{{ __('Laravel is already included in this checkout. Requires PHP 8.3+, Composer 2, Git and Node 22.12+. Open / for the website and /admin for administration. Normal seeding creates roles only; sample demo data is a separate, opt-in setup. These commands are for a new local checkout; follow the guide for production deployment.') }}</p></article>
             </div>
         </div>
     </section>

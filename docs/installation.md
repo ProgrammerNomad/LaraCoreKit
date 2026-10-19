@@ -10,6 +10,8 @@ Stable releases are published on [Packagist](https://packagist.org/packages/prog
 
 Start with a **fresh Laravel 13 application**. The first release uses `Modules\User\Models\User` and the stock Laravel `users` table; integrating an existing authentication system needs a separate migration plan.
 
+The `create-project` command installs Laravel and initializes its `.env`, application key and default SQLite database. Run the remaining commands inside `my-app`. `composer require` and `laracorekit:install` alone assume Laravel already exists and do not create the complete demo website.
+
 ```bash
 composer create-project laravel/laravel my-app "^13.0"
 cd my-app
@@ -17,7 +19,7 @@ composer require programmernomad/laracorekit:"^0.1"
 php artisan laracorekit:install
 ```
 
-Configure `.env` with your application URL, mail and database settings. SQLite is sufficient for initial evaluation. Keep `APP_DEBUG=false` in production.
+Configure `.env` with your application URL, mail and database settings. For local evaluation, keep the generated SQLite configuration and set `APP_URL=http://127.0.0.1:8000`. Keep `APP_DEBUG=false` in production.
 
 ```bash
 php artisan migrate
@@ -44,17 +46,19 @@ composer require programmernomad/laracorekit:dev-main
 ```bash
 git clone https://github.com/ProgrammerNomad/LaraCoreKit.git my-demo
 cd my-demo
+php -r "copy('.env.example', '.env');"
 composer install
-npm ci
 ```
 
-Copy `.env.example` to `.env` (`cp` on Unix, `Copy-Item` in PowerShell), configure a database, then:
+Laravel is already included in this checkout; do not run `composer create-project` here. Set `APP_URL=http://127.0.0.1:8000` in `.env`. Keep the default `DB_CONNECTION=sqlite` for local evaluation; the command below creates its database file. For MySQL, configure an existing database and credentials instead and skip the SQLite file command.
 
 ```bash
 php artisan key:generate
+php -r "file_exists('database/database.sqlite') || touch('database/database.sqlite');"
 php artisan migrate --seed
 php artisan laracorekit:admin
 php artisan storage:link
+npm ci
 npm run build:core
 npm run build
 php artisan serve

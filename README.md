@@ -18,6 +18,8 @@ Real views from the disposable demonstration application. The documentation view
 
 Install the published public frontend and Filament admin bundle in a fresh Laravel 13 application:
 
+The `create-project` command installs Laravel and initializes its `.env`, application key and default SQLite database. Run the remaining commands inside `my-app`. `composer require` and `laracorekit:install` alone assume Laravel already exists and do not create the complete demo website.
+
 ```bash
 composer create-project laravel/laravel my-app "^13.0"
 cd my-app
@@ -49,17 +51,19 @@ Requires Composer 2, PHP 8.3+ and Node 22.12+ (CI uses Node 24).
 ```bash
 git clone https://github.com/ProgrammerNomad/LaraCoreKit.git my-app
 cd my-app
+php -r "copy('.env.example', '.env');"
 composer install
-npm ci
 ```
 
-Copy `.env.example` to `.env`, configure your database, then:
+Laravel is already included in this checkout; do not run `composer create-project` here. Set `APP_URL=http://127.0.0.1:8000` in `.env`. The following local setup uses the default SQLite connection; create its empty database file first. For MySQL, configure your database and credentials instead.
 
 ```bash
 php artisan key:generate
+php -r "file_exists('database/database.sqlite') || touch('database/database.sqlite');"
 php artisan migrate --seed
 php artisan laracorekit:admin
 php artisan storage:link
+npm ci
 npm run build:core
 npm run build
 php artisan serve

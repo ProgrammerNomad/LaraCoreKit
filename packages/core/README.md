@@ -16,6 +16,8 @@ Stable releases are published on [Packagist](https://packagist.org/packages/prog
 
 Start with a **fresh Laravel 13 application**. The first release uses `Modules\User\Models\User` and the stock Laravel `users` table; integrating an existing authentication system needs a separate migration plan.
 
+The `create-project` command installs Laravel and initializes its `.env`, application key and default SQLite database. Run the remaining commands inside `my-app`. `composer require` and `laracorekit:install` alone assume Laravel already exists and do not create the complete demo website.
+
 ```bash
 composer create-project laravel/laravel my-app "^13.0"
 cd my-app
@@ -23,7 +25,7 @@ composer require programmernomad/laracorekit:"^0.1"
 php artisan laracorekit:install
 ```
 
-Configure `.env` with your application URL, mail and database settings. SQLite is sufficient for initial evaluation. Keep `APP_DEBUG=false` in production.
+Configure `.env` with your application URL, mail and database settings. For local evaluation, keep the generated SQLite configuration and set `APP_URL=http://127.0.0.1:8000`. Keep `APP_DEBUG=false` in production.
 
 ```bash
 php artisan migrate

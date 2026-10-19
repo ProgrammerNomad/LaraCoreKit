@@ -7,6 +7,8 @@ Package name: **`programmernomad/laracorekit`**. Package root: `packages/core`. 
 [v0.1.0 is available on Packagist](https://packagist.org/packages/programmernomad/laracorekit), from standalone package commit `220940d294bcd7d6de84f26d293867d576820e71`. The recommended application install is:
 
 ```bash
+composer create-project laravel/laravel my-app "^13.0"
+cd my-app
 composer require programmernomad/laracorekit:"^0.1"
 php artisan laracorekit:install
 ```
@@ -59,6 +61,8 @@ The job uses the distribution repository's own short-lived GITHUB_TOKEN, so no c
 6. Test the new version in a fresh Laravel application:
 
 ```bash
+composer create-project laravel/laravel my-app "^13.0"
+cd my-app
 composer require programmernomad/laracorekit:"^0.1"
 php artisan laracorekit:install
 # Configure the application's .env and its database first.

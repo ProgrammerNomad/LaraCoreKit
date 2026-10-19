@@ -1,6 +1,6 @@
 # Configuration
 
-Run `php artisan laracorekit:install` to publish `config/laracorekit.php` and public CSS. Existing configuration is preserved.
+After [creating a Laravel application and requiring the package](/docs/installation), run `php artisan laracorekit:install` to publish `config/laracorekit.php` and public CSS. Existing configuration is preserved.
 
 | Setting | Default | Purpose |
 | --- | --- | --- |
