@@ -2,6 +2,8 @@
 
 The demo is a disposable application hosted by this repository. It is not part of `programmernomad/laracorekit`. The existing `programmernomad/laracorekit-demo-module` dependency manages reset behavior and restrictions.
 
+First complete the [GitHub host installation](/docs/installation#option-b-run-the-complete-github-demodevelopment-host), including dependencies, environment, application key, database and frontend builds. The commands below add sample content to that configured host; they do not install Laravel or the demo website.
+
 Use a separate database and storage location. Explicitly set `DEMO_MODE=true` only for the demo application. Follow the demo package's allowed-host requirements before enabling it in production. Then migrate and seed:
 
 ```bash
