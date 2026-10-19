@@ -89,8 +89,19 @@ The initial package is intended for new applications. API tokens, email-verifica
 
 When contributing from the monorepo, use a path repository instead of the GitHub VCS repository:
 
+Add this path entry to the consumer application's `repositories` array in `composer.json`. The explicit local version keeps the command working when the monorepo is checked out on a feature branch:
+
+```json
+{
+  "type": "path",
+  "url": "../LaraCoreKit/packages/core",
+  "options": {
+    "versions": { "programmernomad/laracorekit": "dev-main" }
+  }
+}
+```
+
 ```bash
-composer config repositories.laracorekit path ../LaraCoreKit/packages/core
 composer require programmernomad/laracorekit:dev-main
 ```
 
