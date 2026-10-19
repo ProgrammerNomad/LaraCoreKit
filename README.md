@@ -4,11 +4,11 @@ Reusable public frontend and Filament administration for Laravel. This repositor
 
 ## Installation
 
-LaraCoreKit is a reusable Laravel package for **both a public frontend and a Filament admin panel**. The website/demo application is a separate host in this repository. PHP 8.3+, Composer 2 and Laravel 13 are required. Node 22.12+ is required when building this repository's assets; CI uses Node 24.
+LaraCoreKit is a reusable Laravel package for **both a public frontend and a Filament admin panel**. The website/demo application is maintained separately in the LaraCoreKit monorepo. PHP 8.3+, Composer 2 and Laravel 13 are required. Node 22.12+ is required when building this repository's assets; CI uses Node 24.
 
 ## Release status
 
-The package source is in `packages/core`, named `programmernomad/laracorekit`. The [standalone GitHub source](https://github.com/ProgrammerNomad/laracorekit-package) is available; its first standalone Packagist release is being prepared. Do not assume that `composer require programmernomad/laracorekit` works until the package is registered and a stable tag exists. No account, activation key or telemetry is required.
+The package is maintained in the monorepo under `packages/core`, named `programmernomad/laracorekit`. The [standalone GitHub source](https://github.com/ProgrammerNomad/laracorekit-package) is available; its first standalone Packagist release is being prepared. Do not assume that `composer require programmernomad/laracorekit` works until the package is registered and a stable tag exists. No account, activation key or telemetry is required.
 
 ## Option A: install only the package directly from GitHub now
 
@@ -58,7 +58,7 @@ npm run build
 php artisan serve
 ```
 
-This repository uses a Composer **path repository** pointing at `packages/core`; keep that directory with the checkout. It includes the marketing website, docs viewer, showcase and the separately published demo-module dependency. The reusable package does not require any of those.
+The demo checkout uses a Composer **path repository** pointing at `packages/core`; keep that directory with the checkout. It includes the marketing website, docs viewer, showcase and the separately published demo-module dependency. The reusable package does not require any of those.
 
 Only on a disposable demo database, explicitly enable `DEMO_MODE=true` and seed `Database\Seeders\DemoSeeder`. Demo mode permits known sample credentials and scheduled resets. Never enable it for a customer deployment. See [demo setup](https://www.laracorekit.com/docs/deployment/demo-setup).
 

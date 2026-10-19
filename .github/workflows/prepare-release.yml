@@ -1,0 +1,62 @@
+name: Prepare Release PR
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Reviewed stable version without v (example: 0.1.0)'
+        required: true
+permissions:
+  contents: read
+jobs:
+  propose:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Validate version and prepare release notes
+        env:
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          python3 - <<'PY'
+          import os, re, subprocess
+          from pathlib import Path
+          from datetime import date
+          version = os.environ['RELEASE_VERSION']
+          if not re.fullmatch(r'(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)', version):
+              raise SystemExit('Use a stable semantic version, e.g. 0.1.0.')
+          if subprocess.run(['git', 'rev-parse', '--verify', 'refs/tags/v'+version], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL).returncode == 0:
+              raise SystemExit('That release tag already exists.')
+          path = Path('CHANGELOG.md')
+          text = path.read_text()
+          if '## Unreleased' not in text:
+              raise SystemExit('Missing Unreleased notes.')
+          text = text.replace('## Unreleased', '## Unreleased\n\n## '+version+' — '+date.today().isoformat(), 1)
+          path.write_text(text)
+          PY
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: dom, curl, mbstring, zip, pdo_sqlite, bcmath, intl, gd, exif
+          coverage: none
+      - run: composer validate --strict
+      - run: composer install --no-dev --prefer-dist --no-interaction
+      - run: composer audit
+      - name: Open draft release PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          branch="codex/release-$RELEASE_VERSION"
+          git switch -c "$branch"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add CHANGELOG.md
+          git commit -m "Prepare v$RELEASE_VERSION release notes"
+          git push --set-upstream origin "$branch"
+          printf 'Prepare version %s.\n\nBefore publishing: verify monorepo regression/consumer checks and package export, review compatibility and these release notes. After merge, tag the reviewed package commit and publish the GitHub release; Packagist indexes the tag. This workflow creates no release tag and does not publish.\n' "$RELEASE_VERSION" > "$RUNNER_TEMP/release-body.md"
+          gh pr create --base main --head "$branch" --draft --title "Prepare v$RELEASE_VERSION" --body-file "$RUNNER_TEMP/release-body.md"
