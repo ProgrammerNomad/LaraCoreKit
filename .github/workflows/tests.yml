@@ -16,7 +16,7 @@ jobs:
         dependencies: [locked, compatible]
     name: PHP ${{ matrix.php }} / ${{ matrix.dependencies }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
@@ -51,7 +51,7 @@ jobs:
       DB_PORT: '3306'
       DB_PASSWORD: testing
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.3'
