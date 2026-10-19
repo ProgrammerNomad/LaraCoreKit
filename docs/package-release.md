@@ -15,3 +15,7 @@ Keep the old laracorekit-package repository available. Old 0.x lockfiles contain
 Reconnect laracorekit.com to ProgrammerNomad/laracorekit-website, branch main. Preserve the current environment, database and persistent uploads. Deploy the website README's Composer/asset steps. The starter main branch is no longer the promotional website deployment source.
 
 Packagist indexing and Plesk deployment are separate. Neither automatically upgrades users' customized source modules.
+
+## Legacy version continuity
+
+The original v0.1.0, v0.1.1 and v0.2.0 tag objects/commits have also been copied unchanged to the main repository. Packagist can discover those library versions alongside the new 1.x project versions after reconnecting. The legacy repository remains necessary for existing lockfiles that still point to its source/archive URLs. No published tag was moved or recreated with different content.
