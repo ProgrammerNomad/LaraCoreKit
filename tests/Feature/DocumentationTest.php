@@ -29,7 +29,8 @@ class DocumentationTest extends TestCase
     public function test_homepage_describes_both_frontend_and_admin_and_release_status(): void
     {
         $this->get('/')->assertOk()->assertSee('Public frontend + admin.')
-            ->assertSee('Release preparation')->assertSee('SoftwareSourceCode', false);
+            ->assertSee('Available on Packagist')->assertSee('Install with Composer')
+            ->assertDontSee('Release preparation')->assertSee('SoftwareSourceCode', false);
     }
 
     public function test_sitemap_includes_current_documentation_and_excludes_auth_pages(): void

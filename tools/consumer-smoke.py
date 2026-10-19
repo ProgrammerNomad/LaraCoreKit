@@ -3,6 +3,7 @@
 Requires PHP and Composer on PATH. Leaves the isolated consumer in the system
 temporary directory for inspection. Never points at the host database.
 """
+import argparse
 import base64
 import json
 import os
@@ -10,6 +11,10 @@ from pathlib import Path
 import shutil
 import subprocess
 import tempfile
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--source', choices=['path', 'packagist'], default='path')
+args = parser.parse_args()
 
 root = Path(__file__).resolve().parents[1]
 package = root / 'packages/core'
@@ -26,8 +31,12 @@ if not composer or not php:
 run([composer, 'create-project', 'laravel/laravel', str(target), '^13.0', '--no-install', '--no-scripts', '--no-interaction'])
 manifest = target / 'composer.json'
 config = json.loads(manifest.read_text(encoding='utf-8'))
-config['repositories'] = [{'type': 'path', 'url': package.as_posix(), 'options': {'symlink': False, 'versions': {'programmernomad/laracorekit': 'dev-main'}}}]
-config['require']['programmernomad/laracorekit'] = 'dev-main'
+if args.source == 'path':
+    config['repositories'] = [{'type': 'path', 'url': package.as_posix(), 'options': {'symlink': False, 'versions': {'programmernomad/laracorekit': 'dev-main'}}}]
+    config['require']['programmernomad/laracorekit'] = 'dev-main'
+else:
+    config.pop('repositories', None)
+    config['require']['programmernomad/laracorekit'] = '^0.1'
 manifest.write_text(json.dumps(config, indent=4)+'\n', encoding='utf-8')
 database = target / 'database/database.sqlite'
 database.touch()
@@ -38,6 +47,12 @@ database.touch()
     'CACHE_STORE=array', 'SESSION_DRIVER=array', 'MAIL_MAILER=array', 'DEMO_MODE=false',
 ])+'\n', encoding='utf-8')
 run([composer, 'install', '--no-dev', '--prefer-dist', '--no-interaction'], target)
+locked = json.loads((target/'composer.lock').read_text(encoding='utf-8'))
+installed = next(p for p in locked['packages'] if p['name'] == 'programmernomad/laracorekit')
+if args.source == 'packagist' and ('dev' in installed['version'] or installed.get('dist', {}).get('type') == 'path'):
+    raise SystemExit('Registry test did not resolve a tagged public release.')
+print('Verified consumer source:', args.source, 'version:', installed['version'], flush=True)
+run([composer, 'audit', '--locked'], target)
 run([php, 'artisan', 'laracorekit:install', '--migrate', '--no-interaction'], target)
 published_config = target/'config/laracorekit.php'
 published_config.write_text(published_config.read_text(encoding='utf-8')+'\n// preserved-consumer-customization\n', encoding='utf-8')

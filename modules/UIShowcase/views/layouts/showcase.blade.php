@@ -15,14 +15,14 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="@yield('title', 'UI Showcase') - LaraCoreKit">
     <meta property="og:description" content="@yield('meta-description', 'LaraCoreKit UI Component Library — interface examples built with Tailwind CSS, Alpine.js and Livewire for Laravel applications.')">
-    <meta property="og:image" content="{{ asset('images/og-preview.png') }}">
+    <meta property="og:image" content="{{ asset('images/screenshots/ui-showcase.png') }}">
     <meta property="og:site_name" content="LaraCoreKit">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="@yield('title', 'UI Showcase') - LaraCoreKit">
     <meta name="twitter:description" content="@yield('meta-description', 'LaraCoreKit UI Component Library — interface examples built with Tailwind CSS, Alpine.js and Livewire for Laravel applications.')">
-    <meta name="twitter:image" content="{{ asset('images/og-preview.png') }}">
+    <meta name="twitter:image" content="{{ asset('images/screenshots/ui-showcase.png') }}">
 
     @stack('meta')
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/showcase.js'])
@@ -65,7 +65,7 @@
         <aside id="showcase-navigation" :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'" class="transition-transform z-40 lg:translate-x-0 w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 fixed h-full overflow-y-auto">
             <div class="p-6">
                 <a href="/" class="flex items-center space-x-2 mb-8">
-                    <img src="{{ asset('images/logo.svg') }}" alt="LaraCoreKit" class="h-8">
+                    <img src="{{ asset('images/logo.svg') }}" alt="LaraCoreKit" class="h-8 dark:rounded dark:bg-white dark:p-1">
                 </a>
                 
                 @include('showcase::components.sidebar')

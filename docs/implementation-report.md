@@ -9,7 +9,7 @@ Reviewed 19 October 2026.
 - Public distribution repository: [ProgrammerNomad/laracorekit-package](https://github.com/ProgrammerNomad/laracorekit-package).
 - Core, Auth, User, Settings, Media and Blog ship together initially. Marketing pages, Docs, UIShowcase, sample seeders and the demo dependency stay in the host.
 - The package archive is about 84 KB compressed, excluding installed PHP dependencies. The export checks that host public assets are not accidentally copied into the package.
-- Direct GitHub VCS installation was tested in an independent Laravel application. No stable package tag or Packagist registration has been published.
+- Packagist publishes v0.1.0 from package commit `220940d294bcd7d6de84f26d293867d576820e71`. Composer installation is the primary application path; GitHub VCS is a development fallback.
 
 ## Installation and updates
 
@@ -40,7 +40,7 @@ These are tested improvements, not a claim of a completed independent security a
 
 ## Validation
 
-- 31 PHPUnit tests, 135 assertions passed on both SQLite and an isolated MySQL 8.0.45 server, locally on PHP 8.3.
+- 31 PHPUnit tests, 137 assertions passed on both SQLite and an isolated MySQL 8.0.45 server, locally on PHP 8.3.
 - Pint and PHPStan passed.
 - Root and package Composer schemas validated strictly.
 - Composer and npm dependency audits reported zero advisories.
@@ -56,6 +56,12 @@ The distribution repository has a daily source-sync workflow using its own short
 
 The first remote run [39212465937](https://github.com/ProgrammerNomad/laracorekit-package/actions/runs/39212465937) did **not** execute: GitHub reported, “The job was not started because your account is locked due to a billing issue.” Remote CI is therefore unverified and blocked by account state; local checks are the evidence above. Billing settings were not changed.
 
-The host's optional `laracorekit:stats` command saves validated daily Packagist download snapshots without installation telemetry. Missing/unavailable responses do not become zero counts. Enable it on persistent production storage after package registration.
+The host's optional `laracorekit:stats` command saves validated daily Packagist download snapshots without installation telemetry. Missing/unavailable responses do not become zero counts. Packagist registration is complete; enable collection on persistent production storage when deploying.
 
-Remaining release actions: resolve the GitHub Actions account lock, run remote checks, review/merge the host changes, create the reviewed initial package tag, register the package on Packagist and deploy the updated website. Production deployment and registry publication have not been performed.
+Remaining operational actions: resolve the GitHub Actions account lock, pass remote checks, review/merge the host changes and deploy the updated website. Package tag v0.1.0 and Packagist registration are complete; production website deployment is not verified.
+
+## Published-package follow-up
+
+Packagist's Composer feed confirms v0.1.0. A fresh Laravel consumer installed the tagged package directly from Packagist with no path/VCS override and passed route, asset, migration, safe-default and cached configuration checks. CI now tests both local source and the published package.
+
+Composer installation is the primary path in the homepage, host README, distribution README, installation guide and demo module introduction. Updated release-status documents remove the former publication-pending claim. Real screenshots and a four-view, 12-second GIF illustrate the public site/admin/docs host. Production deployment and the account-blocked remote CI remain separate operational requirements.

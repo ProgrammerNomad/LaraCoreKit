@@ -2,16 +2,18 @@
 
 Package name: **`programmernomad/laracorekit`**. Package root: `packages/core`. It provides both public and admin features. The repository root is the demo/documentation host and must not be submitted as the reusable package.
 
-## One-time setup
+## Current release
 
-1. Use the selected distribution repository `ProgrammerNomad/laracorekit-package`. The Composer name remains `programmernomad/laracorekit`.
-2. Export **only** `packages/core` to that repository. Update its Composer support links to the final repository. Include LICENSE, README, changelog and prebuilt frontend CSS.
-3. Run clean-consumer installation and regression checks. Verify the archive excludes demo accounts, website, docs viewer and showcase.
-4. Tag the first reviewed release, for example `v0.1.0`, in the package repository. Composer reads the version from the tag.
-5. Submit that package repository to Packagist and enable its GitHub update integration. Keep API tokens in secret storage; never in source or screenshots.
-6. Verify `composer require programmernomad/laracorekit:^0.1` from a fresh Laravel application. Only then remove the unreleased notices from website/README instructions.
+[v0.1.0 is available on Packagist](https://packagist.org/packages/programmernomad/laracorekit), from standalone package commit `220940d294bcd7d6de84f26d293867d576820e71`. The recommended application install is:
 
-The source remains maintained in this monorepo. The distribution repository receives the package export through the synchronization workflow described below, preserving its own maintenance workflow. Its root contains the package's `composer.json`; never push the demo repository's root into it. Review compatibility and release notes before tagging.
+```bash
+composer require programmernomad/laracorekit:"^0.1"
+php artisan laracorekit:install
+```
+
+Follow [installation](/docs/installation) for database setup, migrations and administrator creation. Packagist registration and the first tag are complete. Never recreate or move a published tag.
+
+Source remains in `packages/core`; the standalone repository receives package-only exports. The website/demo root is not the library. Review compatibility and release notes before each new tag.
 
 ## Release checks
 
@@ -47,15 +49,14 @@ It validates the monorepo source, builds the package, tests a clean consumer, an
 
 The job uses the distribution repository's own short-lived GITHUB_TOKEN, so no cross-repository personal token or Packagist secret is needed. The distribution repository must allow Actions to create pull requests. Review source updates before merging; then create a reviewed release tag for Packagist indexing.
 
-## Exact Packagist publication steps
+## Maintainer workflow for future releases
 
-1. Resolve the GitHub account Actions lock and pass the host PR checks, including MySQL and the clean consumer. Review/merge the extraction PR before enabling daily synchronization from host main.
-2. Check the standalone repository contains the reviewed package export and prebuilt CSS. Its root `composer.json` must identify `programmernomad/laracorekit`, with no manual `version` field. The repository URL is `https://github.com/ProgrammerNomad/laracorekit-package`.
-3. In that repository's Actions tab, run **Prepare Release PR** with `0.1.0`. Review its release notes PR alongside the host validation and merge it. This prepares notes, not publication. If Actions remains blocked, edit/review release notes manually; do not describe blocked CI as passed.
-4. In the standalone repository's GitHub **Releases → Draft a new release**, choose **Create new tag** `v0.1.0` targeting the reviewed main commit. Set title `v0.1.0`, include the reviewed changelog and initial-release compatibility limits, then publish. This is the public versioned release. Do not tag the demo repository as the core release.
-5. Sign in to [Packagist](https://packagist.org/) as the maintainer of the `programmernomad` vendor. Open [Submit](https://packagist.org/packages/submit), paste `https://github.com/ProgrammerNomad/laracorekit-package`, click Check and confirm Submit. Packagist reads the package name from composer.json; the GitHub repository name can differ.
-6. Connect the GitHub account/integration from the Packagist profile and confirm the package shows automatic updates enabled. If necessary, use the account sync option described in [Packagist's setup documentation](https://packagist.org/about#how-to-update-packages). Do not paste your API token into this repository or a chat.
-7. Confirm the package page lists `v0.1.0`, then test in a fresh Laravel 13 app:
+1. Resolve the GitHub Actions account lock and pass the host PR checks. Review/merge the host extraction before daily source synchronization can read it from main.
+2. Review the standalone package-only source export and prebuilt CSS. Keep its Composer name unchanged and omit a manual version field.
+3. Run **Prepare Release PR** with the next reviewed version, for example `0.1.1` for a compatible patch. Review and merge its release notes. Do not reuse `0.1.0`.
+4. In the package repository, publish a GitHub release with a new semantic tag targeting the reviewed commit. Never move existing tags or tag the demo repository as the core package.
+5. Packagist registration is already complete. Verify the GitHub update integration is enabled and the new version appears on [the package page](https://packagist.org/packages/programmernomad/laracorekit). See [integration setup](https://packagist.org/about#how-to-update-packages) if needed; keep API tokens out of source and chat.
+6. Test the new version in a fresh Laravel application:
 
 ```bash
 composer require programmernomad/laracorekit:"^0.1"
@@ -66,7 +67,7 @@ php artisan laracorekit:admin
 php artisan storage:link
 ```
 
-8. Verify `/blog`, `/login` and `/admin`, then update the website's unreleased notices and deploy the reviewed host. Enable the optional statistics collector on persistent storage only after the public package endpoint works.
+7. Verify `/blog`, `/login` and `/admin`, then update the website's version references and deploy the reviewed host. Enable the optional statistics collector on persistent storage only after the public package endpoint works.
 
 Future updates use reviewed source-sync PRs, then a release-notes PR and a new semantic tag. Packagist's GitHub integration indexes pushed tags; Composer updates remain under each consuming application's control. Download totals are not unique new installations or developer identities.
 

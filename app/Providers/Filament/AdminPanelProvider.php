@@ -38,6 +38,7 @@ class AdminPanelProvider extends PanelProvider
             ->brandName('LaraCoreKit')
             ->defaultAvatarProvider(LocalAvatarProvider::class)
             ->brandLogo(asset('images/logo.svg'))
+            ->darkModeBrandLogo(asset('images/logo-dark.svg'))
             ->darkMode(true)
             ->colors([
                 'primary' => Color::Red,

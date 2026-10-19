@@ -22,6 +22,6 @@ Review your copied view overrides against the package changes and verify authent
 
 ## Updating package consumers
 
-After stable publication, use `composer update programmernomad/laracorekit --with-all-dependencies`, review the lockfile and release notes, run migrations and republish package assets. Application view overrides are preserved but may need manual changes. Minor releases before 1.0 can include breaking changes; pin a tested minor series.
+For the published package, use `composer update programmernomad/laracorekit --with-all-dependencies`, review the lockfile and release notes, run migrations and republish package assets. Application view overrides are preserved but may need manual changes. Minor releases before 1.0 can include breaking changes; pin a tested minor series.
 
 The migration does not automatically turn the demo host into a minimal customer app. For a clean application use the package installation path.

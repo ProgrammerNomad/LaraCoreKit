@@ -32,7 +32,7 @@ The administrator command prompts for a unique email and a hidden password. It d
 
 Package discovery registers providers, views, routes and migrations. Composer installs dependencies; it does **not** configure your database or run package installation migrations automatically. `laracorekit:install --migrate` is available when you explicitly want the installer to run outstanding migrations. Re-running the installer preserves existing configuration.
 
-To track `main` before a tagged release, add a VCS repository and require `dev-main`:
+For contributors testing unreleased changes only, add a VCS repository and require `dev-main`. Use the tagged Packagist package above for application installs:
 
 ```bash
 composer config repositories.laracorekit vcs https://github.com/ProgrammerNomad/laracorekit-package

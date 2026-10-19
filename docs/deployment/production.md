@@ -14,3 +14,25 @@ Start with [package installation](/docs/installation) and test in staging. The p
 The installer never creates known production credentials. Registration is disabled by default. Login failures are rate limited; choose a shared cache store across application servers so limits apply consistently.
 
 Security reports belong in the repository's [security policy](https://github.com/ProgrammerNomad/LaraCoreKit/security/policy), not public issues containing sensitive details.
+
+## Application deployment
+
+Install the tagged Packagist package in a fresh Laravel application as described in the installation guide. Commit the resulting application lockfile. Deploy from that lockfile rather than resolving new versions on the production server:
+
+```bash
+composer install --no-dev --prefer-dist --optimize-autoloader
+php artisan laracorekit:install
+php artisan migrate --force
+php artisan storage:link
+php artisan optimize
+```
+
+Run migrations only after a backup and staging verification. The package installer preserves published configuration and refreshes assets. The package's default public views do not require the demo host's npm build. Custom frontend assets still need their own build.
+
+## Website and demonstration host
+
+The main repository is also a development monorepo: it uses its local `packages/core` source through Composer, so keep that directory in the deployment checkout. Build core and host assets with `npm ci`, `npm run build:core` and `npm run build`. Point the HTTPS document root only at `public/`; keep `.env`, storage logs and database backups private. Use a dedicated database and storage for any disposable demo, with least-privilege database credentials separated from customer infrastructure.
+
+Verify mail delivery, password recovery, uploads, authorization, scheduled jobs, queue workers and backup restoration in the actual deployment environment. Check Laravel's `/up` health endpoint and representative public/admin routes after deployment. Source validation alone does not verify TLS, server configuration or operational readiness.
+
+GitHub Actions may remain blocked by account billing even when local checks pass. Resolve that account state and pass the configured PHP/database/build/consumer jobs before treating remote validation as complete. No independent security certification or production deployment is implied by the release tag.

@@ -4,13 +4,13 @@ Reusable public frontend and Filament administration for Laravel. This repositor
 
 ## Installation
 
-LaraCoreKit is a reusable Laravel package for **both a public frontend and a Filament admin panel**. The website/demo application is maintained separately in the LaraCoreKit monorepo. PHP 8.3+, Composer 2 and Laravel 13 are required. Node 22.12+ is required when building this repository's assets; CI uses Node 24.
+LaraCoreKit is a reusable Laravel package for **both a public frontend and a Filament admin panel**. The website/demo application is maintained separately in the LaraCoreKit monorepo. PHP 8.3+, Composer 2 and Laravel 13 are required. Prebuilt assets are included, so consuming the default package UI does not require Node. Asset development happens in the monorepo with Node 22.12+ (CI uses Node 24).
 
 ## Release status
 
 Stable releases are published on [Packagist](https://packagist.org/packages/programmernomad/laracorekit) as `programmernomad/laracorekit` (current stable line: `^0.1`). Development continues in the [LaraCoreKit monorepo](https://github.com/ProgrammerNomad/LaraCoreKit) under `packages/core`; this repository is the distribution source. No account, activation key or telemetry is required.
 
-## Option A: install from Packagist (recommended)
+## Install from Packagist (recommended)
 
 Start with a **fresh Laravel 13 application**. The first release uses `Modules\User\Models\User` and the stock Laravel `users` table; integrating an existing authentication system needs a separate migration plan.
 
@@ -36,39 +36,18 @@ The administrator command prompts for a unique email and a hidden password. It d
 
 Package discovery registers providers, views, routes and migrations. Composer installs dependencies; it does **not** configure your database or run package installation migrations automatically. `laracorekit:install --migrate` is available when you explicitly want the installer to run outstanding migrations. Re-running the installer preserves existing configuration.
 
-To track `main` before a tagged release, add a VCS repository and require `dev-main`:
+For contributors testing unreleased changes only, add a VCS repository and require `dev-main`. Application installs should use the tagged Packagist package above:
 
 ```bash
 composer config repositories.laracorekit vcs https://github.com/ProgrammerNomad/laracorekit-package
 composer require programmernomad/laracorekit:dev-main
 ```
 
-## Option B: run the complete GitHub demo/development host
+## Demo and screenshots
 
-```bash
-git clone https://github.com/ProgrammerNomad/LaraCoreKit.git my-demo
-cd my-demo
-composer install
-npm ci
-```
+![Public site and admin walkthrough](https://raw.githubusercontent.com/ProgrammerNomad/LaraCoreKit/codex/laracorekit-distribution/docs/images/screenshots/walkthrough.gif)
 
-Copy `.env.example` to `.env` (`cp` on Unix, `Copy-Item` in PowerShell), configure a database, then:
-
-```bash
-php artisan key:generate
-php artisan migrate --seed
-php artisan laracorekit:admin
-php artisan storage:link
-npm run build:core
-npm run build
-php artisan serve
-```
-
-The demo checkout uses a Composer **path repository** pointing at `packages/core`; keep that directory with the checkout. It includes the marketing website, docs viewer, showcase and the separately published demo-module dependency. The reusable package does not require any of those.
-
-Only on a disposable demo database, explicitly enable `DEMO_MODE=true` and seed `Database\Seeders\DemoSeeder`. Demo mode permits known sample credentials and scheduled resets. Never enable it for a customer deployment. See [demo setup](https://www.laracorekit.com/docs/deployment/demo-setup).
-
-The package installs Laravel dependencies into an existing app; it does not download the demo website. See [release preparation](https://www.laracorekit.com/docs/package-release) and [upgrading](https://www.laracorekit.com/docs/upgrade-guide).
+These real screenshots show the demonstration host, including optional website/docs/showcase features outside the core library. See the [full demo repository and gallery](https://github.com/ProgrammerNomad/LaraCoreKit/tree/codex/laracorekit-distribution#screenshots) for demo setup and contributions. Composer installs only the reusable frontend/admin bundle and its dependencies.
 
 ## Customization
 
@@ -101,4 +80,4 @@ Add this path entry to the consumer application's `repositories` array in `compo
 composer require programmernomad/laracorekit:dev-main
 ```
 
-A development branch can change without a release. Pin and review a tested commit for evaluation; use a reviewed tagged release for production when available. The monorepo host already configures the local path and an explicit dev-main version for CI.
+A development branch can change without a release. Pin and review a tested commit for evaluation; use a reviewed tagged release for production. The monorepo host already configures the local path and an explicit dev-main version for CI.

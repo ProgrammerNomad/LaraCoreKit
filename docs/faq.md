@@ -6,7 +6,7 @@ No. The package provides a public Livewire frontend and a Filament admin workspa
 
 ## Should I clone GitHub or install with Composer?
 
-Use the package in a fresh Laravel application for your product. Clone the full repository to run the demo website, docs and showcase or contribute. Until Packagist publication, use the documented GitHub VCS installation.
+Install `programmernomad/laracorekit:"^0.1"` from Packagist in a fresh Laravel application for your product. Clone the full repository to run the demo website, docs and showcase or contribute. GitHub dev-main is for testing unreleased changes.
 
 ## Does Composer install the demo too?
 
@@ -26,7 +26,7 @@ The installation and introduction pages list the implemented scope. API tokens, 
 
 ## Are installations tracked?
 
-No telemetry or registration is required. Packagist downloads can indicate adoption after publication, but cannot identify developers or count unique active installations.
+No telemetry or registration is required. Packagist downloads indicate distribution activity, but cannot identify developers or count unique active installations.
 
 ## Can AI tools read the documentation?
 

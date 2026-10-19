@@ -157,7 +157,7 @@
 <header class="topbar">
     <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle documentation navigation" aria-expanded="false" aria-controls="sidebar">&#9776;</button>
     <a href="/" class="topbar-logo w-auto flex items-center justify-center">
-        <img src="{{ asset('images/logo.svg') }}" alt="LaraCoreKit" style="height: 1.5rem; width: auto; margin-right: 0.2rem;">
+        <img src="{{ asset('images/logo-dark.svg') }}" alt="LaraCoreKit" style="height: 1.5rem; width: auto; margin-right: 0.2rem;">
     </a>
     <div class="topbar-divider"></div>
     <span class="topbar-section">Docs</span>

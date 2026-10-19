@@ -4,24 +4,41 @@
 
 Laravel 13 · Filament 5 · Livewire 4 · Tailwind CSS 4 · PHP 8.3+ · MIT
 
-[Demo website](https://www.laracorekit.com) · [Documentation](https://www.laracorekit.com/docs) · [Installation](docs/installation.md) · [Security policy](SECURITY.md)
+[Packagist](https://packagist.org/packages/programmernomad/laracorekit) · [Demo website](https://www.laracorekit.com) · [Documentation](https://www.laracorekit.com/docs) · [Installation](docs/installation.md) · [Security policy](SECURITY.md)
 
-![LaraCoreKit public website](docs/images/screenshots/homepage.png)
+## Install with Composer (recommended)
 
-## Package and demo are separate
-
-The reusable Composer package is **`programmernomad/laracorekit`**, maintained under [`packages/core`](packages/core). It includes public authentication and blog pages, a Filament admin panel, users, roles/permissions, settings and media. It is not admin-only.
-
-This repository also hosts the marketing website, documentation viewer, component showcase and the separately published [demo module](https://packagist.org/packages/programmernomad/laracorekit-demo-module). Those features and sample accounts stay outside the reusable package.
-
-**Release status:** stable releases are on [Packagist](https://packagist.org/packages/programmernomad/laracorekit) (`^0.1`). Install into a fresh Laravel 13 application:
+Install the published public frontend and Filament admin bundle in a fresh Laravel 13 application:
 
 ```bash
+composer create-project laravel/laravel my-app "^13.0"
+cd my-app
 composer require programmernomad/laracorekit:"^0.1"
 php artisan laracorekit:install
 ```
 
-See the [installation guide](docs/installation.md) for database setup, GitHub `dev-main` installs and compatibility notes for existing user models and route names.
+Configure your database, application URL and mail in `.env`, then:
+
+```bash
+php artisan migrate
+php artisan laracorekit:admin
+php artisan storage:link
+php artisan serve
+```
+
+Visit `/blog`, `/login` and `/admin`. Prebuilt assets ship with the package; the default package UI does not require npm. [Full installation and customization guide](docs/installation.md).
+
+## See the public site and admin
+
+![LaraCoreKit walkthrough: public site, blog, administration and documentation](docs/images/screenshots/walkthrough.gif)
+
+Real views from the disposable demonstration application. The documentation viewer, component showcase, sample content and demo controls are host features outside the core package.
+
+## Package and demo are separate
+
+The reusable package **`programmernomad/laracorekit`** is maintained in [`packages/core`](packages/core) and exported to [laracorekit-package](https://github.com/ProgrammerNomad/laracorekit-package). It includes public authentication/blog pages, Filament administration, users, permissions, settings and media.
+
+The optional [demo module](https://packagist.org/packages/programmernomad/laracorekit-demo-module) stays separate. Clone this monorepo to explore the demo or contribute; use the Composer installation above for your own application.
 
 ## Run the complete GitHub host
 
@@ -62,11 +79,13 @@ API tokens, enforced email verification, billing, tenancy and a marketplace are 
 
 ## Screenshots
 
-![Filament administration](docs/images/screenshots/admin-dashboard.png)
-![Public blog](docs/images/screenshots/blog.png)
-![Component showcase](docs/images/screenshots/ui-showcase.png)
+| Public website | Filament administration |
+| --- | --- |
+| ![Public homepage](docs/images/screenshots/homepage.png) | ![Admin dashboard](docs/images/screenshots/admin-dashboard.png) |
+| ![Public blog](docs/images/screenshots/blog.png) | ![Documentation](docs/images/screenshots/documentation.png) |
+| ![Component showcase](docs/images/screenshots/ui-showcase.png) | ![Mobile navigation](docs/images/screenshots/mobile-navigation.png) |
 
-Screenshots show the local demonstration application, including host-only features. They do not imply that the demo website is included in the package.
+Screenshots show the local demonstration application, including host-only features. Open any image for the full view. See [capture instructions](docs/SCREENSHOT_GUIDE.md) to reproduce the screenshots and GIF.
 
 ## Development and validation
 
@@ -84,7 +103,7 @@ See [contribution guidelines](CONTRIBUTING.md), [upgrade guide](docs/upgrade-gui
 
 ## Adoption and privacy
 
-No registration, activation or telemetry is required. Packagist downloads can measure distribution activity after publication, not unique developers or active projects. The host includes a validated daily snapshot command and optional scheduler configuration; see [release and metrics setup](docs/package-release.md). Contributions, issues and voluntary showcase submissions are welcome. Search engines and AI tools can read server-rendered docs and `/llms.txt`; no ranking or recommendation is promised.
+No registration, activation or telemetry is required. Packagist downloads measure distribution activity, not unique developers or active projects. The host includes a validated daily snapshot command and optional scheduler configuration; see [release and metrics setup](docs/package-release.md). Contributions, issues and voluntary showcase submissions are welcome. Search engines and AI tools can read server-rendered docs and `/llms.txt`; no ranking or recommendation is promised.
 
 ## License
 
