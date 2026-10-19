@@ -8,7 +8,7 @@ files = subprocess.check_output(['git', 'ls-files', '--cached', '--others', '--e
 with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED) as bundle:
     for name in sorted(set(files)):
         path = root/name
-        if not name or not path.is_file() or name.startswith(('docs/images/', '.github/', 'tools/', 'tests/')):
+        if not name or not path.is_file() or name.startswith(('docs/images/', '.github/', 'tools/')):
             continue
         bundle.write(path, name)
 manifest = json.loads((root/'composer.json').read_text(encoding='utf-8'))

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1
+
+- Include application tests and PHPUnit configuration in the Composer project archive so developers can run and extend the starter test suite.
+- Use remotely accessible README preview images in the slim project download.
+
 ## 1.0.0 - Editable modular starter
 
 - Change distribution from a vendor-installed library to a complete Composer project.

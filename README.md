@@ -8,9 +8,9 @@ Laravel 13 · Filament 5 · Livewire 4 · Tailwind CSS 4 · PHP 8.3+ · MIT
 
 [Website](https://www.laracorekit.com) · [Website repository](https://github.com/ProgrammerNomad/laracorekit-website) · [Installation](docs/installation.md) · [Security policy](SECURITY.md)
 
-![Editable frontend](docs/images/screenshots/starter-homepage.png)
+![Editable frontend](https://raw.githubusercontent.com/ProgrammerNomad/LaraCoreKit/main/docs/images/screenshots/starter-homepage.png)
 
-![Public site and administration walkthrough](docs/images/screenshots/walkthrough.gif)
+![Public site and administration walkthrough](https://raw.githubusercontent.com/ProgrammerNomad/LaraCoreKit/main/docs/images/screenshots/walkthrough.gif)
 
 The walkthrough also shows the separately hosted promotional website and documentation viewer. The starter contains an editable homepage, public blog/authentication, admin and UI examples.
 

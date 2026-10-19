@@ -12,6 +12,3 @@ CHANGELOG.md export-ignore
 
 /docs/images export-ignore
 /tools export-ignore
-/tests export-ignore
-/phpunit.xml export-ignore
-/phpunit.mysql.xml export-ignore
