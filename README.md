@@ -8,17 +8,16 @@ LaraCoreKit is a reusable Laravel package for **both a public frontend and a Fil
 
 ## Release status
 
-The package source is in `packages/core`, named `programmernomad/laracorekit`. The first standalone Packagist release is being prepared. Do not assume that `composer require programmernomad/laracorekit` works until the package is registered and a stable tag exists. No account, activation key or telemetry is required.
+The package source is in `packages/core`, named `programmernomad/laracorekit`. The [standalone GitHub source](https://github.com/ProgrammerNomad/laracorekit-package) is available; its first standalone Packagist release is being prepared. Do not assume that `composer require programmernomad/laracorekit` works until the package is registered and a stable tag exists. No account, activation key or telemetry is required.
 
-## Option A: install the package from a GitHub checkout now
+## Option A: install only the package directly from GitHub now
 
 Start with a **fresh Laravel 13 application**. The first release uses `Modules\User\Models\User` and the stock Laravel `users` table; integrating an existing authentication system needs a separate migration plan.
 
 ```bash
-git clone https://github.com/ProgrammerNomad/LaraCoreKit.git laracorekit-source
 composer create-project laravel/laravel my-app "^13.0"
 cd my-app
-composer config repositories.laracorekit path ../laracorekit-source/packages/core
+composer config repositories.laracorekit vcs https://github.com/ProgrammerNomad/laracorekit-package
 composer require programmernomad/laracorekit:dev-main
 php artisan laracorekit:install
 ```
@@ -85,3 +84,14 @@ Use the commands above only after release availability is verified. The package 
 - Routes use conventional names such as `login`, `dashboard`, and `blog.index`. Resolve collisions before integrating with existing routes.
 
 The initial package is intended for new applications. API tokens, email-verification enforcement, billing, tenancy and a public module marketplace are not bundled capabilities.
+
+## Local package development
+
+When contributing from the monorepo, use a path repository instead of the GitHub VCS repository:
+
+```bash
+composer config repositories.laracorekit path ../LaraCoreKit/packages/core
+composer require programmernomad/laracorekit:dev-main
+```
+
+A development branch can change without a release. Pin and review a tested commit for evaluation; use a reviewed tagged release for production when available. The monorepo host already configures the local path and an explicit dev-main version for CI.
