@@ -34,7 +34,7 @@ jobs:
           text = path.read_text()
           if '## Unreleased' not in text:
               raise SystemExit('Missing Unreleased notes.')
-          text = text.replace('## Unreleased', '## Unreleased\n\n## '+version+' — '+date.today().isoformat(), 1)
+          text = text.replace('## Unreleased', '## Unreleased\n\n## '+version+' - '+date.today().isoformat(), 1)
           path.write_text(text)
           PY
       - uses: shivammathur/setup-php@v2
