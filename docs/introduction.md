@@ -19,4 +19,6 @@ The reusable package is `programmernomad/laracorekit`, with source in `packages/
 3. [Review production setup](/docs/deployment/production).
 4. [Read the upgrade guide](/docs/upgrade-guide).
 
-The first standalone Packagist release is pending. You can install directly from its GitHub VCS repository using Composer. There is no mandatory account or installation telemetry. API tokens, enforced email verification, billing and tenancy need additional implementation.
+Install the published package from Packagist with `composer require programmernomad/laracorekit:"^0.1"`. There is no mandatory account or installation telemetry. API tokens, enforced email verification, billing and tenancy need additional implementation.
+
+The main project repository is [ProgrammerNomad/LaraCoreKit](https://github.com/ProgrammerNomad/LaraCoreKit). The supporting laracorekit-package repository is only the package-only Composer distribution export; project documentation, demo GIF, screenshots, issues and development remain in the main repository.

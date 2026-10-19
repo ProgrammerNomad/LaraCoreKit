@@ -2,9 +2,17 @@
 
 **A modular Laravel foundation for your public website and admin workspace.**
 
+This is the main LaraCoreKit project repository: source development, documentation, demo website, screenshots, issues and contributions belong here.
+
 Laravel 13 · Filament 5 · Livewire 4 · Tailwind CSS 4 · PHP 8.3+ · MIT
 
 [Packagist](https://packagist.org/packages/programmernomad/laracorekit) · [Demo website](https://www.laracorekit.com) · [Documentation](https://www.laracorekit.com/docs) · [Installation](docs/installation.md) · [Security policy](SECURITY.md)
+
+## See the public site and admin
+
+![LaraCoreKit walkthrough: public site, blog, administration and documentation](docs/images/screenshots/walkthrough.gif)
+
+Real views from the disposable demonstration application. The documentation viewer, component showcase, sample content and demo controls are host features outside the core package.
 
 ## Install with Composer (recommended)
 
@@ -28,15 +36,9 @@ php artisan serve
 
 Visit `/blog`, `/login` and `/admin`. Prebuilt assets ship with the package; the default package UI does not require npm. [Full installation and customization guide](docs/installation.md).
 
-## See the public site and admin
-
-![LaraCoreKit walkthrough: public site, blog, administration and documentation](docs/images/screenshots/walkthrough.gif)
-
-Real views from the disposable demonstration application. The documentation viewer, component showcase, sample content and demo controls are host features outside the core package.
-
 ## Package and demo are separate
 
-The reusable package **`programmernomad/laracorekit`** is maintained in [`packages/core`](packages/core) and exported to [laracorekit-package](https://github.com/ProgrammerNomad/laracorekit-package). It includes public authentication/blog pages, Filament administration, users, permissions, settings and media.
+The reusable package **`programmernomad/laracorekit`** is maintained in [`packages/core`](packages/core) and exported to the supporting [Composer distribution repository, laracorekit-package](https://github.com/ProgrammerNomad/laracorekit-package). It includes public authentication/blog pages, Filament administration, users, permissions, settings and media.
 
 The optional [demo module](https://packagist.org/packages/programmernomad/laracorekit-demo-module) stays separate. Clone this monorepo to explore the demo or contribute; use the Composer installation above for your own application.
 

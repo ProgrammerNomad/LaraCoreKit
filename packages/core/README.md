@@ -1,6 +1,8 @@
-# LaraCoreKit
+# LaraCoreKit Composer distribution
 
-Reusable public frontend and Filament administration for Laravel. This repository is the distribution source for `programmernomad/laracorekit`. Development and integration tests are maintained in the [LaraCoreKit monorepo](https://github.com/ProgrammerNomad/LaraCoreKit), under `packages/core`.
+**Supporting repository for Composer distribution only.** The main project is [ProgrammerNomad/LaraCoreKit](https://github.com/ProgrammerNomad/LaraCoreKit).
+
+For the demo GIF, screenshots, documentation, development, issues and contributions, use the [main LaraCoreKit repository](https://github.com/ProgrammerNomad/LaraCoreKit). This repository contains the package-only export installed by Composer; it is not the project homepage or primary development repository.
 
 ## Installation
 
@@ -43,11 +45,9 @@ composer config repositories.laracorekit vcs https://github.com/ProgrammerNomad/
 composer require programmernomad/laracorekit:dev-main
 ```
 
-## Demo and screenshots
+## Demo, screenshots and contributions
 
-![Public site and admin walkthrough](https://raw.githubusercontent.com/ProgrammerNomad/LaraCoreKit/42eb1bf42e5c833f7810fd0114432d029fa8c220/docs/images/screenshots/walkthrough.gif)
-
-These real screenshots show the demonstration host, including optional website/docs/showcase features outside the core library. See the [full demo repository and gallery](https://github.com/ProgrammerNomad/LaraCoreKit/tree/42eb1bf42e5c833f7810fd0114432d029fa8c220#screenshots) for demo setup and contributions. Composer installs only the reusable frontend/admin bundle and its dependencies.
+The demo GIF and screenshot gallery live in the [main LaraCoreKit project](https://github.com/ProgrammerNomad/LaraCoreKit#readme). Package source changes are maintained there under `packages/core` and exported here for releases.
 
 ## Customization
 
