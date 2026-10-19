@@ -45,9 +45,9 @@ composer require programmernomad/laracorekit:dev-main
 
 ## Demo and screenshots
 
-![Public site and admin walkthrough](https://raw.githubusercontent.com/ProgrammerNomad/LaraCoreKit/codex/laracorekit-distribution/docs/images/screenshots/walkthrough.gif)
+![Public site and admin walkthrough](https://raw.githubusercontent.com/ProgrammerNomad/LaraCoreKit/42eb1bf42e5c833f7810fd0114432d029fa8c220/docs/images/screenshots/walkthrough.gif)
 
-These real screenshots show the demonstration host, including optional website/docs/showcase features outside the core library. See the [full demo repository and gallery](https://github.com/ProgrammerNomad/LaraCoreKit/tree/codex/laracorekit-distribution#screenshots) for demo setup and contributions. Composer installs only the reusable frontend/admin bundle and its dependencies.
+These real screenshots show the demonstration host, including optional website/docs/showcase features outside the core library. See the [full demo repository and gallery](https://github.com/ProgrammerNomad/LaraCoreKit/tree/42eb1bf42e5c833f7810fd0114432d029fa8c220#screenshots) for demo setup and contributions. Composer installs only the reusable frontend/admin bundle and its dependencies.
 
 ## Customization
 
