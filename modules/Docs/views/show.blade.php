@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" type="text/plain" href="{{ url('/docs-source/'.$page) }}" title="Markdown source">
     <title>{{ $title ?? 'Documentation' }} - LaraCoreKit</title>
-    <meta name="description" content="LaraCoreKit documentation - Production-ready modular Laravel starter kit with Filament admin, Livewire, multilingual support, and modular architecture.">
+    <meta name="description" content="{{ $description ?? 'LaraCoreKit package documentation: installation, public frontend, administration and deployment.' }}">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="{{ url()->current() }}">
 
@@ -12,15 +13,15 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="{{ ($title ?? 'Documentation') }} - LaraCoreKit Docs">
-    <meta property="og:description" content="LaraCoreKit documentation - Production-ready modular Laravel starter kit.">
-    <meta property="og:image" content="{{ asset('images/og-preview.png') }}">
+    <meta property="og:description" content="{{ $description ?? 'LaraCoreKit package documentation.' }}">
+    <meta property="og:image" content="{{ asset('images/screenshots/homepage.png') }}">
     <meta property="og:site_name" content="LaraCoreKit">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ ($title ?? 'Documentation') }} - LaraCoreKit Docs">
-    <meta name="twitter:description" content="LaraCoreKit documentation - Production-ready modular Laravel starter kit.">
-    <meta name="twitter:image" content="{{ asset('images/og-preview.png') }}">
+    <meta name="twitter:description" content="{{ $description ?? 'LaraCoreKit package documentation.' }}">
+    <meta name="twitter:image" content="{{ asset('images/screenshots/homepage.png') }}">
     
     <!-- Fonts - Self Hosted (Inter and Fira Code are loaded via Tailwind/Vite) -->
     
@@ -154,13 +155,14 @@
 <div id="reading-progress"></div>
 
 <header class="topbar">
-    <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">&#9776;</button>
+    <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle documentation navigation" aria-expanded="false" aria-controls="sidebar">&#9776;</button>
     <a href="/" class="topbar-logo w-auto flex items-center justify-center">
         <img src="{{ asset('images/logo.svg') }}" alt="LaraCoreKit" style="height: 1.5rem; width: auto; margin-right: 0.2rem;">
     </a>
     <div class="topbar-divider"></div>
     <span class="topbar-section">Docs</span>
     <div class="topbar-spacer"></div>
+    <button class="mobile-menu-btn" id="mobileSearchTrigger" aria-label="Search documentation">&#x2315;</button>
     <div class="topbar-search" id="searchTrigger" role="button" tabindex="0" aria-label="Search documentation">
         <span class="search-icon">&#x2315;</span>
         <input type="text" placeholder="Search docs..." readonly id="searchInput" aria-label="Search">
@@ -168,12 +170,12 @@
     </div>
 </header>
 
-<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search documentation">
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Search documentation">
     <div class="search-modal">
         <div class="search-modal-input-wrap">
             <span style="color:var(--text-muted);font-size:1rem;">&#x2315;</span>
             <input type="text" class="search-modal-input" id="searchModalInput" placeholder="Search documentation..." autocomplete="off" aria-label="Search query">
-            <button id="closeSearchBtn" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1.1rem;">&#x2715;</button>
+            <button id="closeSearchBtn" aria-label="Close search" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1.1rem;">&#x2715;</button>
         </div>
         <div class="search-results" id="searchResults"></div>
         <div class="search-modal-footer">
@@ -272,16 +274,22 @@
 </div>
 
 <script>
-var pages = {!! json_encode($searchPages) !!};
+var pages = {!! json_encode($searchPages, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) !!};
+var searchReturnFocus;
 
 function openSearch() {
+    searchReturnFocus = document.activeElement?.id === 'searchInput' ? document.getElementById('searchTrigger') : document.activeElement;
     document.getElementById('searchOverlay').classList.add('open');
+    document.getElementById('searchOverlay').setAttribute('aria-hidden', 'false');
     document.getElementById('searchModalInput').focus();
     renderResults('');
 }
 function closeSearch() {
+    if (!document.getElementById('searchOverlay').classList.contains('open')) return;
     document.getElementById('searchOverlay').classList.remove('open');
+    document.getElementById('searchOverlay').setAttribute('aria-hidden', 'true');
     document.getElementById('searchModalInput').value = '';
+    searchReturnFocus?.focus();
 }
 function renderResults(query) {
     var container = document.getElementById('searchResults');
@@ -296,6 +304,10 @@ function renderResults(query) {
     }).join('');
 }
 document.getElementById('searchTrigger').addEventListener('click', openSearch);
+document.getElementById('mobileSearchTrigger').addEventListener('click', openSearch);
+document.getElementById('searchTrigger').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openSearch(); }
+});
 document.getElementById('searchInput').addEventListener('focus', openSearch);
 document.getElementById('searchModalInput').addEventListener('input', function(e){ renderResults(e.target.value); });
 document.getElementById('searchOverlay').addEventListener('click', function(e){ if(e.target === e.currentTarget) closeSearch(); });
@@ -303,15 +315,31 @@ document.getElementById('closeSearchBtn').addEventListener('click', closeSearch)
 document.addEventListener('keydown', function(e){
     if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
     if (e.key === 'Escape') closeSearch();
+    if (document.getElementById('searchOverlay').classList.contains('open')) {
+        var focusable = Array.from(document.querySelectorAll('#searchOverlay input, #searchOverlay button, #searchOverlay a'));
+        var current = focusable.indexOf(document.activeElement);
+        if (e.key === 'Tab') {
+            e.preventDefault();
+            focusable[(current + (e.shiftKey ? -1 : 1) + focusable.length) % focusable.length].focus();
+        }
+        var results = Array.from(document.querySelectorAll('#searchResults a'));
+        if ((e.key === 'ArrowDown' || e.key === 'ArrowUp') && results.length) {
+            e.preventDefault();
+            var index = results.indexOf(document.activeElement);
+            results[(index + (e.key === 'ArrowDown' ? 1 : -1) + results.length) % results.length].focus();
+        }
+    }
 });
 
 document.getElementById('menuBtn').addEventListener('click', function(){
     document.getElementById('sidebar').classList.toggle('open');
     document.getElementById('sidebarOverlay').classList.toggle('open');
+    this.setAttribute('aria-expanded', String(document.getElementById('sidebar').classList.contains('open')));
 });
 document.getElementById('sidebarOverlay').addEventListener('click', function(){
     document.getElementById('sidebar').classList.remove('open');
     document.getElementById('sidebarOverlay').classList.remove('open');
+    document.getElementById('menuBtn').setAttribute('aria-expanded', 'false');
 });
 
 var installCopyBtn = document.getElementById('installCopyBtn');

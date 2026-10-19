@@ -1,78 +1,9 @@
-﻿# Service Providers
+# Service providers
 
-**Estimated time:** 6 minutes  
-**Difficulty:** Intermediate
+Laravel discovers `LaraCoreKit\Core\CoreServiceProvider` from the package's Composer metadata. It merges configuration, selects the packaged auth model when enabled, registers configured module providers, and optionally registers the default Filament panel.
 
----
+Module providers load namespaced views, migrations, public routes and Livewire aliases. The package also registers the locale middleware and console commands. The host's `AppServiceProvider` handles website-only integration, including the docs view namespace and the demo's language-switch plugin.
 
-Service providers are the bootstrap layer of LaraCoreKit and each module.
+The former application `ModuleServiceProvider` and `config/modules.php` have been removed. Use `config/laracorekit.php` for bundled modules. Independently distributed addons should use normal Composer provider discovery.
 
----
-
-## Why Providers Matter
-
-Service providers tell Laravel how to wire your application:
-
-- Register services in the container
-- Load routes/views/translations/migrations
-- Bind interfaces to implementations
-- Register event listeners and commands
-
----
-
-## Provider Types in LaraCoreKit
-
-1. `AppServiceProvider` - global app bootstrapping.
-2. `ModuleServiceProvider` - discovers and registers modules.
-3. `*ModuleServiceProvider` - one per module.
-
----
-
-## Typical Module Provider
-
-```php
-class BlogServiceProvider extends ServiceProvider
-{
-    public function register(): void
-    {
-        // Bind services or merge config
-    }
-
-    public function boot(): void
-    {
-        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
-        $this->loadViewsFrom(__DIR__.'/resources/views', 'blog');
-        $this->loadMigrationsFrom(__DIR__.'/Database/migrations');
-        $this->loadTranslationsFrom(__DIR__.'/resources/lang', 'blog');
-    }
-}
-```
-
----
-
-## Register vs Boot
-
-- `register()`:
-  - Container bindings
-  - Config merge
-  - No runtime dependencies
-
-- `boot()`:
-  - Route/view/migration loading
-  - Event registration
-  - Runtime-ready logic
-
----
-
-## Best Practices
-
-1. Keep providers lightweight.
-2. Avoid heavy DB queries in `boot()`.
-3. Use dedicated classes for complex registration logic.
-4. Namespace module views/translations.
-
----
-
-## Next Steps
-
-Next: [Routing →](routing.md)
+See [installation](/docs/installation) and [package architecture](/docs/core/architecture).

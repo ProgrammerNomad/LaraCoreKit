@@ -60,13 +60,19 @@ Feature suggestions are welcome! Please:
 7. **Push to your branch** (`git push origin feature/amazing-feature`)
 8. **Open a Pull Request**
 
+## Package and host ownership
+
+The Composer package is `programmernomad/laracorekit`, with public and admin modules under `packages/core`. The repository root hosts the website, documentation viewer, component showcase and demo integrations. Keep the local path repository and package directory together when developing from GitHub. Read `docs/installation.md` and `docs/upgrade-guide.md` before changing registration or installation behavior.
+
+Run `python tools/consumer-smoke.py` for an independent package installation in a disposable Laravel application. Never use real data for smoke tests or screenshots. Registration/telemetry is not required for package users.
+
 ## Development Setup
 
 ### Prerequisites
 
 - PHP 8.3+
 - Composer
-- Node.js & NPM
+- Node.js 22.12+ and npm (CI uses Node 24)
 - MySQL, PostgreSQL, or SQLite
 
 ### Local Installation
@@ -78,7 +84,7 @@ cd LaraCoreKit
 
 # Install dependencies
 composer install
-npm install
+npm ci
 
 # Setup environment
 cp .env.example .env
@@ -90,7 +96,7 @@ php artisan migrate --seed
 php artisan storage:link
 
 # Create admin user
-php artisan filament:user
+php artisan laracorekit:admin
 
 # Start development servers
 npm run dev
@@ -113,6 +119,7 @@ vendor/bin/phpstan analyse
 composer review
 
 # Build assets
+npm run build:core
 npm run build
 ```
 
@@ -271,7 +278,7 @@ php artisan test --filter=test_user_can_create_blog_post
 Each module should follow this structure:
 
 ```
-modules/YourModule/
+packages/your-addon/
 ├── src/
 │   ├── YourModuleServiceProvider.php
 │   ├── Http/

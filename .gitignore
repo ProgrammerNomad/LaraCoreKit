@@ -48,5 +48,12 @@ Thumbs.db
 /storage/logs/*.log
 .github/copilot-instructions.md
 /package-files
-/storage/framework/sessions
-/storage/framework/views
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitignore
+/storage/framework/views/*
+!/storage/framework/views/.gitignore
+/packages/**/vendor
+/packages/**/node_modules
+/packages/**/composer.lock
+/storage/framework/cache/phpstan/
+/storage/app/releases/

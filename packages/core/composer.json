@@ -1,0 +1,61 @@
+{
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "programmernomad/laracorekit",
+    "description": "Modular Laravel application foundation with Filament administration, authentication, roles, settings, blog and media.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "filament",
+        "livewire",
+        "starter-kit",
+        "modular",
+        "laracorekit"
+    ],
+    "homepage": "https://www.laracorekit.com",
+    "support": {
+        "source": "https://github.com/ProgrammerNomad/laracorekit-package",
+        "issues": "https://github.com/ProgrammerNomad/LaraCoreKit/issues"
+    },
+    "require": {
+        "php": "^8.3",
+        "laravel/framework": "^13.37",
+        "filament/filament": "^5.10",
+        "livewire/livewire": "^4.4",
+        "spatie/laravel-medialibrary": "^11.23",
+        "spatie/laravel-permission": "^6.23"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaraCoreKit\\Core\\": "src/",
+            "Modules\\Core\\": "modules/Core/src/",
+            "Modules\\Auth\\": "modules/Auth/src/",
+            "Modules\\User\\Database\\Seeders\\": "modules/User/database/seeders/",
+            "Modules\\User\\Database\\Factories\\": "modules/User/database/factories/",
+            "Modules\\User\\": "modules/User/src/",
+            "Modules\\Settings\\": "modules/Settings/src/",
+            "Modules\\Media\\": "modules/Media/src/",
+            "Modules\\Blog\\": "modules/Blog/src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaraCoreKit\\Core\\CoreServiceProvider"
+            ]
+        }
+    },
+    "archive": {
+        "exclude": [
+            "/tests",
+            "/phpunit.xml",
+            "/.github"
+        ]
+    },
+    "authors": [
+        {
+            "name": "ProgrammerNomad",
+            "homepage": "https://github.com/ProgrammerNomad"
+        }
+    ]
+}

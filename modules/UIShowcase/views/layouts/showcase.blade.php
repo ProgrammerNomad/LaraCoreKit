@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))" :class="{ 'dark': darkMode }">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}" x-data="{ darkMode: localStorage.getItem('theme') === 'dark' }" x-init="$watch('darkMode', val => { localStorage.setItem('darkMode', String(val)); localStorage.setItem('theme', val ? 'dark' : 'light'); })" :class="{ 'dark': darkMode }">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>@yield('title', 'UI Showcase') - LaraCoreKit UI Components</title>
 
-    <meta name="description" content="@yield('meta-description', 'LaraCoreKit UI Component Library — 175+ responsive components built with Tailwind CSS, Alpine.js and Livewire for Laravel applications.')">
+    <meta name="description" content="@yield('meta-description', 'LaraCoreKit UI Component Library — interface examples built with Tailwind CSS, Alpine.js and Livewire for Laravel applications.')">
     <meta name="robots" content="@yield('robots', 'index, follow')">
     <link rel="canonical" href="{{ url()->current() }}">
 
@@ -14,18 +14,18 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="@yield('title', 'UI Showcase') - LaraCoreKit">
-    <meta property="og:description" content="@yield('meta-description', 'LaraCoreKit UI Component Library — 175+ responsive components built with Tailwind CSS, Alpine.js and Livewire for Laravel applications.')">
+    <meta property="og:description" content="@yield('meta-description', 'LaraCoreKit UI Component Library — interface examples built with Tailwind CSS, Alpine.js and Livewire for Laravel applications.')">
     <meta property="og:image" content="{{ asset('images/og-preview.png') }}">
     <meta property="og:site_name" content="LaraCoreKit">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="@yield('title', 'UI Showcase') - LaraCoreKit">
-    <meta name="twitter:description" content="@yield('meta-description', 'LaraCoreKit UI Component Library — 175+ responsive components built with Tailwind CSS, Alpine.js and Livewire for Laravel applications.')">
+    <meta name="twitter:description" content="@yield('meta-description', 'LaraCoreKit UI Component Library — interface examples built with Tailwind CSS, Alpine.js and Livewire for Laravel applications.')">
     <meta name="twitter:image" content="{{ asset('images/og-preview.png') }}">
 
     @stack('meta')
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/showcase.js'])
     @livewireStyles
     <style>
         [x-cloak] { display: none !important; }
@@ -34,6 +34,7 @@
 </head>
 <body class="bg-gray-50 dark:bg-gray-900">
     <div class="flex min-h-screen" x-data="{ 
+        sidebarOpen: false,
         openSections: JSON.parse(localStorage.getItem('openSections') || '{}'),
         toggleSection(section) {
             this.openSections[section] = !this.openSections[section];
@@ -61,7 +62,7 @@
         }
     }">
         <!-- Sidebar -->
-        <aside class="w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 fixed h-full overflow-y-auto">
+        <aside id="showcase-navigation" :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'" class="transition-transform z-40 lg:translate-x-0 w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 fixed h-full overflow-y-auto">
             <div class="p-6">
                 <a href="/" class="flex items-center space-x-2 mb-8">
                     <img src="{{ asset('images/logo.svg') }}" alt="LaraCoreKit" class="h-8">
@@ -72,17 +73,19 @@
         </aside>
 
         <!-- Main Content -->
-        <div class="ml-64 flex-1 min-w-0 flex flex-col">
+        <div class="lg:ml-64 flex-1 min-w-0 flex flex-col">
+            <button x-show="sidebarOpen" x-cloak @click="sidebarOpen=false" aria-label="Close component navigation" class="fixed inset-0 z-30 bg-black/40 lg:hidden"></button>
             <!-- Top Bar -->
             <header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-10">
-                <div class="px-6 py-4 flex justify-between items-center">
+                <div class="px-4 sm:px-6 py-4 flex justify-between items-center gap-3">
+                    <button type="button" @click="sidebarOpen=!sidebarOpen" :aria-expanded="String(sidebarOpen)" aria-controls="showcase-navigation" aria-label="Toggle component navigation" class="rounded border border-gray-300 p-2 lg:hidden dark:text-white">☰</button>
                     <div>
-                        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">@yield('page-title', 'UI Showcase')</h1>
+                        <h1 class="text-lg sm:text-2xl font-bold text-gray-900 dark:text-white">@yield('page-title', 'UI Showcase')</h1>
                         <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">@yield('page-description', 'Component library and design system')</p>
                     </div>
                     <div class="flex items-center space-x-4">
                         <!-- Theme Toggle -->
-                        <button @click="darkMode = !darkMode" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        <button type="button" aria-label="Toggle dark theme" @click="darkMode = !darkMode" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                             <svg x-show="!darkMode" class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
                             </svg>
@@ -96,7 +99,7 @@
             </header>
 
             <!-- Page Content -->
-            <main class="p-6 flex-1 w-full overflow-x-hidden">
+            <main class="p-4 sm:p-6 flex-1 w-full overflow-x-hidden">
                 @yield('content')
             </main>
         </div>

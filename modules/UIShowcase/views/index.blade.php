@@ -1,7 +1,7 @@
 @extends('showcase::layouts.showcase')
 
 @section('title', 'UI Component Library - LaraCoreKit')
-@section('meta-description', 'Browse 175+ production-ready UI components for Laravel — buttons, forms, data tables, charts, modals, and more. Built with Tailwind CSS, Alpine.js and Livewire.')
+@section('meta-description', 'Browse interface examples for Laravel: buttons, forms, tables, charts and layouts built with Tailwind CSS, Alpine.js and Livewire.')
 @section('page-title', 'UI Showcase Overview')
 @section('page-description', 'Complete component library for LaraCoreKit')
 
@@ -11,14 +11,14 @@
 @endphp
 <div class="max-w-7xl mx-auto">
     <!-- Hero Section -->
-    <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 mb-8 text-white">
-        <h2 class="text-4xl font-bold mb-4">LaraCoreKit UI Components</h2>
+    <div class="bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-2xl p-6 sm:p-10 mb-8 text-white">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">LaraCoreKit UI Components</h2>
         <p class="text-xl text-blue-100 mb-6">A comprehensive collection of beautiful, responsive UI components built with Tailwind CSS and Alpine.js</p>
-        <div class="flex space-x-4">
+        <div class="flex flex-wrap gap-3">
             <a href="{{ route('showcase.typography') }}" class="px-6 py-3 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition">
                 Browse Components
             </a>
-            <a href="https://github.com/ProgrammerNomad/LaraCoreKit" target="_blank" class="px-6 py-3 bg-blue-700 text-white rounded-lg font-medium hover:bg-blue-800 transition">
+            <a href="https://github.com/ProgrammerNomad/LaraCoreKit" target="_blank" rel="noopener" class="px-6 py-3 bg-indigo-900 text-white rounded-lg font-medium hover:bg-indigo-950 transition">
                 View on GitHub
             </a>
         </div>
@@ -27,7 +27,7 @@
     <!-- Stats -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
         <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
-            <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">{{ $totalComponents }}+</div>
+            <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">{{ $totalComponents }}</div>
             <div class="text-sm text-gray-600 dark:text-gray-400">UI Components</div>
         </div>
         <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
@@ -35,8 +35,8 @@
             <div class="text-sm text-gray-600 dark:text-gray-400">Categories</div>
         </div>
         <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
-            <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">100%</div>
-            <div class="text-sm text-gray-600 dark:text-gray-400">Responsive</div>
+            <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">MIT</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">License</div>
         </div>
         <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
             <div class="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">Dark</div>

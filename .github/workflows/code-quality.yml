@@ -1,50 +1,23 @@
 name: Code Quality
-
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main, develop ]
-
+    branches: [main, develop]
+permissions:
+  contents: read
 jobs:
-  pint:
+  quality:
     runs-on: ubuntu-latest
-    name: Laravel Pint
-    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+      - uses: actions/checkout@v6
+      - uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.3
-          extensions: dom, curl, libxml, mbstring, zip
+          php-version: '8.3'
+          extensions: dom, curl, mbstring, zip, pdo_sqlite, bcmath, intl, gd, exif
           coverage: none
-          
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-interaction
-        
-      - name: Run Pint
-        run: vendor/bin/pint --test
-        
-  phpstan:
-    runs-on: ubuntu-latest
-    name: PHPStan
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 8.3
-          extensions: dom, curl, libxml, mbstring, zip
-          coverage: none
-          
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-interaction
-        
-      - name: Run PHPStan
-        run: vendor/bin/phpstan analyse --memory-limit=2G
+      - run: composer install --prefer-dist --no-interaction
+      - run: cp .env.example .env
+      - run: php artisan key:generate
+      - run: composer pint-test
+      - run: composer phpstan

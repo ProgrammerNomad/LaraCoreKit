@@ -3,7 +3,7 @@
 Use this for the GitHub repository About/Description section:
 
 ```
-Modular Laravel 13 starter kit with Filament 5, Livewire 4, Tailwind 4, multilingual content, RTL support, auth, roles/permissions, blog, settings, media, and publishable add-on modules.
+Modular Laravel foundation for public websites and Filament administration. Reusable Composer package, documentation, demo host and component examples.
 ```
 
 ## Topics/Tags

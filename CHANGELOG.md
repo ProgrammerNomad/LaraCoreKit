@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Package extraction and website refresh
+- Extract `programmernomad/laracorekit` under `packages/core`, bundling both public frontend and admin modules with auto-discovery.
+- Move marketing pages and sample seeders into the host; retain Docs/UIShowcase/demo integrations outside the package.
+- Add an explicit installer, prebuilt public CSS, interactive administrator creation and clean-consumer smoke testing.
+- Update compatible PHP dependencies and the Vite toolchain; separate showcase JavaScript from ordinary pages.
+- Add authentication throttling, safe seed defaults, direct resource access checks, settings save authorization and public blog sanitization/publication checks.
+- Redesign the website, add mobile navigation and real screenshots, and correct installation/features/upgrade documentation.
+- Add machine-readable docs, page descriptions, full documentation sitemap coverage and accurate source-code metadata.
+- Add dependency proposals, scheduled security checks and separate locked/compatible PHP CI lanes.
+
+This package release is prepared locally; registry publication and deployment are separate steps. Earlier entries below describe historical host changes.
+
+
 ### Added
 - Installed `bezhansalleh/filament-language-switch` plugin for a native Filament admin topbar language switcher
 - Configured `LanguageSwitch` in `AppServiceProvider` with locales `en`, `hi`, `ar`, native labels, and circular avatars

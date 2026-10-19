@@ -8,7 +8,7 @@ Route::prefix('ui-showcase')->name('showcase.')->group(function () {
     Route::get('/', function () use ($components) {
         return view('showcase::index', ['categories' => $components]);
     })->name('index');
-    
+
     // Category-level routes: redirect to first component in the category
     foreach ($components as $categorySlug => $category) {
         if (isset($category['components']) && count($category['components']) > 0) {
@@ -22,14 +22,14 @@ Route::prefix('ui-showcase')->name('showcase.')->group(function () {
     foreach ($components as $categorySlug => $category) {
         if (isset($category['components'])) {
             foreach ($category['components'] as $componentSlug => $component) {
-                Route::get("/{$categorySlug}/{$componentSlug}", function () use ($categorySlug, $componentSlug, $category, $component, $components) {
+                Route::get("/{$categorySlug}/{$componentSlug}", function () use ($categorySlug, $componentSlug, $category, $component) {
                     // Get all components in this category for prev/next navigation
                     $categoryComponents = array_keys($category['components']);
                     $currentIndex = array_search($componentSlug, $categoryComponents);
-                    
+
                     $prevComponent = null;
                     $nextComponent = null;
-                    
+
                     if ($currentIndex > 0) {
                         $prevSlug = $categoryComponents[$currentIndex - 1];
                         $prevComponent = [
@@ -37,7 +37,7 @@ Route::prefix('ui-showcase')->name('showcase.')->group(function () {
                             'title' => $category['components'][$prevSlug]['title'],
                         ];
                     }
-                    
+
                     if ($currentIndex < count($categoryComponents) - 1) {
                         $nextSlug = $categoryComponents[$currentIndex + 1];
                         $nextComponent = [
@@ -45,7 +45,7 @@ Route::prefix('ui-showcase')->name('showcase.')->group(function () {
                             'title' => $category['components'][$nextSlug]['title'],
                         ];
                     }
-                    
+
                     return view("showcase::components.{$categorySlug}.{$componentSlug}", [
                         'category' => $categorySlug,
                         'categoryName' => $category['name'],
@@ -60,5 +60,5 @@ Route::prefix('ui-showcase')->name('showcase.')->group(function () {
             }
         }
     }
-    
+
 });

@@ -1,57 +1,34 @@
 name: Tests
-
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main, develop ]
-
+    branches: [main, develop]
+permissions:
+  contents: read
 jobs:
   tests:
     runs-on: ubuntu-latest
-    
     strategy:
       fail-fast: false
       matrix:
-        php: [8.3]
-        laravel: [13.*]
-        stability: [prefer-stable]
-        
-    name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} - ${{ matrix.stability }}
-    
+        php: ['8.3', '8.5']
+        dependencies: [locked, compatible]
+    name: PHP ${{ matrix.php }} / ${{ matrix.dependencies }}
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+      - uses: actions/checkout@v6
+      - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv
+          extensions: dom, curl, mbstring, zip, pdo_sqlite, bcmath, intl, gd, exif
           coverage: none
-          
-      - name: Setup problem matchers
-        run: |
-          echo "::add-matcher::${{ runner.tool_cache }}/php.json"
-          echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
-          
-      - name: Install dependencies
-        run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
-          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
-          
-      - name: Create SQLite database
-        run: |
-          mkdir -p database
-          touch database/database.sqlite
-          
-      - name: Setup environment
-        run: |
-          cp .env.example .env
-          php artisan key:generate
-          
-      - name: Run migrations
-        run: php artisan migrate --force
-        
-      - name: Execute tests
-        run: vendor/bin/phpunit --testdox
+      - run: composer validate --strict
+      - run: composer --working-dir=packages/core validate --strict
+      - if: matrix.dependencies == 'locked'
+        run: composer install --prefer-dist --no-interaction
+      - if: matrix.dependencies == 'compatible'
+        run: composer update --with-all-dependencies --prefer-dist --no-interaction
+      - run: cp .env.example .env
+      - run: php artisan key:generate
+      - run: composer audit --locked
+      - run: composer test

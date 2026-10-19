@@ -2,6 +2,7 @@
 
 namespace Modules\Docs;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class DocsServiceProvider extends ServiceProvider
@@ -14,10 +15,10 @@ class DocsServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // Load views
-        $this->loadViewsFrom(__DIR__ . '/../views', 'docs');
+        $this->loadViewsFrom(__DIR__.'/../views', 'docs');
 
         // Load routes
-        \Illuminate\Support\Facades\Route::middleware('web')
-            ->group(__DIR__ . '/../routes/web.php');
+        Route::middleware('web')
+            ->group(__DIR__.'/../routes/web.php');
     }
 }

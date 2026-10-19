@@ -2,19 +2,27 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\Dashboard;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Widgets\AccountWidget;
-use Filament\Widgets\FilamentInfoWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use LaraCoreKit\Core\Filament\LocalAvatarProvider;
+use LaraCoreKit\Core\Filament\OverviewStats;
+use LaraCoreKit\DemoModule\Filament\Widgets\DemoBannerWidget;
+use Modules\Blog\Filament\Resources\BlogResource;
+use Modules\Settings\Filament\Pages\Settings;
+use Modules\User\Filament\Resources\Permissions\PermissionResource;
+use Modules\User\Filament\Resources\Roles\RoleResource;
+use Modules\User\Filament\Resources\UserResource;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -28,29 +36,29 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->authGuard('web')
             ->brandName('LaraCoreKit')
+            ->defaultAvatarProvider(LocalAvatarProvider::class)
             ->brandLogo(asset('images/logo.svg'))
             ->darkMode(true)
-            ->renderHook('panels::body.end', fn() => view('filament.login-placeholders'))
             ->colors([
                 'primary' => Color::Red,
                 'danger' => Color::Red,
             ])
-            ->font('Inter')
             ->resources([
-                \Modules\Blog\Filament\Resources\BlogResource::class,
-                \Modules\User\Filament\Resources\UserResource::class,
-                \Modules\User\Filament\Resources\Roles\RoleResource::class,
-                \Modules\User\Filament\Resources\Permissions\PermissionResource::class,
+                BlogResource::class,
+                UserResource::class,
+                RoleResource::class,
+                PermissionResource::class,
             ])
             ->pages([
-                \App\Filament\Pages\Dashboard::class,
-                \Modules\Settings\Filament\Pages\Settings::class,
+                Dashboard::class,
+                Settings::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
                 AccountWidget::class,
-                FilamentInfoWidget::class,
-                \LaraCoreKit\DemoModule\Filament\Widgets\DemoBannerWidget::class,
+                OverviewStats::class,
+                ...(config('demo.enabled') && class_exists(DemoBannerWidget::class)
+                    ? [DemoBannerWidget::class] : []),
             ])
             ->middleware([
                 EncryptCookies::class,

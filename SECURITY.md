@@ -1,105 +1,19 @@
-# Security Policy
+# Security policy
 
-## Supported Versions
+The standalone `programmernomad/laracorekit` package is currently unreleased. The development branch is being prepared for its first reviewed release. Older demo tags do not imply that their dependency lockfiles remain secure; audit and upgrade before deploying.
 
-We release patches for security vulnerabilities in the following versions:
+## Reporting a vulnerability
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 0.0.2   | :white_check_mark: |
-| 0.0.1   | :x:                |
+Report sensitive issues through [GitHub private vulnerability reporting](https://github.com/ProgrammerNomad/LaraCoreKit/security/advisories/new). Include affected commit/version, impact and a minimal reproduction. Do not post secrets or exploitable details in public issues. Repository administrators must enable private reporting if the form is unavailable.
 
-## Reporting a Vulnerability
+Maintainers will assess reports and coordinate fixes and disclosure. Response and fix times depend on severity and maintainer availability; this project does not provide a guaranteed security-response SLA.
 
-We take security seriously at LaraCoreKit. If you discover a security vulnerability, please follow these steps:
+## Deployment expectations
 
-### Where to Report
+- Use reviewed lockfiles and run Composer/npm audits regularly.
+- Set `APP_DEBUG=false`, use HTTPS and keep environment files and logs private.
+- Keep demo mode disabled in customer applications. Never deploy sample credentials or the demo reset scheduler against real data.
+- Create administrators with unique passwords. Review permissions on public Livewire actions and direct admin record routes.
+- Test upload restrictions, mail recovery and data backups for your deployment.
 
-**DO NOT** create a public GitHub issue for security vulnerabilities.
-
-Instead, please use one of these methods:
-
-**Option 1: GitHub Security Advisories (Recommended)**
-- Go to https://github.com/ProgrammerNomad/LaraCoreKit/security/advisories/new
-- This creates a private security advisory
-
-**Option 2: Private Email**
-- **Email:** Contact the repository owner directly through GitHub
-- **Subject:** [SECURITY] Brief description of the issue
-
-### What to Include
-
-Please provide the following information:
-
-1. **Description** - Clear description of the vulnerability
-2. **Steps to Reproduce** - Detailed steps to reproduce the issue
-3. **Impact** - Potential impact and severity assessment
-4. **Affected Versions** - Which versions of LaraCoreKit are affected
-5. **Suggested Fix** - If you have a fix or mitigation suggestion
-6. **Disclosure Timeline** - Your preferred disclosure timeline
-
-### Response Timeline
-
-- **Initial Response:** Within 48 hours
-- **Status Update:** Within 7 days
-- **Fix Timeline:** Depends on severity
-  - Critical: 1-7 days
-  - High: 7-14 days
-  - Medium: 14-30 days
-  - Low: 30-60 days
-
-### Disclosure Policy
-
-We follow responsible disclosure practices:
-
-1. We will acknowledge your email within 48 hours
-2. We will provide a detailed response within 7 days
-3. We will work with you to understand and validate the issue
-4. We will develop and test a fix
-5. We will release a security patch
-6. We will credit you in the release notes (unless you prefer to remain anonymous)
-
-### Security Updates
-
-Security updates will be:
-- Released as patch versions
-- Documented in CHANGELOG.md
-- Announced on GitHub Releases
-- Tagged with `security` label
-
-### Security Best Practices
-
-When using LaraCoreKit:
-
-1. **Keep Updated** - Always use the latest supported version
-2. **Environment Files** - Never commit `.env` files to version control
-3. **Credentials** - Use strong passwords and rotate API keys regularly
-4. **Database** - Run migrations and seeders only in trusted environments
-5. **File Permissions** - Ensure proper file and directory permissions
-6. **Dependencies** - Keep all Composer and NPM dependencies updated
-7. **HTTPS** - Always use HTTPS in production
-8. **Demo Mode** - Never use demo credentials in production
-
-### Scope
-
-This security policy applies to:
-- LaraCoreKit core framework
-- Official modules (Auth, Blog, Core, Media, Settings, User)
-- Official documentation
-- Official demo site
-
-This policy does NOT apply to:
-- Third-party modules
-- Custom implementations
-- Modified versions
-- Development/staging environments
-
-## Hall of Fame
-
-We thank the following researchers for responsibly disclosing security issues:
-
-(No reports yet)
-
----
-
-**Last Updated:** April 22, 2026
+The package requires no activation, telemetry or user registration. The current automated tests are not an independent security audit. Read [production setup](docs/deployment/production.md) before deploying.

@@ -1,0 +1,19 @@
+name: Clean Package Consumer
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+permissions:
+  contents: read
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: dom, curl, mbstring, zip, pdo_sqlite, bcmath, intl, gd, exif
+          coverage: none
+      - run: python3 tools/consumer-smoke.py

@@ -1,0 +1,21 @@
+name: Dependency Security
+on:
+  schedule:
+    - cron: '23 7 * * 2'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - run: composer audit --locked
+      - run: npm audit --package-lock-only

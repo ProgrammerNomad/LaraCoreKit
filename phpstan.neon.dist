@@ -3,17 +3,18 @@ includes:
 
 parameters:
     level: 5
+    configDirectories:
+        - config
+        - packages/core/config
     paths:
         - app
         - config
         - database
         - modules
+        - packages/core/src
+        - packages/core/modules
         - routes
     excludePaths:
         - */vendor/*
         - */storage/*
         - */bootstrap/cache/*
-    ignoreErrors:
-        - '#PHPDoc tag @var#'
-    checkMissingIterableValueType: false
-    checkGenericClassInNonGenericObjectType: false

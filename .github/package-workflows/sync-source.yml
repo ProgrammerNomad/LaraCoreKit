@@ -1,0 +1,91 @@
+name: Sync Package Source
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 8 * * *'
+permissions:
+  contents: read
+jobs:
+  propose:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          path: distribution
+      - uses: actions/checkout@v6
+        with:
+          repository: ProgrammerNomad/LaraCoreKit
+          ref: main
+          path: source
+          persist-credentials: false
+      - name: Check source availability and pending proposals
+        id: source
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          if [ ! -f source/packages/core/composer.json ]; then
+            echo 'Package extraction is not on the monorepo main branch yet.'
+            exit 0
+          fi
+          pending=$(gh pr list --state open --label package-sync --json number --jq length)
+          if [ "$pending" != '0' ]; then
+            echo 'A package source proposal is already waiting for review.'
+            exit 0
+          fi
+          echo 'ready=true' >> "$GITHUB_OUTPUT"
+      - if: steps.source.outputs.ready == 'true'
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: dom, curl, mbstring, zip, pdo_sqlite, bcmath, intl, gd, exif
+          coverage: none
+      - if: steps.source.outputs.ready == 'true'
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: source/package-lock.json
+      - name: Validate the monorepo source and prepare the package
+        if: steps.source.outputs.ready == 'true'
+        working-directory: source
+        run: |
+          composer install --prefer-dist --no-interaction
+          cp .env.example .env
+          php artisan key:generate
+          composer validate --strict
+          composer --working-dir=packages/core validate --strict
+          composer review
+          composer audit --locked
+          npm ci
+          npm audit
+          npm run build:core
+          python3 tools/consumer-smoke.py
+          python3 tools/package-release.py
+      - name: Propose a package-only source update
+        if: steps.source.outputs.ready == 'true'
+        working-directory: distribution
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          branch="codex/package-sync-$GITHUB_RUN_ID"
+          source_sha=$(git -C ../source rev-parse HEAD)
+          git switch -c "$branch"
+          # Preserve this repository's own maintenance workflow.
+          git rm -r --ignore-unmatch -- . ':!.github'
+          unzip -oq ../source/storage/app/releases/laracorekit-preview.zip
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'Package source is already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "Sync package source from $source_sha"
+          git push --set-upstream origin "$branch"
+          printf 'Update package source from LaraCoreKit commit %s.\n\nMonorepo checks, dependency audits and clean-consumer installation passed. Review and merge before creating a release tag.\n' "$source_sha" > "$RUNNER_TEMP/package-sync-body.md"
+          gh pr create --base main --head "$branch" --draft --label package-sync --title 'Sync LaraCoreKit package source' --body-file "$RUNNER_TEMP/package-sync-body.md"

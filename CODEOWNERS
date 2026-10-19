@@ -4,14 +4,14 @@
 *       @ProgrammerNomad @shivsingh
 
 # Core modules
-/modules/Core/      @ProgrammerNomad
-/modules/Auth/      @ProgrammerNomad
-/modules/User/      @ProgrammerNomad
+/packages/core/modules/Core/      @ProgrammerNomad
+/packages/core/modules/Auth/      @ProgrammerNomad
+/packages/core/modules/User/      @ProgrammerNomad
 
 # Feature modules
-/modules/Blog/      @ProgrammerNomad
-/modules/Media/     @ProgrammerNomad
-/modules/Settings/  @ProgrammerNomad
+/packages/core/modules/Blog/      @ProgrammerNomad
+/packages/core/modules/Media/     @ProgrammerNomad
+/packages/core/modules/Settings/  @ProgrammerNomad
 
 # Documentation
 /docs/              @ProgrammerNomad
@@ -30,3 +30,7 @@ package.json        @ProgrammerNomad
 # Database migrations and seeders
 /database/migrations/   @ProgrammerNomad
 /database/seeders/      @ProgrammerNomad
+
+# Package registration, installer and release contract
+/packages/core/     @ProgrammerNomad
+/tools/             @ProgrammerNomad

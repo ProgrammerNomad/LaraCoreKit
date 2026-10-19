@@ -1,9 +1,14 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "programmernomad/laracorekit-site",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "Documentation and demo host for the LaraCoreKit Composer package.",
+    "keywords": [
+        "laravel",
+        "filament",
+        "laracorekit",
+        "starter-kit"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.3",
@@ -16,7 +21,7 @@
         "programmernomad/laracorekit-demo-module": "^1.0",
         "spatie/laravel-medialibrary": "^11.17",
         "spatie/laravel-permission": "^6.23",
-        "spatie/laravel-sitemap": "^8.0"
+        "programmernomad/laracorekit": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -25,22 +30,13 @@
         "laravel/sail": "^1.41",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
-        "phpunit/phpunit": "^11.5.3"
+        "phpunit/phpunit": "^11.5.3",
+        "larastan/larastan": "^3.0"
     },
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "Modules\\Auth\\": "modules/Auth/src/",
-            "Modules\\Media\\": "modules/Media/src/",
-            "Modules\\Blog\\": "modules/Blog/src/",
-            "Modules\\Blog\\Database\\Seeders\\": "modules/Blog/database/seeders/",
-            "Modules\\Core\\": "modules/Core/src/",
-            "Modules\\Settings\\": "modules/Settings/src/",
-            "Modules\\Settings\\Database\\Seeders\\": "modules/Settings/database/seeders/",
             "Modules\\UIShowcase\\": "modules/UIShowcase/src/",
-            "Modules\\User\\": "modules/User/src/",
-            "Modules\\User\\Database\\Factories\\": "modules/User/database/factories/",
-            "Modules\\User\\Database\\Seeders\\": "modules/User/database/seeders/",
             "Modules\\Docs\\": "modules/Docs/src/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
@@ -91,14 +87,8 @@
         ]
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "13.x-dev"
-        },
         "laravel": {
-            "dont-discover": [],
-            "providers": [
-                "App\\Providers\\ModuleServiceProvider"
-            ]
+            "dont-discover": []
         }
     },
     "config": {
@@ -110,6 +100,18 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/core",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "programmernomad/laracorekit": "dev-main"
+                }
+            }
+        }
+    ]
 }

@@ -1,13 +1,11 @@
 <?php
 
+use App\Providers\AppServiceProvider;
+use App\Providers\Filament\AdminPanelProvider;
+use Modules\UIShowcase\UIShowcaseServiceProvider;
+
 return [
-    App\Providers\AppServiceProvider::class,
-    App\Providers\Filament\AdminPanelProvider::class,
-    Modules\Auth\AuthServiceProvider::class,
-    Modules\Core\CoreServiceProvider::class,
-    Modules\Media\MediaServiceProvider::class,
-    Modules\Blog\BlogServiceProvider::class,
-    Modules\Settings\SettingsServiceProvider::class,
-    Modules\UIShowcase\UIShowcaseServiceProvider::class,
-    Modules\User\UserServiceProvider::class,
+    AppServiceProvider::class,
+    AdminPanelProvider::class,
+    UIShowcaseServiceProvider::class,
 ];

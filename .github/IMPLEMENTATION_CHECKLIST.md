@@ -1,5 +1,7 @@
 # LaraCoreKit - Implementation Checklist
 
+Historical checklist from the earlier host audit. For the current package extraction, validation evidence and external release blockers, see [implementation report](../docs/implementation-report.md).
+
 This document tracks the implementation of improvements based on the comprehensive audit report.
 
 ## Must-Fix Priority Items

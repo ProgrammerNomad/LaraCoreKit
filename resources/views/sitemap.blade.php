@@ -5,53 +5,17 @@
     <!-- Home -->
     <url>
         <loc>{{ url('/') }}</loc>
-        <lastmod>{{ now()->toDateString() }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
-    <!-- Docs -->
-    <url>
-        <loc>{{ url('/docs') }}</loc>
-        <lastmod>{{ now()->toDateString() }}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>{{ url('/docs/introduction') }}</loc>
-        <lastmod>{{ now()->toDateString() }}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>{{ url('/docs/quick-start') }}</loc>
-        <lastmod>{{ now()->toDateString() }}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>{{ url('/docs/installation') }}</loc>
-        <lastmod>{{ now()->toDateString() }}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>{{ url('/docs/configuration') }}</loc>
-        <lastmod>{{ now()->toDateString() }}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>{{ url('/docs/project-structure') }}</loc>
-        <lastmod>{{ now()->toDateString() }}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
+    @foreach($docs as $slug)
+    <url><loc>{{ url('/docs/'.$slug) }}</loc></url>
+    @endforeach
 
     <!-- Blog index -->
     <url>
         <loc>{{ url('/blog') }}</loc>
-        <lastmod>{{ now()->toDateString() }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
@@ -69,7 +33,6 @@
     <!-- Changelog -->
     <url>
         <loc>{{ url('/changelog') }}</loc>
-        <lastmod>{{ now()->toDateString() }}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>

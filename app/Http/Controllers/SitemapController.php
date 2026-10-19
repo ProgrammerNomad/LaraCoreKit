@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Response;
+use Modules\Blog\Models\Blog;
+use Modules\Docs\Http\Controllers\DocsController;
 
 class SitemapController extends Controller
 {
@@ -11,8 +13,8 @@ class SitemapController extends Controller
         $blogs = collect();
 
         try {
-            $blogs = \Modules\Blog\Models\Blog::query()
-                ->where('status', 'published')
+            $blogs = Blog::query()
+                ->published()
                 ->whereNotNull('published_at')
                 ->orderByDesc('published_at')
                 ->get(['slug', 'updated_at', 'published_at']);
@@ -20,8 +22,10 @@ class SitemapController extends Controller
             // Table may not exist yet during install
         }
 
+        $docs = app(DocsController::class)->publishedPages();
+
         return response()
-            ->view('sitemap', compact('blogs'))
+            ->view('sitemap', compact('blogs', 'docs'))
             ->header('Content-Type', 'application/xml; charset=utf-8');
     }
 }

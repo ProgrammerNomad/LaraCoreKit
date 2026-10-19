@@ -9,6 +9,10 @@
 @source "../**/*.vue";
 @source "../../modules/**/views/**/*.blade.php";
 @source "../../modules/**/src/**/*.php";
+@source "../../packages/core/modules/**/*.blade.php";
+@source "../../packages/core/modules/**/*.php";
+@plugin "@tailwindcss/typography";
+[x-cloak] { display: none !important; }
 
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
